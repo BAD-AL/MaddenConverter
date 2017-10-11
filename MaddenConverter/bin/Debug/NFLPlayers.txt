@@ -1,0 +1,1944 @@
+
+CB	20	Acker, Kenneth	ACT	TCKL	22	SCK	0.0	FF	0	INT	1	SF
+WR	6	Anderson, Dres	RES	REC	--	YDS	--	AVG	--	TDS	--	SF
+TE	48	Anderson, Rory	RES	REC	--	YDS	--	AVG	--	TDS	--	SF
+DE	91	Armstead, Arik	ACT	TCKL	5	SCK	1.0	FF	0	INT	--	SF
+TE	84	Bell, Blake	ACT	REC	2	YDS	11	AVG	5.5	TDS	0	SF
+LB	50	Bellore, Nick	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	SF
+SS	41	Bethea, Antoine	ACT	TCKL	24	SCK	1.0	FF	0	INT	--	SF
+WR	81	Boldin, Anquan	ACT	REC	15	YDS	124	AVG	8.3	TDS	1	SF
+G	75	Boone, Alex	ACT	G	4	GS	4					SF
+ILB	53	Bowman, NaVorro	ACT	TCKL	28	SCK	1.0	FF	0	INT	--	SF
+CB	26	Brock, Tramaine	ACT	TCKL	14	SCK	0.0	FF	0	INT	1	SF
+OLB	55	Brooks, Ahmad	ACT	TCKL	12	SCK	1.0	FF	0	INT	--	SF
+OT	77	Brown, Trenton	ACT	G	2	GS	0					SF
+RB	23	Bush, Reggie	ACT	CAR	3	YDS	8	AVG	2.7	TDS	0	SF
+DT	95	Carradine, Tank	ACT	TCKL	11	SCK	1.0	FF	1	INT	--	SF
+TE	88	Celek, Garrett	ACT	REC	11	YDS	105	AVG	9.5	TDS	0	SF
+RB	22	Davis, Mike	ACT	CAR	14	YDS	20	AVG	1.4	TDS	0	SF
+TE	85	Davis, Vernon	ACT	REC	8	YDS	109	AVG	13.6	TDS	0	SF
+K	9	Dawson, Phil	ACT	FGA	5	FGM	4	PCT	80.0	LNG	47	SF
+OG	65	Devey, Jordan	ACT	G	4	GS	4					SF
+DE	92	Dial, Quinton	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	SF
+DE	90	Dorsey, Glenn	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	SF
+WR	10	Ellington, Bruce	ACT	REC	2	YDS	5	AVG	2.5	TDS	0	SF
+QB	2	Gabbert, Blaine	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	SF
+OLB	58	Harold, Eli	ACT	TCKL	0	SCK	--	FF	--	INT	--	SF
+RB	38	Hayne, Jarryd	ACT	CAR	6	YDS	16	AVG	2.7	TDS	0	SF
+MLB		Hodges, Gerald	ACT	TCKL	20	SCK	0.0	FF	0	INT	--	SF
+RB	28	Hyde, Carlos	ACT	CAR	62	YDS	282	AVG	4.5	TDS	2	SF
+DE	63	Jerod-Eddie, Tony	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	SF
+CB	36	Johnson, Dontae	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	SF
+QB	7	Kaepernick, Colin	ACT	TDS	2	INT	5	YDS	727	RTG	67.7	SF
+C	67	Kilgore, Daniel	PUP	G	--	GS	--					SF
+OLB	96	Lemonier, Corey	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	SF
+OLB	59	Lynch, Aaron	ACT	TCKL	11	SCK	3.0	FF	0	INT	--	SF
+C	66	Martin, Marcus	ACT	G	4	GS	4					SF
+DB	31	McCray, L.J.	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	SF
+TE	89	McDonald, Vance	ACT	REC	2	YDS	12	AVG	6.0	TDS	0	SF
+FB	49	Miller, Bruce	ACT	CAR	--	YDS	--	AVG	--	TDS	--	SF
+LS	86	Nelson, Kyle	ACT	G	4	GS	0					SF
+WR	11	Patton, Quinton	ACT	REC	7	YDS	85	AVG	12.1	TDS	0	SF
+T	71	Pears, Erik	ACT	G	4	GS	4					SF
+P	5	Pinion, Bradley	ACT	PUNTS	19	AVG	44.3	LNG	59	IN 20	7	SF
+NT	64	Purcell, Mike	ACT	TCKL	0	SCK	--	FF	--	INT	--	SF
+CB	27	Reaser, Keith	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	SF
+FS	35	Reid, Eric	ACT	TCKL	15	SCK	0.0	FF	0	INT	--	SF
+OG	62	Silberman, Ian	ACT	G	1	GS	0					SF
+WR	14	Simpson, Jerome	SUS	REC	--	YDS	--	AVG	--	TDS	--	SF
+ILB	48	Skov, Shayne	ACT	TCKL	0	SCK	--	FF	--	INT	--	SF
+WR	82	Smith, Torrey	ACT	REC	9	YDS	185	AVG	20.6	TDS	1	SF
+T	74	Staley, Joe	ACT	G	4	GS	4					SF
+SS	29	Tartt, Jaquiski	ACT	TCKL	5	SCK	1.0	FF	0	INT	--	SF
+G	60	Thomas, Brandon	ACT	G	0	GS	0					SF
+SS	25	Ward, Jimmie	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	SF
+WR	18	White, DeAndrew	ACT	REC	2	YDS	18	AVG	9.0	TDS	0	SF
+ILB	57	Wilhoite, Michael	ACT	TCKL	21	SCK	0.0	FF	0	INT	--	SF
+NT	93	Williams, Ian	ACT	TCKL	13	SCK	0.0	FF	0	INT	--	SF
+DB	24	Wright, Shareece	ACT	TCKL	0	SCK	--	FF	--	INT	--	SF
+
+WR	11	Aiken, Kamar	ACT	REC	11	YDS	165	AVG	15.0	TDS	1	BAL
+RB	37	Allen, Javorius	ACT	CAR	18	YDS	66	AVG	3.7	TDS	0	BAL
+DB	24	Arrington, Kyle	ACT	TCKL	13	SCK	0.0	FF	0	INT	--	BAL
+DE	56	Babin, Jason	ACT	TCKL	0	SCK	--	FF	--	INT	--	BAL
+DE	68	Bilukidi, Christo	ACT	TCKL	0	SCK	--	FF	--	INT	--	BAL
+TE	82	Boyle, Nick	ACT	REC	5	YDS	31	AVG	6.2	TDS	0	BAL
+FS	31	Brooks, Terrence	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	BAL
+ILB	59	Brown, Arthur	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	BAL
+WR	14	Brown, Marlon	ACT	REC	8	YDS	75	AVG	9.4	TDS	0	BAL
+WR	15	Campanaro, Michael	RES	REC	5	YDS	35	AVG	7.0	TDS	0	BAL
+DE	99	Canty, Chris	ACT	TCKL	2	SCK	1.0	FF	0	INT	--	BAL
+LS	46	Cox, Morgan	ACT	G	4	GS	0					BAL
+DE	94	Davis, Carl	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	BAL
+SS	39	Davis, Will	ACT	TCKL	1	SCK	0.0	FF	0	INT	0	BAL
+OLB	58	Dumervil, Elvis	ACT	TCKL	12	SCK	2.0	FF	1	INT	--	BAL
+SS	26	Elam, Matt	RES	TCKL	--	SCK	--	FF	--	INT	--	BAL
+QB	5	Flacco, Joe	ACT	TDS	5	INT	5	YDS	1,052	RTG	80.5	BAL
+RB	29	Forsett, Justin	ACT	CAR	66	YDS	274	AVG	4.2	TDS	0	BAL
+TE	80	Gillmore, Crockett	ACT	REC	10	YDS	151	AVG	15.1	TDS	2	BAL
+WR		Givens, Chris	ACT	REC	1	YDS	7	AVG	7.0	TDS	0	BAL
+DE	93	Guy, Lawrence	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	BAL
+SS	33	Hill, Will	ACT	TCKL	18	SCK	1.0	FF	0	INT	1	BAL
+T	74	Hurst, James	ACT	G	4	GS	3					BAL
+C	66	Jensen, Ryan	ACT	G	3	GS	0					BAL
+DE	97	Jernigan, Timmy	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	BAL
+FB	44	Juszczyk, Kyle	ACT	CAR	--	YDS	--	AVG	--	TDS	--	BAL
+P	4	Koch, Sam	ACT	PUNTS	16	AVG	48.8	LNG	59	IN 20	4	BAL
+CB	41	Levine, Anthony	ACT	TCKL	0	SCK	--	FF	--	INT	--	BAL
+FS	23	Lewis, Kendrick	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	BAL
+DE	95	Lewis-Moore, Kapron	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	BAL
+OLB	50	McClellan, Albert	ACT	TCKL	6	SCK	1.0	FF	0	INT	--	BAL
+CB	38	Melvin, Rashaan	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	BAL
+T	60	Monroe, Eugene	ACT	G	1	GS	1					BAL
+ILB	57	Mosley, C.J.	ACT	TCKL	27	SCK	2.0	FF	0	INT	--	BAL
+LB	54	Orr, Zach	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	BAL
+G	72	Osemele, Kelechi	ACT	G	4	GS	4					BAL
+WR	18	Perriman, Breshad	ACT	REC	--	YDS	--	AVG	--	TDS	--	BAL
+TE	88	Pitta, Dennis	PUP	REC	--	YDS	--	AVG	--	TDS	--	BAL
+TE	85	Reisner, Allen	RES	REC	--	YDS	--	AVG	--	TDS	--	BAL
+DT	79	Reynolds, Micajah	RES	TCKL	--	SCK	--	FF	--	INT	--	BAL
+QB	8	Schaub, Matt	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	BAL
+ILB	51	Smith, Daryl	ACT	TCKL	34	SCK	1.0	FF	0	INT	--	BAL
+CB	22	Smith, Jimmy	ACT	TCKL	19	SCK	1.0	FF	0	INT	2	BAL
+WR	89	Smith, Steve	ACT	REC	29	YDS	373	AVG	12.9	TDS	2	BAL
+LB	90	Smith, Za'Darius	ACT	TCKL	6	SCK	2.0	FF	0	INT	--	BAL
+OLB	55	Suggs, Terrell	RES	TCKL	0	SCK	--	FF	--	INT	--	BAL
+RB	34	Taliaferro, Lorenzo	ACT	CAR	13	YDS	47	AVG	3.6	TDS	1	BAL
+LB	92	Thompson, Zach	RES	TCKL	--	SCK	--	FF	--	INT	--	BAL
+DB	28	Trawick, Brynden	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	BAL
+K	9	Tucker, Justin	ACT	FGA	11	FGM	10	PCT	90.9	LNG	52	BAL
+OLB	91	Upshaw, Courtney	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	BAL
+DE	96	Urban, Brent	RES	TCKL	--	SCK	--	FF	--	INT	--	BAL
+G	64	Urschel, John	ACT	G	4	GS	0					BAL
+T	71	Wagner, Ricky	ACT	G	4	GS	4					BAL
+CB	25	Walker, Tray	ACT	TCKL	0	SCK	--	FF	--	INT	--	BAL
+WR	12	Waller, Darren	ACT	REC	1	YDS	17	AVG	17.0	TDS	0	BAL
+CB	21	Webb, Lardarius	ACT	TCKL	18	SCK	0.0	FF	0	INT	--	BAL
+NT	98	Williams, Brandon	ACT	TCKL	21	SCK	0.0	FF	0	INT	--	BAL
+TE	87	Williams, Maxx	ACT	REC	7	YDS	84	AVG	12.0	TDS	0	BAL
+CB		Wilson, Julian	RES	TCKL	--	SCK	--	FF	--	INT	--	BAL
+WR		Worthy, Cam	RES	REC	--	YDS	--	AVG	--	TDS	--	BAL
+G	73	Yanda, Marshal	ACT	G	4	GS	4					BAL
+C	53	Zuttah, Jeremy	ACT	G	4	GS	4					BAL
+WR	15	Alford, Mario	ACT	REC	--	YDS	--	AVG	--	TDS	--	CIN
+DT	97	Atkins, Geno	ACT	TCKL	12	SCK	3.0	FF	1	INT	--	CIN
+RB	25	Bernard, Giovani	ACT	CAR	54	YDS	297	AVG	5.5	TDS	1	CIN
+C	61	Bodine, Russell	ACT	G	4	GS	4					CIN
+G	65	Boling, Clint	ACT	G	4	GS	4					CIN
+OLB	55	Burfict, Vontaze	PUP	TCKL	--	SCK	--	FF	--	INT	--	CIN
+RB	33	Burkhead, Rex	ACT	CAR	--	YDS	--	AVG	--	TDS	--	CIN
+LB	51	Carter, Chris	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	CIN
+DE	93	Clarke, Will	ACT	TCKL	2	SCK	0.5	FF	0	INT	--	CIN
+QB	14	Dalton, Andy	ACT	TDS	9	INT	1	YDS	1,187	RTG	123.0	CIN
+OLB	47	Dawson, P.J.	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CIN
+CB	21	Dennard, Darqueze	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	CIN
+DE	96	Dunlap, Carlos	ACT	TCKL	15	SCK	3.5	FF	0	INT	--	CIN
+TE	85	Eifert, Tyler	ACT	REC	16	YDS	222	AVG	13.9	TDS	3	CIN
+OT	74	Fisher, Jake	ACT	G	4	GS	0					CIN
+OLB	53	Flowers, Marquis	RES	TCKL	--	SCK	--	FF	--	INT	--	CIN
+DE	95	Gilberry, Wallace	ACT	TCKL	6	SCK	1.0	FF	1	INT	--	CIN
+WR	18	Green, A.J.	ACT	REC	25	YDS	417	AVG	16.7	TDS	3	CIN
+CB	29	Hall, Leon	ACT	TCKL	13	SCK	0.0	FF	0	INT	--	CIN
+DT	91	Hardison, Marcus	ACT	TCKL	0	SCK	--	FF	--	INT	--	CIN
+LS	46	Harris, Clark	ACT	G	4	GS	0					CIN
+OLB	50	Hawk, A.J.	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	CIN
+TE	89	Hewitt, Ryan	ACT	REC	0	YDS	0	AVG	--	TDS	0	CIN
+RB	32	Hill, Jeremy	ACT	CAR	50	YDS	163	AVG	3.3	TDS	5	CIN
+P	10	Huber, Kevin	ACT	PUNTS	14	AVG	49.1	LNG	67	IN 20	6	CIN
+DE	99	Hunt, Margus	ACT	TCKL	0	SCK	--	FF	--	INT	--	CIN
+SS	43	Iloka, George	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	CIN
+C	60	Johnson, T.J.	ACT	G	0	GS	0					CIN
+DE	90	Johnson, Michael	ACT	TCKL	9	SCK	1.0	FF	1	INT	--	CIN
+CB	24	Jones, Adam	ACT	TCKL	26	SCK	0.0	FF	1	INT	1	CIN
+WR	82	Jones, Marvin	ACT	REC	10	YDS	165	AVG	16.5	TDS	2	CIN
+CB	27	Kirkpatrick, Dre	ACT	TCKL	18	SCK	0.0	FF	0	INT	--	CIN
+TE	81	Kroft, Tyler	ACT	REC	--	YDS	--	AVG	--	TDS	--	CIN
+OLB	59	Lamur, Emmanuel	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	CIN
+CB	37	Lewis-Harris, Chris	ACT	TCKL	0	SCK	--	FF	--	INT	--	CIN
+WR	11	Little, Greg	ACT	REC	--	YDS	--	AVG	--	TDS	--	CIN
+MLB	58	Maualuga, Rey	ACT	TCKL	25	SCK	0.0	FF	0	INT	--	CIN
+QB	5	McCarron, AJ	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	CIN
+FS	20	Nelson, Reggie	ACT	TCKL	17	SCK	0.0	FF	0	INT	1	CIN
+K	2	Nugent, Mike	ACT	FGA	5	FGM	3	PCT	60.0	LNG	35	CIN
+RB	30	Peerman, Cedric	ACT	CAR	--	YDS	--	AVG	--	TDS	--	CIN
+DT	94	Peko, Domata	ACT	TCKL	7	SCK	2.0	FF	0	INT	--	CIN
+OLB	56	Porter, Sean	PUP	TCKL	--	SCK	--	FF	--	INT	--	CIN
+OLB	57	Rey, Vincent	ACT	TCKL	36	SCK	0.0	FF	0	INT	1	CIN
+WR	12	Sanu, Mohamed	ACT	REC	9	YDS	161	AVG	17.9	TDS	0	CIN
+CB	26	Shaw, Josh	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	CIN
+DT	92	Sims, Pat	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CIN
+T	71	Smith, Andre	ACT	G	4	GS	4					CIN
+FS	40	Smith, Derron	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	CIN
+WR	19	Tate, Brandon	ACT	REC	1	YDS	55	AVG	55.0	TDS	1	CIN
+DT	98	Thompson, Brandon	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CIN
+TE	87	Uzomah, C.J.	ACT	REC	--	YDS	--	AVG	--	TDS	--	CIN
+T	77	Whitworth, Andrew	ACT	G	4	GS	4					CIN
+SS	36	Williams, Shawn	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	CIN
+T	73	Winston, Eric	ACT	G	4	GS	0					CIN
+WR	86	Wright, James	RES	REC	--	YDS	--	AVG	--	TDS	--	CIN
+G	68	Zeitler, Kevin	ACT	G	4	GS	4					CIN
+
+CB	24	Bademosi, Johnson	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	CLE
+TE	82	Barnidge, Gary	ACT	REC	16	YDS	235	AVG	14.7	TDS	2	CLE
+WR	11	Benjamin, Travis	ACT	REC	16	YDS	328	AVG	20.5	TDS	4	CLE
+TE	88	Bibbs, E.J.	ACT	REC	--	YDS	--	AVG	--	TDS	--	CLE
+G	75	Bitonio, Joel	ACT	G	4	GS	4					CLE
+WR	80	Bowe, Dwayne	ACT	REC	0	YDS	0	AVG	--	TDS	0	CLE
+T	61	Bowie, Michael	RES	G	--	GS	--					CLE
+OLB	95	Bryant, Armonty	ACT	TCKL	12	SCK	2.5	FF	1	INT	--	CLE
+DE	92	Bryant, Desmond	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	CLE
+SS	30	Campbell, Ibraheim	ACT	TCKL	0	SCK	--	FF	--	INT	--	CLE
+ILB	59	Carder, Tank	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	CLE
+K	6	Coons, Travis	ACT	FGA	7	FGM	7	PCT	100.0	LNG	41	CLE
+DT	96	Cooper, Xavier	ACT	TCKL	3	SCK	1.0	FF	0	INT	--	CLE
+RB	34	Crowell, Isaiah	ACT	CAR	49	YDS	191	AVG	3.9	TDS	1	CLE
+MLB	56	Dansby, Karlos	ACT	TCKL	31	SCK	0.0	FF	0	INT	--	CLE
+QB	7	Davis, Austin	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	CLE
+CB	26	Desir, Pierre	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	CLE
+RB	20	Draughn, Shaun	ACT	CAR	2	YDS	10	AVG	5.0	TDS	0	CLE
+TE	81	Dray, Jim	ACT	REC	1	YDS	13	AVG	13.0	TDS	0	CLE
+OT	74	Erving, Cameron	ACT	G	4	GS	0					CLE
+WR	18	Gabriel, Taylor	ACT	REC	10	YDS	67	AVG	6.7	TDS	0	CLE
+CB	43	Gaines, Charles	RES	TCKL	--	SCK	--	FF	--	INT	--	CLE
+CB	21	Gilbert, Justin	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	CLE
+FS	39	Gipson, Tashaun	ACT	TCKL	22	SCK	0.0	FF	0	INT	1	CLE
+WR	12	Gordon, Josh	SUS	REC	--	YDS	--	AVG	--	TDS	--	CLE
+G	77	Greco, John	ACT	G	4	GS	4					CLE
+CB	23	Haden, Joe	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	CLE
+WR	83	Hartline, Brian	ACT	REC	8	YDS	123	AVG	15.4	TDS	0	CLE
+WR	16	Hawkins, Andrew	ACT	REC	10	YDS	112	AVG	11.2	TDS	0	CLE
+TE	84	Housler, Rob	ACT	REC	0	YDS	0	AVG	--	TDS	0	CLE
+DE	93	Hughes, John	ACT	TCKL	6	SCK	1.5	FF	1	INT	--	CLE
+LS	47	Hughlett, Charley	ACT	G	4	GS	0					CLE
+FB	42	Johnson, Malcolm	ACT	CAR	--	YDS	--	AVG	--	TDS	--	CLE
+RB	29	Johnson, Duke	ACT	CAR	31	YDS	99	AVG	3.2	TDS	0	CLE
+ILB	58	Kirksey, Chris	ACT	TCKL	17	SCK	1.0	FF	1	INT	--	CLE
+OLB	99	Kruger, Paul	ACT	TCKL	11	SCK	0.5	FF	0	INT	--	CLE
+P	8	Lee, Andy	ACT	PUNTS	16	AVG	52.7	LNG	67	IN 20	7	CLE
+RB	42	Lundy, Luke	RES	CAR	--	YDS	--	AVG	--	TDS	--	CLE
+C	55	Mack, Alex	ACT	G	4	GS	4					CLE
+QB	2	Manziel, Johnny	ACT	TDS	3	INT	1	YDS	354	RTG	99.7	CLE
+QB	13	McCown, Josh	ACT	TDS	4	INT	1	YDS	746	RTG	98.4	CLE
+DT	66	Meder, Jamie	ACT	TCKL	9	SCK	1.0	FF	0	INT	--	CLE
+OLB	51	Mingo, Barkevious	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	CLE
+WR	15	Moore, Marlon	ACT	REC	1	YDS	15	AVG	15.0	TDS	0	CLE
+LB	48	Orchard, Nate	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CLE
+OT	67	Pasztor, Austin	ACT	G	4	GS	0					CLE
+CB	33	Poyer, Jordan	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	CLE
+ILB	53	Robertson, Craig	ACT	TCKL	18	SCK	0.0	FF	1	INT	--	CLE
+T	72	Schwartz, Mitchell	ACT	G	4	GS	4					CLE
+QB	9	Shaw, Connor	RES	TDS	--	INT	--	YDS	--	RTG	--	CLE
+NT	71	Shelton, Danny	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	CLE
+LB	54	Solomon, Scott	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	CLE
+DE	94	Starks, Randy	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	CLE
+T	73	Thomas, Joe	ACT	G	4	GS	4					CLE
+RB	32	Turbin, Robert	ACT	CAR	--	YDS	--	AVG	--	TDS	--	CLE
+SS	31	Whitner, Donte	ACT	TCKL	30	SCK	0.5	FF	0	INT	--	CLE
+DB	36	Williams, K'Waun	ACT	TCKL	5	SCK	1.0	FF	1	INT	--	CLE
+CB	22	Williams, Tramon	ACT	TCKL	19	SCK	0.0	FF	0	INT	--	CLE
+
+T	76	Adams, Mike	PUP	G	--	GS	--					PIT
+CB	28	Allen, Cortez	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	PIT
+SS	20	Allen, Will	ACT	TCKL	29	SCK	1.0	FF	0	INT	1	PIT
+RB	13	Archer, Dri	ACT	CAR	--	YDS	--	AVG	--	TDS	--	PIT
+T	68	Beachum, Kelvin	ACT	G	4	GS	4					PIT
+RB	26	Bell, Le'Veon	ACT	CAR	41	YDS	191	AVG	4.7	TDS	2	PIT
+P	4	Berry, Jordan	ACT	PUNTS	15	AVG	44.3	LNG	62	IN 20	6	PIT
+CB	41	Blake, Antwon	ACT	TCKL	24	SCK	0.0	FF	0	INT	--	PIT
+TE	87	Blanchflower, Rob	RES	REC	--	YDS	--	AVG	--	TDS	--	PIT
+K	6	Boswell, Chris	ACT	FGA	--	FGM	--	PCT	--	LNG	--	PIT
+DB	25	Boykin, Brandon	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	PIT
+WR	84	Brown, Antonio	ACT	REC	34	YDS	478	AVG	14.1	TDS	2	PIT
+WR	10	Bryant, Martavis	EXE	REC	--	YDS	--	AVG	--	TDS	--	PIT
+DE	56	Chickillo, Anthony	ACT	TCKL	0	SCK	--	FF	--	INT	--	PIT
+WR	14	Coates, Sammie	ACT	REC	1	YDS	11	AVG	11.0	TDS	0	PIT
+DB	31	Cockrell, Ross	ACT	TCKL	7	SCK	0.0	FF	0	INT	1	PIT
+G	66	DeCastro, David	ACT	G	4	GS	4					PIT
+LB	48	Dupree, Bud	ACT	TCKL	11	SCK	2.0	FF	0	INT	--	PIT
+G	73	Foster, Ramon	ACT	G	4	GS	4					PIT
+ILB	57	Garvin, Terence	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	PIT
+CB	22	Gay, William	ACT	TCKL	14	SCK	0.0	FF	0	INT	--	PIT
+DT	96	Geathers, Clifton	RES	TCKL	--	SCK	--	FF	--	INT	--	PIT
+T	77	Gilbert, Marcus	ACT	G	4	GS	4					PIT
+SAF	21	Golden, Robert	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	PIT
+CB	27	Golson, Senquez	RES	TCKL	--	SCK	--	FF	--	INT	--	PIT
+QB	5	Gradkowski, Bruce	RES	TDS	--	INT	--	YDS	--	RTG	--	PIT
+TE	80	Hamilton, Ray	RES	REC	--	YDS	--	AVG	--	TDS	--	PIT
+OLB	92	Harrison, James	ACT	TCKL	15	SCK	1.0	FF	0	INT	--	PIT
+K	8	Hartley, Garrett	RES	FGA	--	FGM	--	PCT	--	LNG	--	PIT
+T		Hatchie, Micah	RES	G	--	GS	--					PIT
+DE	97	Heyward, Cameron	ACT	TCKL	17	SCK	2.0	FF	1	INT	--	PIT
+WR	88	Heyward-Bey, Darrius	ACT	REC	15	YDS	185	AVG	12.3	TDS	2	PIT
+G	74	Hubbard, Chris	ACT	G	1	GS	0					PIT
+TE	81	James, Jesse	ACT	REC	--	YDS	--	AVG	--	TDS	--	PIT
+FB	46	Johnson, Will	ACT	CAR	4	YDS	7	AVG	1.8	TDS	1	PIT
+OLB	95	Jones, Jarvis	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	PIT
+QB	3	Jones, Landry	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	PIT
+C	64	Legursky, Doug	ACT	G	0	GS	0					PIT
+NT	62	McCullers-Sanders, Dan	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	PIT
+NT	90	McLendon, Steve	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	PIT
+TE	83	Miller, Heath	ACT	REC	13	YDS	117	AVG	9.0	TDS	1	PIT
+FS	23	Mitchell, Mike	ACT	TCKL	19	SCK	0.0	FF	1	INT	--	PIT
+OLB	55	Moats, Arthur	ACT	TCKL	7	SCK	1.5	FF	0	INT	--	PIT
+WR	15	Nelson, David	RES	REC	--	YDS	--	AVG	--	TDS	--	PIT
+RB	45	Nix, Roosevelt	ACT	CAR	--	YDS	--	AVG	--	TDS	--	PIT
+OT	69	Palmer, Kelvin	RES	G	--	GS	--					PIT
+C	53	Pouncey, Maurkice	RES	G	--	GS	--					PIT
+QB	7	Roethlisberger, Ben	ACT	TDS	4	INT	2	YDS	912	RTG	113.1	PIT
+WR		Rogers, Eli	RES	REC	--	YDS	--	AVG	--	TDS	--	PIT
+ILB	50	Shazier, Ryan	ACT	TCKL	22	SCK	1.0	FF	1	INT	--	PIT
+TE	89	Spaeth, Matt	ACT	REC	--	YDS	--	AVG	--	TDS	--	PIT
+ILB	51	Spence, Sean	ACT	TCKL	14	SCK	1.0	FF	0	INT	--	PIT
+K	6	Suisham, Shaun	RES	FGA	--	FGM	--	PCT	--	LNG	--	PIT
+DE	93	Thomas, Cam	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	PIT
+SS	29	Thomas, Shamarko	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	PIT
+ILB	94	Timmons, Lawrence	ACT	TCKL	30	SCK	1.0	FF	0	INT	--	PIT
+RB	30	Todman, Jordan	ACT	CAR	1	YDS	11	AVG	11.0	TDS	0	PIT
+DE	91	Tuitt, Stephon	ACT	TCKL	22	SCK	3.5	FF	0	INT	--	PIT
+T	64	Van Dyk, Mitchell	RES	G	--	GS	--					PIT
+DB	35	Ventrone, Ross	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	PIT
+QB	2	Vick, Michael	ACT	TDS	1	INT	0	YDS	162	RTG	96.1	PIT
+T	78	Villanueva, Alejandro	ACT	G	4	GS	0					PIT
+C	72	Wallace, Cody	ACT	G	4	GS	4					PIT
+DT	96	Walton, Leterrius	ACT	TCKL	0	SCK	--	FF	--	INT	--	PIT
+LS	60	Warren, Greg	ACT	G	4	GS	0					PIT
+WR	11	Wheaton, Markus	ACT	REC	8	YDS	156	AVG	19.5	TDS	0	PIT
+RB	34	Williams, DeAngelo	ACT	CAR	44	YDS	211	AVG	4.8	TDS	3	PIT
+ILB	98	Williams, Vince	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	PIT
+OLB	56	Zumwalt, Jordan	RES	TCKL	--	SCK	--	FF	--	INT	--	PIT
+
+G	78	Aboushi, Oday	ACT	G	2	GS	2					HOU
+OG	70	Adams, Jeff	RES	G	2	GS	2					HOU
+SAF	39	Ballentine, Lonnie	ACT	TCKL	0	SCK	--	FF	--	INT	--	HOU
+RB	28	Blue, Alfred	ACT	CAR	51	YDS	204	AVG	4.0	TDS	1	HOU
+CB	34	Bouye, A.J.	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	HOU
+G	79	Brooks, Brandon	ACT	G	4	GS	4					HOU
+T	76	Brown, Duane	ACT	G	2	GS	2					HOU
+LB	48	Brown, Kourtnei	ACT	TCKL	0	SCK	0.0	FF	0	INT	0	HOU
+ILB	53	Bullough, Max	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	HOU
+T	74	Clark, Chris	ACT	G	2	GS	2					HOU
+OLB	58	Cliett, Reshard	RES	TCKL	--	SCK	--	FF	--	INT	--	HOU
+OLB	90	Clowney, Jadeveon	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	HOU
+DT	95	Covington, Christian	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	HOU
+DE	93	Crick, Jared	ACT	TCKL	16	SCK	1.0	FF	0	INT	--	HOU
+ILB	56	Cushing, Brian	ACT	TCKL	32	SCK	0.0	FF	0	INT	--	HOU
+SS	27	Demps, Quintin	ACT	TCKL	19	SCK	0.5	FF	0	INT	1	HOU
+TE	81	Denham, Anthony	RES	REC	--	YDS	--	AVG	--	TDS	--	HOU
+ILB	50	Dent, Akeem	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	HOU
+TE	87	Fiedorowicz, C.J.	ACT	REC	5	YDS	62	AVG	12.4	TDS	1	HOU
+RB	23	Foster, Arian	ACT	CAR	8	YDS	10	AVG	1.3	TDS	0	HOU
+TE	88	Graham, Garrett	ACT	REC	3	YDS	22	AVG	7.3	TDS	1	HOU
+TE	84	Griffin, Ryan	RES	REC	1	YDS	18	AVG	18.0	TDS	0	HOU
+RB	41	Grimes, Jonathan	ACT	CAR	14	YDS	54	AVG	3.9	TDS	0	HOU
+DB	29	Hal, Andre	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	HOU
+WR	10	Hopkins, DeAndre	ACT	REC	31	YDS	409	AVG	13.2	TDS	3	HOU
+QB	7	Hoyer, Brian	ACT	TDS	3	INT	1	YDS	468	RTG	87.2	HOU
+CB	25	Jackson, Kareem	ACT	TCKL	21	SCK	0.0	FF	0	INT	--	HOU
+CB	30	Johnson, Kevin	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	HOU
+C	60	Jones, Ben	ACT	G	4	GS	4					HOU
+CB	24	Joseph, Johnathan	ACT	TCKL	14	SCK	0.0	FF	0	INT	--	HOU
+T	63	Lamm, Kendall	ACT	G	3	GS	0					HOU
+P	9	Lechler, Shane	ACT	PUNTS	25	AVG	47.1	LNG	60	IN 20	8	HOU
+QB	15	Mallett, Ryan	ACT	TDS	3	INT	3	YDS	720	RTG	65.3	HOU
+C	65	Mancz, Greg	ACT	G	3	GS	0					HOU
+TE	89	McFarland, Mike	RES	REC	--	YDS	--	AVG	--	TDS	--	HOU
+ILB	55	McKinney, Benardrick	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	HOU
+OLB	59	Mercilus, Whitney	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	HOU
+FS	26	Moore, Rahim	ACT	TCKL	10	SCK	0.0	FF	0	INT	1	HOU
+DB	21	Morris, Darryl	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	HOU
+WR	12	Mumphery, Keith	ACT	REC	6	YDS	79	AVG	13.2	TDS	0	HOU
+T	72	Newton, Derek	ACT	G	4	GS	4					HOU
+K	8	Novak, Nick	ACT	FGA	1	FGM	0	PCT	0.0	LNG	0	HOU
+DE	97	Pagan, Jeoffrey	ACT	TCKL	0	SCK	--	FF	--	INT	--	HOU
+LB	52	Peters, Brian	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	HOU
+DB	35	Pleasant, Eddie	ACT	TCKL	6	SCK	0.5	FF	0	INT	--	HOU
+RB	22	Polk, Chris	ACT	CAR	27	YDS	92	AVG	3.4	TDS	1	HOU
+FB	45	Prosch, Jay	ACT	CAR	4	YDS	28	AVG	7.0	TDS	0	HOU
+DB	20	Rolle, Jumal	ACT	TCKL	0	SCK	--	FF	--	INT	--	HOU
+QB	3	Savage, Tom	RES	TDS	--	INT	--	YDS	--	RTG	--	HOU
+WR	18	Shorts, Cecil	ACT	REC	22	YDS	236	AVG	10.7	TDS	1	HOU
+OLB	51	Simon, John	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	HOU
+OL	62	Slade, Chad	RES	G	--	GS	--					HOU
+WR	11	Strong, Jaelen	ACT	REC	--	YDS	--	AVG	--	TDS	--	HOU
+G	71	Su'a-Filo, Xavier	ACT	G	1	GS	0					HOU
+LB	44	Thompson, Carlos	RES	TCKL	2	SCK	0.0	FF	0	INT	--	HOU
+ILB	57	Tuggle, Justin	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	HOU
+WR	85	Washington, Nate	ACT	REC	13	YDS	210	AVG	16.2	TDS	0	HOU
+DE	99	Watt, J.J.	ACT	TCKL	23	SCK	4.0	FF	0	INT	--	HOU
+LS	46	Weeks, Jon	ACT	G	4	GS	0					HOU
+NT	75	Wilfork, Vince	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	HOU
+WR	13	Worthy, Chandler	ACT	REC	3	YDS	14	AVG	4.7	TDS	0	HOU
+
+SS	29	Adams, Mike	ACT	TCKL	24	SCK	0.0	FF	0	INT	1	IND
+TE	83	Allen, Dwayne	ACT	REC	3	YDS	17	AVG	5.7	TDS	1	IND
+FS	32	Anderson, Colt	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	IND
+DE	96	Anderson, Henry	ACT	TCKL	21	SCK	1.0	FF	0	INT	--	IND
+CB	25	Brown, Jalil	ACT	TCKL	15	SCK	0.0	FF	0	INT	--	IND
+CB	20	Butler, Darius	ACT	TCKL	17	SCK	0.0	FF	2	INT	--	IND
+T	74	Castonzo, Anthony	ACT	G	4	GS	4					IND
+OLB	58	Cole, Trent	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	IND
+CB	21	Davis, Vontae	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	IND
+WR	15	Dorsett, Phillip	ACT	REC	7	YDS	120	AVG	17.1	TDS	1	IND
+TE	84	Doyle, Jack	ACT	REC	3	YDS	32	AVG	10.7	TDS	0	IND
+TE	80	Fleener, Coby	ACT	REC	14	YDS	139	AVG	9.9	TDS	1	IND
+ILB	50	Freeman, Jerrell	ACT	TCKL	27	SCK	1.0	FF	0	INT	--	IND
+SS	42	Geathers, Clayton	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	IND
+OT	71	Good, Denzelle	ACT	G	0	GS	0					IND
+RB	23	Gore, Frank	ACT	CAR	54	YDS	227	AVG	4.2	TDS	2	IND
+FS	27	Guy, Winston	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	IND
+C	72	Harrison, Jonotthan	ACT	G	4	GS	0					IND
+QB	8	Hasselbeck, Matt	ACT	TDS	1	INT	0	YDS	282	RTG	87.4	IND
+G	79	Herremans, Todd	ACT	G	3	GS	2					IND
+WR	13	Hilton, T.Y.	ACT	REC	22	YDS	294	AVG	13.4	TDS	0	IND
+C	62	Holmes, Khaled	ACT	G	4	GS	4					IND
+LB	55	Irving, Nate	ACT	TCKL	0	SCK	--	FF	--	INT	--	IND
+ILB	52	Jackson, D'Qwell	ACT	TCKL	47	SCK	0.0	FF	1	INT	--	IND
+WR	81	Johnson, Andre	ACT	REC	7	YDS	51	AVG	7.3	TDS	0	IND
+DE	97	Jones, Arthur	RES	TCKL	--	SCK	--	FF	--	INT	--	IND
+NT	94	Kerr, Zach	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	IND
+DE	90	Langford, Kendall	ACT	TCKL	11	SCK	1.0	FF	0	INT	--	IND
+G	60	Louis, Lance	ACT	G	3	GS	2					IND
+FS	33	Lowery, Dwight	ACT	TCKL	19	SCK	0.0	FF	0	INT	2	IND
+QB	12	Luck, Andrew	ACT	TDS	5	INT	7	YDS	753	RTG	65.1	IND
+OLB	98	Mathis, Robert	ACT	TCKL	2	SCK	1.0	FF	0	INT	--	IND
+P	1	McAfee, Pat	ACT	PUNTS	18	AVG	47.9	LNG	57	IN 20	4	IND
+DT	67	McGill, T.Y.	ACT	TCKL	0	SCK	--	FF	--	INT	--	IND
+ILB	57	McNary, Josh	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	IND
+OT	75	Mewhort, Jack	ACT	G	4	GS	4					IND
+CB	1	Mitchel, Tevin	RES	TCKL	--	SCK	--	FF	--	INT	--	IND
+CB		Mitchell, Josh	RES	TCKL	--	SCK	--	FF	--	INT	--	IND
+WR	10	Moncrief, Donte	ACT	REC	23	YDS	275	AVG	12.0	TDS	3	IND
+LB	51	Moore, Sio	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	IND
+OLB	91	Newsome, Jonathan	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	IND
+LS	45	Overton, Matt	ACT	G	4	GS	0					IND
+NT	54	Parry, David	ACT	TCKL	8	SCK	1.0	FF	0	INT	--	IND
+DB		Prater, Shaun	ACT	TCKL	--	SCK	--	FF	--	INT	--	IND
+OT	76	Reitz, Joe	ACT	G	4	GS	2					IND
+RB	34	Robinson, Josh	ACT	CAR	14	YDS	33	AVG	2.4	TDS	0	IND
+CB	30	Smith, D'Joun	RES	TCKL	0	SCK	--	FF	--	INT	--	IND
+LB	44	Sylvestre, Junior	RES	TCKL	--	SCK	--	FF	--	INT	--	IND
+DB	35	Thomas, Josh	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	IND
+G	69	Thornton, Hugh	ACT	G	3	GS	2					IND
+RB	37	Tipton, Zurlon	ACT	CAR	--	YDS	--	AVG	--	TDS	--	IND
+CB	28	Toler, Greg	ACT	TCKL	0	SCK	--	FF	--	INT	--	IND
+FB	38	Varga, Tyler	ACT	CAR	1	YDS	2	AVG	2.0	TDS	0	IND
+K	4	Vinatieri, Adam	ACT	FGA	5	FGM	3	PCT	60.0	LNG	54	IND
+OLB	93	Walden, Erik	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	IND
+OLB	92	Werner, Bjoern	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	IND
+WR	17	Whalen, Griff	ACT	REC	1	YDS	16	AVG	16.0	TDS	0	IND
+DT	99	Winn, Billy	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	IND
+
+DT	93	Alualu, Tyson	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	JAC
+P	19	Anger, Bryan	ACT	PUNTS	24	AVG	43.8	LNG	57	IN 20	9	JAC
+LB	57	Armbrister, Thurston	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	JAC
+G	68	Beadles, Zane	ACT	G	4	GS	4					JAC
+WR	12	Benn, Arrelious	RES	REC	--	YDS	--	AVG	--	TDS	--	JAC
+DT	96	Bennett, Michael	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	JAC
+WR	14	Blackmon, Justin	SUS	REC	--	YDS	--	AVG	--	TDS	--	JAC
+QB	5	Bortles, Blake	ACT	TDS	6	INT	3	YDS	996	RTG	78.9	JAC
+C	70	Bowanko, Luke	ACT	G	2	GS	0					JAC
+DE	90	Branch, Andre	ACT	TCKL	0	SCK	--	FF	--	INT	--	JAC
+FS	38	Brown, Sergio	ACT	TCKL	13	SCK	0.5	FF	0	INT	--	JAC
+OG	60	Cann, A.J.	ACT	G	2	GS	1					JAC
+DE	91	Clemons, Chris	ACT	TCKL	4	SCK	1.0	FF	0	INT	--	JAC
+CB	22	Colvin, Aaron	ACT	TCKL	16	SCK	1.0	FF	0	INT	--	JAC
+WR	83	Copeland, Damian	RES	REC	--	YDS	--	AVG	--	TDS	--	JAC
+SS	37	Cyprien, Johnathan	ACT	TCKL	18	SCK	0.0	FF	0	INT	--	JAC
+DE	59	Davis, Ryan	ACT	TCKL	5	SCK	2.5	FF	1	INT	--	JAC
+SS	26	Evans, Josh	ACT	TCKL	13	SCK	0.0	FF	1	INT	--	JAC
+DE	56	Fowler, Dante	RES	TCKL	--	SCK	--	FF	--	INT	--	JAC
+RB	21	Gerhart, Toby	ACT	CAR	4	YDS	8	AVG	2.0	TDS	0	JAC
+RB	33	Grant, Corey	ACT	CAR	3	YDS	7	AVG	2.3	TDS	0	JAC
+CB	27	Gratz, Dwayne	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	JAC
+WR	13	Greene, Rashad	RES	REC	9	YDS	35	AVG	3.9	TDS	1	JAC
+TE	86	Harbor, Clay	ACT	REC	7	YDS	74	AVG	10.6	TDS	1	JAC
+QB	7	Henne, Chad	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	JAC
+DE	92	Hood, Ziggy	RES	TCKL	--	SCK	--	FF	--	INT	--	JAC
+CB	31	House, Davon	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	JAC
+WR	88	Hurns, Allen	ACT	REC	22	YDS	314	AVG	14.3	TDS	2	JAC
+TE	85	Jacobs, Nic	ACT	REC	0	YDS	0	AVG	--	TDS	0	JAC
+T	76	Joeckel, Luke	ACT	G	2	GS	2					JAC
+LB		Johnson, James-Michael	ACT	TCKL	0	SCK	--	FF	--	INT	--	JAC
+DT	95	Jones, Abry	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	JAC
+WR	11	Lee, Marqise	ACT	REC	3	YDS	40	AVG	13.3	TDS	0	JAC
+TE	89	Lewis, Marcedes	ACT	REC	5	YDS	40	AVG	8.0	TDS	0	JAC
+G	65	Linder, Brandon	RES	G	3	GS	3					JAC
+LB	53	Lotulelei, John	ACT	TCKL	0	SCK	--	FF	--	INT	--	JAC
+DT	99	Marks, Sen'Derrick	ACT	TCKL	0	SCK	--	FF	--	INT	--	JAC
+CB	41	Marshall, Nick	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	JAC
+CB	35	McCray, Demetrius	ACT	TCKL	13	SCK	0.0	FF	0	INT	--	JAC
+DT	97	Miller, Roy	ACT	TCKL	8	SCK	1.0	FF	0	INT	--	JAC
+K	2	Myers, Jason	ACT	FGA	10	FGM	7	PCT	70.0	LNG	58	JAC
+DE	75	Odrick, Jared	ACT	TCKL	8	SCK	1.0	FF	1	INT	--	JAC
+T	78	Parnell, Jermey	ACT	G	4	GS	4					JAC
+RB	30	Pierce, Bernard	ACT	CAR	4	YDS	5	AVG	1.3	TDS	0	JAC
+MLB	51	Posluszny, Paul	ACT	TCKL	39	SCK	0.0	FF	0	INT	1	JAC
+WR	15	Robinson, Allen	ACT	REC	15	YDS	330	AVG	22.0	TDS	2	JAC
+RB	16	Robinson, Denard	ACT	CAR	6	YDS	28	AVG	4.7	TDS	0	JAC
+SS	23	Sample, James	ACT	TCKL	15	SCK	0.0	FF	0	INT	--	JAC
+G	69	Shatley, Tyler	ACT	G	4	GS	0					JAC
+OLB	55	Skuta, Dan	ACT	TCKL	15	SCK	1.0	FF	1	INT	--	JAC
+DE	98	Smith, Chris	ACT	TCKL	7	SCK	0.5	FF	0	INT	--	JAC
+OLB	50	Smith, Telvin	ACT	TCKL	38	SCK	0.5	FF	0	INT	--	JAC
+TE	80	Thomas, Julius	ACT	REC	--	YDS	--	AVG	--	TDS	--	JAC
+DB	25	Thompson, Peyton	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	JAC
+LS	46	Tinker, Carson	ACT	G	4	GS	0					JAC
+WR	81	Walters, Bryan	ACT	REC	6	YDS	72	AVG	12.0	TDS	0	JAC
+WR	12	Washington, Tony	ACT	REC	--	YDS	--	AVG	--	TDS	--	JAC
+T	72	Wells, Josh	RES	G	--	GS	--					JAC
+C	61	Wisniewski, Stefen	ACT	G	4	GS	4					JAC
+RB	24	Yeldon, T.J.	ACT	CAR	70	YDS	259	AVG	3.7	TDS	0	JAC
+T	74	Young, Sam	ACT	G	4	GS	2					JAC
+
+RB	26	Andrews, Antonio	ACT	CAR	12	YDS	49	AVG	4.1	TDS	1	TEN
+LB	51	Bass, David	ACT	TCKL	0	SCK	--	FF	--	INT	--	TEN
+OG	76	Bell, Byron	ACT	G	3	GS	3					TEN
+DE	95	Blackson, Angelo	ACT	TCKL	3	SCK	1.0	FF	1	INT	--	TEN
+LS	48	Brinkley, Beau	ACT	G	3	GS	0					TEN
+ILB	55	Brown, Zach	ACT	TCKL	19	SCK	0.0	FF	0	INT	1	TEN
+DE	99	Casey, Jurrell	ACT	TCKL	6	SCK	2.0	FF	0	INT	--	TEN
+RB	23	Cobb, David	RES	CAR	--	YDS	--	AVG	--	TDS	--	TEN
+TE	85	Coffman, Chase	ACT	REC	4	YDS	42	AVG	10.5	TDS	0	TEN
+CB	29	Cox, Perrish	ACT	TCKL	8	SCK	0.0	FF	0	INT	1	TEN
+TE	42	Dickerson, Dorin	RES	REC	--	YDS	--	AVG	--	TDS	--	TEN
+WR	83	Douglas, Harry	ACT	REC	6	YDS	53	AVG	8.8	TDS	1	TEN
+TE	80	Fasano, Anthony	ACT	REC	7	YDS	128	AVG	18.3	TDS	1	TEN
+FB	45	Fowler, Jalston	ACT	CAR	5	YDS	12	AVG	2.4	TDS	1	TEN
+C	69	Gallik, Andy	ACT	G	2	GS	0					TEN
+WR	17	Green-Beckham, Dorial	ACT	REC	3	YDS	35	AVG	11.7	TDS	2	TEN
+FS	33	Griffin, Michael	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	TEN
+DB	32	Harris, Brandon	RES	TCKL	--	SCK	--	FF	--	INT	--	TEN
+NT	94	Hill, Sammie Lee	ACT	TCKL	0	SCK	--	FF	--	INT	--	TEN
+SS	28	Huff, Marqueston	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	TEN
+WR	15	Hunter, Justin	ACT	REC	4	YDS	74	AVG	18.5	TDS	0	TEN
+LB	52	Johnson, Steven	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	TEN
+DE	90	Jones, DaQuan	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	TEN
+P	6	Kern, Brett	ACT	PUNTS	15	AVG	46.6	LNG	57	IN 20	4	TEN
+DE	97	Klug, Karl	ACT	TCKL	5	SCK	1.0	FF	1	INT	--	TEN
+T	77	Lewan, Taylor	ACT	G	3	GS	3					TEN
+QB	8	Mariota, Marcus	ACT	TDS	8	INT	2	YDS	833	RTG	109.2	TEN
+DE	93	Martin, Mike	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	TEN
+RB	22	McCluster, Dexter	ACT	CAR	17	YDS	113	AVG	6.6	TDS	0	TEN
+CB	30	McCourty, Jason	ACT	TCKL	0	SCK	--	FF	--	INT	--	TEN
+OG	79	Meredith, Jamon	ACT	G	3	GS	1					TEN
+QB	7	Mettenberger, Zach	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	TEN
+OLB	91	Morgan, Derrick	ACT	TCKL	12	SCK	3.0	FF	1	INT	--	TEN
+OLB	53	Mount, Deiontrez	ACT	TCKL	0	SCK	0.0	FF	0	INT	1	TEN
+FB		Neighbors, Connor	RES	CAR	--	YDS	--	AVG	--	TDS	--	TEN
+OLB	98	Orakpo, Brian	ACT	TCKL	6	SCK	1.0	FF	0	INT	--	TEN
+DE	92	Pitoitua, Ropati	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	TEN
+OT	73	Poutasi, Jeremiah	ACT	G	3	GS	3					TEN
+CB	37	Riggs, Cody	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	TEN
+CB		Riley, Curtis	RES	TCKL	--	SCK	--	FF	--	INT	--	TEN
+RB	20	Sankey, Bishop	ACT	CAR	29	YDS	126	AVG	4.3	TDS	1	TEN
+C	62	Schwenke, Brian	ACT	G	3	GS	3					TEN
+SS	21	Searcy, Da'Norris	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	TEN
+CB	24	Sensabaugh, Coty	ACT	TCKL	8	SCK	0.0	FF	0	INT	1	TEN
+G	60	Spain, Quinton	ACT	G	0	GS	0					TEN
+SS	39	Stafford, Daimion	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	TEN
+TE	88	Stevens, Craig	ACT	REC	3	YDS	42	AVG	14.0	TDS	0	TEN
+K	4	Succop, Ryan	ACT	FGA	2	FGM	2	PCT	100.0	LNG	38	TEN
+TE	89	Supernaw, Phillip	ACT	REC	--	YDS	--	AVG	--	TDS	--	TEN
+TE	82	Walker, Delanie	ACT	REC	10	YDS	111	AVG	11.1	TDS	1	TEN
+G	70	Warmack, Chance	ACT	G	2	GS	2					TEN
+RB	35	West, Terrance	ACT	CAR	16	YDS	51	AVG	3.2	TDS	0	TEN
+QB	12	Whitehurst, Charlie	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	TEN
+ILB	54	Williamson, Avery	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	TEN
+NT	96	Woods, Al	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	TEN
+ILB	59	Woodyard, Wesley	ACT	TCKL	5	SCK	1.0	FF	1	INT	--	TEN
+CB	25	Wreh-Wilson, Blidi	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	TEN
+WR	13	Wright, Kendall	ACT	REC	13	YDS	213	AVG	16.4	TDS	2	TEN
+
+OLB	53	Bradham, Nigel	ACT	TCKL	25	SCK	1.0	FF	0	INT	--	BUF
+CB	33	Brooks, Ron	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	BUF
+MLB	52	Brown, Preston	ACT	TCKL	36	SCK	0.0	FF	1	INT	2	BUF
+DT	97	Bryant, Corbin	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	BUF
+DB	39	Butler, Mario	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	BUF
+K	2	Carpenter, Dan	ACT	FGA	7	FGM	5	PCT	71.4	LNG	51	BUF
+DE	98	Carrington, Alex	ACT	TCKL	0	SCK	--	FF	--	INT	--	BUF
+T	79	Chandler, Tyson	RES	G	--	GS	--					BUF
+DT	96	Charles, Stefan	ACT	TCKL	4	SCK	1.0	FF	1	INT	--	BUF
+TE	85	Clay, Charles	ACT	REC	21	YDS	255	AVG	12.1	TDS	2	BUF
+CB	28	Darby, Ronald	ACT	TCKL	19	SCK	0.0	FF	0	INT	2	BUF
+DT	99	Dareus, Marcell	ACT	TCKL	9	SCK	1.0	FF	0	INT	--	BUF
+RB	26	Dixon, Anthony	ACT	CAR	8	YDS	0	AVG	0.0	TDS	1	BUF
+WR	81	Easley, Marcus	ACT	REC	0	YDS	0	AVG	--	TDS	0	BUF
+LB	75	Enemkpali, IK	EXE	TCKL	--	SCK	--	FF	--	INT	--	BUF
+RB	42	Felton, Jerome	ACT	CAR	--	YDS	--	AVG	--	TDS	--	BUF
+K	4	Gay, Jordan	ACT	FGA	--	FGM	--	PCT	--	LNG	--	BUF
+CB	24	Gilmore, Stephon	ACT	TCKL	14	SCK	0.0	FF	0	INT	1	BUF
+T	77	Glenn, Cordy	ACT	G	4	GS	4					BUF
+WR	88	Goodwin, Marquise	ACT	REC	--	YDS	--	AVG	--	TDS	--	BUF
+TE	89	Gragg, Chris	ACT	REC	1	YDS	15	AVG	15.0	TDS	0	BUF
+FS	20	Graham, Corey	ACT	TCKL	36	SCK	1.0	FF	0	INT	--	BUF
+TE	48	Gray, MarQueis	RES	REC	1	YDS	2	AVG	2.0	TDS	0	BUF
+WR	18	Harvin, Percy	ACT	REC	19	YDS	218	AVG	11.5	TDS	1	BUF
+T	66	Henderson, Seantrel	ACT	G	4	GS	4					BUF
+RB		Herron, Dan	ACT	CAR	--	YDS	--	AVG	--	TDS	--	BUF
+WR	15	Hogan, Chris	ACT	REC	9	YDS	96	AVG	10.7	TDS	1	BUF
+DE	55	Hughes, Jerry	ACT	TCKL	10	SCK	1.0	FF	1	INT	--	BUF
+C	61	Ikard, Gabe	ACT	G	1	GS	0					BUF
+OG	64	Incognito, Richie	ACT	G	4	GS	4					BUF
+OLB	58	Johnson, Randell	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	BUF
+T	71	Kouandjio, Cyrus	ACT	G	4	GS	0					BUF
+OLB	91	Lawson, Manny	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	BUF
+QB	3	Manuel, EJ	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	BUF
+RB	25	McCoy, LeSean	ACT	CAR	43	YDS	146	AVG	3.4	TDS	0	BUF
+DB	36	Meeks, Jonathan	ACT	TCKL	0	SCK	--	FF	--	INT	--	BUF
+OG	76	Miller, John	ACT	G	3	GS	3					BUF
+TE	82	Mulligan, Matthew	ACT	REC	1	YDS	2	AVG	2.0	TDS	0	BUF
+LB	57	Powell, Ty	RES	TCKL	--	SCK	--	FF	--	INT	--	BUF
+SS	30	Rambo, Bacarri	ACT	TCKL	19	SCK	0.0	FF	0	INT	--	BUF
+DB	37	Robey, Nickell	ACT	TCKL	20	SCK	1.0	FF	0	INT	--	BUF
+LS	65	Sanborn, Garrison	ACT	G	4	GS	0					BUF
+P	6	Schmidt, Colton	ACT	PUNTS	21	AVG	47.7	LNG	63	IN 20	7	BUF
+LB	50	Steward, Tony	ACT	TCKL	0	SCK	--	FF	--	INT	--	BUF
+LB	59	Tarpley, A.J.	ACT	TCKL	0	SCK	0.0	FF	0	INT	--	BUF
+QB	5	Taylor, Tyrod	ACT	TDS	8	INT	4	YDS	988	RTG	104.4	BUF
+WR	11	Thigpen, Marcus	ACT	REC	--	YDS	--	AVG	--	TDS	--	BUF
+CB	41	Thomas, Cam	PUP	TCKL	--	SCK	--	FF	--	INT	--	BUF
+G	60	Urbik, Kraig	ACT	G	4	GS	1					BUF
+WR	14	Watkins, Sammy	ACT	REC	7	YDS	99	AVG	14.1	TDS	1	BUF
+SS	23	Williams, Aaron	ACT	TCKL	8	SCK	0.0	FF	0	INT	1	BUF
+RB	29	Williams, Karlos	ACT	CAR	42	YDS	226	AVG	5.4	TDS	3	BUF
+DT	95	Williams, Kyle	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	BUF
+DE	94	Williams, Mario	ACT	TCKL	7	SCK	1.0	FF	0	INT	--	BUF
+SS	27	Williams, Duke	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	BUF
+RB	41	Wood, Cierre	ACT	CAR	--	YDS	--	AVG	--	TDS	--	BUF
+C	70	Wood, Eric	ACT	G	4	GS	4					BUF
+WR	10	Woods, Robert	ACT	REC	12	YDS	158	AVG	13.2	TDS	1	BUF
+DT	92	Wynn, Jarius	RES	TCKL	--	SCK	--	FF	--	INT	--	BUF
+
+FS	35	Aikens, Walt	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	MIA
+RB	33	Ajayi, Jay	RES	CAR	--	YDS	--	AVG	--	TDS	--	MIA
+OT	76	Albert, Branden	ACT	G	2	GS	2					MIA
+DB	30	Bowman, Zack	ACT	TCKL	2	SCK	0.0	FF	0	INT	1	MIA
+C	65	Brenner, Sam	ACT	G	3	GS	0					MIA
+TE	84	Cameron, Jordan	ACT	REC	12	YDS	170	AVG	14.2	TDS	0	MIA
+P	4	Darr, Matt	ACT	PUNTS	21	AVG	48.8	LNG	63	IN 20	6	MIA
+FS	25	Delmas, Louis	RES	TCKL	--	SCK	--	FF	--	INT	--	MIA
+LS	92	Denney, John	ACT	G	4	GS	0					MIA
+OG	75	Douglas, Jamil	ACT	G	4	GS	4					MIA
+DE	78	Fede, Terrence	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	MIA
+T	74	Fox, Jason	ACT	G	3	GS	2					MIA
+DT	96	Francis, A.J.	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	MIA
+K	3	Franks, Andrew	ACT	FGA	4	FGM	3	PCT	75.0	LNG	48	MIA
+RB	38	Gray, Jonas	ACT	CAR	10	YDS	49	AVG	4.9	TDS	0	MIA
+CB	21	Grimes, Brent	ACT	TCKL	12	SCK	0.0	FF	0	INT	1	MIA
+WR	83	Hazel, Matt	ACT	REC	--	YDS	--	AVG	--	TDS	--	MIA
+LB	46	Hewitt, Neville	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	MIA
+T	70	James, Ja'Wuan	ACT	G	4	GS	4					MIA
+OLB	53	Jenkins, Jelani	ACT	TCKL	30	SCK	0.0	FF	0	INT	--	MIA
+WR	85	Jennings, Greg	ACT	REC	7	YDS	54	AVG	7.7	TDS	0	MIA
+SS	20	Jones, Reshad	ACT	TCKL	43	SCK	0.0	FF	0	INT	--	MIA
+DE	95	Jordan, Dion	SUS	TCKL	--	SCK	--	FF	--	INT	--	MIA
+DB	32	Kovacs, Jordan	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	MIA
+WR	14	Landry, Jarvis	ACT	REC	28	YDS	270	AVG	9.6	TDS	0	MIA
+T	72	Linkenbach, Jeffrey	ACT	G	3	GS	0					MIA
+DB	36	Lippett, Tony	ACT	TCKL	0	SCK	--	FF	--	INT	--	MIA
+WR	18	Matthews, Rishard	ACT	REC	17	YDS	278	AVG	16.4	TDS	3	MIA
+CB	28	McCain, Bobby	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	MIA
+CB	24	McCain, Brice	ACT	TCKL	17	SCK	0.0	FF	0	INT	1	MIA
+LB	58	McCain, Chris	ACT	TCKL	0	SCK	--	FF	--	INT	--	MIA
+RB	26	Miller, Lamar	ACT	CAR	37	YDS	131	AVG	3.5	TDS	0	MIA
+OLB	55	Misi, Koa	ACT	TCKL	29	SCK	0.0	FF	0	INT	--	MIA
+DT	90	Mitchell, Earl	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	MIA
+QB	8	Moore, Matt	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	MIA
+DT	94	Mosley, C.J.	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	MIA
+RB	27	Mostert, Raheem	ACT	CAR	--	YDS	--	AVG	--	TDS	--	MIA
+WR	11	Parker, DeVante	ACT	REC	4	YDS	49	AVG	12.3	TDS	0	MIA
+LB	42	Paysinger, Spencer	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	MIA
+DT	97	Phillips, Jordan	ACT	TCKL	1	SCK	1.0	FF	0	INT	--	MIA
+C	51	Pouncey, Mike	ACT	G	4	GS	4					MIA
+DE	79	Shelby, Derrick	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	MIA
+MLB	52	Sheppard, Kelvin	ACT	TCKL	20	SCK	0.0	FF	0	INT	--	MIA
+TE	80	Sims, Dion	ACT	REC	0	YDS	0	AVG	--	TDS	0	MIA
+WR	10	Stills, Kenny	ACT	REC	8	YDS	101	AVG	12.6	TDS	1	MIA
+TE	86	Stoneburner, Jake	ACT	REC	5	YDS	47	AVG	9.4	TDS	2	MIA
+DT	93	Suh, Ndamukong	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	MIA
+QB	17	Tannehill, Ryan	ACT	TDS	7	INT	5	YDS	1,080	RTG	77.1	MIA
+CB	22	Taylor, Jamar	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	MIA
+OG	63	Thomas, Dallas	ACT	G	4	GS	4					MIA
+FS	31	Thomas, Michael	ACT	TCKL	13	SCK	0.0	FF	0	INT	--	MIA
+G	77	Turner, Billy	ACT	G	1	GS	0					MIA
+DE	50	Vernon, Olivier	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	MIA
+LB	49	Vigil, Zach	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	MIA
+DE	91	Wake, Cameron	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	MIA
+RB	34	Williams, Damien	ACT	CAR	5	YDS	22	AVG	4.4	TDS	0	MIA
+
+P	6	Allen, Ryan	ACT	PUNTS	5	AVG	49.0	LNG	67	IN 20	1	NE
+WR	80	Amendola, Danny	ACT	REC	8	YDS	92	AVG	11.5	TDS	1	NE
+C	60	Andrews, David	ACT	G	3	GS	3					NE
+RB	29	Blount, LeGarrette	ACT	CAR	20	YDS	82	AVG	4.1	TDS	3	NE
+RB	38	Bolden, Brandon	ACT	CAR	6	YDS	2	AVG	0.3	TDS	0	NE
+OLB	58	Bostic, Jon	ACT	TCKL	0	SCK	--	FF	--	INT	--	NE
+WR	82	Boyce, Josh	RES	REC	--	YDS	--	AVG	--	TDS	--	NE
+QB	12	Brady, Tom	ACT	TDS	9	INT	0	YDS	1,112	RTG	119.6	NE
+DT	97	Branch, Alan	ACT	TCKL	4	SCK	1.0	FF	1	INT	--	NE
+DT	90	Brown, Malcom	ACT	TCKL	4	SCK	1.0	FF	0	INT	--	NE
+CB	25	Brown, Tarell	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	NE
+CB	21	Butler, Malcolm	ACT	TCKL	15	SCK	0.0	FF	0	INT	1	NE
+G	61	Cannon, Marcus	ACT	G	3	GS	0					NE
+LS	49	Cardona, Joe	ACT	G	3	GS	0					NE
+TE	88	Chandler, Scott	ACT	REC	6	YDS	49	AVG	8.2	TDS	1	NE
+SS	23	Chung, Patrick	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	NE
+CB	22	Coleman, Justin	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	NE
+OLB	91	Collins, Jamie	ACT	TCKL	22	SCK	3.5	FF	2	INT	--	NE
+TE		Derby, A.J.	RES	REC	--	YDS	--	AVG	--	TDS	--	NE
+FB	46	Develin, James	RES	CAR	--	YDS	--	AVG	--	TDS	--	NE
+WR	17	Dobson, Aaron	ACT	REC	9	YDS	101	AVG	11.2	TDS	0	NE
+DT	99	Easley, Dominique	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NE
+DB	43	Ebner, Nate	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NE
+WR	11	Edelman, Julian	ACT	REC	30	YDS	279	AVG	9.3	TDS	2	NE
+DB	24	Fletcher, Bradley	ACT	TCKL	10	SCK	0.0	FF	1	INT	--	NE
+LB	52	Fletcher, Dane	PUP	TCKL	--	SCK	--	FF	--	INT	--	NE
+DE	98	Flowers, Trey	ACT	TCKL	0	SCK	--	FF	--	INT	--	NE
+LB	55	Freeny, Jonathan	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	NE
+RB	31	Gaffney, Tyler	RES	CAR	--	YDS	--	AVG	--	TDS	--	NE
+QB	10	Garoppolo, Jimmy	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	NE
+WR	13	Gibson, Brandon	RES	REC	--	YDS	--	AVG	--	TDS	--	NE
+K	3	Gostkowski, Stephen	ACT	FGA	7	FGM	7	PCT	100.0	LNG	50	NE
+OLB	92	Grissom, Geneo	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NE
+TE	87	Gronkowski, Rob	ACT	REC	16	YDS	308	AVG	19.3	TDS	4	NE
+CB	30	Harmon, Duron	ACT	TCKL	4	SCK	0.0	FF	0	INT	2	NE
+DE		Hicks, Akiem	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NE
+OLB	54	Hightower, Dont'a	ACT	TCKL	21	SCK	1.5	FF	0	INT	--	NE
+T	72	Hughes, Kevin	RES	G	--	GS	--					NE
+OG	63	Jackson, Tre	ACT	G	3	GS	2					NE
+LB	70	Johnson, Rufus	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NE
+DE	95	Jones, Chandler	ACT	TCKL	11	SCK	3.0	FF	0	INT	--	NE
+DT	94	Jones, Chris	PUP	TCKL	--	SCK	--	FF	--	INT	--	NE
+G	67	Kline, Josh	ACT	G	3	GS	3					NE
+WR	19	LaFell, Brandon	PUP	REC	--	YDS	--	AVG	--	TDS	--	NE
+RB	33	Lewis, Dion	ACT	CAR	30	YDS	146	AVG	4.9	TDS	2	NE
+WR	82	Martin, Keshawn	ACT	REC	3	YDS	33	AVG	11.0	TDS	1	NE
+OG	69	Mason, Shaq	ACT	G	3	GS	1					NE
+MLB	51	Mayo, Jerod	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	NE
+FS	32	McCourty, Devin	ACT	TCKL	13	SCK	0.0	FF	0	INT	1	NE
+DE	50	Ninkovich, Rob	ACT	TCKL	9	SCK	1.0	FF	0	INT	--	NE
+SS	37	Richards, Jordan	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NE
+CB	28	Roberts, Darryl	RES	TCKL	--	SCK	--	FF	--	INT	--	NE
+CB	26	Ryan, Logan	ACT	TCKL	8	SCK	0.0	FF	0	INT	1	NE
+DE	93	Sheard, Jabaal	ACT	TCKL	8	SCK	2.0	FF	0	INT	--	NE
+DT	96	Siliga, Sealver	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	NE
+WR	18	Slater, Matthew	ACT	REC	--	YDS	--	AVG	--	TDS	--	NE
+T	77	Solder, Nate	ACT	G	3	GS	3					NE
+C	66	Stork, Bryan	RES	G	--	GS	--					NE
+DT	74	Thornton, Khyri	ACT	TCKL	0	SCK	--	FF	--	INT	--	NE
+WR	84	Tyms, Brian	RES	REC	--	YDS	--	AVG	--	TDS	--	NE
+T	76	Vollmer, Sebastian	ACT	G	3	GS	3					NE
+G	62	Wendell, Ryan	ACT	G	0	GS	0					NE
+RB	28	White, James	ACT	CAR	2	YDS	8	AVG	4.0	TDS	0	NE
+TE	85	Williams, Michael	ACT	REC	1	YDS	15	AVG	15.0	TDS	0	NE
+SS	27	Wilson, Tavon	ACT	TCKL	0	SCK	--	FF	--	INT	--	NE
+
+DB	39	Allen, Antonio	RES	TCKL	--	SCK	--	FF	--	INT	--	NYJ
+TE	88	Amaro, Jace	RES	REC	--	YDS	--	AVG	--	TDS	--	NYJ
+SS	34	Bailey, Dion	ACT	TCKL	8	SCK	0.0	FF	0	INT	0	NYJ
+DT	99	Barnes, T.J.	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NYJ
+FB	40	Bohanon, Tommy	ACT	CAR	2	YDS	2	AVG	1.0	TDS	0	NYJ
+DE	72	Bowen, Stephen	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NYJ
+G	77	Carpenter, James	ACT	G	4	GS	4					NYJ
+G	66	Colon, Willie	ACT	G	3	GS	3					NYJ
+OLB	98	Coples, Quinton	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	NYJ
+CB	31	Cromartie, Antonio	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	NYJ
+TE	85	Cumberland, Jeff	ACT	REC	2	YDS	10	AVG	5.0	TDS	0	NYJ
+ILB	56	Davis, Demario	ACT	TCKL	24	SCK	0.0	FF	0	INT	--	NYJ
+TE	47	Davis, Kellen	ACT	REC	0	YDS	0	AVG	--	TDS	0	NYJ
+WR	87	Decker, Eric	ACT	REC	14	YDS	180	AVG	12.9	TDS	3	NYJ
+DE	78	Douzable, Leger	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	NYJ
+T	70	Dozier, Dakota	ACT	G	3	GS	0					NYJ
+WR	81	Enunwa, Quincy	ACT	REC	6	YDS	77	AVG	12.8	TDS	0	NYJ
+T	60	Ferguson, D'Brickashaw	ACT	G	4	GS	4					NYJ
+QB	14	Fitzpatrick, Ryan	ACT	TDS	7	INT	6	YDS	924	RTG	78.1	NYJ
+K	2	Folk, Nick	ACT	FGA	8	FGM	6	PCT	75.0	LNG	53	NYJ
+T	68	Giacomini, Breno	ACT	G	4	GS	4					NYJ
+FS	21	Gilchrist, Marcus	ACT	TCKL	20	SCK	0.0	FF	0	INT	1	NYJ
+ILB	52	Harris, David	ACT	TCKL	27	SCK	2.0	FF	2	INT	--	NYJ
+NT	94	Harrison, Damon	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	NYJ
+OG	64	Harrison, Jarvis	ACT	G	0	GS	0					NYJ
+LB	58	Henderson, Erin	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NYJ
+T	71	Ijalana, Ben	ACT	G	0	GS	0					NYJ
+RB	33	Ivory, Chris	ACT	CAR	63	YDS	314	AVG	5.0	TDS	3	NYJ
+FS	37	Jarrett, Jaiquawn	ACT	TCKL	0	SCK	--	FF	--	INT	--	NYJ
+WR	11	Kerley, Jeremy	ACT	REC	6	YDS	33	AVG	5.5	TDS	1	NYJ
+LB	54	Lattimore, Jamari	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NYJ
+C	74	Mangold, Nick	ACT	G	4	GS	4					NYJ
+WR	15	Marshall, Brandon	ACT	REC	30	YDS	400	AVG	13.3	TDS	3	NYJ
+OLB	55	Mauldin, Lorenzo	ACT	TCKL	3	SCK	0.0	FF	1	INT	--	NYJ
+CB	23	McDougle, Dexter	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NYJ
+CB	27	Milliner, Dee	RES	TCKL	--	SCK	--	FF	--	INT	--	NYJ
+WR	17	Owusu, Chris	ACT	REC	4	YDS	55	AVG	13.8	TDS	0	NYJ
+OLB	97	Pace, Calvin	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NYJ
+QB	9	Petty, Bryce	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	NYJ
+RB	29	Powell, Bilal	ACT	CAR	34	YDS	131	AVG	3.9	TDS	0	NYJ
+SS	25	Pryor, Calvin	ACT	TCKL	23	SCK	0.0	FF	1	INT	1	NYJ
+LS	46	Purdum, Tanner	ACT	G	4	GS	0					NYJ
+P	4	Quigley, Ryan	ACT	PUNTS	21	AVG	42.1	LNG	54	IN 20	8	NYJ
+T	79	Qvale, Brent	ACT	G	4	GS	0					NYJ
+OLB	57	Reilly, Trevor	ACT	TCKL	2	SCK	1.0	FF	1	INT	--	NYJ
+CB	24	Revis, Darrelle	ACT	TCKL	9	SCK	0.0	FF	0	INT	2	NYJ
+DE	91	Richardson, Sheldon	EXE	TCKL	--	SCK	--	FF	--	INT	--	NYJ
+RB	22	Ridley, Stevan	PUP	CAR	--	YDS	--	AVG	--	TDS	--	NYJ
+TE	86	Saxton, Wes	ACT	REC	--	YDS	--	AVG	--	TDS	--	NYJ
+DB	41	Skrine, Buster	ACT	TCKL	18	SCK	0.0	FF	0	INT	--	NYJ
+WR	19	Smith, Devin	ACT	REC	5	YDS	53	AVG	10.6	TDS	0	NYJ
+QB	7	Smith, Geno	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	NYJ
+RB	38	Stacy, Zac	ACT	CAR	7	YDS	10	AVG	1.4	TDS	1	NYJ
+TE	44	Sudfeld, Zach	RES	REC	--	YDS	--	AVG	--	TDS	--	NYJ
+CB	30	Walls, Darrin	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NYJ
+DE	96	Wilkerson, Muhammad	ACT	TCKL	21	SCK	3.5	FF	1	INT	--	NYJ
+DE	92	Williams, Leonard	ACT	TCKL	18	SCK	0.5	FF	0	INT	--	NYJ
+CB	20	Williams, Marcus	ACT	TCKL	9	SCK	0.0	FF	0	INT	2	NYJ
+G	67	Winters, Brian	ACT	G	4	GS	1					NYJ
+
+RB	22	Anderson, C.J.	ACT	CAR	43	YDS	117	AVG	2.7	TDS	0	DEN
+DE	91	Anunike, Kenny	ACT	TCKL	0	SCK	--	FF	--	INT	--	DEN
+DT	76	Austin, Marvin	RES	TCKL	--	SCK	--	FF	--	INT	--	DEN
+LB	48	Barrett, Shaquil	ACT	TCKL	6	SCK	1.0	FF	1	INT	--	DEN
+SS	31	Bolden, Omar	ACT	TCKL	0	SCK	--	FF	--	INT	--	DEN
+LS	46	Brewer, Aaron	ACT	G	4	GS	0					DEN
+SS	30	Bruton, David	ACT	TCKL	15	SCK	1.0	FF	1	INT	1	DEN
+WR	12	Caldwell, Andre	ACT	REC	3	YDS	9	AVG	3.0	TDS	0	DEN
+TE	80	Casey, James	ACT	REC	--	YDS	--	AVG	--	TDS	--	DEN
+T	78	Clady, Ryan	RES	G	--	GS	--					DEN
+P	4	Colquitt, Britton	ACT	PUNTS	20	AVG	46.4	LNG	62	IN 20	7	DEN
+TE	81	Daniels, Owen	ACT	REC	12	YDS	61	AVG	5.1	TDS	2	DEN
+OLB	51	Davis, Todd	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	DEN
+CB	37	Doss, Lorenzo	ACT	TCKL	0	SCK	--	FF	--	INT	--	DEN
+C	53	Ferentz, James	ACT	G	3	GS	0					DEN
+WR	16	Fowler, Bennie	ACT	REC	5	YDS	61	AVG	12.2	TDS	0	DEN
+C	73	Garcia, Max	ACT	G	4	GS	0					DEN
+TE	85	Green, Virgil	ACT	REC	3	YDS	38	AVG	12.7	TDS	1	DEN
+CB	25	Harris, Chris	ACT	TCKL	17	SCK	0.0	FF	0	INT	1	DEN
+T	68	Harris, Ryan	ACT	G	4	GS	4					DEN
+TE	84	Henry, Mitchell	ACT	REC	--	YDS	--	AVG	--	TDS	--	DEN
+TE	82	Heuerman, Jeff	RES	REC	--	YDS	--	AVG	--	TDS	--	DEN
+RB	23	Hillman, Ronnie	ACT	CAR	39	YDS	191	AVG	4.9	TDS	2	DEN
+DE	97	Jackson, Malik	ACT	TCKL	11	SCK	2.0	FF	0	INT	--	DEN
+NT	98	Kilgo, Darius	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	DEN
+WR	14	Latimer, Cody	ACT	REC	--	YDS	--	AVG	--	TDS	--	DEN
+QB	18	Manning, Peyton	ACT	TDS	6	INT	5	YDS	968	RTG	80.8	DEN
+ILB	54	Marshall, Brandon	ACT	TCKL	33	SCK	1.0	FF	1	INT	--	DEN
+G	69	Mathis, Evan	ACT	G	4	GS	4					DEN
+OLB	55	McCray, Lerentee	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	DEN
+K	8	McManus, Brandon	ACT	FGA	9	FGM	9	PCT	100.0	LNG	57	DEN
+OLB	58	Miller, Von	ACT	TCKL	9	SCK	2.0	FF	0	INT	--	DEN
+OLB	52	Nelson, Corey	ACT	TCKL	5	SCK	1.0	FF	0	INT	--	DEN
+WR	11	Norwood, Jordan	ACT	REC	8	YDS	66	AVG	8.3	TDS	0	DEN
+QB	17	Osweiler, Brock	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	DEN
+C	61	Paradis, Matt	ACT	G	4	GS	4					DEN
+T	76	Polumbus, Tyler	ACT	G	3	GS	0					DEN
+LB	56	Ray, Shane	ACT	TCKL	3	SCK	1.0	FF	0	INT	--	DEN
+CB	29	Roby, Bradley	ACT	TCKL	8	SCK	0.0	FF	1	INT	1	DEN
+OT	74	Sambrailo, Ty	ACT	G	3	GS	3					DEN
+WR	10	Sanders, Emmanuel	ACT	REC	25	YDS	307	AVG	12.3	TDS	2	DEN
+T	79	Schofield, Michael	ACT	G	1	GS	1					DEN
+QB	13	Siemian, Trevor	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	DEN
+DE	90	Smith, Antonio	ACT	TCKL	5	SCK	1.0	FF	0	INT	--	DEN
+G	64	Smith, Shelley	ACT	G	0	GS	0					DEN
+FS	26	Stewart, Darian	ACT	TCKL	20	SCK	0.0	FF	1	INT	1	DEN
+CB	21	Talib, Aqib	ACT	TCKL	13	SCK	0.0	FF	0	INT	2	DEN
+WR	88	Thomas, Demaryius	ACT	REC	33	YDS	361	AVG	10.9	TDS	1	DEN
+RB	40	Thompson, Juwan	ACT	CAR	3	YDS	11	AVG	3.7	TDS	0	DEN
+ILB	59	Trevathan, Danny	ACT	TCKL	21	SCK	0.0	FF	0	INT	--	DEN
+OG	65	Vasquez, Louis	ACT	G	4	GS	4					DEN
+DE	96	Walker, Vance	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	DEN
+SS	43	Ward, T.J.	ACT	TCKL	19	SCK	2.0	FF	1	INT	--	DEN
+OLB	94	Ware, DeMarcus	ACT	TCKL	13	SCK	4.5	FF	0	INT	--	DEN
+CB	36	Webster, Kayvon	ACT	TCKL	0	SCK	--	FF	--	INT	--	DEN
+WR	15	Williams, Kyle	RES	REC	--	YDS	--	AVG	--	TDS	--	DEN
+NT	92	Williams, Sylvester	ACT	TCKL	11	SCK	1.5	FF	0	INT	--	DEN
+DE	95	Wolfe, Derek	EXE	TCKL	--	SCK	--	FF	--	INT	--	DEN
+
+FS	39	Abdullah, Husain	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	KC
+LB	57	Alexander, D.J.	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	KC
+T	71	Allen, Jeff	ACT	G	2	GS	0					KC
+WR	81	Avant, Jason	ACT	REC	6	YDS	51	AVG	8.5	TDS	0	KC
+DE	97	Bailey, Allen	ACT	TCKL	10	SCK	2.0	FF	0	INT	--	KC
+FS	29	Berry, Eric	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	KC
+DB	27	Branch, Tyvon	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	KC
+RB	25	Charles, Jamaal	ACT	CAR	59	YDS	306	AVG	5.2	TDS	4	KC
+P	2	Colquitt, Dustin	ACT	PUNTS	18	AVG	48.9	LNG	62	IN 20	7	KC
+CB	26	Commings, Sanders	RES	TCKL	--	SCK	--	FF	--	INT	--	KC
+WR	17	Conley, Chris	ACT	REC	3	YDS	69	AVG	23.0	TDS	0	KC
+CB	31	Cooper, Marcus	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	KC
+QB	10	Daniel, Chase	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	KC
+RB	34	Davis, Knile	ACT	CAR	9	YDS	25	AVG	2.8	TDS	1	KC
+DE	70	DeVito, Mike	ACT	TCKL	6	SCK	1.0	FF	0	INT	--	KC
+OG	76	Duvernay-Tardif, Laurent	ACT	G	4	GS	3					KC
+G	74	Fanaika, Paul	RES	G	--	GS	--					KC
+T	72	Fisher, Eric	ACT	G	4	GS	2					KC
+CB	30	Fleming, Jamell	ACT	TCKL	15	SCK	0.0	FF	0	INT	--	KC
+LB	55	Ford, Dee	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	KC
+G	73	Fulton, Zach	ACT	G	4	GS	1					KC
+CB	23	Gaines, Phillip	RES	TCKL	6	SCK	0.0	FF	0	INT	--	KC
+G	66	Grubbs, Ben	ACT	G	4	GS	4					KC
+OLB	91	Hali, Tamba	ACT	TCKL	8	SCK	1.0	FF	0	INT	--	KC
+WR	85	Hammond, Frankie	ACT	REC	--	YDS	--	AVG	--	TDS	--	KC
+TE	84	Harris, Demetrius	ACT	REC	0	YDS	0	AVG	--	TDS	0	KC
+OLB	50	Houston, Justin	ACT	TCKL	16	SCK	3.0	FF	1	INT	--	KC
+NT	96	Howard, Jaye	ACT	TCKL	23	SCK	1.0	FF	0	INT	--	KC
+ILB	56	Johnson, Derrick	ACT	TCKL	20	SCK	1.0	FF	0	INT	--	KC
+TE	87	Kelce, Travis	ACT	REC	21	YDS	293	AVG	14.0	TDS	2	KC
+WR	19	Maclin, Jeremy	ACT	REC	28	YDS	398	AVG	14.2	TDS	1	KC
+LB	59	March-Lillard, Justin	RES	TCKL	--	SCK	--	FF	--	INT	--	KC
+ILB	90	Mauga, Josh	ACT	TCKL	14	SCK	0.0	FF	0	INT	--	KC
+C	61	Morse, Mitch	ACT	G	4	GS	4					KC
+LB	54	Moses, Dezman	ACT	TCKL	0	SCK	--	FF	--	INT	--	KC
+QB	7	Murray, Aaron	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	KC
+CB	20	Nelson, Steven	ACT	TCKL	0	SCK	--	FF	--	INT	--	KC
+DT	99	Nunez-Roches, Rakeem	ACT	TCKL	0	SCK	--	FF	--	INT	--	KC
+TE	80	O'Shaughnessy, James	ACT	REC	3	YDS	62	AVG	20.7	TDS	0	KC
+TE	82	Parker, Brian	ACT	REC	--	YDS	--	AVG	--	TDS	--	KC
+SS	38	Parker, Ron	ACT	TCKL	24	SCK	0.0	FF	0	INT	--	KC
+CB	22	Peters, Marcus	ACT	TCKL	18	SCK	0.0	FF	0	INT	2	KC
+NT	92	Poe, Dontari	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	KC
+OT	75	Reid, Jah	ACT	G	2	GS	2					KC
+K	5	Santos, Cairo	ACT	FGA	11	FGM	10	PCT	90.9	LNG	51	KC
+FB	42	Sherman, Anthony	ACT	CAR	--	YDS	--	AVG	--	TDS	--	KC
+QB	11	Smith, Alex	ACT	TDS	4	INT	3	YDS	1,110	RTG	89.2	KC
+CB	21	Smith, Sean	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	KC
+DB	49	Sorensen, Daniel	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	KC
+T	79	Stephenson, Donald	ACT	G	4	GS	4					KC
+WR	13	Thomas, De'Anthony	ACT	REC	6	YDS	45	AVG	7.5	TDS	0	KC
+RB	35	West, Charcandrick	ACT	CAR	5	YDS	17	AVG	3.4	TDS	0	KC
+DT	98	Williams, Nick	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	KC
+WR	12	Wilson, Albert	ACT	REC	3	YDS	25	AVG	8.3	TDS	0	KC
+OLB	53	Wilson, Ramik	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	KC
+LS	41	Winchester, James	ACT	G	4	GS	0					KC
+OLB	51	Zombo, Frank	ACT	TCKL	0	SCK	--	FF	--	INT	--	KC
+
+LB	56	Alexander, Lorenzo	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	OAK
+SS	20	Allen, Nate	RES	TCKL	1	SCK	0.0	FF	0	INT	--	OAK
+CB	29	Amerson, David	ACT	TCKL	12	SCK	0.0	FF	1	INT	0	OAK
+OLB	57	Armstrong, Ray-Ray	ACT	TCKL	11	SCK	1.0	FF	0	INT	--	OAK
+DB	42	Asante, Larry	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	OAK
+DE	96	Autry, Denico	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	OAK
+OLB	58	Ball, Neiron	ACT	TCKL	4	SCK	1.0	FF	0	INT	--	OAK
+T	69	Barnes, Khalif	ACT	G	4	GS	0					OAK
+G	70	Bergstrom, Tony	ACT	G	4	GS	0					OAK
+QB	4	Carr, Derek	ACT	TDS	7	INT	2	YDS	922	RTG	97.7	OAK
+CB	38	Carrie, T.J.	ACT	TCKL	15	SCK	0.0	FF	1	INT	--	OAK
+LS	59	Condo, Jon	ACT	G	4	GS	0					OAK
+WR	89	Cooper, Amari	ACT	REC	24	YDS	339	AVG	14.1	TDS	2	OAK
+WR	15	Crabtree, Michael	ACT	REC	23	YDS	264	AVG	11.5	TDS	1	OAK
+WR		Debose, Andre	RES	REC	--	YDS	--	AVG	--	TDS	--	OAK
+DE	97	Edwards, Mario Jr.	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	OAK
+DT	78	Ellis, Justin	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	OAK
+OG	68	Feliciano, Jon	ACT	G	0	GS	0					OAK
+LB	43	Hall, Jimmy	RES	TCKL	--	SCK	--	FF	--	INT	--	OAK
+CB	25	Hayden, D.J.	ACT	TCKL	18	SCK	0.0	FF	0	INT	--	OAK
+ILB	51	Heeney, Ben	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	OAK
+RB	26	Helu, Roy	ACT	CAR	5	YDS	22	AVG	4.4	TDS	0	OAK
+WR	18	Holmes, Andre	ACT	REC	4	YDS	53	AVG	13.3	TDS	1	OAK
+OT	77	Howard, Austin	ACT	G	4	GS	4					OAK
+C	61	Hudson, Rodney	ACT	G	4	GS	4					OAK
+G	66	Jackson, Gabe	ACT	G	4	GS	4					OAK
+K	11	Janikowski, Sebastian	ACT	FGA	7	FGM	7	PCT	100.0	LNG	48	OAK
+RB	22	Jones, Taiwan	ACT	CAR	7	YDS	30	AVG	4.3	TDS	0	OAK
+P	7	King, Marquette	ACT	PUNTS	17	AVG	45.7	LNG	70	IN 20	6	OAK
+SS	32	Lambert, Keenan	ACT	TCKL	0	SCK	0.0	FF	0	INT	--	OAK
+MLB	50	Lofton, Curtis	ACT	TCKL	26	SCK	0.0	FF	0	INT	--	OAK
+DE	52	Mack, Khalil	ACT	TCKL	13	SCK	3.0	FF	1	INT	--	OAK
+DE	95	Mayowa, Benson	ACT	TCKL	0	SCK	--	FF	--	INT	--	OAK
+SS	27	Mays, Taylor	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	OAK
+T	73	McCants, Matt	ACT	G	0	GS	0					OAK
+CB	21	McDonald, Dexter	ACT	TCKL	0	SCK	--	FF	--	INT	--	OAK
+DT	92	McGee, Stacy	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	OAK
+CB	39	McGill, Keith	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	OAK
+QB	14	McGloin, Matt	ACT	TDS	2	INT	1	YDS	142	RTG	91.1	OAK
+RB	28	Murray, Latavius	ACT	CAR	68	YDS	297	AVG	4.4	TDS	2	OAK
+RB	49	Olawale, Jamize	ACT	CAR	2	YDS	5	AVG	2.5	TDS	0	OAK
+T	72	Penn, Donald	ACT	G	4	GS	4					OAK
+FB	45	Reece, Marcel	ACT	CAR	1	YDS	1	AVG	1.0	TDS	0	OAK
+TE	81	Rivera, Mychal	ACT	REC	6	YDS	31	AVG	5.2	TDS	0	OAK
+WR	10	Roberts, Seth	ACT	REC	7	YDS	80	AVG	11.4	TDS	2	OAK
+OLB	99	Smith, Aldon	ACT	TCKL	11	SCK	1.0	FF	0	INT	--	OAK
+TE	86	Smith, Lee	ACT	REC	4	YDS	28	AVG	7.0	TDS	0	OAK
+OLB	53	Smith, Malcolm	ACT	TCKL	37	SCK	1.0	FF	1	INT	--	OAK
+WR	80	Streater, Rod	ACT	REC	1	YDS	8	AVG	8.0	TDS	0	OAK
+CB	31	Thorpe, Neiko	ACT	TCKL	14	SCK	0.0	FF	0	INT	1	OAK
+DE	91	Tuck, Justin	ACT	TCKL	13	SCK	1.0	FF	0	INT	--	OAK
+TE	88	Walford, Clive	ACT	REC	2	YDS	5	AVG	2.5	TDS	0	OAK
+T	71	Watson, Menelik	RES	G	--	GS	--					OAK
+OG	76	Webb, J'Marcus	ACT	G	4	GS	4					OAK
+DT	90	Williams, Dan	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	OAK
+DT	98	Wilson, C.J.	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	OAK
+FS	24	Woodson, Charles	ACT	TCKL	22	SCK	0.0	FF	0	INT	2	OAK
+
+SS	37	Addae, Jahleel	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	SD
+WR	13	Allen, Keenan	ACT	REC	33	YDS	387	AVG	11.7	TDS	3	SD
+WR	3	Allen, Torrence	RES	REC	--	YDS	--	AVG	--	TDS	--	SD
+LB	40	Ariguzo, Chi Chi	RES	TCKL	--	SCK	--	FF	--	INT	--	SD
+OLB	97	Attaochu, Jeremiah	ACT	TCKL	8	SCK	2.0	FF	0	INT	--	SD
+T	72	Barksdale, Joe	ACT	G	4	GS	4					SD
+G		Beckwith, Ben	RES	G	--	GS	--					SD
+RB		Brown, Donald	ACT	CAR	--	YDS	--	AVG	--	TDS	--	SD
+T	78	Burwell, Tyreek	ACT	G	1	GS	0					SD
+ILB	56	Butler, Donald	ACT	TCKL	19	SCK	0.0	FF	1	INT	--	SD
+DT	92	Carrethers, Ryan	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	SD
+QB	10	Clemens, Kellen	ACT	TDS	1	INT	0	YDS	63	RTG	150.0	SD
+ILB	53	Conner, Kavell	ACT	TCKL	0	SCK	--	FF	--	INT	--	SD
+CB	20	Davis, Chris	RES	TCKL	--	SCK	--	FF	--	INT	--	SD
+T	77	Dunlap, King	ACT	G	3	GS	3					SD
+LB	48	Dzubnar, Nick	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	SD
+OLB	51	Emanuel, Kyle	ACT	TCKL	8	SCK	1.0	FF	0	INT	1	SD
+CB	24	Flowers, Brandon	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	SD
+WR	80	Floyd, Malcom	ACT	REC	8	YDS	167	AVG	20.9	TDS	1	SD
+OG	76	Fluker, D.J.	ACT	G	3	GS	3					SD
+OG	74	Franklin, Orlando	ACT	G	3	GS	3					SD
+TE	85	Gates, Antonio	EXE	REC	--	YDS	--	AVG	--	TDS	--	SD
+RB	28	Gordon, Melvin	ACT	CAR	56	YDS	228	AVG	4.1	TDS	0	SD
+TE	89	Green, Ladarius	ACT	REC	14	YDS	174	AVG	12.4	TDS	2	SD
+OG	75	Hairston, Chris	ACT	G	4	GS	2					SD
+LB	59	Hekking, Brock	RES	TCKL	--	SCK	--	FF	--	INT	--	SD
+OLB	54	Ingram, Melvin	ACT	TCKL	17	SCK	1.5	FF	1	INT	--	SD
+WR	15	Inman, Dontrelle	ACT	REC	3	YDS	88	AVG	29.3	TDS	0	SD
+TE	88	Johnson, David	ACT	REC	0	YDS	0	AVG	--	TDS	0	SD
+WR	11	Johnson, Steve	ACT	REC	18	YDS	205	AVG	11.4	TDS	2	SD
+WR	12	Jones, Jacoby	ACT	REC	--	YDS	--	AVG	--	TDS	--	SD
+K	2	Lambo, Josh	ACT	FGA	8	FGM	7	PCT	87.5	LNG	46	SD
+LB	99	Law, Cordarro	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	SD
+NT	98	Lissemore, Sean	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	SD
+DE	94	Liuget, Corey	ACT	TCKL	15	SCK	0.0	FF	0	INT	--	SD
+CB	29	Mager, Craig	ACT	TCKL	0	SCK	--	FF	--	INT	--	SD
+DE	90	Mathews, Ricardo	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	SD
+RB	43	Oliver, Branden	ACT	CAR	11	YDS	32	AVG	2.9	TDS	0	SD
+DE	72	Palepoi, Tenny	RES	TCKL	--	SCK	--	FF	--	INT	--	SD
+ILB	52	Perryman, Denzel	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	SD
+DB	31	Phillips, Adrian	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	SD
+TE	83	Phillips, John	ACT	REC	5	YDS	36	AVG	7.2	TDS	1	SD
+DE	93	Philon, Darius	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	SD
+DE	91	Reyes, Kendall	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	SD
+QB	17	Rivers, Philip	ACT	TDS	8	INT	4	YDS	1,248	RTG	105.3	SD
+CB	26	Robinson, Patrick	ACT	TCKL	10	SCK	0.0	FF	1	INT	1	SD
+C	60	Robinson, Trevor	ACT	G	4	GS	1					SD
+P	5	Scifres, Mike	ACT	PUNTS	16	AVG	43.6	LNG	68	IN 20	4	SD
+DB	25	Stuckey, Darrell	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	SD
+ILB	50	Te'o, Manti	ACT	TCKL	33	SCK	0.0	FF	0	INT	--	SD
+G	63	Troutman, Johnnie	RES	G	0	GS	0					SD
+CB	22	Verrett, Jason	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	SD
+C	59	Walton, J.D.	ACT	G	0	GS	0					SD
+C	65	Watt, Chris	ACT	G	3	GS	3					SD
+FS	32	Weddle, Eric	ACT	TCKL	38	SCK	0.5	FF	0	INT	--	SD
+OT	79	Wiggins, Kenny	ACT	G	3	GS	1					SD
+CB	23	Williams, Steve	ACT	TCKL	4	SCK	0.0	FF	0	INT	1	SD
+OLB	58	Williams, Tourek	ACT	TCKL	0	SCK	--	FF	--	INT	--	SD
+SS	27	Wilson, Jimmy	ACT	TCKL	22	SCK	0.0	FF	0	INT	--	SD
+LS	47	Windt, Mike	ACT	G	4	GS	0					SD
+RB	39	Woodhead, Danny	ACT	CAR	33	YDS	144	AVG	4.4	TDS	2	SD
+
+DE	49	Acho, Sam	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	CHI
+FS	38	Amos, Adrian	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	CHI
+CB	24	Ball, Alan	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	CHI
+LB	57	Barrow, Lamin	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	CHI
+T		Becton, Nick	ACT	G	--	GS	--					CHI
+WR	11	Bellamy, Josh	ACT	REC	1	YDS	48	AVG	48.0	TDS	1	CHI
+TE	83	Bennett, Martellus	ACT	REC	24	YDS	201	AVG	8.4	TDS	2	CHI
+T	74	Bushrod, Jermon	ACT	G	3	GS	3					CHI
+RB	25	Carey, Ka'Deem	ACT	CAR	--	YDS	--	AVG	--	TDS	--	CHI
+WR	82	Chiles, John	RES	REC	--	YDS	--	AVG	--	TDS	--	CHI
+QB	8	Clausen, Jimmy	ACT	TDS	0	INT	1	YDS	184	RTG	58.7	CHI
+QB	6	Cutler, Jay	ACT	TDS	4	INT	3	YDS	626	RTG	83.8	CHI
+OG	62	Ducasse, Vladimir	ACT	G	4	GS	4					CHI
+OT	73	Fabuluje, Tayo	ACT	G	1	GS	0					CHI
+QB	12	Fales, David	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	CHI
+DT	95	Ferguson, Ego	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CHI
+RB	22	Forte, Matt	ACT	CAR	84	YDS	367	AVG	4.4	TDS	1	CHI
+CB	23	Fuller, Kyle	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	CHI
+LS	43	Gafford, Thomas	ACT	G	4	GS	0					CHI
+NT	91	Goldman, Eddie	ACT	TCKL	5	SCK	1.0	FF	0	INT	--	CHI
+K	9	Gould, Robbie	ACT	FGA	9	FGM	9	PCT	100.0	LNG	54	CHI
+C	55	Grasu, Hroniss	ACT	G	0	GS	0					CHI
+LB	99	Houston, Lamarr	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	CHI
+SS	46	Jefferson, Anthony	RES	TCKL	--	SCK	--	FF	--	INT	--	CHI
+WR	17	Jeffery, Alshon	ACT	REC	5	YDS	78	AVG	15.6	TDS	0	CHI
+DE	96	Jenkins, Jarvis	ACT	TCKL	17	SCK	3.0	FF	0	INT	--	CHI
+ILB	59	Jones, Christian	ACT	TCKL	22	SCK	0.0	FF	0	INT	--	CHI
+DB	44	Jones-Quartey, Harold	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	CHI
+RB	36	Langford, Jeremy	ACT	CAR	8	YDS	26	AVG	3.3	TDS	1	CHI
+TE	82	Lee, Khari	ACT	REC	--	YDS	--	AVG	--	TDS	--	CHI
+T	72	Leno, Charles	ACT	G	4	GS	1					CHI
+OT	75	Long, Kyle	ACT	G	4	GS	4					CHI
+WR	80	Mariani, Marc	ACT	REC	0	YDS	0	AVG	--	TDS	0	CHI
+DB		Martin, Sherrod	ACT	TCKL	--	SCK	--	FF	--	INT	--	CHI
+ILB	50	McClellin, Shea	ACT	TCKL	28	SCK	0.0	FF	0	INT	--	CHI
+CB	27	McManis, Sherrick	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	CHI
+OLB	92	McPhee, Pernell	ACT	TCKL	24	SCK	2.0	FF	0	INT	1	CHI
+WR	81	Meredith, Cameron	ACT	REC	3	YDS	36	AVG	12.0	TDS	0	CHI
+TE	86	Miller, Zach	ACT	REC	3	YDS	35	AVG	11.7	TDS	0	CHI
+CB	20	Mitchell, Terrance	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	CHI
+C	64	Montgomery, Will	RES	G	4	GS	4					CHI
+SS	21	Mundy, Ryan	RES	TCKL	--	SCK	--	FF	--	INT	--	CHI
+P	16	O'Donnell, Pat	ACT	PUNTS	16	AVG	47.6	LNG	72	IN 20	4	CHI
+OG	65	Omameh, Patrick	ACT	G	3	GS	0					CHI
+RB	32	Perry, Senorise	RES	CAR	--	YDS	--	AVG	--	TDS	--	CHI
+DB	21	Porter, Tracy	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CHI
+DB	33	Prosinski, Chris	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	CHI
+DT	90	Ratliff, Jay	ACT	TCKL	0	SCK	--	FF	--	INT	--	CHI
+OLB	52	Reynolds, LaRoy	ACT	TCKL	2	SCK	0.0	FF	0	INT	0	CHI
+RB	35	Rodgers, Jacquizz	ACT	CAR	12	YDS	38	AVG	3.2	TDS	0	CHI
+SS	26	Rolle, Antrel	ACT	TCKL	23	SCK	0.0	FF	0	INT	--	CHI
+WR	19	Royal, Eddie	ACT	REC	18	YDS	120	AVG	6.7	TDS	1	CHI
+G	68	Slauson, Matt	ACT	G	4	GS	4					CHI
+DE	93	Sutton, Will	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	CHI
+DT	76	Unrein, Mitch	ACT	TCKL	1	SCK	0.0	FF	0	INT	0	CHI
+DE	94	Washington, Cornelius	RES	TCKL	0	SCK	--	FF	--	INT	--	CHI
+OL	78	Weaver, Jason	RES	G	--	GS	--					CHI
+WR	13	White, Kevin	PUP	REC	--	YDS	--	AVG	--	TDS	--	CHI
+WR	10	Wilson, Marquess	ACT	REC	9	YDS	149	AVG	16.6	TDS	0	CHI
+LB	97	Young, Willie	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CHI
+
+SS	42	Abdul-Quddus, Isa	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	DET
+RB	21	Abdullah, Ameer	ACT	CAR	34	YDS	115	AVG	3.4	TDS	1	DET
+DE	94	Ansah, Ezekiel	ACT	TCKL	15	SCK	4.0	FF	1	INT	--	DET
+RB	35	Bell, Joique	ACT	CAR	20	YDS	22	AVG	1.1	TDS	1	DET
+C	65	Boggs, Taylor	ACT	G	1	GS	0					DET
+FB	46	Burton, Michael	ACT	CAR	2	YDS	2	AVG	1.0	TDS	0	DET
+OLB	57	Bynes, Josh	ACT	TCKL	25	SCK	0.0	FF	0	INT	--	DET
+SS	26	Carey, Don	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	DET
+CB	33	Carter, Alex	RES	TCKL	--	SCK	--	FF	--	INT	--	DET
+LB	95	Copeland, Brandon	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	DET
+DT	99	Cudjo, Jermelle	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	DET
+CB	28	Diggs, Quandre	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	DET
+TE	85	Ebron, Eric	ACT	REC	15	YDS	179	AVG	11.9	TDS	2	DET
+WR	10	Fuller, Corey	ACT	REC	--	YDS	--	AVG	--	TDS	--	DET
+DE	58	Hunt, Phillip	ACT	TCKL	7	SCK	1.0	FF	0	INT	--	DET
+SS	32	Ihedigbo, James	ACT	TCKL	28	SCK	1.0	FF	3	INT	--	DET
+WR	81	Johnson, Calvin	ACT	REC	27	YDS	255	AVG	9.4	TDS	1	DET
+DE	91	Jones, Jason	ACT	TCKL	11	SCK	0.5	FF	1	INT	--	DET
+WR	13	Jones, T.J.	ACT	REC	--	YDS	--	AVG	--	TDS	--	DET
+C	68	Keyton, Darren	RES	G	--	GS	--					DET
+CB	24	Lawson, Nevin	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	DET
+OLB	54	Levy, DeAndre	ACT	TCKL	0	SCK	--	FF	--	INT	--	DET
+OLB	50	Lewis, Travis	ACT	TCKL	10	SCK	1.0	FF	0	INT	--	DET
+T	77	Lucas, Cornelius	ACT	G	4	GS	3					DET
+P	6	Martin, Sam	ACT	PUNTS	22	AVG	44.8	LNG	66	IN 20	9	DET
+CB	31	Mathis, Rashean	ACT	TCKL	23	SCK	0.0	FF	1	INT	--	DET
+WR	16	Moore, Lance	ACT	REC	8	YDS	67	AVG	8.4	TDS	0	DET
+LS	48	Muhlbach, Don	ACT	G	4	GS	0					DET
+DT	92	Ngata, Haloti	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	DET
+QB	8	Orlovsky, Dan	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	DET
+DB	44	Owens, Chris	RES	TCKL	--	SCK	--	FF	--	INT	--	DET
+TE	87	Pettigrew, Brandon	ACT	REC	0	YDS	0	AVG	--	TDS	0	DET
+K	5	Prater, Matt	ACT	FGA	2	FGM	2	PCT	100.0	LNG	41	DET
+FS	27	Quin, Glover	ACT	TCKL	21	SCK	0.0	FF	0	INT	2	DET
+G	63	Ramirez, Manny	ACT	G	4	GS	4					DET
+DT	97	Reid, Caraun	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	DET
+T	71	Reiff, Riley	ACT	G	4	GS	4					DET
+RB	25	Riddick, Theo	ACT	CAR	2	YDS	10	AVG	5.0	TDS	0	DET
+OT	70	Robinson, Corey	ACT	G	1	GS	0					DET
+CB	23	Slay, Darius	ACT	TCKL	19	SCK	0.0	FF	0	INT	1	DET
+LB	46	Snyder, Kevin	RES	TCKL	--	SCK	--	FF	--	INT	--	DET
+QB	9	Stafford, Matthew	ACT	TDS	5	INT	5	YDS	1,017	RTG	79.7	DET
+C	64	Swanson, Travis	ACT	G	4	GS	4					DET
+DE	52	Tapp, Darryl	ACT	TCKL	9	SCK	1.0	FF	0	INT	--	DET
+WR	15	Tate, Golden	ACT	REC	18	YDS	190	AVG	10.6	TDS	0	DET
+DE	98	Taylor, Devin	ACT	TCKL	9	SCK	1.5	FF	0	INT	--	DET
+TE	82	Thompson, Jordan	RES	REC	--	YDS	--	AVG	--	TDS	--	DET
+OG	72	Tomlinson, Laken	ACT	G	4	GS	2					DET
+MLB	55	Tulloch, Stephen	ACT	TCKL	31	SCK	0.0	FF	0	INT	--	DET
+OLB	53	Van Noy, Kyle	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	DET
+T	66	Waddle, LaAdrian	ACT	G	2	GS	1					DET
+DT	93	Walker, Tyrunn	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	DET
+G	75	Warford, Larry	ACT	G	2	GS	2					DET
+MLB	59	Whitehead, Tahir	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	DET
+DB	30	Wilson, Josh	ACT	TCKL	19	SCK	0.0	FF	0	INT	--	DET
+DE	99	Wootton, Corey	RES	TCKL	--	SCK	--	FF	--	INT	--	DET
+DT	90	Wright, Gabe	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	DET
+TE	83	Wright, Timothy	ACT	REC	1	YDS	26	AVG	26.0	TDS	0	DET
+FB	34	Zenner, Zach	ACT	CAR	4	YDS	15	AVG	3.8	TDS	0	DET
+
+WR	84	Abbrederis, Jared	ACT	REC	--	YDS	--	AVG	--	TDS	--	GB
+WR	17	Adams, Davante	ACT	REC	9	YDS	92	AVG	10.2	TDS	0	GB
+TE	86	Backman, Kennard	ACT	REC	--	YDS	--	AVG	--	TDS	--	GB
+T	69	Bakhtiari, David	ACT	G	4	GS	4					GB
+CB	32	Banjo, Chris	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	GB
+T	67	Barclay, Don	ACT	G	4	GS	3					GB
+ILB	58	Barrington, Sam	RES	TCKL	1	SCK	0.0	FF	0	INT	--	GB
+DE	93	Boyd, Josh	RES	TCKL	1	SCK	0.0	FF	0	INT	--	GB
+T	75	Bulaga, Bryan	ACT	G	1	GS	1					GB
+SS	42	Burnett, Morgan	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	GB
+FS	21	Clinton-Dix, Ha Ha	ACT	TCKL	29	SCK	0.0	FF	0	INT	--	GB
+WR	18	Cobb, Randall	ACT	REC	25	YDS	289	AVG	11.6	TDS	4	GB
+K	2	Crosby, Mason	ACT	FGA	8	FGM	7	PCT	87.5	LNG	54	GB
+DE	76	Daniels, Mike	ACT	TCKL	10	SCK	2.5	FF	1	INT	--	GB
+LB	91	Elliott, Jay	ACT	TCKL	9	SCK	2.0	FF	1	INT	1	GB
+LS	61	Goode, Brett	ACT	G	4	GS	0					GB
+CB	39	Goodson, Demetri	ACT	TCKL	0	SCK	--	FF	--	INT	--	GB
+NT	98	Guion, Letroy	ACT	TCKL	0	SCK	--	FF	--	INT	--	GB
+CB	36	Gunter, Ladarius	ACT	TCKL	0	SCK	--	FF	--	INT	--	GB
+RB	46	Harris, Alonzo	ACT	CAR	2	YDS	17	AVG	8.5	TDS	0	GB
+CB	29	Hayward, Casey	ACT	TCKL	13	SCK	0.0	FF	0	INT	--	GB
+QB	7	Hundley, Brett	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	GB
+SS	33	Hyde, Micah	ACT	TCKL	18	SCK	0.0	FF	0	INT	--	GB
+WR	83	Janis, Jeff	ACT	REC	0	YDS	0	AVG	--	TDS	0	GB
+DE	95	Jones, Datone	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	GB
+WR	89	Jones, James	ACT	REC	17	YDS	317	AVG	18.6	TDS	4	GB
+FB	30	Kuhn, John	ACT	CAR	1	YDS	1	AVG	1.0	TDS	1	GB
+RB	27	Lacy, Eddie	ACT	CAR	50	YDS	230	AVG	4.6	TDS	1	GB
+G	70	Lang, T.J.	ACT	G	4	GS	4					GB
+C	63	Linsley, Corey	ACT	G	4	GS	4					GB
+P	8	Masthay, Tim	ACT	PUNTS	16	AVG	42.9	LNG	54	IN 20	3	GB
+ILB	52	Matthews, Clay	ACT	TCKL	14	SCK	3.0	FF	0	INT	1	GB
+WR	88	Montgomery, Ty	ACT	REC	9	YDS	66	AVG	7.3	TDS	1	GB
+OLB	55	Mulumba, Andy	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	GB
+OLB	96	Neal, Mike	ACT	TCKL	8	SCK	1.5	FF	0	INT	--	GB
+WR	87	Nelson, Jordy	RES	REC	--	YDS	--	AVG	--	TDS	--	GB
+ILB	51	Palmer, Nate	ACT	TCKL	20	SCK	0.0	FF	0	INT	--	GB
+DE	64	Pennel, Mike	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	GB
+OLB	56	Peppers, Julius	ACT	TCKL	12	SCK	3.5	FF	0	INT	--	GB
+OLB	53	Perry, Nick	ACT	TCKL	9	SCK	3.0	FF	1	INT	--	GB
+TE	81	Quarless, Andrew	RES	REC	2	YDS	14	AVG	7.0	TDS	0	GB
+NT	90	Raji, B.J.	ACT	TCKL	10	SCK	0.5	FF	0	INT	--	GB
+CB	23	Randall, Damarious	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	GB
+LB	59	Rasco, Jermauria	RES	TCKL	--	SCK	--	FF	--	INT	--	GB
+CB	28	Richardson, Sean	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	GB
+FB	22	Ripkowski, Aaron	ACT	CAR	--	YDS	--	AVG	--	TDS	--	GB
+QB	12	Rodgers, Aaron	ACT	TDS	11	INT	0	YDS	995	RTG	125.9	GB
+TE	82	Rodgers, Richard	ACT	REC	13	YDS	110	AVG	8.5	TDS	2	GB
+CB	24	Rollins, Quinten	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	GB
+OLB	47	Ryan, Jake	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	GB
+CB	37	Shields, Sam	ACT	TCKL	17	SCK	0.0	FF	0	INT	2	GB
+G	71	Sitton, Josh	ACT	G	4	GS	4					GB
+RB	44	Starks, James	ACT	CAR	48	YDS	157	AVG	3.3	TDS	0	GB
+G	65	Taylor, Lane	ACT	G	0	GS	0					GB
+LB	48	Thomas, Joe	ACT	TCKL	7	SCK	1.0	FF	1	INT	--	GB
+QB	16	Tolzien, Scott	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	GB
+T	73	Tretter, JC	ACT	G	4	GS	0					GB
+G	79	Walker, Josh	ACT	G	4	GS	0					GB
+
+RB	44	Asiata, Matt	ACT	CAR	6	YDS	25	AVG	4.2	TDS	0	MIN
+OLB	55	Barr, Anthony	ACT	TCKL	26	SCK	1.0	FF	1	INT	1	MIN
+C	61	Berger, Joe	ACT	G	4	GS	4					MIN
+SS	36	Blanton, Robert	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	MIN
+QB	5	Bridgewater, Teddy	ACT	TDS	2	INT	2	YDS	774	RTG	84.5	MIN
+T	60	Bykowski, Carter	RES	G	--	GS	--					MIN
+OT	68	Clemmings, T.J.	ACT	G	4	GS	4					MIN
+MLB	57	Cole, Audie	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	MIN
+DE	95	Crichton, Scott	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	MIN
+WR	14	Diggs, Stefon	ACT	REC	6	YDS	87	AVG	14.5	TDS	0	MIN
+C		Easton, Nick	ACT	G	0	GS	0					MIN
+TE	85	Ellison, Rhett	ACT	REC	1	YDS	3	AVG	3.0	TDS	0	MIN
+CB	32	Exum, Antone	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	MIN
+DT	73	Floyd, Sharrif	ACT	TCKL	6	SCK	0.5	FF	0	INT	--	MIN
+TE	86	Ford, Chase	ACT	REC	--	YDS	--	AVG	--	TDS	--	MIN
+G	63	Fusco, Brandon	ACT	G	4	GS	4					MIN
+OLB	52	Greenway, Chad	ACT	TCKL	5	SCK	0.5	FF	0	INT	1	MIN
+DE	97	Griffen, Everson	ACT	TCKL	12	SCK	3.0	FF	0	INT	--	MIN
+OG	79	Harris, Michael	ACT	G	4	GS	4					MIN
+QB	6	Heinicke, Taylor	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	MIN
+QB	13	Hill, Shaun	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	MIN
+DE	99	Hunter, Danielle	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	MIN
+WR	12	Johnson, Charles	ACT	REC	6	YDS	46	AVG	7.7	TDS	0	MIN
+DT	92	Johnson, Tom	ACT	TCKL	6	SCK	1.0	FF	0	INT	--	MIN
+DT	98	Joseph, Linval	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	MIN
+T	75	Kalil, Matt	ACT	G	4	GS	4					MIN
+ILB	54	Kendricks, Eric	ACT	TCKL	19	SCK	1.0	FF	0	INT	--	MIN
+OG	67	Kerin, Zac	ACT	G	0	GS	0					MIN
+FB	48	Line, Zach	ACT	CAR	2	YDS	2	AVG	1.0	TDS	2	MIN
+T	71	Loadholt, Phil	RES	G	--	GS	--					MIN
+P	18	Locke, Jeff	ACT	PUNTS	16	AVG	41.6	LNG	60	IN 20	9	MIN
+LB	59	Matthews, Casey	RES	TCKL	--	SCK	--	FF	--	INT	--	MIN
+LS	47	McDermott, Kevin	ACT	G	4	GS	0					MIN
+RB	31	McKinnon, Jerick	ACT	CAR	13	YDS	50	AVG	3.8	TDS	0	MIN
+CB	24	Munnerlyn, Captain	ACT	TCKL	12	SCK	0.0	FF	1	INT	--	MIN
+CB	23	Newman, Terence	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	MIN
+WR	84	Patterson, Cordarrelle	ACT	REC	2	YDS	10	AVG	5.0	TDS	0	MIN
+RB	28	Peterson, Adrian	ACT	CAR	75	YDS	372	AVG	5.0	TDS	3	MIN
+CB	25	Price, Jabari	ACT	TCKL	0	SCK	--	FF	--	INT	--	MIN
+TE	83	Pruitt, MyCole	ACT	REC	0	YDS	0	AVG	--	TDS	0	MIN
+CB	29	Rhodes, Xavier	ACT	TCKL	20	SCK	0.0	FF	0	INT	--	MIN
+OLB	51	Robinson, Edmond	ACT	TCKL	0	SCK	--	FF	--	INT	--	MIN
+CB	21	Robinson, Josh	PUP	TCKL	--	SCK	--	FF	--	INT	--	MIN
+DE	96	Robison, Brian	ACT	TCKL	11	SCK	1.0	FF	0	INT	--	MIN
+TE	82	Rudolph, Kyle	ACT	REC	14	YDS	104	AVG	7.4	TDS	1	MIN
+SS	34	Sendejo, Andrew	ACT	TCKL	13	SCK	0.0	FF	0	INT	--	MIN
+G	74	Shepherd, Austin	ACT	G	2	GS	0					MIN
+CB	35	Sherels, Marcus	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	MIN
+OT	78	Sirles, Jeremiah	ACT	G	0	GS	0					MIN
+FS	22	Smith, Harrison	ACT	TCKL	26	SCK	0.0	FF	1	INT	1	MIN
+DT	93	Stephen, Shamar	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	MIN
+C	65	Sullivan, John	RES	G	--	GS	--					MIN
+WR	19	Thielen, Adam	ACT	REC	8	YDS	86	AVG	10.8	TDS	0	MIN
+DE	94	Trattou, Justin	ACT	TCKL	1	SCK	0.0	FF	0	INT	1	MIN
+WR	11	Wallace, Mike	ACT	REC	20	YDS	233	AVG	11.7	TDS	1	MIN
+K	3	Walsh, Blair	ACT	FGA	8	FGM	6	PCT	75.0	LNG	38	MIN
+CB	26	Waynes, Trae	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	MIN
+WR	17	Wright, Jarius	ACT	REC	5	YDS	72	AVG	14.4	TDS	0	MIN
+
+DB	20	Adams, Phillip	ACT	TCKL	18	SCK	0.0	FF	0	INT	--	ATL
+CB	23	Alford, Robert	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	ATL
+FS	37	Allen, Ricardo	ACT	TCKL	17	SCK	0.0	FF	0	INT	1	ATL
+G	75	Asamoah, Jon	RES	G	--	GS	--					ATL
+DT	95	Babineaux, Jonathan	ACT	TCKL	11	SCK	0.0	FF	0	INT	1	ATL
+ILB	59	Bartu, Joplo	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	ATL
+DE	44	Beasley, Vic	ACT	TCKL	11	SCK	2.0	FF	1	INT	--	ATL
+OLB	71	Biermann, Kroy	ACT	TCKL	9	SCK	1.0	FF	1	INT	--	ATL
+P	5	Bosher, Matt	ACT	PUNTS	19	AVG	52.4	LNG	69	IN 20	5	ATL
+LB	53	Bradford, Allen	ACT	TCKL	7	SCK	0.0	FF	1	INT	--	ATL
+K	3	Bryant, Matt	ACT	FGA	6	FGM	6	PCT	100.0	LNG	47	ATL
+OG	65	Chester, Chris	ACT	G	4	GS	4					ATL
+DE	99	Clayborn, Adrian	ACT	TCKL	3	SCK	1.0	FF	0	INT	--	ATL
+RB	26	Coleman, Tevin	ACT	CAR	29	YDS	112	AVG	3.9	TDS	1	ATL
+CB	32	Collins, Jalen	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	ATL
+FB	42	DiMarco, Patrick	ACT	CAR	--	YDS	--	AVG	--	TDS	--	ATL
+OLB	52	Durant, Justin	ACT	TCKL	28	SCK	0.0	FF	1	INT	--	ATL
+RB	24	Freeman, Devonta	ACT	CAR	66	YDS	252	AVG	3.8	TDS	7	ATL
+TE		Gardner, Beau	RES	REC	--	YDS	--	AVG	--	TDS	--	ATL
+FS		Godfrey, Charles	ACT	TCKL	0	SCK	--	FF	--	INT	--	ATL
+DE	93	Goodman, Malliciah	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	ATL
+C	66	Gradkowski, Gino	ACT	G	0	GS	0					ATL
+DT	77	Hageman, Ra'Shede	ACT	TCKL	2	SCK	1.0	FF	0	INT	--	ATL
+WR	85	Hankerson, Leonard	ACT	REC	17	YDS	241	AVG	14.2	TDS	2	ATL
+WR	16	Hardy, Justin	ACT	REC	--	YDS	--	AVG	--	TDS	--	ATL
+OT	72	Harris, Bryce	ACT	G	1	GS	0					ATL
+LS	47	Harris, Josh	ACT	G	4	GS	0					ATL
+DT	73	Heimuli, Ricky	RES	TCKL	--	SCK	--	FF	--	INT	--	ATL
+WR	17	Hester, Devin	RES	REC	--	YDS	--	AVG	--	TDS	--	ATL
+T	76	Holmes, Lamar	PUP	G	--	GS	--					ATL
+CB	33	Howard, Travis	RES	TCKL	--	SCK	--	FF	--	INT	--	ATL
+SS	36	Ishmael, Kemal	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	ATL
+DE	94	Jackson, Tyson	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	ATL
+DT	97	Jarrett, Grady	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	ATL
+WR	11	Jones, Julio	ACT	REC	38	YDS	478	AVG	12.6	TDS	4	ATL
+G	67	Levitre, Andy	ACT	G	4	GS	4					ATL
+OT	75	Long, Jake	ACT	G	0	GS	0					ATL
+T	70	Matthews, Jake	ACT	G	4	GS	4					ATL
+TE		Moeaki, Tony	ACT	REC	--	YDS	--	AVG	--	TDS	--	ATL
+RB	39	Mooney, Collin	RES	CAR	--	YDS	--	AVG	--	TDS	--	ATL
+SS	25	Moore, William	ACT	TCKL	25	SCK	0.0	FF	1	INT	2	ATL
+C	68	Person, Mike	ACT	G	4	GS	4					ATL
+LB	56	Reed, Brooks	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	ATL
+QB	12	Renfree, Sean	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	ATL
+G	67	Replogle, Adam	RES	G	--	GS	--					ATL
+QB	2	Ryan, Matt	ACT	TDS	6	INT	2	YDS	1,202	RTG	101.2	ATL
+OLB	50	Schofield, O'Brien	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	ATL
+T	73	Schraeder, Ryan	ACT	G	4	GS	4					ATL
+DT	96	Soliai, Paul	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	ATL
+FS	22	Southward, Dezmen	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	ATL
+C	62	Stone, James	ACT	G	3	GS	0					ATL
+OLB	54	Stupar, Nate	ACT	TCKL	14	SCK	0.0	FF	0	INT	--	ATL
+TE	83	Tamme, Jacob	ACT	REC	8	YDS	104	AVG	13.0	TDS	0	ATL
+DB	27	Therezie, Robenson	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	ATL
+TE	80	Toilolo, Levine	ACT	REC	2	YDS	10	AVG	5.0	TDS	0	ATL
+CB	21	Trufant, Desmond	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	ATL
+RB	33	Ward, Terron	ACT	CAR	19	YDS	72	AVG	3.8	TDS	1	ATL
+WR	14	Weems, Eric	ACT	REC	--	YDS	--	AVG	--	TDS	--	ATL
+WR	84	White, Roddy	ACT	REC	6	YDS	92	AVG	15.3	TDS	0	ATL
+WR	15	Williams, Nick	ACT	REC	4	YDS	31	AVG	7.8	TDS	0	ATL
+MLB	55	Worrilow, Paul	ACT	TCKL	24	SCK	0.0	FF	0	INT	--	ATL
+
+DE	97	Addison, Mario	ACT	TCKL	9	SCK	2.0	FF	0	INT	--	CAR
+DE	90	Alexander, Frank	RES	TCKL	--	SCK	--	FF	--	INT	--	CAR
+OLB	69	Allen, Jared	ACT	TCKL	6	SCK	0.0	FF	0	INT	1	CAR
+QB	3	Anderson, Derek	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	CAR
+RB	34	Artis-Payne, Cameron	ACT	CAR	11	YDS	31	AVG	2.8	TDS	0	CAR
+WR	13	Benjamin, Kelvin	RES	REC	--	YDS	--	AVG	--	TDS	--	CAR
+CB	25	Benwikere, Bene'	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	CAR
+WR	11	Bersin, Brenton	ACT	REC	5	YDS	67	AVG	13.4	TDS	0	CAR
+FS	33	Boston, Tre	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	CAR
+TE	47	Brockel, Richie	ACT	REC	--	YDS	--	AVG	--	TDS	--	CAR
+WR	10	Brown, Corey	ACT	REC	6	YDS	73	AVG	12.2	TDS	1	CAR
+T	78	Chandler, Nate	RES	G	0	GS	0					CAR
+FS	20	Coleman, Kurt	ACT	TCKL	18	SCK	0.0	FF	0	INT	1	CAR
+WR	82	Cotchery, Jerricho	ACT	REC	5	YDS	56	AVG	11.2	TDS	1	CAR
+OLB	58	Davis, Thomas	ACT	TCKL	36	SCK	1.0	FF	1	INT	2	CAR
+DE	91	Delaire, Ryan	ACT	TCKL	5	SCK	2.0	FF	0	INT	--	CAR
+TE	84	Dickson, Ed	ACT	REC	4	YDS	39	AVG	9.8	TDS	0	CAR
+DE	94	Ealy, Kony	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	CAR
+DT	92	Edwards, Dwan	ACT	TCKL	6	SCK	1.0	FF	0	INT	--	CAR
+WR	17	Funchess, Devin	ACT	REC	3	YDS	38	AVG	12.7	TDS	0	CAR
+K	9	Gano, Graham	ACT	FGA	11	FGM	8	PCT	72.7	LNG	47	CAR
+WR	19	Ginn, Ted	ACT	REC	12	YDS	206	AVG	17.2	TDS	3	CAR
+G	68	Green, Tyronne	RES	G	--	GS	--					CAR
+OLB	54	Green-Thompson, Shaq	ACT	TCKL	16	SCK	1.0	FF	0	INT	--	CAR
+SS	41	Harper, Roman	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	CAR
+WR	87	Hill, Stephen	RES	REC	--	YDS	--	AVG	--	TDS	--	CAR
+DE		Horton, Wes	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CAR
+LB	53	Jacobs, Ben	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CAR
+LS	44	Jansen, J.J.	ACT	G	4	GS	0					CAR
+DE	95	Johnson, Charles	RES	TCKL	5	SCK	1.0	FF	0	INT	--	CAR
+DB	42	Jones, Colin	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	CAR
+C	67	Kalil, Ryan	ACT	G	4	GS	4					CAR
+MLB	56	Klein, A.J.	ACT	TCKL	29	SCK	0.0	FF	0	INT	1	CAR
+MLB	59	Kuechly, Luke	ACT	TCKL	7	SCK	1.0	FF	0	INT	--	CAR
+DT	98	Lotulelei, Star	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CAR
+DT	93	Love, Kyle	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	CAR
+FS	29	Marlowe, Dean	ACT	TCKL	0	SCK	--	FF	--	INT	--	CAR
+LB	55	Mayo, David	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	CAR
+DE	71	Miley, Arthur	RES	TCKL	--	SCK	--	FF	--	INT	--	CAR
+QB	1	Newton, Cam	ACT	TDS	7	INT	2	YDS	809	RTG	88.5	CAR
+CB	24	Norman, Josh	ACT	TCKL	19	SCK	0.0	FF	1	INT	4	CAR
+P	8	Nortman, Brad	ACT	PUNTS	19	AVG	46.5	LNG	65	IN 20	5	CAR
+G	68	Norwell, Andrew	ACT	G	4	GS	4					CAR
+WR	81	Norwood, Kevin	ACT	REC	0	YDS	0	AVG	--	TDS	0	CAR
+T	73	Oher, Michael	ACT	G	4	GS	4					CAR
+TE	88	Olsen, Greg	ACT	REC	17	YDS	243	AVG	14.3	TDS	2	CAR
+T	74	Remmers, Mike	ACT	G	4	GS	4					CAR
+G	79	Scott, Chris	ACT	G	2	GS	0					CAR
+DT	99	Short, Kawann	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	CAR
+G	66	Silatolu, Amini	ACT	G	3	GS	0					CAR
+RB	28	Stewart, Jonathan	ACT	CAR	59	YDS	220	AVG	3.7	TDS	0	CAR
+CB	31	Tillman, Charles	ACT	TCKL	19	SCK	0.0	FF	0	INT	--	CAR
+FB	35	Tolbert, Mike	ACT	CAR	14	YDS	66	AVG	4.7	TDS	0	CAR
+G	70	Turner, Trai	ACT	G	4	GS	4					CAR
+C	78	Velasco, Fernando	ACT	G	1	GS	0					CAR
+OG	71	Wallace, Davonte	RES	G	--	GS	--					CAR
+QB	14	Webb, Joe	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	CAR
+RB	32	Wegher, Brandon	ACT	CAR	--	YDS	--	AVG	--	TDS	--	CAR
+RB	43	Whittaker, Fozzy	ACT	CAR	3	YDS	5	AVG	1.7	TDS	0	CAR
+OT	60	Williams, Daryl	ACT	G	1	GS	0					CAR
+DB	21	Williams, Teddy	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	CAR
+
+MLB	50	Anthony, Stephone	ACT	TCKL	23	SCK	1.0	FF	0	INT	--	NO
+T	72	Armstead, Terron	ACT	G	4	GS	4					NO
+DE	90	Barnes, Tavaris	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NO
+CB	40	Breaux, Delvin	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	NO
+QB	9	Brees, Drew	ACT	TDS	4	INT	2	YDS	969	RTG	94.9	NO
+NT	71	Brown, Austin	RES	TCKL	--	SCK	--	FF	--	INT	--	NO
+CB	39	Browner, Brandon	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	NO
+FS	25	Bush, Rafael	RES	TCKL	2	SCK	0.0	FF	0	INT	--	NO
+FS	31	Byrd, Jairus	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	NO
+WR	16	Coleman, Brandon	ACT	REC	9	YDS	113	AVG	12.6	TDS	1	NO
+WR	12	Colston, Marques	ACT	REC	15	YDS	164	AVG	10.9	TDS	0	NO
+WR	10	Cooks, Brandin	ACT	REC	20	YDS	215	AVG	10.8	TDS	0	NO
+DT	95	Davison, Tyeler	ACT	TCKL	4	SCK	1.0	FF	0	INT	--	NO
+DB	20	Dixon, Brian	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NO
+LS	47	Drescher, Justin	ACT	G	4	GS	0					NO
+OLB	91	Edebali, Kasim	ACT	TCKL	5	SCK	1.0	FF	0	INT	--	NO
+LB	59	Ellerbe, Dannell	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NO
+DT	71	Eulls, Kaleb	ACT	TCKL	0	SCK	--	FF	--	INT	--	NO
+G	73	Evans, Jahri	ACT	G	2	GS	2					NO
+QB	18	Grayson, Garrett	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	NO
+DE	58	Gwacham, Obum	ACT	TCKL	0	SCK	0.0	FF	0	INT	--	NO
+OLB	57	Hawthorne, David	ACT	TCKL	18	SCK	0.0	FF	0	INT	--	NO
+TE	89	Hill, Josh	ACT	REC	4	YDS	23	AVG	5.8	TDS	1	NO
+K	2	Hocker, Zach	ACT	FGA	9	FGM	7	PCT	77.8	LNG	51	NO
+TE	84	Hoomanawanui, Michael	ACT	REC	0	YDS	0	AVG	0.0	TDS	0	NO
+ILB	53	Humber, Ramon	ACT	TCKL	18	SCK	0.0	FF	0	INT	--	NO
+RB	22	Ingram, Mark	ACT	CAR	56	YDS	204	AVG	3.6	TDS	2	NO
+DT	92	Jenkins, John	ACT	TCKL	14	SCK	0.0	FF	0	INT	--	NO
+FB	35	Johnson, Austin	ACT	CAR	4	YDS	9	AVG	2.3	TDS	1	NO
+DB	30	Jones, Don	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NO
+DE	94	Jordan, Cameron	ACT	TCKL	8	SCK	1.0	FF	0	INT	--	NO
+G	65	Kelemete, Senio	ACT	G	4	GS	2					NO
+OLB	44	Kikaha, Hau'oli	ACT	TCKL	26	SCK	3.0	FF	2	INT	--	NO
+OG	68	Lelito, Tim	ACT	G	4	GS	4					NO
+CB	21	Lewis, Keenan	ACT	TCKL	0	SCK	--	FF	--	INT	--	NO
+LB	56	Mauti, Michael	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NO
+QB	7	McCown, Luke	ACT	TDS	0	INT	1	YDS	310	RTG	89.7	NO
+T	63	McGlynn, Mike	ACT	G	2	GS	0					NO
+P	6	Morstead, Thomas	ACT	PUNTS	13	AVG	43.2	LNG	55	IN 20	6	NO
+RB	48	Murphy, Marcus	ACT	CAR	--	YDS	--	AVG	--	TDS	--	NO
+OT	75	Peat, Andrus	ACT	G	4	GS	1					NO
+DE	78	Richardson, Bobby	ACT	TCKL	15	SCK	0.0	FF	0	INT	--	NO
+RB	29	Robinson, Khiry	ACT	CAR	26	YDS	95	AVG	3.7	TDS	2	NO
+SS	33	Sanford, Jamarca	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NO
+WR	83	Snead, Willie	ACT	REC	16	YDS	240	AVG	15.0	TDS	1	NO
+LB	99	Spencer, Anthony	RES	TCKL	--	SCK	--	FF	--	INT	--	NO
+RB	28	Spiller, C.J.	ACT	CAR	6	YDS	21	AVG	3.5	TDS	0	NO
+T	64	Strief, Zach	ACT	G	4	GS	4					NO
+SAF	43	Sunseri, Vinnie	RES	TCKL	--	SCK	--	FF	--	INT	--	NO
+CB	27	Swann, Damian	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	NO
+TE		Tabb, Jack	RES	REC	--	YDS	--	AVG	--	TDS	--	NO
+OLB	55	Tull, Davis	RES	TCKL	--	SCK	--	FF	--	INT	--	NO
+C	60	Unger, Max	ACT	G	4	GS	4					NO
+SS	32	Vaccaro, Kenny	ACT	TCKL	23	SCK	0.0	FF	0	INT	--	NO
+DT	96	Virgil, Lawrence	RES	TCKL	--	SCK	--	FF	--	INT	--	NO
+TE	82	Watson, Benjamin	ACT	REC	12	YDS	103	AVG	8.6	TDS	0	NO
+CB	36	Williams, P.J.	RES	TCKL	--	SCK	--	FF	--	INT	--	NO
+DT	93	Williams, Kevin	ACT	TCKL	6	SCK	0.0	FF	1	INT	--	NO
+DB	24	Wilson, Kyle	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NO
+
+DB	38	Adjei-Barimah, Jude	ACT	TCKL	0	SCK	--	FF	--	INT	--	TB
+MLB	58	Alexander, Kwon	ACT	TCKL	27	SCK	0.0	FF	0	INT	1	TB
+CB	27	Banks, Johnthan	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	TB
+K		Barth, Connor	ACT	FGA	--	FGM	--	PCT	--	LNG	--	TB
+WR	80	Bell, Kenny	RES	REC	--	YDS	--	AVG	--	TDS	--	TB
+LB	50	Carter, Bruce	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	TB
+T	78	Cherilus, Gosder	ACT	G	4	GS	4					TB
+SS	23	Conte, Chris	ACT	TCKL	25	SCK	0.0	FF	2	INT	1	TB
+OLB	54	David, Lavonte	ACT	TCKL	33	SCK	0.0	FF	1	INT	--	TB
+LS	48	DePaola, Andrew	ACT	G	4	GS	0					TB
+T	69	Dotson, Demar	RES	G	--	GS	--					TB
+WR		Dye, Donteea	ACT	REC	--	YDS	--	AVG	--	TDS	--	TB
+DE	57	English, Larry	RES	TCKL	--	SCK	--	FF	--	INT	--	TB
+WR	13	Evans, Mike	ACT	REC	10	YDS	133	AVG	13.3	TDS	0	TB
+DE	96	Fatinikun, T.J.	RES	TCKL	3	SCK	0.0	FF	0	INT	--	TB
+LB	52	George, Jeremiah	ACT	TCKL	0	SCK	--	FF	--	INT	--	TB
+DE	92	Gholston, William	ACT	TCKL	15	SCK	0.0	FF	0	INT	--	TB
+C	72	Gilkey, Garrett	RES	G	--	GS	--					TB
+QB	8	Glennon, Mike	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	TB
+QB	4	Griffin, Ryan	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	TB
+C	61	Hawley, Joe	ACT	G	3	GS	2					TB
+WR	83	Jackson, Vincent	ACT	REC	19	YDS	292	AVG	15.4	TDS	2	TB
+CB	24	Jenkins, Mike	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	TB
+CB	28	Jennings, Tim	ACT	TCKL	14	SCK	0.0	FF	0	INT	--	TB
+DE	94	Johnson, George	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	TB
+CB	29	Johnson, Leonard	RES	TCKL	--	SCK	--	FF	--	INT	--	TB
+LB		Jones, Howard	ACT	TCKL	--	SCK	--	FF	--	INT	--	TB
+FB	46	Lane, Jorvorskie	ACT	CAR	1	YDS	0	AVG	0.0	TDS	0	TB
+OLB	51	Lansanah, Danny	ACT	TCKL	13	SCK	1.0	FF	1	INT	--	TB
+G	70	Mankins, Logan	ACT	G	4	GS	4					TB
+OG	74	Marpet, Ali	ACT	G	4	GS	4					TB
+RB	22	Martin, Doug	ACT	CAR	66	YDS	282	AVG	4.3	TDS	1	TB
+LB	95	Martin, Josh	ACT	TCKL	0	SCK	--	FF	--	INT	--	TB
+DE	65	Masifilo, Matthew	ACT	TCKL	0	SCK	--	FF	--	INT	--	TB
+DT	93	McCoy, Gerald	ACT	TCKL	11	SCK	3.0	FF	0	INT	--	TB
+DT	77	McDaniel, Tony	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	TB
+DT	98	McDonald, Clinton	ACT	TCKL	22	SCK	0.0	FF	0	INT	--	TB
+FS	30	McDougald, Bradley	ACT	TCKL	21	SCK	0.0	FF	0	INT	--	TB
+DT	90	Melton, Henry	ACT	TCKL	7	SCK	1.0	FF	1	INT	--	TB
+DB	26	Moore, Sterling	ACT	TCKL	14	SCK	0.0	FF	1	INT	--	TB
+WR	18	Murphy, Louis	ACT	REC	9	YDS	169	AVG	18.8	TDS	0	TB
+K	7	Murray, Patrick	RES	FGA	--	FGM	--	PCT	--	LNG	--	TB
+TE	82	Myers, Brandon	ACT	REC	4	YDS	26	AVG	6.5	TDS	0	TB
+T	64	Pamphile, Kevin	ACT	G	4	GS	0					TB
+RB	43	Rainey, Bobby	ACT	CAR	3	YDS	10	AVG	3.3	TDS	0	TB
+P	5	Schum, Jacob	ACT	PUNTS	16	AVG	43.6	LNG	56	IN 20	4	TB
+TE	87	Seferian-Jenkins, Austin	ACT	REC	7	YDS	139	AVG	19.9	TDS	2	TB
+WR	89	Shepard, Russell	ACT	REC	1	YDS	6	AVG	6.0	TDS	0	TB
+RB	34	Sims, Charles	ACT	CAR	25	YDS	84	AVG	3.4	TDS	0	TB
+OT	76	Smith, Donovan	ACT	G	4	GS	4					TB
+C	62	Smith, Evan	ACT	G	2	GS	2					TB
+DE	56	Smith, Jacquies	ACT	TCKL	13	SCK	4.0	FF	2	INT	--	TB
+DT	97	Spence, Akeem	PUP	TCKL	--	SCK	--	FF	--	INT	--	TB
+TE	88	Stocker, Luke	ACT	REC	--	YDS	--	AVG	--	TDS	--	TB
+DB	36	Swearinger, D.J.	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	TB
+FS	37	Tandy, Keith	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	TB
+CB	21	Verner, Alterraun	ACT	TCKL	9	SCK	0.0	FF	0	INT	0	TB
+C	60	Warren, Jeremiah	ACT	G	2	GS	0					TB
+QB	3	Winston, Jameis	ACT	TDS	6	INT	7	YDS	965	RTG	71.2	TB
+SS	31	Wright, Major	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	TB
+
+K	5	Bailey, Dan	ACT	FGA	6	FGM	6	PCT	100.0	LNG	38	DAL
+WR	11	Beasley, Cole	ACT	REC	18	YDS	174	AVG	9.7	TDS	0	DAL
+G	73	Bernadeau, Mackenzy	ACT	G	4	GS	1					DAL
+DE	79	Boatright, Kenneth	RES	TCKL	--	SCK	--	FF	--	INT	--	DAL
+T	61	Brown, Charles	ACT	G	3	GS	1					DAL
+WR	88	Bryant, Dez	ACT	REC	5	YDS	48	AVG	9.6	TDS	0	DAL
+WR	19	Butler, Brice	ACT	REC	1	YDS	67	AVG	67.0	TDS	0	DAL
+CB	39	Carr, Brandon	ACT	TCKL	20	SCK	0.0	FF	0	INT	--	DAL
+QB	16	Cassel, Matt	ACT	TDS	0	INT	0	YDS	0	RTG	0.0	DAL
+SS	42	Church, Barry	ACT	TCKL	29	SCK	0.0	FF	0	INT	--	DAL
+CB	24	Claiborne, Morris	ACT	TCKL	14	SCK	0.0	FF	0	INT	--	DAL
+OT	69	Clay, Cody	RES	G	--	GS	--					DAL
+FB	44	Clutts, Tyler	ACT	CAR	--	YDS	--	AVG	--	TDS	--	DAL
+OG	71	Collins, La'el	ACT	G	2	GS	1					DAL
+DE	58	Crawford, Jack	ACT	TCKL	5	SCK	1.0	FF	0	INT	--	DAL
+DT	98	Crawford, Tyrone	ACT	TCKL	3	SCK	1.0	FF	0	INT	--	DAL
+RB	25	Dunbar, Lance	ACT	CAR	5	YDS	67	AVG	13.4	TDS	0	DAL
+TE	89	Escobar, Gavin	ACT	REC	4	YDS	24	AVG	6.0	TDS	1	DAL
+G		Fortenberry, Reshod	RES	G	--	GS	--					DAL
+C	72	Frederick, Travis	ACT	G	4	GS	4					DAL
+T	68	Free, Doug	ACT	G	4	GS	4					DAL
+LB	52	Gachkar, Andrew	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	DAL
+LB	47	Glaud, Ka'Lial	RES	TCKL	--	SCK	--	FF	--	INT	--	DAL
+OT	79	Green, Chaz	PUP	G	--	GS	--					DAL
+DE	94	Gregory, Randy	ACT	TCKL	0	SCK	0.0	FF	0	INT	--	DAL
+TE	84	Hanna, James	ACT	REC	1	YDS	7	AVG	7.0	TDS	0	DAL
+DE	76	Hardy, Greg	EXE	TCKL	--	SCK	--	FF	--	INT	--	DAL
+DT	96	Hayden, Nick	ACT	TCKL	13	SCK	0.0	FF	0	INT	--	DAL
+SS	38	Heath, Jeff	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	DAL
+RB	34	Hill, Michael	RES	CAR	--	YDS	--	AVG	--	TDS	--	DAL
+MLB	59	Hitchens, Anthony	ACT	TCKL	31	SCK	1.5	FF	0	INT	--	DAL
+DT	95	Irving, David	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	DAL
+CB	31	Jones, Byron	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	DAL
+P	6	Jones, Chris	ACT	PUNTS	17	AVG	46.5	LNG	61	IN 20	9	DAL
+LS	91	LaDouceur, L.P.	ACT	G	4	GS	0					DAL
+LB	53	Lawrence, Cameron	RES	TCKL	--	SCK	--	FF	--	INT	--	DAL
+DE	90	Lawrence, Demarcus	ACT	TCKL	13	SCK	1.0	FF	0	INT	--	DAL
+G	65	Leary, Ronald	ACT	G	2	GS	2					DAL
+OLB	50	Lee, Sean	ACT	TCKL	36	SCK	1.0	FF	0	INT	1	DAL
+G	70	Martin, Zack	ACT	G	4	GS	4					DAL
+MLB	55	McClain, Rolando	EXE	TCKL	--	SCK	--	FF	--	INT	--	DAL
+DT	97	McClain, Terrell	RES	TCKL	2	SCK	0.0	FF	0	INT	--	DAL
+DB	40	McCray, Danny	ACT	TCKL	0	SCK	0.0	FF	0	INT	--	DAL
+RB	20	McFadden, Darren	ACT	CAR	32	YDS	113	AVG	3.5	TDS	1	DAL
+RB	30	Michael, Christine	ACT	CAR	1	YDS	-1	AVG	-1.0	TDS	0	DAL
+DE	92	Mincey, Jeremy	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	DAL
+QB	17	Moore, Kellen	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	DAL
+DB	26	Patmon, Tyler	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	DAL
+RB	21	Randle, Joseph	ACT	CAR	59	YDS	229	AVG	3.9	TDS	4	DAL
+QB	9	Romo, Tony	RES	TDS	3	INT	2	YDS	551	RTG	98.8	DAL
+DE	99	Russell, Ryan	ACT	TCKL	0	SCK	--	FF	--	INT	--	DAL
+CB	32	Scandrick, Orlando	RES	TCKL	--	SCK	--	FF	--	INT	--	DAL
+LB	56	Smith, Keith	ACT	TCKL	0	SCK	--	FF	--	INT	--	DAL
+T	77	Smith, Tyron	ACT	G	4	GS	4					DAL
+WR	15	Street, Devin	ACT	REC	1	YDS	18	AVG	18.0	TDS	0	DAL
+TE	87	Swaim, Geoff	ACT	REC	1	YDS	0	AVG	0.0	TDS	0	DAL
+QB	3	Weeden, Brandon	ACT	TDS	2	INT	1	YDS	551	RTG	108.8	DAL
+DT	64	Whaley, Chris	RES	TCKL	--	SCK	--	FF	--	INT	--	DAL
+DB	23	White, Corey	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	DAL
+WR	13	Whitehead, Lucky	ACT	REC	--	YDS	--	AVG	--	TDS	--	DAL
+OLB	51	Wilber, Kyle	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	DAL
+FS	27	Wilcox, J.J.	ACT	TCKL	9	SCK	0.0	FF	0	INT	1	DAL
+WR	83	Williams, Terrance	ACT	REC	12	YDS	193	AVG	16.1	TDS	2	DAL
+ILB	57	Wilson, Damien	ACT	TCKL	11	SCK	0.5	FF	0	INT	--	DAL
+TE	82	Witten, Jason	ACT	REC	25	YDS	238	AVG	9.5	TDS	2	DAL
+
+CB	20	Amukamara, Prince	ACT	TCKL	26	SCK	0.0	FF	1	INT	1	NYG
+DE	91	Ayers, Robert	ACT	TCKL	6	SCK	1.0	FF	1	INT	--	NYG
+MLB	52	Beason, Jon	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	NYG
+T	65	Beatty, Will	PUP	G	--	GS	--					NYG
+WR	13	Beckham, Odell	ACT	REC	24	YDS	307	AVG	12.8	TDS	2	NYG
+SS	29	Berhe, Nat	RES	TCKL	--	SCK	--	FF	--	INT	--	NYG
+LB	53	Brinkley, Jasper	ACT	TCKL	0	SCK	--	FF	--	INT	--	NYG
+DT	96	Bromley, Jay	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	NYG
+K	3	Brown, Josh	ACT	FGA	10	FGM	10	PCT	100.0	LNG	50	NYG
+LB	54	Casillas, Jonathan	ACT	TCKL	20	SCK	1.0	FF	0	INT	--	NYG
+FS	21	Collins, Landon	ACT	TCKL	22	SCK	0.0	FF	0	INT	--	NYG
+WR	80	Cruz, Victor	ACT	REC	--	YDS	--	AVG	--	TDS	--	NYG
+TE	86	Cunningham, Jerome	ACT	REC	1	YDS	3	AVG	3.0	TDS	0	NYG
+DB	36	Currie, Justin	RES	TCKL	--	SCK	--	FF	--	INT	--	NYG
+DB	25	Dahl, Craig	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	NYG
+RB	26	Darkwa, Orleans	ACT	CAR	--	YDS	--	AVG	--	TDS	--	NYG
+WR	18	Davis, Geremy	ACT	REC	1	YDS	5	AVG	5.0	TDS	0	NYG
+LS	51	DeOssie, Zak	ACT	G	4	GS	0					NYG
+TE	84	Donnell, Larry	ACT	REC	15	YDS	119	AVG	7.9	TDS	1	NYG
+TE	85	Fells, Daniel	ACT	REC	6	YDS	60	AVG	10.0	TDS	0	NYG
+OT	76	Flowers, Ereck	ACT	G	3	GS	3					NYG
+DT	95	Hankins, Johnathan	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	NYG
+WR	17	Harris, Dwayne	ACT	REC	5	YDS	51	AVG	10.2	TDS	1	NYG
+WR	18	Harris, Marcus	RES	REC	--	YDS	--	AVG	--	TDS	--	NYG
+OG	68	Hart, Bobby	ACT	G	2	GS	0					NYG
+OLB	94	Herzlich, Mark	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	NYG
+CB	28	Hosley, Jayron	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	NYG
+CB	24	Jackson, Bennett	RES	TCKL	--	SCK	--	FF	--	INT	--	NYG
+DT	99	Jenkins, Cullen	ACT	TCKL	6	SCK	2.0	FF	0	INT	--	NYG
+RB	23	Jennings, Rashad	ACT	CAR	42	YDS	134	AVG	3.2	TDS	1	NYG
+G	77	Jerry, John	ACT	G	4	GS	1					NYG
+C	69	Jones, Brett	RES	G	--	GS	--					NYG
+OLB	59	Kennard, Devon	ACT	TCKL	25	SCK	0.0	FF	0	INT	1	NYG
+DT	78	Kuhn, Markus	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NYG
+QB	10	Manning, Eli	ACT	TDS	7	INT	1	YDS	976	RTG	96.4	NYG
+CB	38	McBride, Trumaine	ACT	TCKL	14	SCK	0.0	FF	1	INT	1	NYG
+SS	22	Meriweather, Brandon	ACT	TCKL	23	SCK	0.0	FF	0	INT	--	NYG
+DE	98	Moore, Damontre	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	NYG
+G	75	Mosley, Brandon	RES	G	--	GS	--					NYG
+QB	12	Nassib, Ryan	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	NYG
+OT	73	Newhouse, Marshall	ACT	G	4	GS	4					NYG
+DT	92	Nix, Louis	ACT	TCKL	0	SCK	--	FF	--	INT	--	NYG
+DE	58	Odighizuwa, Owamagbe	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	NYG
+OG	67	Pugh, Justin	ACT	G	4	GS	4					NYG
+WR	82	Randle, Rueben	ACT	REC	14	YDS	175	AVG	12.5	TDS	2	NYG
+G	61	Reynolds, Dallas	ACT	G	4	GS	0					NYG
+C	70	Richburg, Weston	ACT	G	4	GS	4					NYG
+CB	41	Rodgers-Cromartie, Dominique	ACT	TCKL	12	SCK	0.0	FF	0	INT	--	NYG
+G	74	Schwartz, Geoff	ACT	G	4	GS	4					NYG
+DE	93	Selvie, George	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	NYG
+DB	30	Taylor, Cooper	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	NYG
+OLB	55	Thomas, J.T.	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	NYG
+DB	33	Thompson, Mykkele	RES	TCKL	--	SCK	--	FF	--	INT	--	NYG
+TE	45	Tye, Will	ACT	REC	0	YDS	0	AVG	--	TDS	0	NYG
+MLB	47	Unga, Uani'	ACT	TCKL	28	SCK	0.0	FF	1	INT	2	NYG
+RB	34	Vereen, Shane	ACT	CAR	20	YDS	77	AVG	3.9	TDS	0	NYG
+DB	31	Wade, Trevin	ACT	TCKL	4	SCK	0.0	FF	1	INT	--	NYG
+RB	49	Whitlock, Nikita	ACT	CAR	--	YDS	--	AVG	--	TDS	--	NYG
+RB	44	Williams, Andre	ACT	CAR	37	YDS	121	AVG	3.3	TDS	1	NYG
+P	9	Wing, Brad	ACT	PUNTS	20	AVG	43.5	LNG	63	IN 20	12	NYG
+DE	72	Wynn, Kerry	ACT	TCKL	22	SCK	0.0	FF	0	INT	--	NYG
+
+WR	17	Agholor, Nelson	ACT	REC	7	YDS	100	AVG	14.3	TDS	0	PHI
+WR	16	Ajirotutu, Seyi	ACT	REC	--	YDS	--	AVG	--	TDS	--	PHI
+DT	94	Allen, Beau	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	PHI
+LB	50	Alonso, Kiko	ACT	TCKL	7	SCK	0.0	FF	0	INT	1	PHI
+G	68	Andrews, Josh	ACT	G	3	GS	0					PHI
+WR	19	Austin, Miles	ACT	REC	4	YDS	73	AVG	18.3	TDS	1	PHI
+DE	93	Bair, Brandon	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	PHI
+OG	76	Barbre, Allen	ACT	G	4	GS	4					PHI
+RB	34	Barner, Kenjon	ACT	CAR	--	YDS	--	AVG	--	TDS	--	PHI
+OLB	98	Barwin, Connor	ACT	TCKL	14	SCK	2.0	FF	0	INT	--	PHI
+DB	38	Biggers, E.J.	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	PHI
+QB	7	Bradford, Sam	ACT	TDS	6	INT	4	YDS	948	RTG	82.2	PHI
+LB	56	Braman, Bryan	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	PHI
+TE	47	Burton, Trey	ACT	REC	--	YDS	--	AVG	--	TDS	--	PHI
+CB	23	Carroll, Nolan	ACT	TCKL	20	SCK	0.0	FF	0	INT	--	PHI
+TE	87	Celek, Brent	ACT	REC	2	YDS	16	AVG	8.0	TDS	1	PHI
+WR	14	Cooper, Riley	ACT	REC	5	YDS	97	AVG	19.4	TDS	1	PHI
+DB	21	Couplin, Jerome	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	PHI
+DE	91	Cox, Fletcher	ACT	TCKL	12	SCK	1.0	FF	0	INT	--	PHI
+DE	75	Curry, Vinny	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	PHI
+LS	46	Dorenbos, Jon	ACT	G	4	GS	0					PHI
+TE	86	Ertz, Zach	ACT	REC	10	YDS	104	AVG	10.4	TDS	0	PHI
+G	66	Gardner, Andrew	RES	G	3	GS	3					PHI
+LB	53	Goode, Najee	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	PHI
+OLB	55	Graham, Brandon	ACT	TCKL	15	SCK	1.0	FF	1	INT	--	PHI
+DE	97	Hart, Taylor	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	PHI
+OLB	58	Hicks, Jordan	ACT	TCKL	23	SCK	1.0	FF	1	INT	1	PHI
+WR	13	Huff, Josh	ACT	REC	4	YDS	39	AVG	9.8	TDS	0	PHI
+FS	27	Jenkins, Malcolm	ACT	TCKL	31	SCK	0.0	FF	2	INT	--	PHI
+T	65	Johnson, Lane	ACT	G	4	GS	4					PHI
+LB	52	Jones, Brad	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	PHI
+P	8	Jones, Donnie	ACT	PUNTS	26	AVG	46.9	LNG	60	IN 20	6	PHI
+C	62	Kelce, Jason	ACT	G	4	GS	4					PHI
+NT	74	Keliikipi, Wade	RES	TCKL	--	SCK	--	FF	--	INT	--	PHI
+G	67	Kelly, Dennis	ACT	G	2	GS	0					PHI
+ILB	95	Kendricks, Mychal	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	PHI
+QB	9	Lewis, Thad	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	PHI
+NT	96	Logan, Bennie	ACT	TCKL	21	SCK	0.0	FF	0	INT	--	PHI
+OLB	57	Long, Travis	RES	TCKL	--	SCK	--	FF	--	INT	--	PHI
+FS	42	Maragos, Chris	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	PHI
+RB	24	Mathews, Ryan	ACT	CAR	33	YDS	132	AVG	4.0	TDS	1	PHI
+WR	81	Matthews, Jordan	ACT	REC	25	YDS	281	AVG	11.2	TDS	1	PHI
+CB	31	Maxwell, Byron	ACT	TCKL	23	SCK	0.0	FF	1	INT	--	PHI
+DE		McBryde, B.J.	RES	TCKL	--	SCK	--	FF	--	INT	--	PHI
+C	63	Molk, David	RES	G	1	GS	0					PHI
+RB	29	Murray, DeMarco	ACT	CAR	29	YDS	47	AVG	1.6	TDS	1	PHI
+K	1	Parkey, Cody	RES	FGA	4	FGM	3	PCT	75.0	LNG	46	PHI
+T	71	Peters, Jason	ACT	G	4	GS	4					PHI
+DB	35	Rice, Denzel	ACT	TCKL	0	SCK	--	FF	--	INT	--	PHI
+CB	32	Rowe, Eric	ACT	TCKL	8	SCK	0.0	FF	0	INT	1	PHI
+ILB	59	Ryans, DeMeco	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	PHI
+QB	3	Sanchez, Mark	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	PHI
+CB	36	Shepherd, JaCorey	RES	TCKL	--	SCK	--	FF	--	INT	--	PHI
+LB	90	Smith, Marcus	ACT	TCKL	0	SCK	--	FF	--	INT	--	PHI
+RB	43	Sproles, Darren	ACT	CAR	21	YDS	80	AVG	3.8	TDS	1	PHI
+K	6	Sturgis, Caleb	ACT	FGA	1	FGM	0	PCT	0.0	LNG	0	PHI
+DE	72	Thornton, Cedric	ACT	TCKL	5	SCK	1.0	FF	0	INT	--	PHI
+SS	26	Thurmond, Walter	ACT	TCKL	23	SCK	0.0	FF	0	INT	2	PHI
+G	64	Tobin, Matt	ACT	G	4	GS	1					PHI
+OG	61	Vandervelde, Julian	ACT	G	0	GS	0					PHI
+
+NT	92	Baker, Chris	ACT	TCKL	13	SCK	2.5	FF	0	INT	--	WAS
+DB	41	Blackmon, Will	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	WAS
+CB	26	Breeland, Bashaud	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	WAS
+TE	89	Carrier, Derek	ACT	REC	4	YDS	26	AVG	6.5	TDS	0	WAS
+T	68	Compton, Tom	ACT	G	1	GS	0					WAS
+ILB	51	Compton, Will	ACT	TCKL	20	SCK	0.0	FF	0	INT	--	WAS
+QB	8	Cousins, Kirk	ACT	TDS	4	INT	4	YDS	1,005	RTG	84.5	WAS
+WR	80	Crowder, Jamison	ACT	REC	15	YDS	117	AVG	7.8	TDS	0	WAS
+CB	29	Culliver, Chris	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	WAS
+WR	17	Dunbar, Quinton	ACT	REC	--	YDS	--	AVG	--	TDS	--	WAS
+CB	22	Everett, Deshazor	ACT	TCKL	0	SCK	--	FF	--	INT	--	WAS
+LB	54	Foster, Mason	ACT	TCKL	0	SCK	--	FF	--	INT	--	WAS
+DE	58	Galette, Junior	RES	TCKL	--	SCK	--	FF	--	INT	--	WAS
+WR	88	Garcon, Pierre	ACT	REC	24	YDS	216	AVG	9.0	TDS	2	WAS
+DE		Gayle, James	RES	TCKL	--	SCK	--	FF	--	INT	--	WAS
+FS	38	Goldson, Dashon	ACT	TCKL	20	SCK	0.0	FF	0	INT	--	WAS
+DE	64	Golston, Kedric	ACT	TCKL	0	SCK	--	FF	--	INT	--	WAS
+WR	14	Grant, Ryan	ACT	REC	11	YDS	114	AVG	10.4	TDS	0	WAS
+QB	10	Griffin III, Robert	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	WAS
+CB	23	Hall, DeAngelo	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	WAS
+DE	97	Hatcher, Jason	ACT	TCKL	5	SCK	1.0	FF	0	INT	--	WAS
+OLB	55	Hayward, Adam	RES	TCKL	--	SCK	--	FF	--	INT	--	WAS
+K	3	Hopkins, Dustin	ACT	FGA	6	FGM	6	PCT	100.0	LNG	46	WAS
+SS	24	Ihenacho, Duke	RES	TCKL	3	SCK	0.0	FF	0	INT	--	WAS
+WR	11	Jackson, DeSean	ACT	REC	0	YDS	0	AVG	--	TDS	0	WAS
+DB	36	Jackson, Tanard	SUS	TCKL	--	SCK	--	FF	--	INT	--	WAS
+SS	30	Jarrett, Kyshoen	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	WAS
+DT	99	Jean Francois, Ricky	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	WAS
+OLB	53	Jeffcoat, Jackson	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	WAS
+DB	20	Johnson, Jeron	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	WAS
+RB	31	Jones, Matt	ACT	CAR	43	YDS	200	AVG	4.7	TDS	2	WAS
+DT		Kearse, Frank	ACT	TCKL	0	SCK	--	FF	--	INT	--	WAS
+OLB	91	Kerrigan, Ryan	ACT	TCKL	11	SCK	1.5	FF	1	INT	--	WAS
+DT	98	Knighton, Terrance	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	WAS
+OG	74	Kouandjio, Arie	ACT	G	1	GS	0					WAS
+G	77	Lauvao, Shawn	RES	G	3	GS	3					WAS
+G	67	LeRibeus, Josh	ACT	G	4	GS	0					WAS
+C	78	Lichtensteiger, Kory	ACT	G	4	GS	4					WAS
+G	61	Long, Spencer	ACT	G	1	GS	1					WAS
+QB	16	McCoy, Colt	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	WAS
+TE	85	McCoy, Anthony	ACT	REC	--	YDS	--	AVG	--	TDS	--	WAS
+RB	46	Morris, Alfred	ACT	CAR	66	YDS	261	AVG	4.0	TDS	0	WAS
+T	76	Moses, Morgan	ACT	G	4	GS	4					WAS
+OLB	93	Murphy, Trent	ACT	TCKL	10	SCK	1.0	FF	0	INT	--	WAS
+T	79	Nsekhe, Ty	ACT	G	2	GS	0					WAS
+DE	90	Paea, Stephen	ACT	TCKL	6	SCK	1.0	FF	0	INT	--	WAS
+TE	84	Paul, Niles	RES	REC	--	YDS	--	AVG	--	TDS	--	WAS
+TE	82	Paulsen, Logan	RES	REC	--	YDS	--	AVG	--	TDS	--	WAS
+RB	32	Redd, Silas	RES	CAR	--	YDS	--	AVG	--	TDS	--	WAS
+TE	86	Reed, Jordan	ACT	REC	24	YDS	278	AVG	11.6	TDS	1	WAS
+ILB	56	Riley, Perry	ACT	TCKL	7	SCK	0.0	FF	0	INT	--	WAS
+WR	12	Roberts, Andre	ACT	REC	5	YDS	54	AVG	10.8	TDS	0	WAS
+ILB	52	Robinson, Keenan	ACT	TCKL	27	SCK	0.0	FF	0	INT	--	WAS
+SS	34	Robinson, Trenton	ACT	TCKL	24	SCK	0.0	FF	0	INT	--	WAS
+DB	35	Rogers, Justin	RES	TCKL	4	SCK	0.0	FF	0	INT	--	WAS
+WR	19	Ross, Rashad	ACT	REC	3	YDS	70	AVG	23.3	TDS	0	WAS
+OG	75	Scherff, Brandon	ACT	G	4	GS	4					WAS
+LB	94	Smith, Preston	ACT	TCKL	5	SCK	2.0	FF	2	INT	--	WAS
+OLB	50	Spaight, Martrell	RES	TCKL	1	SCK	0.0	FF	0	INT	--	WAS
+LS	57	Sundberg, Nick	ACT	G	4	GS	0					WAS
+RB	25	Thompson, Chris	ACT	CAR	11	YDS	93	AVG	8.5	TDS	0	WAS
+P	5	Way, Tress	ACT	PUNTS	15	AVG	41.7	LNG	63	IN 20	2	WAS
+T	71	Williams, Trent	ACT	G	4	GS	4					WAS
+FB	36	Young, Darrel	ACT	CAR	2	YDS	2	AVG	1.0	TDS	0	WAS
+
+QB	9	Barkley, Matt	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	ARI
+CB	28	Bethel, Justin	ACT	TCKL	3	SCK	0.0	FF	1	INT	1	ARI
+WR	13	Brown, Jaron	ACT	REC	4	YDS	48	AVG	12.0	TDS	1	ARI
+WR	12	Brown, John	ACT	REC	19	YDS	228	AVG	12.0	TDS	1	ARI
+SS	20	Bucannon, Deone	ACT	TCKL	24	SCK	0.0	FF	1	INT	--	ARI
+P	2	Butler, Drew	ACT	PUNTS	12	AVG	38.9	LNG	47	IN 20	6	ARI
+DE	93	Campbell, Calais	ACT	TCKL	25	SCK	0.5	FF	0	INT	--	ARI
+K	7	Catanzaro, Chandler	ACT	FGA	7	FGM	7	PCT	100.0	LNG	43	ARI
+TE	83	Christian, Gerald	RES	REC	--	YDS	--	AVG	--	TDS	--	ARI
+DB	29	Clemons, Chris	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	ARI
+G	61	Cooper, Jonathan	ACT	G	4	GS	4					ARI
+ILB	54	Demens, Kenny	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	ARI
+RB	38	Ellington, Andre	ACT	CAR	12	YDS	69	AVG	5.8	TDS	1	ARI
+TE	85	Fells, Darren	ACT	REC	6	YDS	112	AVG	18.7	TDS	1	ARI
+WR	11	Fitzgerald, Larry	ACT	REC	30	YDS	432	AVG	14.4	TDS	5	ARI
+WR	15	Floyd, Michael	ACT	REC	7	YDS	89	AVG	12.7	TDS	0	ARI
+OLB	59	Fua, Alani	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	ARI
+OG	79	Fullington, John	RES	G	--	GS	--					ARI
+WR	10	Golden, Brittan	ACT	REC	--	YDS	--	AVG	--	TDS	--	ARI
+OLB	44	Golden, Markus	ACT	TCKL	8	SCK	1.0	FF	0	INT	--	ARI
+TE	84	Gresham, Jermaine	ACT	REC	5	YDS	51	AVG	10.2	TDS	0	ARI
+NT	95	Gunter, Rodney	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	ARI
+OT	74	Humphries, D.J.	ACT	G	0	GS	0					ARI
+G	76	Iupati, Mike	ACT	G	1	GS	1					ARI
+SS	22	Jefferson, Tony	ACT	TCKL	16	SCK	0.0	FF	0	INT	1	ARI
+RB	23	Johnson, Chris	ACT	CAR	68	YDS	302	AVG	4.4	TDS	2	ARI
+RB	31	Johnson, David	ACT	CAR	15	YDS	85	AVG	5.7	TDS	1	ARI
+FS	26	Johnson, Rashad	ACT	TCKL	18	SCK	0.0	FF	0	INT	1	ARI
+G	62	Larsen, Ted	ACT	G	3	GS	3					ARI
+LS	82	Leach, Mike	ACT	G	4	GS	0					ARI
+LB	96	Martin, Kareem	ACT	TCKL	1	SCK	0.5	FF	0	INT	--	ARI
+T	70	Massie, Bobby	ACT	G	2	GS	2					ARI
+FS	32	Mathieu, Tyrann	ACT	TCKL	23	SCK	0.0	FF	1	INT	2	ARI
+NT	97	Mauro, Josh	ACT	TCKL	4	SCK	1.0	FF	0	INT	--	ARI
+ILB	51	Minter, Kevin	ACT	TCKL	21	SCK	0.0	FF	0	INT	--	ARI
+TE	80	Momah, Ifeanyi	RES	REC	--	YDS	--	AVG	--	TDS	--	ARI
+WR	14	Nelson, J.J.	ACT	REC	0	YDS	0	AVG	--	TDS	0	ARI
+TE	87	Niklas, Troy	ACT	REC	--	YDS	--	AVG	--	TDS	--	ARI
+OLB	57	Okafor, Alex	ACT	TCKL	9	SCK	2.0	FF	0	INT	--	ARI
+QB	3	Palmer, Carson	ACT	TDS	10	INT	3	YDS	1,155	RTG	106.4	ARI
+DB	34	Person, Brandon	RES	TCKL	--	SCK	--	FF	--	INT	--	ARI
+DT	98	Peters, Corey	RES	TCKL	--	SCK	--	FF	--	INT	--	ARI
+CB	21	Peterson, Patrick	ACT	TCKL	6	SCK	0.0	FF	0	INT	1	ARI
+CB	25	Powers, Jerraud	ACT	TCKL	15	SCK	0.0	FF	0	INT	1	ARI
+DE	90	Redding, Cory	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	ARI
+LB	47	Riddick, Shaquille	ACT	TCKL	0	SCK	--	FF	--	INT	--	ARI
+DE	92	Rucker, Frostee	ACT	TCKL	9	SCK	1.0	FF	1	INT	--	ARI
+C	63	Sendlein, Lyle	ACT	G	4	GS	4					ARI
+C	53	Shipley, A.Q.	ACT	G	3	GS	0					ARI
+T	79	Sowell, Bradley	ACT	G	4	GS	0					ARI
+QB	5	Stanton, Drew	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	ARI
+DT	91	Stinson, Ed	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	ARI
+RB	30	Taylor, Stepfan	ACT	CAR	4	YDS	6	AVG	1.5	TDS	0	ARI
+T	68	Veldheer, Jared	ACT	G	4	GS	4					ARI
+LB	94	Wagenmann, Zack	RES	TCKL	--	SCK	--	FF	--	INT	--	ARI
+OT	78	Watford, Earl	ACT	G	4	GS	2					ARI
+LB	55	Weatherspoon, Sean	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	ARI
+DT	94	Williams, Xavier	ACT	TCKL	0	SCK	--	FF	--	INT	--	ARI
+OLB	56	Woodley, LaMarr	ACT	TCKL	6	SCK	1.0	FF	0	INT	--	ARI
+
+DE	56	Avril, Cliff	ACT	TCKL	12	SCK	1.0	FF	0	INT	--	SEA
+G	78	Bailey, Alvin	ACT	G	4	GS	0					SEA
+WR	89	Baldwin, Doug	ACT	REC	20	YDS	198	AVG	9.9	TDS	2	SEA
+DE	72	Bennett, Michael	ACT	TCKL	15	SCK	2.0	FF	0	INT	--	SEA
+OG	68	Britt, Justin	ACT	G	4	GS	4					SEA
+DB	28	Burley, Marcus	ACT	TCKL	10	SCK	0.0	FF	0	INT	--	SEA
+SS	31	Chancellor, Kam	ACT	TCKL	8	SCK	0.0	FF	1	INT	--	SEA
+DE	55	Clark, Frank	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	SEA
+FB	40	Coleman, Derrick	ACT	CAR	1	YDS	2	AVG	2.0	TDS	0	SEA
+MLB	52	Coyle, Brock	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	SEA
+WR	11	Daniels, B.J.	ACT	REC	1	YDS	12	AVG	12.0	TDS	0	SEA
+DE	95	Dobbs, Demarcus	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	SEA
+T	79	Gilliam, Garry	ACT	G	4	GS	4					SEA
+OG	63	Glowinski, Mark	ACT	G	0	GS	0					SEA
+TE	88	Graham, Jimmy	ACT	REC	18	YDS	174	AVG	9.7	TDS	2	SEA
+LS	49	Gresham, Clint	ACT	G	4	GS	0					SEA
+K	4	Hauschka, Steven	ACT	FGA	10	FGM	10	PCT	100.0	LNG	54	SEA
+TE	84	Helfet, Cooper	ACT	REC	0	YDS	0	AVG	--	TDS	0	SEA
+DT	97	Hill, Jordan	ACT	TCKL	16	SCK	0.0	FF	0	INT	--	SEA
+OLB	51	Irvin, Bruce	ACT	TCKL	14	SCK	1.5	FF	0	INT	--	SEA
+RB	22	Jackson, Fred	ACT	CAR	8	YDS	47	AVG	5.9	TDS	0	SEA
+QB	7	Jackson, Tarvaris	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	SEA
+WR	15	Kearse, Jermaine	ACT	REC	16	YDS	236	AVG	14.8	TDS	0	SEA
+DE	93	King, David	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	SEA
+CB	20	Lane, Jeremy	PUP	TCKL	--	SCK	--	FF	--	INT	--	SEA
+C	65	Lewis, Patrick	ACT	G	0	GS	0					SEA
+WR	16	Lockett, Tyler	ACT	REC	10	YDS	109	AVG	10.9	TDS	0	SEA
+WR	83	Lockette, Ricardo	ACT	REC	1	YDS	23	AVG	23.0	TDS	0	SEA
+RB	24	Lynch, Marshawn	ACT	CAR	38	YDS	128	AVG	3.4	TDS	0	SEA
+DE	91	Marsh, Cassius	ACT	TCKL	5	SCK	0.0	FF	0	INT	--	SEA
+WR	13	Matthews, Chris	ACT	REC	3	YDS	42	AVG	14.0	TDS	0	SEA
+DB	33	McCray, Kelcie	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	SEA
+DT	92	Mebane, Brandon	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	SEA
+OLB	57	Morgan, Mike	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	SEA
+C	62	Nowak, Drew	ACT	G	4	GS	4					SEA
+T	76	Okung, Russell	ACT	G	4	GS	4					SEA
+LB	58	Pierre-Louis, Kevin	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	SEA
+RB	34	Rawls, Thomas	ACT	CAR	35	YDS	157	AVG	4.5	TDS	0	SEA
+WR	10	Richardson, Paul	PUP	REC	--	YDS	--	AVG	--	TDS	--	SEA
+DE	58	Robinson, Ryan	RES	TCKL	--	SCK	--	FF	--	INT	--	SEA
+DT	77	Rubin, Ahtyba	ACT	TCKL	11	SCK	0.0	FF	0	INT	--	SEA
+P	9	Ryan, Jon	ACT	PUNTS	17	AVG	45.1	LNG	73	IN 20	9	SEA
+G	53	Schwenke, Kona	RES	G	--	GS	--					SEA
+DB	39	Seisay, Mohammed	RES	TCKL	--	SCK	--	FF	--	INT	--	SEA
+SS	35	Shead, DeShawn	ACT	TCKL	14	SCK	0.0	FF	0	INT	--	SEA
+CB	25	Sherman, Richard	ACT	TCKL	9	SCK	0.0	FF	0	INT	--	SEA
+CB	27	Simon, Tharold	ACT	TCKL	0	SCK	--	FF	--	INT	--	SEA
+CB	21	Smith, Tye	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	SEA
+G	67	Sokoli, Kristjan	ACT	G	0	GS	0					SEA
+G	64	Sweezy, J.R.	ACT	G	4	GS	4					SEA
+FS	23	Terrell, Steven	ACT	TCKL	0	SCK	--	FF	--	INT	--	SEA
+FS	29	Thomas, Earl	ACT	TCKL	19	SCK	0.0	FF	1	INT	--	SEA
+FB	46	Tukuafu, Will	ACT	CAR	--	YDS	--	AVG	--	TDS	--	SEA
+MLB	54	Wagner, Bobby	ACT	TCKL	34	SCK	0.5	FF	0	INT	--	SEA
+CB	26	Williams, Cary	ACT	TCKL	13	SCK	1.0	FF	1	INT	--	SEA
+TE	82	Willson, Luke	ACT	REC	4	YDS	51	AVG	12.8	TDS	0	SEA
+QB	3	Wilson, Russell	ACT	TDS	5	INT	2	YDS	979	RTG	100.5	SEA
+OLB	50	Wright, K.J.	ACT	TCKL	27	SCK	0.0	FF	1	INT	--	SEA
+
+SS	31	Alexander, Maurice	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	STL
+WR	11	Austin, Tavon	ACT	REC	14	YDS	138	AVG	9.9	TDS	2	STL
+OLB	56	Ayers, Akeem	ACT	TCKL	4	SCK	0.0	FF	0	INT	--	STL
+WR	12	Bailey, Stedman	ACT	REC	6	YDS	88	AVG	14.7	TDS	1	STL
+C	61	Barnes, Tim	ACT	G	4	GS	4					STL
+SS	26	Barron, Mark	ACT	TCKL	18	SCK	1.0	FF	1	INT	--	STL
+LB	53	Bates, Daren	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	STL
+WR	18	Britt, Kenny	ACT	REC	11	YDS	183	AVG	16.6	TDS	1	STL
+DT	90	Brockers, Michael	ACT	TCKL	17	SCK	0.0	FF	0	INT	--	STL
+OG	68	Brown, Jamon	ACT	G	4	GS	4					STL
+DB	37	Bryant, Christian	ACT	TCKL	0	SCK	--	FF	--	INT	--	STL
+TE	89	Cook, Jared	ACT	REC	14	YDS	161	AVG	11.5	TDS	0	STL
+RB	36	Cunningham, Benny	ACT	CAR	20	YDS	57	AVG	2.9	TDS	0	STL
+DB	38	Davis, Cody	ACT	TCKL	3	SCK	0.0	FF	0	INT	--	STL
+DT	99	Donald, Aaron	ACT	TCKL	20	SCK	3.5	FF	0	INT	--	STL
+OT	64	Donnal, Andrew	ACT	G	1	GS	0					STL
+LB		Dunbar, Jo-Lonn	ACT	TCKL	--	SCK	--	FF	--	INT	--	STL
+DT	98	Fairley, Nick	ACT	TCKL	4	SCK	0.5	FF	0	INT	--	STL
+WR	2	Ferguson, Isiah	RES	REC	--	YDS	--	AVG	--	TDS	--	STL
+QB	5	Foles, Nick	ACT	TDS	5	INT	1	YDS	815	RTG	96.5	STL
+CB	33	Gaines, E.J.	RES	TCKL	--	SCK	--	FF	--	INT	--	STL
+RB	30	Gurley, Todd	ACT	CAR	25	YDS	155	AVG	6.2	TDS	0	STL
+ILB	54	Hager, Bryce	ACT	TCKL	2	SCK	0.0	FF	0	INT	--	STL
+TE	46	Harkey, Cory	ACT	REC	1	YDS	4	AVG	4.0	TDS	0	STL
+OT	79	Havenstein, Rob	ACT	G	4	GS	4					STL
+DE	95	Hayes, William	ACT	TCKL	8	SCK	0.0	FF	0	INT	--	STL
+P	6	Hekker, Johnny	ACT	PUNTS	22	AVG	47.3	LNG	57	IN 20	8	STL
+CB	21	Jenkins, Janoris	ACT	TCKL	26	SCK	0.0	FF	0	INT	2	STL
+CB	22	Johnson, Trumaine	ACT	TCKL	18	SCK	0.0	FF	0	INT	1	STL
+CB	20	Joyner, Lamarcus	ACT	TCKL	22	SCK	2.0	FF	0	INT	--	STL
+QB	17	Keenum, Case	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	STL
+TE	88	Kendricks, Lance	ACT	REC	5	YDS	69	AVG	13.8	TDS	1	STL
+MLB	55	Laurinaitis, James	ACT	TCKL	29	SCK	1.0	FF	1	INT	--	STL
+DE	91	Long, Chris	ACT	TCKL	10	SCK	2.0	FF	0	INT	--	STL
+LB	50	Lynch, Cameron	ACT	TCKL	1	SCK	0.0	FF	0	INT	--	STL
+QB	14	Mannion, Sean	ACT	TDS	--	INT	--	YDS	--	RTG	0.0	STL
+WR	15	Marquez, Bradley	ACT	REC	--	YDS	--	AVG	--	TDS	--	STL
+RB	27	Mason, Tre	ACT	CAR	18	YDS	41	AVG	2.3	TDS	0	STL
+SS	25	McDonald, T.J.	ACT	TCKL	23	SCK	1.0	FF	0	INT	--	STL
+FS	23	McLeod, Rodney	ACT	TCKL	24	SCK	0.0	FF	1	INT	--	STL
+LS	44	McQuaide, Jake	ACT	G	4	GS	0					STL
+OLB	52	Ogletree, Alec	ACT	TCKL	42	SCK	2.0	FF	0	INT	--	STL
+WR	83	Quick, Brian	ACT	REC	--	YDS	--	AVG	--	TDS	--	STL
+DE	94	Quinn, Robert	ACT	TCKL	12	SCK	3.0	FF	2	INT	--	STL
+RB	34	Reynolds, Chase	ACT	CAR	--	YDS	--	AVG	--	TDS	--	STL
+T	71	Reynolds, Garrett	ACT	G	4	GS	0					STL
+C	65	Rhaney, Demetrius	ACT	G	4	GS	0					STL
+CB	47	Roberson, Marcus	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	STL
+T	73	Robinson, Greg	ACT	G	4	GS	4					STL
+G	76	Saffold, Rodger	ACT	G	4	GS	4					STL
+DE	97	Sims, Eugene	ACT	TCKL	3	SCK	1.0	FF	0	INT	--	STL
+RB	42	Watts, Trey	EXE	CAR	--	YDS	--	AVG	--	TDS	--	STL
+DT	93	Westbrooks, Ethan	ACT	TCKL	6	SCK	0.0	FF	0	INT	--	STL
+OG	69	Wichmann, Cody	ACT	G	2	GS	0					STL
+T	63	Williams, Darrell	ACT	G	1	GS	0					STL
+K	4	Zuerlein, Greg	ACT	FGA	6	FGM	6	PCT	100.0	LNG	52	STL
