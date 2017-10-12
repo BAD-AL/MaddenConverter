@@ -15,6 +15,7 @@ text-align:center;
 </style>
 <script type="text/javascript" src="allTeams.js"></script>
 <script type="text/javascript">
+// https://www.easports.com/madden-nfl/player-ratings 
 var positionOrder = ["QB", "HB", "FB","WR","TE","LT","RT","LG","RG","C","LE","RE","NT","DT","OLB","LOLB","ROLB","LILB","RILB", "MLB", "CB","SS","FS", "K","P"],
 	attributeOrder = [
 		"team",
@@ -112,7 +113,7 @@ function button1Click(){
 }
 
 function appendTeam(team){
-    var i, teamNameRow,
+    var i, teamNameRow,td, tr, snapper,
       table = document.createElement("table");
     table.id = 'team-table-'+ team.name;
     
@@ -123,6 +124,14 @@ function appendTeam(team){
     for(i=0; i < team.docs.length; i++){
         insertPlayer(table, team.team, team.docs[i]);
     }
+	snapper = findLongSnapper(team.team);
+	if(snapper){
+		tr = table.insertRow();
+		td = tr.insertCell();
+		td.innerHTML = team.team;
+		td = tr.insertCell();
+		td.innerHTML = snapper.split(' ').reverse().join();
+	}
     document.getElementById("team-area").appendChild(table);
 }
 
@@ -235,6 +244,28 @@ function checkMaddenTeamHasWikipediaPlayers(team){
 	return retVal;
 }
 
+function findLongSnapper(teamName){
+	return findPlayerOnTeam(teamName,  /[A-z\-\.]+ [A-z\-\.]+ LS/g );
+}
+
+function findKickReturner(teamName){
+	return findPlayerOnTeam(teamName,  /[A-z\-\.]+ [A-z\-\.]+ KR/g );
+}
+
+function findPuntReturner(teamName){
+	return findPlayerOnTeam(teamName,  /[A-z\-\.]+ [A-z\-\.]+ PR/g );
+}
+
+function findPlayerOnTeam(teamName, playerRegex){
+	var teamText, wikipediaPlayers, 
+		//playerRegex = /[A-z\-\.]+ [A-z\-\.]+ LS/g,
+		teamStart, teamEnd;
+	teamStart = allText.indexOf(teamName);
+	teamEnd = allText.indexOf("AFC East BUF MIA NE NYJ North BAL", teamStart + 10);
+	teamText = allText.substring(teamStart, teamEnd);
+	wikipediaPlayers = teamText.match(playerRegex);
+	return wikipediaPlayers[0];
+}
 
 </script>
 <body >
@@ -1265,7 +1296,7 @@ Running backs
 Wide receivers
 17 Victor Bolden Jr.
 10 Kendrick Bourne
-15 Pierre Garçon
+15 Pierre Garcon
 11 Marquise Goodwin
 19 Aldrick Robinson
 81 Trent Taylor
@@ -1764,7 +1795,7 @@ Cincinnati Bengals[edit]
 Cincinnati Bengals roster view talk edit
 Quarterbacks
 14 Andy Dalton
- 5 AJ McCarron
+ 5 A.J. McCarron
 Running backs
 25 Giovani Bernard
 89 Ryan Hewitt HB
@@ -1861,7 +1892,7 @@ Offensive linemen
 63 Marcus Martin G
 62 Austin Reiter C
 73 Joe Thomas T
-64 JC Tretter C
+64 J.C. Tretter C
 70 Kevin Zeitler G
 Defensive linemen
 99 Caleb Brantley DT
@@ -2128,7 +2159,6 @@ Jacksonville Jaguars roster view talk edit
 Quarterbacks
  5 Blake Bortles
  7 Chad Henne
- 7 Ben Roethlisberger
 Running backs
 40 Tommy Bohanon FB
 27 Leonard Fournette
@@ -2492,7 +2522,7 @@ Oakland Raiders roster view talk edit
 Quarterbacks
  4 Derek Carr
 18 Connor Cook
- 3 EJ Manuel
+ 3 E.J. Manuel
 Running backs
 24 Marshawn Lynch
 49 Jamize Olawale FB
