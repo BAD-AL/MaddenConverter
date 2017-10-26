@@ -61,7 +61,7 @@ namespace MaddenConverter
         }
 
         // 15 faces
-        //
+        // Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck 
         string mStandardAppearance = "Skin 6,Face 5,No,Standard,Type 7,Clear,Yes,No,Team 3,Team 3,None,None,None,None,None,Style 3,Style 3,None,None";
         Random mRandom = new Random();
 
@@ -90,9 +90,10 @@ namespace MaddenConverter
                         break;
                 }
             }
-            return retVal;
+            return retVal + ',';
         }
 
+        //// Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck,YearsPro
         public string GetAppearance2018(string firstName, string lastName, string position, string height, string weight, string number, 
             string yearsPro, string plyrBirthdate, string plyrHandedness, string college)
         {
@@ -106,11 +107,11 @@ namespace MaddenConverter
             {
                 mPlayersToCheck.Append(firstName + "," + lastName + ": " + position + "\r\n");
                 string face = "Face " + mRandom.Next(1, 15);
-                height = height.Replace("\"", "");
-                height = height.Replace("'", "' ") + "\"";
+                string height2 = height.Replace("\"", "");
+                height2 = height2.Replace("'", "' ") + "\"";
                 //College,DOB,Hand,Weight,Height,BodyType + stdAppearance
                 //retVal = "?,?,Right," + weight + "," + height + "," + GetBodyType(height, weight) + "," + mStandardAppearance.Replace("Face5", face);
-                retVal = String.Format("{0},{1},{2},",college, plyrBirthdate,plyrHandedness) + weight + "," + height + "," + GetBodyType(height, weight) + "," + mStandardAppearance.Replace("Face5", face);
+                retVal = String.Format("{0},{1},{2},",college, plyrBirthdate,plyrHandedness) + weight + "," + height2 + "," + GetBodyType(height, weight) + "," + mStandardAppearance.Replace("Face5", face);
                 switch (position)
                 {
                     case "QB":
@@ -137,9 +138,16 @@ namespace MaddenConverter
             int w = Int32.Parse(weight);
 
             int feet = height[0] - 48;
-            int inches = Int32.Parse(height.Replace("\"","").Substring(2));
-            inches += (feet * 12);
-
+            int inches = 0;
+            if (height.IndexOf('\'') == -1)
+            {
+                inches = Int32.Parse(height.Replace("\"", ""));
+            }
+            else
+            {
+                inches = (height.IndexOf('"') > -1) ? Int32.Parse(height.Replace("\"", "").Substring(2)) : Int32.Parse(height);
+                inches += (feet * 12);
+            }
             #region big switch
             switch (inches)
             {

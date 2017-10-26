@@ -91,7 +91,7 @@ var positionOrder = ["QB", "HB", "FB","WR","TE","LT","RT","LG","RG","C","LE","RE
 
 function button1Click(){
 	var i, team, 
-        allteams = getAllTeams(),
+        allteams = getAllTeams2018(),
      teamTop = document.getElementById("team-top"),
 	 missingPlayerDiv = document.getElementById("missingPlayers"),
      teamArea = document.getElementById("team-area");
@@ -118,19 +118,19 @@ function appendTeam(team){
     table.id = 'team-table-'+ team.name;
     
     tableNameRow = table.insertRow();
-    tableNameRow.innerHTML = "Team = " + team.team + "    Players:"+ team.docs.length;/**/
+    tableNameRow.innerHTML = "Team = " + team.team + "    Players:"+ team.count;/**/
     insertHeadder(table);
     
     for(i=0; i < team.docs.length; i++){
         insertPlayer(table, team.team, team.docs[i]);
     }
-	snapper = findLongSnapper(team.team);
+	//snapper = findLongSnapper(team.team);
 	if(snapper){
 		tr = table.insertRow();
 		td = tr.insertCell();
 		td.innerHTML = team.team;
 		td = tr.insertCell();
-		td.innerHTML = snapper.split(' ').reverse().join();
+		td.innerHTML = '#'+snapper.split(' ').reverse().join();
 	}
     document.getElementById("team-area").appendChild(table);
 }
@@ -193,16 +193,20 @@ function onTeam(playerName, team){
 
 function trimTeam(team){
 	var i, playerName;
-	for(i=team.docs.length-1; i > -1; i--){
-		playerName = team.docs[i].firstName + ' ' + team.docs[i].lastName;
-		if( !onTeam(playerName, team.team)){
-			team.docs[i].notFound = true;
-		}
-		if(team.docs == 53){
-			break;
+	if(team.docs.length > 53){
+	team.count = team.docs.length;
+		for(i=team.docs.length-1; i > -1; i--){
+			playerName = team.docs[i].firstName + ' ' + team.docs[i].lastName;
+			if( !onTeam(playerName, team.team)){
+				team.docs[i].notFound = true;
+				team.count--;
+			}
+			if(team.count == 53){
+				break;
+			}
 		}
 	}
-	team.count = team.docs.length;
+
 }
 
 function onMaddenTeam(team, firstName, lastName){

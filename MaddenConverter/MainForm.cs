@@ -19,20 +19,20 @@ namespace MaddenConverter
                      "Play Recognition,Man Coverage,Zone Coverage,Spectactular Catch,Catch In Traffic,Route Running,Hit Power,Press,"+
                      "Release,Play Action,Throw On The Run,Height,Weight";
         // madden 2017
-        string mMadden2017Attributes = "Team,First Name,Last Name,Position,Jersey,Overall,Speed,Stength,Agility,Awareness,Catching,Carrying,Throw Power,"+
-                     "Throw Accuracy,Kick Power,Kick Accuracy,Run Block,Pass Block,Tackle,Jumping,Kick Return,Injury,Stamina,Toughness,Age,"+
-                     "Years Pro,College,Home State,Hometown,Trucking,Elusiveness,Ball Carrier Vision,Stiff Arm,Spin Move,Juke Move,Impact Block,"+
-                     "Run Block Strength,Run Block Footwork,Pass Block Strength,Pass Block Footwork,Power Moves,Finnesse Moves,Block Shedding,Pursuit,"+
-                     "Play Recognition,Man Cover,Zone cover,Spectacular Catch,Catch in Traffic,Route Running,Hit Power,Press,Release,Short Throw Accuracy,"+
-                     "Medium Throw Accuracy,Deep Throw Accuracy,Playaction,Throw on the Run";/**/
-
+        string mMadden2017Attributes = "Team,First Name,Last Name,Position,Jersey,Overall,Speed,Acceleration,Strength,Agility,Awareness,Catching,Carrying,Throw Power," +
+                     "Throw Accuracy,Throw Accuracy Short,Throw Accuracy Mid,Throw Accuracy Deep,Kick Power,Kick Accuracy,Run Block,Pass Block,Tackle,"+
+                     "Jumping,Kick Return,Injury,Stamina,Toughness,Trucking,Elusiveness,Ball Carrier Vision,"+
+                     "Stiff Arm,Spin Move,Juke Move,Impact Block,Power Moves,Finnesse Moves,Block Shedding,Pursuit," +
+                     "Play Recognition,Man Cover,Zone Cover,Spectacular Catch,Catch in Traffic,Route Running,Hit Power," +
+                     "Press,Release,Playaction,Throw On The Run,Height,Weight,Age,College";/**/
+                     
         //Madden 2018
-        string mMadden2018Attributes = "Team,First Name,Last Name,Position,Jersey Number,OVR,Speed,Acceleration,Strength,Agility,Awareness," +
+        string mMadden2018Attributes = "Team,First Name,Last Name,Position,Jersey,OVR,Speed,Acceleration,Strength,Agility,Awareness," +
                      "Catching,Carrying,Throw Power,Throw Accuracy,Throw Accuracy Short,Throw Accuracy Mid,Throw Accuracy Deep,Kick Power," +
                      "Kick Accuracy,Run Block,Pass Block,Tackle,Jumping,Kick Return,Injury,Stamina,Toughness,Trucking,Elusiveness," +
                      "Ball Carrier Vision,Stiff Arm,Spin Move,Juke Move,Impact Block,Power Moves,Finesse Moves,Block Shedding,Pursuit," +
-                     "Play Recognition,Man Coverage,Zone Coverage,Spectactular Catch,Catch In Traffic,Route Running,Hit Power,Press," +
-                     "Release,Play Action,Throw On The Run,Height,Weight";
+                     "Play Recognition,Man Cover,Zone Cover,Spectactular Catch,Catch In Traffic,Route Running,Hit Power,Press," +
+                     "Release,Play Action,Throw On The Run,Height,Weight,yearsPro,totalSalary,signingBonus,plyrBirthdate,plyrHandedness,college";
 
         string[] keys = null;
 
@@ -42,11 +42,20 @@ namespace MaddenConverter
 
         StringBuilder ErrorString = new StringBuilder();
 
+        private string AttributeString
+        {
+            get 
+            {
+                //return mMadden2016Attributes;
+                return mMadden2017Attributes;
+                //return mMadden2018Attributes;
+            }
+        }
+
         public MainForm()
         {
             InitializeComponent();
-            //keys = mMadden2016Attributes.Split(new char[] {','});
-            keys = mMadden2018Attributes.Split(new char[] { ',' });
+            keys = AttributeString.Split(new char[] { ',' });
             NFLPlayers = System.IO.File.ReadAllText("NFLPlayers.txt");
             NFLPlayers = NFLPlayers.Replace("\r\n", "\n");
         }
@@ -83,6 +92,7 @@ namespace MaddenConverter
                 mPlayerAppearance = new PlayerAppearance();
 
             string output = Convert(textBox1.Text);
+            output = "Key="+ AttributeString + "\r\n" + output;
             textBox2.Text = output;
 
             if (mPlayerAppearance.MissedPlayers.Length > 0)
@@ -185,10 +195,14 @@ namespace MaddenConverter
                 if (IncludePlayer(playerData))
                 {
                     //ConvertPlayerFromMadden2016(playerData, builder);
-                    //ConvertPlayerFromMadden2017(playerData, builder);
-                    ConvertPlayerFromMadden2018(playerData, builder);
+                    ConvertPlayerFromMadden2017(playerData, builder);
+                    //ConvertPlayerFromMadden2018(playerData, builder);
                     players++;
                     builder.Append("\r\n");
+                }
+                else
+                {
+                    Console.Error.WriteLine("Not including player {0} {1}", playerData[1], playerData[2]);
                 }
             }
             return builder.ToString();
@@ -196,7 +210,7 @@ namespace MaddenConverter
 
         private bool IncludePlayer(string[] playerData)
         {
-            bool ret = false;
+            bool ret = true;
             string searchString = GetAttribute("Last Name", playerData) +", " + GetAttribute("First Name", playerData);
 
             string playerLine = GetLine(searchString);
@@ -264,6 +278,7 @@ namespace MaddenConverter
                 );
         }
 
+        //Key=fname,lname,Position,JerseyNumber,Speed,Agility,Strength,Jumping,Coverage,PassRush,RunCoverage,PassBlocking,RunBlocking,Catch,RunRoute,BreakTackle,HoldOntoBall,PowerRunStyle,PassAccuracy,PassArmStrength,PassReadCoverage,Tackle,KickPower,KickAccuracy,Stamina,Durability,Leadership,Scramble,Composure,Consistency,Aggressiveness,College,DOB,Hand,Weight,Height,BodyType,Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck
         private void ConvertPlayerFromMadden2017(string[] playerData, StringBuilder builder)
         {
             String position = MapPosition(GetAttribute("Position", playerData));
@@ -288,9 +303,9 @@ namespace MaddenConverter
             AddAttribute(GetAttribute("Trucking", playerData), builder); // Break Tackle
             AddAttribute(GetAttribute("Toughness", playerData), builder); // HoldOnToBall
             AddAttribute(GetPowerRunStyle(playerData), builder);// PowerRunStyle (Finesse, Balance, Power)
-            AddAttribute((GetIntAttribute("Short Throw Accuracy", playerData) +
-                          GetIntAttribute("Medium Throw Accuracy", playerData) +
-                          GetIntAttribute("Deep Throw Accuracy", playerData)) / 3, builder); //Pass Accuracy
+            AddAttribute((GetIntAttribute("Throw Accuracy Short", playerData) +
+                          GetIntAttribute("Throw Accuracy Mid", playerData) +
+                          GetIntAttribute("Throw Accuracy Deep", playerData)) / 3, builder); //Pass Accuracy
 
             AddAttribute(GetAttribute("Throw Power", playerData), builder); // PassArm Strength
             AddAttribute(GetPassReadCoverage(playerData), builder); // PassReadCoverage
@@ -302,7 +317,7 @@ namespace MaddenConverter
             AddAttribute(GetAttribute("Awareness", playerData), builder); // Leadership
             AddAttribute(((GetIntAttribute("Throw On The Run", playerData) +
                            GetIntAttribute("Speed", playerData)) +
-                           GetIntAttribute("Short Throw Accuracy", playerData)) / 3, builder); // Scramble
+                           GetIntAttribute("Throw Accuracy Short", playerData)) / 3, builder); // Scramble
             AddAttribute(GetIntAttribute("Awareness", playerData) - 2, builder); // Composure
             AddAttribute(GetAttribute("Awareness", playerData), builder); // Consistency
             AddAttribute(GetAttribute("Hit Power", playerData), builder); // Aggressiveness
@@ -311,8 +326,14 @@ namespace MaddenConverter
             mPlayerAppearance.GetAppearance(GetAttribute("First Name", playerData), GetAttribute("Last Name", playerData), position,
                 GetAttribute("Height", playerData), GetAttribute("Weight", playerData), GetAttribute("Jersey", playerData))
                 );
+            // add college if it's there
+            if (GetAttributeIndex("College") > -1)
+            {
+                AddAttribute(GetAttribute("College", playerData), builder);
+            }
         }
 
+        //Key=fname,lname,Position,JerseyNumber,Speed,Agility,Strength,Jumping,Coverage,PassRush,RunCoverage,PassBlocking,RunBlocking,Catch,RunRoute,BreakTackle,HoldOntoBall,PowerRunStyle,PassAccuracy,PassArmStrength,PassReadCoverage,Tackle,KickPower,KickAccuracy,Stamina,Durability,Leadership,Scramble,Composure,Consistency,Aggressiveness,College,DOB,Hand,Weight,Height,BodyType,Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck,YearsPro
         private void ConvertPlayerFromMadden2018(string[] playerData, StringBuilder builder)
         {
             String position = MapPosition(GetAttribute("Position", playerData));
@@ -337,9 +358,9 @@ namespace MaddenConverter
             AddAttribute(GetAttribute("Trucking", playerData), builder); // Break Tackle
             AddAttribute(GetAttribute("Toughness", playerData), builder); // HoldOnToBall
             AddAttribute(GetPowerRunStyle(playerData), builder);// PowerRunStyle (Finesse, Balance, Power)
-            AddAttribute((GetIntAttribute("Short Throw Accuracy", playerData) +
-                          GetIntAttribute("Medium Throw Accuracy", playerData) +
-                          GetIntAttribute("Deep Throw Accuracy", playerData)) / 3, builder); //Pass Accuracy
+            AddAttribute((GetIntAttribute("Throw Accuracy Short", playerData) +
+                          GetIntAttribute("Throw Accuracy Mid", playerData) +
+                          GetIntAttribute("Throw Accuracy Deep", playerData)) / 3, builder); //Pass Accuracy
 
             AddAttribute(GetAttribute("Throw Power", playerData), builder); // PassArm Strength
             AddAttribute(GetPassReadCoverage(playerData), builder); // PassReadCoverage
@@ -351,7 +372,7 @@ namespace MaddenConverter
             AddAttribute(GetAttribute("Awareness", playerData), builder); // Leadership
             AddAttribute(((GetIntAttribute("Throw On The Run", playerData) +
                            GetIntAttribute("Speed", playerData)) +
-                           GetIntAttribute("Short Throw Accuracy", playerData)) / 3, builder); // Scramble
+                           GetIntAttribute("Throw Accuracy Short", playerData)) / 3, builder); // Scramble
             AddAttribute(GetIntAttribute("Awareness", playerData) - 2, builder); // Composure
             AddAttribute(GetAttribute("Awareness", playerData), builder); // Consistency
             AddAttribute(GetAttribute("Hit Power", playerData), builder); // Aggressiveness
