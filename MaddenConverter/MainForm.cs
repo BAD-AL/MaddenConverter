@@ -92,7 +92,7 @@ namespace MaddenConverter
                 mPlayerAppearance = new PlayerAppearance();
 
             string output = Convert(textBox1.Text);
-            output = "Key="+ AttributeString + "\r\n" + output;
+            output = GetKey() + "\r\n" + output;
             textBox2.Text = output;
 
             if (mPlayerAppearance.MissedPlayers.Length > 0)
