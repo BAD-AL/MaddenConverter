@@ -63,7 +63,7 @@ namespace MaddenConverter
         // 15 faces
         // Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck 
         //string mStandardAppearance = "Skin 6,Face 5,No,Standard,Type 7,Clear,Yes,No,Team 3,Team 3,None,None,None,None,None,Style 3,Style 3,None,None";
-        string mStandardAppearance = "Skin 6,Face 5,No,Standard,FaceMAsk7,Clear,Yes,No,Team3,Team3,None,None,None,None,None,Shoe3,Shoe3,None,None";
+        string mStandardAppearance = "Skin 6,Face 5,No,Standard,FaceMask7,Clear,Yes,No,Team3,Team3,None,None,None,None,None,Shoe3,Shoe3,None,None";
         Random mRandom = new Random();
 
         public string GetAppearance(string firstName, string lastName, string position, string height, string weight, string number)

@@ -47,8 +47,8 @@ namespace MaddenConverter
             get 
             {
                 //return mMadden2016Attributes;
-                return mMadden2017Attributes;
-                //return mMadden2018Attributes;
+                //return mMadden2017Attributes;
+                return mMadden2018Attributes;
             }
         }
 
@@ -92,21 +92,21 @@ namespace MaddenConverter
                 mPlayerAppearance = new PlayerAppearance();
 
             string output = Convert(textBox1.Text);
-            output = GetKey() + "\r\n" + output;
+            //output = GetKey() + "\r\n" + output;
             textBox2.Text = output;
 
-            if (mPlayerAppearance.MissedPlayers.Length > 0)
-            {
-                TextDisplay disp = new TextDisplay();
-                disp.Text = "Players to Check";
-                disp.Content = mPlayerAppearance.MissedPlayers;
-                disp.Show();
-            }
+            //if (mPlayerAppearance.MissedPlayers.Length > 0)
+            //{
+            //    TextDisplay disp = new TextDisplay();
+            //    disp.Text = "Players to Check";
+            //    disp.Content = mPlayerAppearance.MissedPlayers;
+            //    disp.Show();
+            //}
 
-            TextDisplay disp2 = new TextDisplay();
-            disp2.Text = "Missing Players";
-            disp2.Content = FindMissingPlayers();
-            disp2.Show();
+            //TextDisplay disp2 = new TextDisplay();
+            //disp2.Text = "Missing Players";
+            //disp2.Content = FindMissingPlayers();
+            //disp2.Show();
             
         }
 
@@ -195,8 +195,8 @@ namespace MaddenConverter
                 if (IncludePlayer(playerData))
                 {
                     //ConvertPlayerFromMadden2016(playerData, builder);
-                    ConvertPlayerFromMadden2017(playerData, builder);
-                    //ConvertPlayerFromMadden2018(playerData, builder);
+                    //ConvertPlayerFromMadden2017(playerData, builder);
+                    ConvertPlayerFromMadden2018(playerData, builder);
                     players++;
                     builder.Append("\r\n");
                 }
