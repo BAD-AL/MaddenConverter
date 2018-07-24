@@ -92,7 +92,7 @@ var
 		"college",
 		//*/
        
-    ], allText;
+    ], allText, freeAgents={team:"FreeAgents", count:0, docs:[] };
 
 function button1Click(){
 	var i, team, 
@@ -110,12 +110,17 @@ function button1Click(){
      }
     // sort all the teams
     for(i=0; i < allTeams.length; i++){ 
-        team=allTeams[i];
-		trimTeam(team);
-        team.docs.sort(comparePlayer);
-        missingPlayerDiv.innerHTML += checkMaddenTeamHasWikipediaPlayers(team);
+		team=allTeams[i];
+		//trimTeam(team);
+		team.docs.sort(comparePlayer);
+		trimTeam2(team);
+		//missingPlayerDiv.innerHTML += checkMaddenTeamHasWikipediaPlayers(team);
 		appendTeam(team);
     }
+	freeAgents.docs.sort(comparePlayer);
+	untrimTeam(freeAgents); // reset the 'notFound' flag on all players
+	trimTeam2(freeAgents);
+	appendTeam(freeAgents);
 }
 
 function appendTeam(team){
@@ -124,7 +129,7 @@ function appendTeam(team){
     table.id = 'team-table-'+ team.name;
     
     tableNameRow = table.insertRow();
-    tableNameRow.innerHTML = "Team = " + team.docs[0].team + "    Players:"+ team.count;/**/
+    tableNameRow.innerHTML = "Team = " + team.team + "    Players:"+ team.count;/**/
     insertHeadder(table);
     
     for(i=0; i < team.docs.length; i++){
@@ -145,18 +150,16 @@ function appendTeam(team){
 function insertPlayer(table, teamName, player){
     //attributeOrder
     var i, td, tr;
-	if( !player.notFound){
-		tr = table.insertRow();
-		for(i=0; i < attributeOrder.length;i++){
-			td = tr.insertCell();
-			td.innerHTML = player[attributeOrder[i]];
-			if( attributeOrder[i] == "team"){
-				td.innerHTML = teamName;
-			} else if(attributeOrder[i] == "routeRunning_rating"){
-				td.innerHTML = Math.floor( (player["mediumRouteRunning_rating"] + player["deepRouteRunning_rating"] + player["shortRouteRunning_rating"])/3);
-			} else if(attributeOrder[i] == "throwAccuracy_rating"){
-				td.innerHTML = Math.floor( (player["throwAccuracyShort_rating"] + player["throwAccuracyMid_rating"] + player["throwAccuracyDeep_rating"])/3);
-			}
+	tr = table.insertRow();
+	for(i=0; i < attributeOrder.length;i++){
+		td = tr.insertCell();
+		td.innerHTML = player[attributeOrder[i]];
+		if( attributeOrder[i] == "team"){
+			td.innerHTML = teamName;
+		} else if(attributeOrder[i] == "routeRunning_rating"){
+			td.innerHTML = Math.floor( (player["mediumRouteRunning_rating"] + player["deepRouteRunning_rating"] + player["shortRouteRunning_rating"])/3);
+		} else if(attributeOrder[i] == "throwAccuracy_rating"){
+			td.innerHTML = Math.floor( (player["throwAccuracyShort_rating"] + player["throwAccuracyMid_rating"] + player["throwAccuracyDeep_rating"])/3);
 		}
 	}
 }
@@ -216,7 +219,7 @@ function onTeam(playerName, team){
 function trimTeam(team){
 	var i, playerName, protectedPositions =["P","K"];
 	if(team.docs.length > 53){
-	team.count = team.docs.length;
+		team.count = team.docs.length;
 		for(i=team.docs.length-1; i > -1; i--){
 			playerName = team.docs[i].firstName + ' ' + team.docs[i].lastName;
 			if( protectedPositions.indexOf(team.docs[i].position) == -1 && !onTeam(playerName, team.docs[i].team)){
@@ -229,6 +232,63 @@ function trimTeam(team){
 		}
 	}
 	return team;
+}
+function cloneObject(a){
+	return JSON.parse(JSON.stringify(a));
+}
+function untrimTeam(team){
+	var i;
+	for(i=0; i < team.docs.length;i++){
+		team.docs[i].notFound = false;
+	}
+}
+function trimTeam2(team){
+	var clone, i, pos, prevPos, player, playerPosition=0, teamPositions={}, playerLimits = {
+		"QB":3, "HB":3, "FB":1, "WR":5,   "TE":3,   "LT":2,  "LG":2, "C":1,  "RG":2, "RT":2,
+		"LE":2, "RE":3, "DT":4, "LOLB":2, "ROLB":2, "MLB":4, "CB":6, "SS":2, "FS":2,
+		 "K":1, "P":1
+	};
+	team.count = team.docs.length;
+	// hack to get a few teams up to 53 (pre-prepseason)
+	// 51: Cowboys, Dolphins, Eagles, Titans,
+	// 52: Rams, Redskins,Colts
+	switch(team.team){
+		case "Cowboys":  playerLimits.WR++; playerLimits.HB++; break;
+		case "Dolphins": playerLimits.RE++; playerLimits.CB++; break;
+		case "Eagles":   playerLimits.WR++; playerLimits.HB++; break;
+		case "Titans":   playerLimits.WR++; break;
+		case "Rams":     playerLimits.HB++; break;
+		case "Redskins": playerLimits.WR++; break;
+		case "Colts": playerLimits.WR++; break;
+		case "FreeAgents":
+			playerLimits = { // add upto 190 (pre-prepseason)
+				"QB":10, "HB":10, "FB":5, "WR":19,   "TE":12,   "LT":8,  "LG":7, "C":3,  "RG":7, "RT":8,
+				"LE":10, "RE":10, "DT":12, "LOLB":8, "ROLB":8, "MLB":12, "CB":20, "SS":6, "FS":6,
+				 "K":5, "P":5
+			};
+			break;
+	} // end hack
+
+	for(i=0; i < team.docs.length;i++){
+		player = team.docs[i];
+		pos = player.position;
+		if(!teamPositions[pos]) {
+			teamPositions[pos] = 0;
+			if( prevPos && ( playerLimits[prevPos] - teamPositions[prevPos] ) > 0 ) {
+				playerLimits[pos] = playerLimits[pos] + ( playerLimits[prevPos] - teamPositions[prevPos] );
+			}
+		}
+		teamPositions[pos] = teamPositions[pos]+1;
+		if( teamPositions[pos] > playerLimits[pos] ){
+			// clone = cloneObject(player); // cloning takes too long
+			player.notFound = true;
+			team.count--;
+			if(team.team != "FreeAgents"){
+				freeAgents.docs.push(player);
+			}
+		}
+		prevPos = pos;
+	}
 }
 
 function onMaddenTeam(team, firstName, lastName){
@@ -299,6 +359,7 @@ function findPlayerOnTeam(teamName, playerRegex){
 <div id="myTitle">Madden player ratings</div>
 <div id="sliderContainer" class="sliderControl">
 </div>
+<a href="https://www.easports.com/madden-nfl/player-ratings"> Madden Ratings</a><br><br>
 <button id="button1" onclick="button1Click()" >Show Players!</button>
 
 <div id="missingPlayers">
