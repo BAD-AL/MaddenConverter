@@ -169,6 +169,7 @@ namespace MaddenConverter
             string team = "";
             string tmpTeam = "";
             mPlayerAppearance.Initialize();
+            builder.Append(GetKey2018());
             
             foreach (string line in lines)
             {
@@ -184,8 +185,8 @@ namespace MaddenConverter
                     {
                         builder.Append("# Team:" + team + " players: " + players + "\r\n");
                     }
-                    if (team == "")
-                        builder.Append("#");
+                    //if (team == "")
+                    //    builder.Append("#");
                     team = tmpTeam;
                     builder.Append("Team = ");
                     builder.Append(team);
@@ -210,7 +211,7 @@ namespace MaddenConverter
 
         private bool IncludePlayer(string[] playerData)
         {
-            bool ret = true;
+            bool ret = true;/*
             string searchString = GetAttribute("Last Name", playerData) +", " + GetAttribute("First Name", playerData);
 
             string playerLine = GetLine(searchString);
@@ -218,7 +219,7 @@ namespace MaddenConverter
             {
                 if (playerLine.IndexOf("	ACT") > -1)
                     ret = true;
-            }
+            }*/
             return ret;
         }
 
@@ -333,6 +334,10 @@ namespace MaddenConverter
             }
         }
 
+        private string GetKey2018()
+        {
+            return "Key=fname,lname,Position,JerseyNumber,Speed,Agility,Strength,Jumping,Coverage,PassRush,RunCoverage,PassBlocking,RunBlocking,Catch,RunRoute,BreakTackle,HoldOntoBall,PowerRunStyle,PassAccuracy,PassArmStrength,PassReadCoverage,Tackle,KickPower,KickAccuracy,Stamina,Durability,Leadership,Scramble,Composure,Consistency,Aggressiveness,College,DOB,Hand,Weight,Height,BodyType,Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck,YearsPro\r\n\r\n";
+        }
         //Key=fname,lname,Position,JerseyNumber,Speed,Agility,Strength,Jumping,Coverage,PassRush,RunCoverage,PassBlocking,RunBlocking,Catch,RunRoute,BreakTackle,HoldOntoBall,PowerRunStyle,PassAccuracy,PassArmStrength,PassReadCoverage,Tackle,KickPower,KickAccuracy,Stamina,Durability,Leadership,Scramble,Composure,Consistency,Aggressiveness,College,DOB,Hand,Weight,Height,BodyType,Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck,YearsPro
         private void ConvertPlayerFromMadden2018(string[] playerData, StringBuilder builder)
         {

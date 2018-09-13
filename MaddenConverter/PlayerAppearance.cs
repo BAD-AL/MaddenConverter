@@ -35,7 +35,7 @@ namespace MaddenConverter
         public PlayerAppearance()
         {
             mKeys = attrs.Split(new char[] { ',' });
-            string data = System.IO.File.ReadAllText("NFL2K5_EquipmentData_2014.txt");
+            string data = System.IO.File.ReadAllText("NFL2K5_EquipmentData_2014.csv");
             data = data.Replace("\r\n", "\n");
             string[] lines = data.Split(new char[] { '\n' });
             int index = 0;
@@ -45,7 +45,7 @@ namespace MaddenConverter
 
             foreach (string line in lines)
             {
-                if (line.StartsWith("#") || line.Length < 20)
+                if (line.StartsWith("#") || line.Length < 20 || line.StartsWith("Team "))
                     continue;
                 index = 0;
                 for (int i = 0; i < 3; i++) // advance to 3rd comma
@@ -94,6 +94,52 @@ namespace MaddenConverter
             return retVal + ',';
         }
 
+        string mSkinMap = null;
+
+        private string SkinMap
+        {
+            get
+            {
+                if (mSkinMap == null)
+                {
+                    string fileName = "SkinMap.txt";
+                    if (System.IO.File.Exists(fileName))
+                        mSkinMap = System.IO.File.ReadAllText(fileName);
+                    else
+                        mSkinMap = "";
+                }
+                return mSkinMap;
+            }
+        }
+
+        Regex skinRegex = new Regex("Skin[0-9+]");
+
+        private string GetSkin(string firstName, string lastName, string position)
+        {
+            string retVal = "Skin ";
+            string pattern = string.Format("{0},{1},{2},Skin", firstName, lastName, position);
+            int index = SkinMap.IndexOf(pattern, StringComparison.InvariantCultureIgnoreCase);
+            if (index > -1)
+            {
+                retVal += SkinMap[index + pattern.Length ];
+            }
+            else
+            {
+                switch (position)
+                {
+                    case "QB":
+                    case "P":
+                    case "K":
+                        retVal += "1";
+                        break;
+                    default:
+                        retVal += "6";
+                        break;
+                }
+            }
+            return retVal;
+        }
+
         //// Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck,YearsPro
         public string GetAppearance2018(string firstName, string lastName, string position, string height, string weight, string number, 
             string yearsPro, string plyrBirthdate, string plyrHandedness, string college)
@@ -106,6 +152,7 @@ namespace MaddenConverter
             }
             else
             {
+                string skin = GetSkin(firstName, lastName, position);
                 mPlayersToCheck.Append(firstName + "," + lastName + ": " + position + "\r\n");
                 string face = "Face " + mRandom.Next(1, 15);
                 string height2 = height.Replace("\"", "");
@@ -113,14 +160,8 @@ namespace MaddenConverter
                 //College,DOB,Hand,Weight,Height,BodyType + stdAppearance
                 //retVal = "?,?,Right," + weight + "," + height + "," + GetBodyType(height, weight) + "," + mStandardAppearance.Replace("Face5", face);
                 retVal = String.Format("{0},{1},{2},",college, plyrBirthdate,plyrHandedness) + weight + "," + height2 + "," + GetBodyType(height, weight) + "," + mStandardAppearance.Replace("Face5", face);
-                switch (position)
-                {
-                    case "QB":
-                    case "P":
-                    case "K":
-                        retVal = retVal.Replace("Skin 6", "Skin 1");
-                        break;
-                }
+
+                retVal = retVal.Replace("Skin 6", skin);
             }
             retVal += "," + yearsPro;
             return retVal;

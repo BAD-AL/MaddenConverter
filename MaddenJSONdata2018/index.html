@@ -14,9 +14,15 @@ text-align:center;
 
 </style>
 <script type="text/javascript" src="allTeams.js"></script>
+<script type="text/javascript" src="allTeamsWeek_9_2017.js"></script>
 <script type="text/javascript">
 // https://www.easports.com/madden-nfl/player-ratings 
-var positionOrder = ["QB", "HB", "FB","WR","TE","LT","RT","LG","RG","C","LE","RE","NT","DT","OLB","LOLB","ROLB","LILB","RILB", "MLB", "CB","SS","FS", "K","P"],
+var 
+    positionOrder = ["QB", "HB", "FB","WR","TE","LT","RT","LG","RG","C","LE","RE","NT","DT","OLB","LOLB","ROLB","LILB","RILB", "MLB", "CB","SS","FS", "K","P"],
+	teamOrder =["49ers", "Bears","Bengals", "Bills", "Broncos", "Browns","Buccaneers", "Cardinals", 
+                 "Chargers", "Chiefs","Colts","Cowboys",  "Dolphins", "Eagles","Falcons","Giants","Jaguars",
+                 "Jets","Lions","Packers", "Panthers", "Patriots","Raiders","Rams","Ravens","Redskins",
+                 "Saints","Seahawks","Steelers", "Texans", "Titans",  "Vikings" ],
 	attributeOrder = [
 		"team",
 		"firstName",
@@ -91,11 +97,13 @@ var positionOrder = ["QB", "HB", "FB","WR","TE","LT","RT","LG","RG","C","LE","RE
 
 function button1Click(){
 	var i, team, 
-        allteams = getAllTeams2018(),
+     allTeams = //getAllTeams2018(),
+	 getAllTeams2018_week9(),
      teamTop = document.getElementById("team-top"),
 	 missingPlayerDiv = document.getElementById("missingPlayers"),
      teamArea = document.getElementById("team-area");
 	 allText = document.getElementById("NFLData").innerHTML;
+	 allTeams.sort(sortTeamsByName);
      if( teamArea){
         teamTop.removeChild(teamArea);
         teamArea = document.createElement('div');
@@ -118,17 +126,18 @@ function appendTeam(team){
     table.id = 'team-table-'+ team.name;
     
     tableNameRow = table.insertRow();
-    tableNameRow.innerHTML = "Team = " + team.team + "    Players:"+ team.count;/**/
+    tableNameRow.innerHTML = "Team = " + team.docs[0].team + "    Players:"+ team.count;/**/
     insertHeadder(table);
     
     for(i=0; i < team.docs.length; i++){
-        insertPlayer(table, team.team, team.docs[i]);
+        if( !team.docs[i].notFound )
+			insertPlayer(table, team.docs[i].team, team.docs[i]);
     }
 	//snapper = findLongSnapper(team.team);
 	if(snapper){
 		tr = table.insertRow();
 		td = tr.insertCell();
-		td.innerHTML = team.team;
+		td.innerHTML = team.docs[i].team;
 		td = tr.insertCell();
 		td.innerHTML = '#'+snapper.split(' ').reverse().join();
 	}
@@ -179,11 +188,21 @@ function comparePlayer(a,b) {
     return 0;
 }
 
+function sortTeamsByName(a,b){
+	if (teamOrder.indexOf(a.docs[0].team) < teamOrder.indexOf( b.docs[0].team))
+		return -1;
+	if (teamOrder.indexOf(a.docs[0].team) > teamOrder.indexOf(b.docs[0].team))
+		return 1;
+	
+	return 0;
+}
+
 function onTeam(playerName, team){
 	var retVal =false, teamStart, teamEnd, playerLocation;
 	team = team.charAt(0).toUpperCase() + team.slice(1);
 	teamStart = allText.indexOf(team);
-	teamEnd = allText.indexOf("AFC East BUF MIA NE NYJ North BAL", teamStart + 10);
+	//teamEnd = allText.indexOf("AFC East BUF MIA NE NYJ North BAL", teamStart + 10);
+	teamEnd = allText.indexOf("Reserve lists", teamStart + 10);
 	playerLocation = allText.indexOf(playerName, teamStart);
 	if(playerLocation> teamStart && playerLocation < teamEnd)
 		retVal = true;
@@ -191,13 +210,14 @@ function onTeam(playerName, team){
 	return retVal;
 }
 
+// itterates through the team checking if the player name is found on the wikipedia listing.
 function trimTeam(team){
-	var i, playerName;
+	var i, playerName, protectedPositions =["P","K"];
 	if(team.docs.length > 53){
 	team.count = team.docs.length;
 		for(i=team.docs.length-1; i > -1; i--){
 			playerName = team.docs[i].firstName + ' ' + team.docs[i].lastName;
-			if( !onTeam(playerName, team.team)){
+			if( protectedPositions.indexOf(team.docs[i].position) == -1 && !onTeam(playerName, team.docs[i].team)){
 				team.docs[i].notFound = true;
 				team.count--;
 			}
@@ -206,7 +226,7 @@ function trimTeam(team){
 			}
 		}
 	}
-
+	return team;
 }
 
 function onMaddenTeam(team, firstName, lastName){
@@ -221,14 +241,15 @@ function onMaddenTeam(team, firstName, lastName){
 }
 
 function checkMaddenTeamHasWikipediaPlayers(team){
-	var teamName = team.team, teamText, wikipediaPlayers,i,j, fullName, 
+	var teamName = team.docs[0].team, teamText, wikipediaPlayers,i,j, fullName, 
 		maddenTeamText ='', 
 		retVal='',
-		playerRegex = /[0-9]+ [A-z\-\.]+ [A-z\-\.]+/g,
+		playerRegex = /[0-9]+ ['A-z\-\.]+ [A-z\-\.]+/g,
 		teamStart, teamEnd;
 	teamName = teamName.charAt(0).toUpperCase() + teamName.slice(1);
 	teamStart = allText.indexOf(teamName);
-	teamEnd = allText.indexOf("AFC East BUF MIA NE NYJ North BAL", teamStart + 10);
+	//teamEnd = allText.indexOf("AFC East BUF MIA NE NYJ North BAL", teamStart + 10);
+	teamEnd = allText.indexOf("Reserve lists", teamStart + 10);
 	teamText = allText.substring(teamStart, teamEnd);
 	wikipediaPlayers = teamText.match(playerRegex);
 	for(i=0; i <team.docs.length; i++){
@@ -249,20 +270,20 @@ function checkMaddenTeamHasWikipediaPlayers(team){
 }
 
 function findLongSnapper(teamName){
-	return findPlayerOnTeam(teamName,  /[A-z\-\.]+ [A-z\-\.]+ LS/g );
+	return findPlayerOnTeam(teamName,  /['A-z\-\.]+ [A-z\-\.]+ LS/g );
 }
 
 function findKickReturner(teamName){
-	return findPlayerOnTeam(teamName,  /[A-z\-\.]+ [A-z\-\.]+ KR/g );
+	return findPlayerOnTeam(teamName,  /['A-z\-\.]+ [A-z\-\.]+ KR/g );
 }
 
 function findPuntReturner(teamName){
-	return findPlayerOnTeam(teamName,  /[A-z\-\.]+ [A-z\-\.]+ PR/g );
+	return findPlayerOnTeam(teamName,  /['A-z\-\.]+ [A-z\-\.]+ PR/g );
 }
 
 function findPlayerOnTeam(teamName, playerRegex){
 	var teamText, wikipediaPlayers, 
-		//playerRegex = /[A-z\-\.]+ [A-z\-\.]+ LS/g,
+		//playerRegex = /['A-z\-\.]+ [A-z\-\.]+ LS/g,
 		teamStart, teamEnd;
 	teamStart = allText.indexOf(teamName);
 	teamEnd = allText.indexOf("AFC East BUF MIA NE NYJ North BAL", teamStart + 10);
@@ -286,14 +307,10 @@ function findPlayerOnTeam(teamName, playerRegex){
     <div id="team-area"><div>
 <div>
 <div id="NFLData" style="display: none;" >
-
-List of current NFC team rosters
-
 NFC East[edit]
 Dallas Cowboys[edit]
 Dallas Cowboys roster view talk edit
 Quarterbacks
-17 Kellen Moore
  4 Dak Prescott
  7 Cooper Rush
 Running backs
@@ -311,6 +328,7 @@ Wide receivers
 83 Terrance Williams
 Tight ends
 84 James Hanna
+89 Blake Jarwin
 87 Geoff Swaim
 82 Jason Witten
 Offensive linemen
@@ -323,19 +341,19 @@ Offensive linemen
 70 Zack Martin G
 77 Tyron Smith T
 Defensive linemen
+76 Richard Ash DT/DE
 97 Taco Charlton DE
 96 Maliek Collins DT
 98 Tyrone Crawford DE/DT
 95 David Irving DT/DE
 90 DeMarcus Lawrence DE
 93 Benson Mayowa DE
-58 Damontre Moore DE
-55 Stephen Paea DT
 92 Brian Price DT
 Linebackers
 52 Justin Durant MLB/OLB
 59 Anthony Hitchens MLB
 50 Sean Lee OLB
+53 Justin March-Lillard OLB
 54 Jaylon Smith MLB
 51 Kyle Wilber OLB/MLB
 57 Damien Wilson OLB/MLB
@@ -343,7 +361,6 @@ Defensive backs
 33 Chidobe Awuzie CB/FS
 23 Bené Benwikere CB
 30 Anthony Brown CB
-24 Nolan Carroll CB
 35 Kavon Frazier SS
 38 Jeff Heath SS/FS
 31 Byron Jones FS
@@ -354,10 +371,29 @@ Special teams
  5 Dan Bailey K
  6 Chris Jones P
 91 L.P. Ladouceur LS
+ 2 Mike Nugent K
+Reserve lists
+-- Zac Dysert QB (IR) Injury icon 2.svg
+80 Rico Gathers TE (IR) Injury icon 2.svg
+94 Randy Gregory DE (Susp.)
+55 Stephen Paea DT (IR) Injury icon 2.svg
+99 Charles Tapper DE (IR) Injury icon 2.svg
+26 Duke Thomas CB (IR) Injury icon 2.svg
+Practice squad
+18 Brian Brown WR
+78 Kadeem Edwards T/G
+56 Tre'Von Johnson MLB
+62 Jarron Jones T
+14 Lance Lenoir WR
+-- Stansly Maponga DE
+17 Kellen Moore QB
+66 Lewis Neal DT/DE
+28 Jameill Showers FS/SS
+39 Marquez White CB
 Rookies in italics
-Roster updated October 5, 2017
+Roster updated October 27, 2017
 Depth chart • Transactions
-53 Active, 5 Inactive, 10
+53 Active, 6 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -373,10 +409,10 @@ Running backs
 28 Paul Perkins
 34 Shane Vereen
 Wide receivers
-13 Odell Beckham Jr.
-17 Dwayne Harris
+84 Ed Eagan
+12 Tavarres King
 18 Roger Lewis
-15 Brandon Marshall
+19 Travis Rudolph
 87 Sterling Shepard
 Tight ends
 89 Jerell Adams
@@ -386,7 +422,7 @@ Tight ends
 Offensive linemen
 74 Ereck Flowers T
 76 D.J. Fluker G
-75 Jon Halapio C
+75 Jon Halapio G
 68 Bobby Hart T
 77 John Jerry G
 69 Brett Jones C
@@ -398,7 +434,6 @@ Defensive linemen
 95 Cap Capi DE
 98 Damon Harrison DT
 91 Avery Moss DE
-78 Romeo Okwara DE
 90 Jason Pierre-Paul DE
 99 Robert Thomas DT
 94 Dalvin Tomlinson DT
@@ -407,7 +442,8 @@ Defensive linemen
 Linebackers
 52 Jonathan Casillas OLB
 93 B.J. Goodson MLB
-58 Curtis Grant MLB
+58 Curtis Grant OLB
+53 Nigel Harris OLB
 59 Devon Kennard OLB
 46 Calvin Munson MLB
 57 Keenan Robinson OLB
@@ -417,7 +453,7 @@ Defensive backs
 29 Nat Berhe SS
 37 Ross Cockrell CB
 21 Landon Collins SS
-23 Michael Hunter CB
+38 Donte Deayon CB
 20 Janoris Jenkins CB
 41 Dominique Rodgers-Cromartie CB
 27 Darian Thompson FS
@@ -425,10 +461,36 @@ Special teams
 51 Zak DeOssie LS
  2 Aldrick Rosas K
  9 Brad Wing P
+Reserve lists
+64 Josh Banks DT (IR) Injury icon 2.svg
+13 Odell Beckham Jr. WR (IR) Injury icon 2.svg
+73 Corbin Bryant DT (IR) Injury icon 2.svg
+65 Jessamen Dunker G (IR) Injury icon 2.svg
+60 Adam Gettis G (IR) Injury icon 2.svg
+17 Dwayne Harris WR (IR) Injury icon 2.svg
+44 Mark Herzlich MLB (IR) Injury icon 2.svg
+82 Keeon Johnson WR (IR) Injury icon 2.svg
+15 Brandon Marshall WR (IR) Injury icon 2.svg
+83 Kevin Norwood WR (IR) Injury icon 2.svg
+78 Romeo Okwara DE (IR) Injury icon 2.svg
+71 Evan Schwan DE (IR) Injury icon 2.svg
+55 J.T. Thomas OLB (IR) Injury icon 2.svg
+97 Ishaq Williams OLB (IR) Injury icon 2.svg
+Practice squad
+66 Adam Bisnowaty OT
+86 Marquis Bundy WR
+62 Ethan Cooper G
+39 Brandon Dixon CB
+36 Ryan Murphy SS
+80 Darius Powe WR
+83 Kalif Raymond WR
+31 Tim Scott CB
+43 Shane Smith TE
+79 Jordan Williams DE
 Rookies in italics
-Roster updated October 4, 2017
+Roster updated October 23, 2017
 Depth chart • Transactions
-53 Active, 10 Inactive, 10
+53 Active, 14 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -455,13 +517,13 @@ Tight ends
 86 Zach Ertz
 Offensive linemen
 79 Brandon Brooks G
+77 Taylor Hart T
 65 Lane Johnson T
 62 Jason Kelce C
-71 Jason Peters T
 73 Isaac Seumalo G
 72 Halapoulivaati Vaitai T
 67 Chance Warmack G
-61 Stefen Wisniewski C
+61 Stefen Wisniewski G
 Defensive linemen
 94 Beau Allen DT
 96 Derek Barnett DE
@@ -476,6 +538,7 @@ Defensive linemen
 97 Destiny Vaeao DT
 Linebackers
 53 Nigel Bradham OLB
+47 Nathan Gerry OLB
 52 Najee Goode OLB
 54 Kamu Grugier-Hill OLB
 58 Jordan Hicks MLB
@@ -486,7 +549,6 @@ Defensive backs
 32 Rasul Douglas CB
 24 Corey Graham FS
 27 Malcolm Jenkins SS
-42 Chris Maragos FS
 33 Dexter McDougle CB
 23 Rodney McLeod FS
 31 Jalen Mills CB
@@ -496,10 +558,31 @@ Special teams
  4 Jake Elliott K
 45 Rick Lovato LS
  8 Donnie Jones P
+Reserve lists
+-- Randall Goforth CB (IR) Injury icon 2.svg
+22 Sidney Jones CB (NF-Inj.) Injury icon 2.svg
+42 Chris Maragos FS (IR) Injury icon 2.svg
+71 Jason Peters T (IR) Injury icon 2.svg
+34 Donnel Pumphrey RB (IR) Injury icon 2.svg
+-- Aziz Shittu DT (IR) Injury icon 2.svg
+43 Darren Sproles RB (IR) Injury icon 2.svg
+ 6 Caleb Sturgis K (IR) Injury icon 2.svg
+-- Dom Williams WR (IR) Injury icon 2.svg
+Practice squad
+68 Josh Andrews G
+36 De'Vante Bausby CB
+85 Billy Brown TE
+48 Don Cherry LB
+ 4 Rashard Davis WR
+69 Dillon Gordon OT
+35 D.J. Killings CB
+39 Byron Marshall RB
+ 7 Nate Sudfeld QB
+89 Greg Ward Jr. WR
 Rookies in italics
-Roster updated October 4, 2017
+Roster updated October 25, 2017
 Depth chart • Transactions
-53 Active, 7 Inactive, 10
+53 Active, 8 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -509,7 +592,6 @@ Quarterbacks
  8 Kirk Cousins
 12 Colt McCoy
 Running backs
-34 Mack Brown
 20 Robert Kelley
 32 Samaje Perine
 25 Chris Thompson KR
@@ -525,8 +607,11 @@ Tight ends
 86 Jordan Reed
 87 Jeremy Sprinkle
 Offensive linemen
+66 Tony Bergstrom G
 68 Tyler Catalina G
 69 T.J. Clemmings T
+74 Orlando Franklin G
+60 Arie Kouandjio G
 77 Shawn Lauvao G
 61 Spencer Long C
 76 Morgan Moses T
@@ -535,7 +620,6 @@ Offensive linemen
 75 Brandon Scherff G
 71 Trent Williams T
 Defensive linemen
-95 Jonathan Allen DE
 72 Anthony Lanier DE
 90 Ziggy Hood NT
 98 Matt Ioannidis DE
@@ -546,7 +630,6 @@ Linebackers
 53 Zach Brown ILB
 55 Chris Carter OLB
 51 Will Compton ILB
-54 Mason Foster ILB
 58 Junior Galette OLB
 40 Josh Harvey-Clemons ILB
 91 Ryan Kerrigan OLB
@@ -564,13 +647,34 @@ Defensive backs
 24 Josh Norman CB
 36 D.J. Swearinger FS
 Special teams
- 3 Dustin Hopkins K
+ 6 Nick Rose K
 57 Nick Sundberg LS
  5 Tress Way P
+Reserve lists
+95 Jonathan Allen DE (IR) Injury icon 2.svg
+-- Kevin Bowen T (IR) Injury icon 2.svg
+30 Su'a Cravens SS (Left Squad)
+54 Mason Foster ILB (IR) Injury icon 2.svg
+23 DeAngelo Hall FS (PUP) Injury icon 2.svg
+ 3 Dustin Hopkins K (IR) Injury icon 2.svg
+-- Keith Marshall RB (IR) Injury icon 2.svg
+93 Trent Murphy OLB (IR) Injury icon 2.svg
+99 Phil Taylor NT (IR) Injury icon 2.svg
+Practice squad
+60 Alex Balducci C
+63 Brandon Banks DE
+19 Robert Davis WR
+82 Manasseh Garner TE
+13 Maurice Harris WR
+67 Andreas Knappe OT
+74 Ondre Pipkins NT
+45 Pete Robertson ILB
+17 Shakeir Ryan WR
+37 Fish Smithson FS
 Rookies in italics
-Roster updated October 3, 2017
+Roster updated October 28, 2017
 Depth chart • Transactions
-53 Active, 6 Inactive, 10
+53 Active, 9 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -589,8 +693,9 @@ Running backs
 33 Taquan Mizzell
 Wide receivers
 15 Josh Bellamy
+19 Tanner Gentry
+17 Dontrelle Inman
 18 Tre McBride
-14 Deonte Thompson
 12 Markus Wheaton
 13 Kendall Wright
 Tight ends
@@ -616,12 +721,13 @@ Defensive linemen
 98 Mitch Unrein DE
 Linebackers
 93 Sam Acho OLB
-58 Jonathan Anderson ILB
 94 Leonard Floyd OLB
+47 Isaiah Irving OLB
 52 Christian Jones ILB
 44 Nick Kwiatkoski ILB
 92 Pernell McPhee OLB
 53 John Timu ILB
+59 Danny Trevathan ILB
 Defensive backs
 38 Adrian Amos FS
 20 Prince Amukamara CB
@@ -637,10 +743,31 @@ Special teams
  4 Connor Barth K
 49 Andrew DePaola LS
 16 Pat O'Donnell P
+Reserve lists
+21 Quintin Demps SS (IR) Injury icon 2.svg
+50 Jerrell Freeman ILB (IR) Injury icon 2.svg
+32 Deiondre' Hall FS (IR) Injury icon 2.svg
+64 Eric Kush C (IR) Injury icon 2.svg
+81 Cameron Meredith WR (IR) Injury icon 2.svg
+67 Jordan Morgan G (IR) Injury icon 2.svg
+48 Patrick Scales LS (IR) Injury icon 2.svg
+11 Kevin White WR (IR) Injury icon 2.svg
+97 Willie Young OLB (IR) Injury icon 2.svg
+Practice squad
+83 Mario Alford WR
+58 Jonathan Anderson ILB
+84 Ben Braunecker TE
+68 Rashaad Coward DE
+35 Doran Grant CB
+60 Brandon Greene T
+57 Howard Jones OLB
+63 Cameron Lee G
+ 1 Darreus Rogers WR
+86 Nelson Spruce WR
 Rookies in italics
-Roster updated October 6, 2017
+Roster updated October 28, 2017
 Depth chart • Transactions
-52 Active, 9 Inactive, 10
+53 Active, 9 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -659,6 +786,7 @@ Running backs
 34 Zach Zenner
 Wide receivers
 10 Jared Abbrederis
+16 Jace Billingsley
 19 Kenny Golladay
 11 Marvin Jones
 13 T.J. Jones
@@ -674,20 +802,19 @@ Offensive linemen
 63 Tim Lelito G
 72 Brian Mihalik T
 73 Greg Robinson T
+74 Dan Skipper T
 64 Travis Swanson C
 71 Rick Wagner T
 Defensive linemen
 94 Ezekiel Ansah DE
-96 George Johnson DE
 98 Jeremiah Ledbetter DT
-92 Haloti Ngata DT
 91 A'Shawn Robinson DT
 97 Akeem Spence DT
+99 Khyri Thornton DT
 78 Jeremiah Valoaga DE
 90 Cornelius Washington DE
 69 Anthony Zettel DE
 Linebackers
-50 Thurston Armbrister OLB
 43 Nick Bellore MLB
 40 Jarrad Davis MLB
 54 Steve Longa OLB
@@ -707,21 +834,46 @@ Defensive backs
 45 Charles Washington FS
 32 Tavon Wilson SS
 Special teams
-18 Jeff Locke P
+ 6 Sam Martin P
 48 Don Muhlbach LS
  5 Matt Prater K
+Reserve lists
+53 Brandon Chubb OLB (IR) Injury icon 2.svg
+51 Brandon Copeland OLB (IR) Injury icon 2.svg
+66 Joe Dahl G (IR) Injury icon 2.svg
+68 Taylor Decker T (PUP) Injury icon 2.svg
+93 Jordan Hill DT (IR) Injury icon 2.svg
+61 Kerry Hyder DE (IR) Injury icon 2.svg
+39 Mike James RB (IR) Injury icon 2.svg
+67 Zac Kerin G (IR) Injury icon 2.svg
+46 Des Lawrence CB (IR) Injury icon 2.svg
+92 Haloti Ngata DT (IR) Injury icon 2.svg
+ 2 Kasey Redfern P (IR) Injury icon 2.svg
+70 Corey Robinson T (IR) Injury icon 2.svg
+Practice squad
+50 Thurston Armbrister LB
+38 Adairius Barnes CB
+79 Alex Barrett DE
+83 Dontez Ford WR (Injured) Injury icon 2.svg
+17 Andy Jones WR
+ 8 Brad Kaaya QB
+75 Leo Koloamatangi C
+41 Rolan Milligan SS
+-- Storm Norton T
+62 Christian Ringo DT
+84 Hakeem Valles TE
 Rookies in italics
-Roster updated October 3, 2017
+Roster updated October 28, 2017
 Depth chart • Transactions
-53 Active, 14 Inactive, 11
+53 Active, 12 Inactive, 11 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
 Green Bay Packers[edit]
 Green Bay Packers roster view talk edit
 Quarterbacks
+ 6 Joe Callahan
  7 Brett Hundley
-12 Aaron Rodgers
 Running backs
 33 Aaron Jones
 32 Devante Mays
@@ -776,15 +928,36 @@ Defensive backs
 20 Kevin King CB
 41 Lenzy Pipkins CB
 23 Damarious Randall CB
-24 Quinten Rollins CB
+35 Jermaine Whitehead FS
 Special teams
  2 Mason Crosby K
 59 Taybor Pepper LS
  8 Justin Vogel P
+Reserve lists
+45 Vince Biegel OLB (PUP) Injury icon 2.svg
+39 Demetri Goodson CB (PUP) Injury icon 2.svg
+68 Kyle Murphy T (IR) Injury icon 2.svg
+12 Aaron Rodgers QB (IR) Injury icon 2.svg
+24 Quinten Rollins CB (IR) Injury icon 2.svg
+10 Jake Schum P (IR) Injury icon 2.svg
+78 Jason Spriggs T (IR) Injury icon 2.svg
+57 David Talley ILB (IR) Injury icon 2.svg
+26 Herb Waters CB (IR) Injury icon 2.svg
+Practice squad
+79 Kofi Amichia G
+44 Donatello Brown CB
+89 Michael Clark WR
+ 9 Jerod Evans QB
+93 Reggie Gilbert OLB
+72 Darrell Greene G
+71 Izaah Lunsford DE
+49 Derrick Mathews ILB
+13 Max McCaffrey WR
+10 DeAngelo Yancey WR
 Rookies in italics
-Roster updated October 7, 2017
+Roster updated October 25, 2017
 Depth chart • Transactions
-53 Active, 8 Inactive, 10
+53 Active, 9 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -798,11 +971,11 @@ Running backs
 30 C.J. Ham FB
 21 Jerick McKinnon
 25 Latavius Murray
-31 Stevan Ridley
 Wide receivers
 12 Rodney Adams
 13 Stacy Coley
 14 Stefon Diggs
+18 Michael Floyd
 19 Adam Thielen
 11 Laquon Treadwell
 17 Jarius Wright
@@ -814,6 +987,7 @@ Offensive linemen
 61 Joe Berger G
 76 Aviante Collins T
 62 Nick Easton G
+67 Cornelius Edison C
 65 Pat Elflein C
 69 Rashod Hill T
 63 Danny Isidora G
@@ -844,7 +1018,6 @@ Defensive backs
 27 Jayron Kearse SS
 23 Terence Newman CB
 29 Xavier Rhodes CB
-34 Andrew Sendejo SS
 35 Marcus Sherels CB
 22 Harrison Smith FS
 26 Trae Waynes CB
@@ -852,10 +1025,28 @@ Special teams
  2 Kai Forbath K
 47 Kevin McDermott LS
  4 Ryan Quigley P
+Reserve lists
+ 5 Teddy Bridgewater QB (PUP) Injury icon 2.svg
+33 Dalvin Cook RB (IR) Injury icon 2.svg
+73 Sharrif Floyd DT (NF-Inj.) Injury icon 2.svg
+43 Bishop Sankey RB (IR) Injury icon 2.svg
+34 Andrew Sendejo SS (Susp.)
+83 R.J. Shelton Jr. WR (IR) Injury icon 2.svg
+57 Shaan Washington OLB (IR) Injury icon 2.svg
+Practice squad
+63 Dylan Bradley DT
+86 Kyle Carter TE
+48 Bronson Hill RB
+16 Cayleb Jones WR
+68 Cedrick Lang T
+95 Ifeadi Odenigbo DE
+38 Horace Richardson CB
+39 Jack Tocho FS
+56 Antwione Williams OLB
 Rookies in italics
-Roster updated October 5, 2017
+Roster updated October 28, 2017
 Depth chart • Transactions
-53 Active, 7 Inactive, 10
+53 Active, 7 Inactive, 9 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -869,10 +1060,10 @@ Running backs
 40 Derrick Coleman FB
 26 Tevin Coleman
 24 Devonta Freeman
-25 Brian Hill
 28 Terron Ward
 Wide receivers
 18 Taylor Gabriel
+17 Marvin Hall
 14 Justin Hardy
 11 Julio Jones
 19 Andre Roberts
@@ -899,16 +1090,17 @@ Defensive linemen
 92 Dontari Poe DT
 50 Brooks Reed DE
 90 Derrick Shelby DE
+79 Ahtyba Rubin DT
 91 Courtney Upshaw DE
-94 Joe Vellano DT
 Linebackers
 44 Vic Beasley OLB
 59 De'Vondre Campbell OLB
-56 Jermaine Grace OLB
+54 Jermaine Grace OLB
 36 Kemal Ishmael OLB
 45 Deion Jones MLB
 42 Duke Riley OLB
 52 Jordan Tripp MLB
+56 Sean Weatherspoon OLB
 Defensive backs
 23 Robert Alford CB
 37 Ricardo Allen FS
@@ -923,10 +1115,31 @@ Special teams
  5 Matt Bosher P
  3 Matt Bryant K
 47 Josh Harris LS
+Reserve lists
+32 Jalen Collins CB (Susp.)
+95 Jack Crawford DT (IR) Injury icon 2.svg
+13 Devin Fuller WR (IR) Injury icon 2.svg
+96 Martin Ifedi DE (IR) Injury icon 2.svg
+41 Quincy Mauger CB (IR) Injury icon 2.svg
+53 LaRoy Reynolds MLB (IR) Injury icon 2.svg
+Practice squad
+35 Marcelis Branch FS
+76 Daniel Brunskill OT
+39 Deante Burton CB
+16 Reggie Davis WR
+75 Jamil Douglas G
+89 Alex Gray TE
+ 9 Garrett Grayson QB
+25 Brian Hill RB
+77 Joey Ivie DT
+55 J'Terius Jones DE
+ 9 Trevor Knight QB (Injured) Injury icon 2.svg
+82 Joshua Perkins TE (Injured) Injury icon 2.svg
+93 Tani Tupou DT
 Rookies in italics
-Roster updated October 3, 2017
+Roster updated October 24, 2017
 Depth chart • Transactions
-52 Active, 6 Inactive, 11
+53 Active, 6 Inactive, 13 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -934,7 +1147,7 @@ Carolina Panthers[edit]
 Carolina Panthers roster view talk edit
 Quarterbacks
  3 Derek Anderson
- 8 Brad Kaaya
+ 4 Garrett Gilbert
  1 Cam Newton
 Running backs
 40 Alexander Armah FB
@@ -944,6 +1157,7 @@ Running backs
 43 Fozzy Whittaker
 Wide receivers
 13 Kelvin Benjamin
+83 Kaelin Clay
 17 Devin Funchess
 10 Curtis Samuel
 19 Russell Shepard
@@ -973,6 +1187,7 @@ Defensive linemen
 99 Kawann Short DT
 Linebackers
 58 Thomas Davis OLB
+57 Andrew Gachkar MLB
 53 Ben Jacobs MLB
 59 Luke Kuechly MLB
 55 David Mayo MLB
@@ -983,21 +1198,45 @@ Defensive backs
 24 James Bradberry CB
 31 Jairus Byrd FS
 20 Kurt Coleman FS
-36 Demetrious Cox SS
 23 LaDarius Gunter CB
 42 Colin Jones FS
 41 Captain Munnerlyn CB
 27 Kevon Seymour CB
-37 Dezmen Southward SS
 26 Daryl Worley CB
 Special teams
  9 Graham Gano K
 44 J.J. Jansen LS
  5 Michael Palardy P
+Reserve lists
+18 Damiere Byrd WR (IR) Injury icon 2.svg
+36 Demetrious Cox SS (IR) Injury icon 2.svg
+35 Corn Elder CB (IR) Injury icon 2.svg
+71 Dan France T (IR) Injury icon 2.svg
+79 Drew Iddings DT (IR) Injury icon 2.svg
+94 Daeshon Hall DE (IR) Injury icon 2.svg
+12 Charles Johnson WR (IR) Injury icon 2.svg
+32 Cole Luke CB (IR) Injury icon 2.svg
+88 Greg Olsen TE (IR) Injury icon 2.svg
+16 Fred Ross WR (IR) Injury icon 2.svg
+80 Scott Simonson TE (IR) Injury icon 2.svg
+21 Teddy Williams CB (IR) Injury icon 2.svg
+61 David Yankey G (IR) Injury icon 2.svg
+Practice squad
+ 6 Roberto Aguayo K
+76 Blaine Clausell T
+81 Mose Frazier WR
+86 Bucky Hodges TE
+11 Jamaal Jones WR
+77 Zach Moore DE
+71 Efe Obada DE
+25 Damian Parms SS
+33 Zack Sanchez CB
+38 Jalen Simmons RB
+37 Dezmen Southward SS
 Rookies in italics
-Roster updated October 3, 2017
+Roster updated October 25, 2017
 Depth chart • Transactions
-53 Active, 12 Inactive, 10
+53 Active, 13 Inactive, 11 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1011,8 +1250,8 @@ Running backs
 33 Trey Edmunds
 22 Mark Ingram Jr.
 41 Alvin Kamara
+36 Daniel Lasco
 42 Zach Line FB
-28 Adrian Peterson
 Wide receivers
 80 Austin Carr
 16 Brandon Coleman
@@ -1026,28 +1265,29 @@ Tight ends
 84 Michael Hoomanawanui
 Offensive linemen
 72 Terron Armstead T
--- John Greco G
+79 John Greco G
 65 Senio Kelemete G
 61 Josh LeRibeus G
 75 Andrus Peat T
 71 Ryan Ramczyk T
+63 Cameron Tom C
 60 Max Unger C
 67 Larry Warford G
 Defensive linemen
 95 Tyeler Davison DT
 91 Trey Hendrickson DE
--- John Hughes DT
+92 John Hughes DT
 94 Cameron Jordan DE
 97 Al-Quadin Muhammad DE
 57 Alex Okafor DE
 93 David Onyemata DT
 98 Sheldon Rankins DT
 Linebackers
+50 Gerald Hodges OLB
 44 Hau'oli Kikaha OLB
 53 A.J. Klein OLB
--- Gabe Martin MLB
+56 Michael Mauti OLB
 52 Craig Robertson OLB
-54 Nate Stupar MLB
 51 Manti Te'o MLB
 Defensive backs
 31 Chris Banjo FS
@@ -1057,7 +1297,6 @@ Defensive backs
 34 Justin Hardee S
 21 De'Vante Harris CB
 23 Marshon Lattimore CB
-24 Sterling Moore CB
 32 Kenny Vaccaro SS
 43 Marcus Williams S
 26 P.J. Williams CB
@@ -1065,10 +1304,37 @@ Special teams
  3 Wil Lutz K
  6 Thomas Morstead P
 49 Zach Wood LS
+Reserve lists
+66 Jack Allen C (IR) Injury icon 2.svg
+47 Alex Anzalone OLB (IR) Injury icon 2.svg
+85 Dan Arnold WR (IR) Injury icon 2.svg
+40 Delvin Breaux CB
+90 Nick Fairley DT (NF-Ill.) Injury icon 2.svg
+11 Corey Fuller WR (IR) Injury icon 2.svg
+80 Clay Harbor TE (IR) Injury icon 2.svg
+29 John Kuhn FB (IR) Injury icon 2.svg
+68 Devaroe Lawrence DT (NF-Inj.) Injury icon 2.svg
+70 Mitchell Loewen DE (IR) Injury icon 2.svg
+58 David Parry DT (IR) Injury icon 2.svg
+64 Zach Strief T (IR) Injury icon 2.svg
+54 Nate Stupar MLB (IR) Injury icon 2.svg
+73 Martin Wallace T (IR) Injury icon 2.svg
+Practice squad
+99 Adam Bighill LB
+14 Travin Dural WR
+77 John Fullington OT
+45 Garrett Griffin TE
+-- Woodrow Hamilton DT
+74 Alex Jenkins DE
+-- Gabe Martin MLB
+37 Arthur Maulet CB
+59 Shayne Skov OLB
+-- Nate Theaker G
+78 Landon Turner G
 Rookies in italics
-Roster updated October 4, 2017
+Roster updated October 25, 2017
 Depth chart • Transactions
-53 Active, 13 Inactive, 10
+53 Active, 14 Inactive, 11 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1112,7 +1378,7 @@ Defensive linemen
 98 Clinton McDonald DT
 95 Ryan Russell DE
 96 Sealver Siliga DT
-57 Noah Spence DE
+56 Darryl Tapp DE
 Linebackers
 58 Kwon Alexander MLB
 51 Kendell Beckwith OLB
@@ -1126,20 +1392,39 @@ Defensive backs
 21 Justin Evans S
 24 Brent Grimes CB
 28 Vernon Hargreaves CB
-39 Isaiah Johnson SS
 36 Robert McClain CB
+27 Deji Olatoye CB
 26 Josh Robinson S
 29 Ryan Smith CB
 37 Keith Tandy S
 43 T.J. Ward S
 Special teams
  9 Bryan Anger P
- 2 Nick Folk K
+ 7 Patrick Murray K
 65 Garrison Sanborn LS
+Reserve lists
+ 2 Nick Folk K (IR) Injury icon 2.svg
+ 4 Ryan Griffin QB (IR) Injury icon 2.svg
+75 DaVonte Lambert DT (IR) Injury icon 2.svg
+57 Noah Spence DE (IR) Injury icon 2.svg
+72 Justin Trattou DE (IR) Injury icon 2.svg
+97 Stevie Tu'ikolovatu DT (IR) Injury icon 2.svg
+Practice squad
+49 Riley Bullough LB
+45 Alan Cross TE
+39 Isaiah Johnson S
+67 Michael Liedtke G
+16 Freddie Martino WR
+61 Justin Murray T
+50 Eric Nzeocha LB
+79 Pat O'Connor DE
+30 David Rivers CB
+71 Channing Ward DE
+85 Bobo Wilson WR
 Rookies in italics
-Roster updated October 6, 2017
+Roster updated October 28, 2017
 Depth chart • Transactions
-53 Active, 4 Inactive, 11
+53 Active, 6 Inactive, 11 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1148,13 +1433,12 @@ Arizona Cardinals[edit]
 Arizona Cardinals roster view talk edit
 Quarterbacks
  7 Blaine Gabbert
- 3 Carson Palmer
  5 Drew Stanton
 Running backs
 38 Andre Ellington
 37 D.J. Foster
-23 Chris Johnson
 35 Elijhaa Penny
+23 Adrian Peterson
 33 Kerwynn Williams
 Wide receivers
 13 Jaron Brown
@@ -1205,17 +1489,35 @@ Defensive backs
 26 Brandon Williams CB
 25 Tramon Williams CB
 Special teams
-46 Aaron Brewer LS
  4 Phil Dawson K
+49 Justin Drescher LS
  2 Andy Lee P
+Reserve lists
+46 Aaron Brewer LS (IR) Injury icon 2.svg
+44 Markus Golden OLB (IR) Injury icon 2.svg
+76 Mike Iupati G (IR) Injury icon 2.svg
+31 David Johnson RB (IR) Injury icon 2.svg
+22 T.J. Logan RB (IR) Injury icon 2.svg
+ 3 Carson Palmer QB (IR) Injury icon 2.svg
+29 Ronald Zamort CB (IR) Injury icon 2.svg
+Practice squad
+19 Carlton Agudosi WR
+54 Bryson Albright ILB
+63 Peli Anau DE
+ 6 Mike Bercovici QB
+81 Anthony Denham TE
+52 Connor Harris ILB
+34 Harlan Miller CB
+91 Earl Okine OLB
+78 Vinston Painter OT
+65 Pasoni Tasini NT
 Rookies in italics
-Roster updated October 8, 2017
+Roster updated October 26, 2017
 Depth chart • Transactions
-53 Active, 5 Inactive, 10
+52 Active, 7 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
-
 Los Angeles Rams[edit]
 Los Angeles Rams roster view talk edit
 Quarterbacks
@@ -1227,10 +1529,11 @@ Running backs
 33 Justin Davis
 30 Todd Gurley
 Wide receivers
-11 Tavon Austin PR
-10 Pharoh Cooper KR
+11 Tavon Austin
+10 Pharoh Cooper PR
 18 Cooper Kupp
 83 Josh Reynolds
+88 Mike Thomas
 12 Sammy Watkins
 17 Robert Woods
 Tight ends
@@ -1248,8 +1551,8 @@ Offensive linemen
 63 Darrell Williams T
 77 Andrew Whitworth T
 Defensive linemen
-90 Michael Brockers DE
-99 Aaron Donald DE
+90 Michael Brockers NT
+99 Aaron Donald DT
 97 Morgan Fox DE
 92 Tanzel Smart DT
 95 Tyrunn Walker NT
@@ -1265,7 +1568,6 @@ Linebackers
 51 Ejuan Price OLB
 94 Robert Quinn OLB
 Defensive backs
-31 Maurice Alexander SS
 41 Marqui Christian FS
 24 Blake Countess SS
 38 Cody Davis FS
@@ -1280,17 +1582,35 @@ Special teams
  6 Johnny Hekker P
 44 Jacob McQuaide LS
  4 Greg Zuerlein K
+Reserve lists
+25 Lance Dunbar RB (PUP) Injury icon 2.svg
+91 Dominique Easley DE (IR) Injury icon 2.svg
+84 Temarrick Hemingway TE (IR) Injury icon 2.svg
+45 Zach Laskey FB (IR) Injury icon 2.svg
+15 Bradley Marquez WR (IR) Injury icon 2.svg
+41 Lenard Tillery RB (IR) Injury icon 2.svg
+Practice squad
+13 Fred Brown WR
+67 Omarius Bryant NT
+27 Isaiah Johnson S
+19 Paul McRoberts WR
+82 Johnny Mundt TE
+72 Aaron Neary C
+47 Kevin Peterson CB
+39 Sam Rogers FB
+56 Garrett Sickels OLB
+53 Carlos Thompson OLB
 Rookies in italics
-Roster updated October 2, 2017
+Roster updated October 12, 2017
 Depth chart • Transactions
-53 Active, 7 Inactive, 9
+53 Active, 6 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
 San Francisco 49ers[edit]
 San Francisco 49ers roster view talk edit
 Quarterbacks
- 2 Brian Hoyer
+ 10 Jimmy Garoppolo
  3 C.J. Beathard
 Running backs
 28 Carlos Hyde
@@ -1300,14 +1620,14 @@ Running backs
 Wide receivers
 17 Victor Bolden Jr.
 10 Kendrick Bourne
-15 Pierre Garcon
+15 Pierre Garçon
 11 Marquise Goodwin
 19 Aldrick Robinson
 81 Trent Taylor
 Tight ends
 88 Garrett Celek
+83 Cole Hikutini
 85 George Kittle
-82 Logan Paulsen
 Offensive linemen
 68 Zane Beadles G
 77 Trent Brown T
@@ -1318,19 +1638,19 @@ Offensive linemen
 74 Joe Staley T
 75 Laken Tomlinson G
 Defensive linemen
-91 Arik Armstead DE
 99 DeForest Buckner DT
-96 Xavier Cooper DT
 58 Elvis Dumervil DE
+92 Leger Douzable DT
+-- Datone Jones DE
 93 D.J. Jones DT
 59 Aaron Lynch DE
+69 Tony McDaniel DT
 90 Earl Mitchell DT
 94 Solomon Thomas DE
 Linebackers
 54 Ray-Ray Armstrong OLB
-53 NaVorro Bowman MLB
-50 Brock Coyle MLB
-56 Reuben Foster OLB
+50 Brock Coyle OLB
+56 Reuben Foster MLB
 57 Eli Harold OLB
 47 Elijah Lee MLB
 46 Mark Nzeocha OLB
@@ -1338,9 +1658,9 @@ Linebackers
 97 Dekoda Watson OLB
 Defensive backs
 38 Adrian Colbert FS
-30 Asa Jackson CB
-26 Lorenzo Jerome FS
+20 Leon Hall CB
 36 Dontae Johnson CB
+27 Dexter McCoil SS
 35 Eric Reid SS
 33 Rashard Robinson CB
 29 Jaquiski Tartt SS
@@ -1351,10 +1671,36 @@ Special teams
  9 Robbie Gould K
 86 Kyle Nelson LS
  5 Bradley Pinion P
+Reserve lists
+91 Arik Armstead DE (IR) Injury icon 2.svg
+98 Ronald Blair DE (IR) Injury icon 2.svg
+13 Aaron Burbridge WR (IR) Injury icon 2.svg
+95 Tank Carradine DE (IR) Injury icon 2.svg
+65 Joshua Garnett G (IR) Injury icon 2.svg
+47 Jimmie Gilbert OLB (IR) Injury icon 2.svg
+30 Prince Charles Iworah CB (IR) Injury icon 2.svg
+30 Asa Jackson CB (IR) Injury icon 2.svg
+43 Chanceller James SS (IR) Injury icon 2.svg
+92 Chris Jones DT (IR) Injury icon 2.svg
+20 Don Jones SS (IR) Injury icon 2.svg
+48 Donavin Newsom MLB (IR) Injury icon 2.svg
+23 Will Redmond CB (IR) Injury icon 2.svg
+51 Malcolm Smith OLB (IR) Injury icon 2.svg
+32 Joe Williams RB (IR) Injury icon 2.svg
+Practice squad
+14 DeAndre Carter WR
+60 John Flynn C
+26 Greg Mabin CB
+41 Jeremy McNichols RB
+ 4 Nick Mullens QB
+71 Pace Murphy OT
+18 DeAndre Smelter WR
+84 Cole Wick TE
+78 Darrell Williams Jr. OT
 Rookies in italics
-Roster updated September 26, 2017
+Roster updated October 28, 2017
 Depth chart • Transactions
-53 Active, 13 Inactive, 10
+53 Active, 15 Inactive, 9 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1391,10 +1737,10 @@ Offensive linemen
 64 Jordan Roos G
 73 Matt Tobin T
 Defensive linemen
-56 Cliff Avril DE
 72 Michael Bennett DE
 55 Frank Clark DE
-93 Branden Jackson DE
+93 Dwight Freeney DE
+67 Branden Jackson DE
 99 Quinton Jefferson DE
 92 Nazair Jones DT
 90 Jarran Reed DT
@@ -1422,18 +1768,35 @@ Special teams
 69 Tyler Ott LS
  9 Jon Ryan P
  7 Blair Walsh K
+Reserve lists
+56 Cliff Avril DE (IR) Injury icon 2.svg
+32 Chris Carson RB (IR) Injury icon 2.svg
+21 DeAndre Elliott CB (IR) Injury icon 2.svg
+74 George Fant OT (IR) Injury icon 2.svg
+48 Christian French DE (IR) Injury icon 2.svg
+95 Dion Jordan DE (NF-Inj.) Injury icon 2.svg
+94 Malik McDowell DT (NF-Inj.) Injury icon 2.svg
+41 Dewey McDonald OLB (IR) Injury icon 2.svg
+65 Justin Senior OT (IR) Injury icon 2.svg
+35 DeShawn Shead CB (PUP) Injury icon 2.svg
+Practice squad
+ 2 Trevone Boykin QB
+61 Rodney Coe DT
+39 Mike Davis RB
+59 Josh Forrest OLB
+53 Joey Hunt C
+59 Joseph Jones LB
+36 Akeem King CB
+83 David Moore WR
+46 Tyrone Swoopes TE
+40 Mike Tyson CB
 Rookies in italics
-Roster updated October 7, 2017
+Roster updated October 25, 2017
 Depth chart • Transactions
-53 Active, 9 Inactive, 9
+53 Active, 10 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
-See also[edit]
-List of current AFC team rosters
-Categories: National Football League playersNational Football League listsLists of players by National Football League team
-Navigation menu
-Not logged inTalkContributionsCreate accountLog inArticleTalkReadEditView historySearch
 
 
 AFC East[edit]
@@ -1444,17 +1807,17 @@ Quarterbacks
  5 Tyrod Taylor
 14 Joe Webb
 Running backs
-22 Joe Banyard
 42 Patrick DiMarco FB
+26 Taiwan Jones
 25 LeSean McCoy
 35 Mike Tolbert FB
-26 Taiwan Jones
 Wide receivers
-13 Kaelin Clay
+13 Kelvin Benjamin
 18 Andre Holmes
 11 Zay Jones
 87 Jordan Matthews
 15 Brandon Tate
+10 Deonte Thompson
 Tight ends
 85 Charles Clay
 84 Nick O'Leary
@@ -1463,6 +1826,7 @@ Tight ends
 Offensive linemen
 73 Dion Dawkins T
 62 Vladimir Ducasse G
+66 Seantrel Henderson T
 64 Richie Incognito G
 77 Cordy Glenn T
 72 Ryan Groy G
@@ -1471,7 +1835,6 @@ Offensive linemen
 79 Jordan Mills T
 70 Eric Wood C
 Defensive linemen
-99 Marcell Dareus DT
 56 Ryan Davis DE
 55 Jerry Hughes DE
 90 Shaq Lawson DE
@@ -1492,7 +1855,7 @@ Defensive backs
 28 E.J. Gaines CB
 23 Micah Hyde SS
 24 Leonard Johnson CB
-31 Greg Mabin CB
+30 Lafayette Pitts CB
 21 Jordan Poyer FS
 29 Shamarko Thomas SS
 27 Tre'Davious White CB
@@ -1501,10 +1864,25 @@ Special teams
 69 Reid Ferguson LS
  4 Steven Hauschka K
  6 Colton Schmidt P
+Reserve lists
+33 Colt Anderson FS (IR) Injury icon 2.svg
+17 Jeremy Butler WR (IR) Injury icon 2.svg
+89 Keith Towbridge TE (IR) Injury icon 2.svg
+Practice squad
+-- Jason Croom TE
+16 Malachi Dupre WR
+75 Eric Lee DE
+97 Marquavius Lewis DT
+38 L.J. McCray FS
+63 Will Pericak G
+60 Adam Redmond C
+89 Brandon Reilly WR
+31 Sammy Seamster CB
+74 De'Ondre Wesley OT
 Rookies in italics
-Roster updated October 7, 2017
+Roster updated November 1, 2017
 Depth chart • Transactions
-53 Active, 4 Inactive, 8
+53 Active, 3 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1512,9 +1890,9 @@ Miami Dolphins[edit]
 Miami Dolphins roster view talk edit
 Quarterbacks
  6 Jay Cutler
+ 9 David Fales
  8 Matt Moore
 Running backs
-23 Jay Ajayi
 32 Kenyan Drake
 34 Senorise Perry
 26 Damien Williams
@@ -1523,6 +1901,7 @@ Wide receivers
 19 Jakeem Grant
 14 Jarvis Landry
 11 DeVante Parker
+87 Rashawn Scott
 10 Kenny Stills
 Tight ends
 80 Anthony Fasano
@@ -1535,7 +1914,6 @@ Offensive linemen
 77 Jesse Davis G
 70 Ja'Wuan James T
 51 Mike Pouncey C
-65 Anthony Steen G
 67 Laremy Tunsil T
 79 Sam Young T
 Defensive linemen
@@ -1557,11 +1935,9 @@ Linebackers
 94 Lawrence Timmons OLB
 Defensive backs
 35 Walt Aikens SS
-29 Nate Allen FS
 25 Xavien Howard CB
 20 Reshad Jones SS
 21 Jordan Lucas CB
-41 Byron Maxwell CB
 28 Bobby McCain CB
 33 Torry McTyer CB
 27 Maurice Smith FS
@@ -1572,10 +1948,33 @@ Special teams
 92 John Denney LS
 16 Matt Haack P
  1 Cody Parkey K
+Reserve lists
+29 Nate Allen FS (IR) Injury icon 2.svg
+49 Lamin Barrow MLB (IR) Injury icon 2.svg
+15 Isaiah Ford WR (IR) Injury icon 2.svg
+62 Ted Larsen G (IR) Injury icon 2.svg
+36 Tony Lippett CB (IR) Injury icon 2.svg
+22 T.J. McDonald FS (Susp.)
+52 Raekwon McMillan MLB (IR) Injury icon 2.svg
+55 Koa Misi OLB (IR) Injury icon 2.svg
+72 Eric Smith T (IR) Injury icon 2.svg
+65 Anthony Steen G (IR) Injury icon 2.svg
+17 Ryan Tannehill QB (IR) Injury icon 2.svg
+Practice squad
+ 7 Brandon Doughty QB
+83 Thomas Duarte TE
+46 Neville Hewitt OLB
+63 Sean Hickey T
+18 Malcolm Lewis WR
+82 Kolby Listenbee WR
+75 Cameron Malveaux DE
+81 Drew Morgan WR
+38 De'Veon Smith RB
+98 Gabe Wright DT
 Rookies in italics
-Roster updated October 3, 2017
+Roster updated October 31, 2017
 Depth chart • Transactions
-53 Active, 10 Inactive, 10
+51 Active, 11 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1583,7 +1982,7 @@ New England Patriots[edit]
 New England Patriots roster view talk edit
 Quarterbacks
 12 Tom Brady
-10 Jimmy Garoppolo
+ 2 Brian Hoyer
 Running backs
 38 Brandon Bolden
 34 Rex Burkhead
@@ -1604,7 +2003,7 @@ Tight ends
 Offensive linemen
 60 David Andrews C
 61 Marcus Cannon T
-74 Cole Croston T
+74 Cole Croston G
 71 Cameron Fleming T
 75 Ted Karras G
 69 Shaq Mason G
@@ -1617,15 +2016,15 @@ Defensive linemen
 70 Adam Butler DT
 98 Trey Flowers DE
 92 Geneo Grissom DE
-93 Lawrence Guy DT
+93 Lawrence Guy DE
 55 Cassius Marsh DE
-91 Deatrich Wise Jr. DE
+91 Deatrich Wise Jr. DT
 Linebackers
 59 Marquis Flowers OLB
-45 David Harris OLB
+45 David Harris MLB
 54 Dont'a Hightower MLB
-48 Harvey Langi OLB
-52 Elandon Roberts MLB
+51 Trevor Reilly OLB
+52 Elandon Roberts OLB
 53 Kyle Van Noy OLB
 Defensive backs
 29 Johnson Bademosi CB
@@ -1635,7 +2034,7 @@ Defensive backs
 24 Stephon Gilmore CB
 30 Duron Harmon FS
 31 Jonathan Jones CB
-36 Brandon King SS
+36 Brandon King FS
 32 Devin McCourty FS
 37 Jordan Richards SS
 25 Eric Rowe CB
@@ -1643,10 +2042,31 @@ Special teams
  6 Ryan Allen P
 49 Joe Cardona LS
  3 Stephen Gostkowski K
+Reserve lists
+51 Keionta Davis DE (NF-Inj.) Injury icon 2.svg
+11 Julian Edelman WR (IR) Injury icon 2.svg
+63 Antonio Garcia T (NF-Ill.) Injury icon 2.svg
+76 Andrew Jelks T (NF-Inj.) Injury icon 2.svg
+41 Cyrus Jones CB (IR) Injury icon 2.svg
+48 Harvey Langi OLB (NF-Inj.) Injury icon 2.svg
+58 Shea McClellin OLB (IR) Injury icon 2.svg
+19 Malcolm Mitchell WR (IR) Injury icon 2.svg
+95 Derek Rivers DE (IR) Injury icon 2.svg
+99 Vincent Valentine DT (IR) Injury icon 2.svg
+Practice squad
+64 James Ferentz C
+81 Cody Hollister WR
+26 David Jones FS
+85 Jake Kumerow WR
+27 Ryan Lewis CB
+84 Riley McCarron WR
+39 Damarius Travis SS
+44 Will Tye TE
+22 Jomal Wiltz CB
 Rookies in italics
-Roster updated October 6, 2017
+Roster updated November 2, 2017
 Depth chart • Transactions
-53 Active, 11 Inactive, 10
+53 Active, 10 Inactive, 9 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1662,7 +2082,7 @@ Running backs
 22 Matt Forte
 25 Elijah McGuire
 29 Bilal Powell
-39 Travaris Cadet
+44 Lawrence Thomas FB
 Wide receivers
 11 Robby Anderson
 16 Chad Hansen
@@ -1670,8 +2090,8 @@ Wide receivers
 14 Jeremy Kerley
 18 ArDarius Stewart
 Tight ends
-86 Jordan Leggett
 88 Austin Seferian-Jenkins
+85 Neal Sterling
 83 Eric Tomlinson
 Offensive linemen
 68 Kelvin Beachum T
@@ -1684,11 +2104,10 @@ Offensive linemen
 72 Brandon Shell T
 67 Brian Winters G
 Defensive linemen
+75 Xavier Cooper DE
 94 Kony Ealy DE
 99 Steve McLendon NT
 98 Mike Pennel NT
-97 Ed Stinson DE
-44 Lawrence Thomas DE
 96 Muhammad Wilkerson DE
 92 Leonard Williams DE
 Linebackers
@@ -1709,17 +2128,43 @@ Defensive backs
 31 Derrick Jones CB
 26 Marcus Maye FS
 45 Rontez Miles S
+30 Robert Nelson CB
 27 Darryl Roberts CB
+-- Rashard Robinson CB
 41 Buster Skrine CB
-20 Marcus Williams CB
 Special teams
  7 Chandler Catanzaro K
  4 Lachlan Edwards P
 42 Thomas Hennessy LS
+Reserve lists
+34 Jeremy Clark CB (NF-Inj.) Injury icon 2.svg
+38 Xavier Coleman CB (IR) Injury icon 2.svg
+49 Dylan Donahue OLB (IR) Injury icon 2.svg
+81 Quincy Enunwa WR (IR) Injury icon 2.svg
+ 3 Brisly Estime WR (IR) Injury icon 2.svg
+87 Chris Gragg TE (IR) Injury icon 2.svg
+86 Jordan Leggett TE (IR) Injury icon 2.svg
+37 Bryson Keeton CB (IR) Injury icon 2.svg
+55 Lorenzo Mauldin OLB (IR) Injury icon 2.svg
+36 Doug Middleton S (IR) Injury icon 2.svg
+17 Charone Peake WR (IR) Injury icon 2.svg
+53 Edmond Robinson OLB (IR) Injury icon 2.svg
+19 Devin Smith WR (IR) Injury icon 2.svg
+Practice squad
+69 Ben Braden G
+46 Jeremy Cash ILB
+63 Geoff Gray G
+36 Akeem Judd RB
+89 Jalin Marshall WR
+87 JoJo Natson WR
+91 Claude Pelon DE
+93 Deon Simon NT
+35 Terrell Sinkfield CB
+ 1 Damore'ea Stringfellow WR
 Rookies in italics
-Roster updated October 7, 2017
+Roster updated November 2, 2017
 Depth chart • Transactions
-53 Active, 13 Inactive, 10
+53 Active, 13 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1732,28 +2177,29 @@ Quarterbacks
 Running backs
 37 Javorius Allen
 34 Alex Collins
-42 Patrick Ricard FB
+31 Bobby Rainey
+42 Patrick Ricard FB/NT
 28 Terrance West
 Wide receivers
 12 Michael Campanaro
 18 Jeremy Maclin
+13 Chris Matthews
 10 Chris Moore
 11 Breshad Perriman
 17 Mike Wallace
-13 Chris Matthews
 Tight ends
 86 Nick Boyle
+81 Gavin Escobar
 88 Vince Mayle
 82 Benjamin Watson
 87 Maxx Williams
 Offensive linemen
-70 Tony Bergstrom G
 61 Luke Bowanko C
 71 Jermaine Eluemunor G
 77 Austin Howard T
 74 James Hurst T
 66 Ryan Jensen C
-78 Dieugot Joseph T
+76 Maurquice Shakir G
 68 Matt Skura G
 79 Ronnie Stanley T
 Defensive linemen
@@ -1766,7 +2212,7 @@ Defensive linemen
 Linebackers
 54 Tyus Bowser OLB
 51 Kamalei Correa ILB
-58 Jonathan Freeny ILB
+58 Steven Johnson ILB
 99 Matt Judon OLB
 57 C.J. Mosley ILB
 48 Patrick Onwuasor ILB
@@ -1780,7 +2226,6 @@ Defensive backs
 29 Marlon Humphrey CB
 23 Tony Jefferson SS
 41 Anthony Levine SS
-33 Tony McRae CB
 22 Jimmy Smith CB
 21 Lardarius Webb FS
 32 Eric Weddle FS
@@ -1788,10 +2233,38 @@ Special teams
 46 Morgan Cox LS
  4 Sam Koch P
  9 Justin Tucker K
+Reserve lists
+35 Brandon Boykin CB (IR) Injury icon 2.svg
+53 Bam Bradley ILB (IR) Injury icon 2.svg
+26 Maurice Canady CB (IR) Injury icon 2.svg
+30 Kenneth Dixon RB (IR) Injury icon 2.svg
+80 Crockett Gillmore TE (IR) Injury icon 2.svg
+60 Brandon Kublanow C (IR) Injury icon 2.svg
+72 Alex Lewis G (IR) Injury icon 2.svg
+50 Albert McClellan OLB (IR) Injury icon 2.svg
+67 Stephane Nembot T (IR) Injury icon 2.svg
+65 Nico Siragusa G (IR) Injury icon 2.svg
+96 Brent Urban DE (IR) Injury icon 2.svg
+84 Darren Waller TE (Susp.)
+ 6 Tim White WR (IR) Injury icon 2.svg
+39 Danny Woodhead RB (IR) Injury icon 2.svg
+73 Marshal Yanda G (IR) Injury icon 2.svg
+25 Tavon Young CB (IR) Injury icon 2.svg
+Practice squad
+16 Quincy Adeboyejo WR
+85 Kenny Bell WR
+45 John Crockett RB
+59 Nicholas Grigsby ILB
+38 Stanley Jean-Baptiste CB
+78 Dieugot Joseph T
+63 Jason King G
+95 Kapron Lewis-Moore DE
+62 Steven Moore T
+ 7 Josh Woodrum QB
 Rookies in italics
-Roster updated October 6, 2017
+Roster updated October 31, 2017
 Depth chart • Transactions
-53 Active, 17 Inactive, 10
+53 Active, 16 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1815,7 +2288,6 @@ Wide receivers
 15 John Ross
 Tight ends
 82 Cethan Carter
-85 Tyler Eifert
 81 Tyler Kroft
 87 C.J. Uzomah
 Offensive linemen
@@ -1842,6 +2314,7 @@ Linebackers
 50 Jordan Evans OLB
 58 Carl Lawson OLB
 51 Kevin Minter MLB
+56 Hardy Nickerson Jr. MLB
 57 Vincent Rey OLB
 59 Nick Vigil MLB
 Defensive backs
@@ -1859,10 +2332,27 @@ Special teams
  4 Randy Bullock K
 46 Clark Harris LS
 10 Kevin Huber P
+Reserve lists
+33 Tra Carson RB (IR) Injury icon 2.svg
+ 6 Jeff Driskel QB (IR) Injury icon 2.svg
+85 Tyler Eifert TE (IR) Injury icon 2.svg
+30 Cedric Peerman RB (IR) Injury icon 2.svg
+86 Mason Schreck TE (IR) Injury icon 2.svg
+Practice squad
+52 Brandon Bell OLB
+64 J.J. Dielman G
+29 Tony McRae CB
+84 Scott Orndoff TE
+76 Kent Perkins OT
+68 Josh Tupou DT
+17 Kermit Whitfield WR
+69 DeShawn Williams DT
+39 Jarveon Williams RB
+40 Brandon Wilson S
 Rookies in italics
-Roster updated September 29, 2017
+Roster updated October 27, 2017
 Depth chart • Transactions
-53 Active, 4 Inactive, 10
+53 Active, 5 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -1882,10 +2372,11 @@ Wide receivers
 10 Sammie Coates
 81 Rashard Higgins
 80 Ricardo Louis
--- Bryce Treggs
+11 Bryce Treggs
 82 Kasen Williams
 Tight ends
 87 Seth DeValve
+89 Matt Lengel
 85 David Njoku
 86 Randall Telfer
 Offensive linemen
@@ -1895,7 +2386,6 @@ Offensive linemen
 66 Spencer Drango G
 63 Marcus Martin G
 62 Austin Reiter C
-73 Joe Thomas T
 64 J.C. Tretter C
 70 Kevin Zeitler G
 Defensive linemen
@@ -1930,10 +2420,31 @@ Special teams
  4 Britton Colquitt P
  5 Zane Gonzalez K
 47 Charley Hughlett LS
+Reserve lists
+54 Dominique Alexander OLB (IR) Injury icon 2.svg
+67 Chris Barker G (IR) Injury icon 2.svg
+59 Tank Carder MLB (IR) Injury icon 2.svg
+19 Corey Coleman WR (IR) Injury icon 2.svg
+12 Josh Gordon WR (Susp.)
+33 Darius Jackson RB (IR) Injury icon 2.svg
+78 Roderick Johnson T (IR) Injury icon 2.svg
+73 Joe Thomas T (IR) Injury icon 2.svg
+23 Howard Wilson CB (PUP) Injury icon 2.svg
+Practice squad
+57 Austin Calitro LB
+16 Rannell Hall WR
+28 Darius Hillary CB
+91 Tyrone Holmes DE
+84 Bug Howard WR
+33 Terrence Magee RB
+-- Victor Salako OT
+35 C.J. Smith CB
+79 Zach Sterup T
+74 Andrew Wylie T
 Rookies in italics
-Roster updated October 5, 2017
+Roster updated October 25, 2017
 Depth chart • Transactions
-53 Active, 10 Inactive, 10
+53 Active, 9 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -2003,11 +2514,28 @@ Special teams
  4 Jordan Berry P
  9 Chris Boswell K
 57 Kameron Canaday LS
-
+Reserve lists
+99 Keion Adams OLB (IR) Injury icon 2.svg
+34 Antonio Crawford CB (IR) Injury icon 2.svg
+38 Greg Ducre CB (IR) Injury icon 2.svg
+62 Mike Matthews C (IR) Injury icon 2.svg
+30 Daimion Stafford S (Did Not Report)
+34 Cameron Sutton CB (IR) Injury icon 2.svg
+Practice squad
+37 Jordan Dangerfield SS
+61 Kyle Friend C
+95 Lavon Hooks NT
+41 Farrington Huguenin OLB
+46 Keith Kelsey ILB
+80 Jake McGee TE
+35 Dashaun Phillips CB
+68 Jake Rodgers OT
+33 Fitzgerald Toussaint RB
+16 Marcus Tucker WR
 Rookies in italics
-Roster updated October 5, 2017
+Roster updated October 27, 2017
 Depth chart • Transactions
-53 Active, 5 Inactive, 10
+53 Active, 6 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -2016,7 +2544,8 @@ Houston Texans[edit]
 Houston Texans roster view talk edit
 Quarterbacks
  3 Tom Savage
- 4 Deshaun Watson
+ – Matt McGloin
+ – T.J. Yates
 Running backs
 28 Alfred Blue
 27 D'Onta Foreman
@@ -2038,33 +2567,32 @@ Offensive linemen
 70 Julién Davenport T
 61 Kyle Fuller C
 68 Breno Giacomini T
+64 Dorian Johnson G
 63 Kendall Lamm T
 65 Greg Mancz C
 66 Nick Martin C
-75 Jah Reid T
 71 Xavier Su'a-Filo G
 Defensive linemen
-95 Christian Covington DE
+97 Angelo Blackson DE
 92 Brandon Dunn NT
 93 Joel Heath DE
+96 Kendall Langford DE
 98 D.J. Reader NT
 91 Carlos Watkins DE
-99 J.J. Watt DE
 Linebackers
 90 Jadeveon Clowney OLB
 51 Dylan Cole ILB
 41 Zach Cunningham ILB
 50 Ben Heeney ILB
+58 Lamarr Houston OLB
+44 Jelani Jenkins ILB
 94 Ufomba Kamalu OLB
 55 Benardrick McKinney ILB
-59 Whitney Mercilus OLB
 52 Brian Peters ILB
 57 Brennan Scarlett OLB
 Defensive backs
-33 Johnthan Banks CB
-20 Marcus Burley CB
-36 Marcus Cromartie FS
 31 Treston Decoud CB
+23 Kurtis Drummond SS
 21 Marcus Gilchrist FS
 29 Andre Hal FS
 25 Kareem Jackson CB
@@ -2072,15 +2600,37 @@ Defensive backs
 24 Johnathan Joseph CB
 43 Corey Moore FS
 35 Eddie Pleasant SS
+40 Marcus Williams CB
 Special teams
  7 Ka'imi Fairbairn K
  9 Shane Lechler P
 46 Jon Weeks LS
-
+Reserve lists
+95 Christian Covington DE (IR) Injury icon 2.svg
+56 Brian Cushing ILB (Susp.)
+34 Tyler Ervin RB (IR) Injury icon 2.svg
+87 C.J. Fiedorowicz TE (IR) Injury icon 2.svg
+69 Matthew Godin DE (IR) Injury icon 2.svg
+16 Deanté Gray WR (IR) Injury icon 2.svg
+59 Whitney Mercilus OLB (IR) Injury icon 2.svg
+72 Derek Newton OT (PUP) Injury icon 2.svg
+ 4 Deshaun Watson QB (IR) Injury icon 2.svg
+99 J.J. Watt DE (IR) Injury icon 2.svg
+Practice squad
+67 Chunky Clements NT
+47 Kennan Gilchrist ILB
+17 Cobi Hamilton WR
+37 Bryce Jones CB
+54 LaTroy Lewis OLB
+53 Gimel President OLB
+85 MyCole Pruitt TE
+77 David Quessenberry G
+62 Chad Slade G
+32 Dee Virgin CB
 Rookies in italics
-Roster updated October 6, 2017
+Roster updated November 1, 2017
 Depth chart • Transactions
-53 Active, 7 Inactive, 10
+53 Active, 10 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -2088,34 +2638,33 @@ Indianapolis Colts[edit]
 Indianapolis Colts roster view talk edit
 Quarterbacks
  7 Jacoby Brissett
-12 Andrew Luck
 16 Scott Tolzien
 Running backs
+39 Josh Ferguson
 23 Frank Gore
 34 Matt Jones
 25 Marlon Mack
-33 Robert Turbin
 Wide receivers
 17 Kamar Aiken
 11 Quan Bray RS
 13 T.Y. Hilton
-81 Krishawn Hogan
 10 Donte Moncrief
 80 Chester Rogers
 Tight ends
 47 Darrell Daniels
 84 Jack Doyle
-45 Henry Krieger-Coble
 85 Brandon Williams
 Offensive linemen
+65 Tyreek Burwell T
 74 Anthony Castonzo T
 62 Le'Raven Clark T
+64 Dillon Day C
 73 Joe Haeg T
 68 Kyle Kalis G
 78 Ryan Kelly C
-75 Jack Mewhort G
 72 Mike Person C
 67 Jeremy Vujnovich G
+63 Isaiah Williams G
 Defensive linemen
 96 Henry Anderson DE
 95 Johnathan Hankins DE
@@ -2129,6 +2678,8 @@ Linebackers
 59 Jeremiah George ILB
 52 Barkevious Mingo OLB
 44 Antonio Morrison ILB
+49 Joshua Perry OLB
+48 Darnell Sankey ILB
 93 Jabaal Sheard OLB
 51 John Simon OLB
 50 Anthony Walker Jr. ILB
@@ -2139,7 +2690,6 @@ Defensive backs
 41 Matthias Farley SS
 32 T.J. Green SS
 27 Nate Hairston CB
-29 Malik Hooker FS
 30 Rashaan Melvin CB
 28 Christopher Milton CB
 42 Kenny Moore CB
@@ -2148,11 +2698,34 @@ Special teams
 46 Luke Rhodes LS
  2 Rigoberto Sanchez P
  4 Adam Vinatieri K
-
- Rookies in italics
-Roster updated October 7, 2017
+Reserve lists
+69 Deyshawn Bond C (IR) Injury icon 2.svg
+26 Clayton Geathers FS (PUP) Injury icon 2.svg
+71 Denzelle Good T (IR) Injury icon 2.svg
+81 Krishawn Hogan WR (IR) Injury icon 2.svg
+29 Malik Hooker FS (IR) Injury icon 2.svg
+53 Edwin Jackson ILB (IR) Injury icon 2.svg
+12 Andrew Luck QB (IR) Injury icon 2.svg
+75 Jack Mewhort G (IR) Injury icon 2.svg
+38 Christine Michael RB (IR) Injury icon 2.svg
+86 Erik Swoope TE (IR) Injury icon 2.svg
+33 Robert Turbin RB (IR) Injury icon 2.svg
+37 George Winn RB (IR) Injury icon 2.svg
+Practice squad
+15 K.J. Brent WR
+43 Mo Alie-Cox TE
+56 Vontarrius Dora OLB
+14 Matt Hazel WR
+40 Ronald Martin S
+94 Joey Mbu NT
+66 Ian Silberman OG
+37 Channing Stribling CB
+-- Jason Vander Laan TE
+ 8 Phillip Walker QB
+Rookies in italics
+Roster updated November 3, 2017
 Depth chart • Transactions
-53 Active, 8 Inactive, 11
+53 Active, 12 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -2174,7 +2747,7 @@ Wide receivers
 84 Keelan Cole
 88 Allen Hurns
 11 Marqise Lee
-19 Max McCaffrey
+85 Jaydon Mickens
 10 Jaelen Strong
 Tight ends
 83 Ben Koyack
@@ -2194,6 +2767,7 @@ Offensive linemen
 Defensive linemen
 99 Eli Ankou DT
 93 Calais Campbell DE
+99 Marcell Dareus DT
 92 Sheldon Day DT
 56 Dante Fowler Jr. DE
 97 Malik Jackson DT
@@ -2214,19 +2788,43 @@ Defensive backs
 39 Tashaun Gipson FS
 31 Jalen Myrick CB
 23 Tyler Patmon CB
-29 Lafayette Pitts CB
 20 Jalen Ramsey CB
 25 Peyton Thompson FS
 26 Jarrod Wilson SS
 Special teams
- 2 Jason Myers K
+ 4 Josh Lambo K
  3 Brad Nortman P
 43 Matt Overton LS
-
+Reserve lists
+96 Michael Bennett DT (IR) Injury icon 2.svg
+14 Justin Blackmon WR (Susp.)
+34 Tyler Gaffney RB (IR) Injury icon 2.svg
+13 Rashad Greene WR (IR) Injury icon 2.svg
+35 Jarrod Harper S (IR) Injury icon 2.svg
+43 I'Tavius Mathers RB (IR) Injury icon 2.svg
+35 Calvin Pryor SS (IR) Injury icon 2.svg
+81 Mychal Rivera TE (IR) Injury icon 2.svg
+15 Allen Robinson WR (IR) Injury icon 2.svg
+46 Carson Tinker LS (IR) Injury icon 2.svg
+12 Dede Westbrook WR (IR) Injury icon 2.svg
+14 Shane Wynn WR (IR) Injury icon 2.svg
+Practice squad
+41 Tim Cook RB (Injured) Injury icon 2.svg
+19 Montay Crockett WR
+79 Hunter Dimick DE
+66 Avery Gennesy G (Injured) Injury icon 2.svg
+86 David Grinnage TE
+98 Marcus Hardison DT
+90 Darius Kilgo DT
+38 Charlie Miller S
+59 Carroll Phillips DE
+18 Larry Pinkard WR
+-- Brandon Thomas G
+38 Brandon Wilds RB
 Rookies in italics
-Roster updated October 7, 2017
+Roster updated October 30, 2017
 Depth chart • Transactions
-53 Active, 14 Inactive, 11
+53 Active, 12 Inactive, 12 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -2263,7 +2861,7 @@ Offensive linemen
 67 Quinton Spain G
 Defensive linemen
 99 Jurrell Casey DE
-94 Austin Johnson DE
+94 Austin Johnson NT
 90 DaQuan Jones DE
 95 David King DE
 97 Karl Klug DE
@@ -2294,11 +2892,27 @@ Special teams
 48 Beau Brinkley LS
  6 Brett Kern P
  4 Ryan Succop K
-
- Rookies in italics
-Roster updated October 5, 2017
+Reserve lists
+83 Harry Douglas WR (IR) Injury icon 2.svg
+51 Victor Ochi OLB (IR) Injury icon 2.svg
+19 Tajae Sharpe WR (IR) Injury icon 2.svg
+11 Alex Tanney QB (IR) Injury icon 2.svg
+52 Aaron Wallace Jr. OLB (IR) Injury icon 2.svg
+Practice squad
+10 C.J. Board WR
+44 Josh Carraway OLB
+42 Denzel Johnson S
+28 Khalfani Muhammad RB
+17 Zach Pascal WR
+73 Brad Seaton OT
+85 Tim Semisch TE
+-- Julius Warmsley DE
+68 Cody Wichmann OG
+75 Antwaun Woods NT
+Rookies in italics
+Roster updated October 24, 2017
 Depth chart • Transactions
-53 Active, 7 Inactive, 10
+53 Active, 5 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -2336,24 +2950,24 @@ Offensive linemen
 60 Connor McGovern C
 61 Matt Paradis C
 71 Donald Stephenson T
-77 Billy Turner G
 75 Menelik Watson T
+68 Elijah Wilkinson T
 Defensive linemen
 99 Adam Gotsis DE
 96 Shelby Harris DE
 92 Zach Kerr DE
 94 Domata Peko NT
-90 Kyle Peko NT
-78 Ahtyba Rubin DE
 95 Derek Wolfe DE
 Linebackers
 50 Zaire Anderson ILB
 48 Shaquil Barrett OLB
 51 Todd Davis ILB
 91 Kasim Edebali OLB
+41 Jerrol Garcia-Williams ILB
 54 Brandon Marshall ILB
 58 Von Miller OLB
-52 Corey Nelson ILB
+56 Shane Ray OLB
+45 Kevin Snyder ILB
 57 DeMarcus Walker OLB
 Defensive backs
 20 Jamal Carter SS
@@ -2369,11 +2983,29 @@ Special teams
  9 Riley Dixon P
 42 Casey Kreiter LS
  8 Brandon McManus K
-
- Rookies in italics
-Roster updated September 19, 2017
+Reserve lists
+80 Jake Butt TE (NF-Inj.) Injury icon 2.svg
+93 Jared Crick DE (IR) Injury icon 2.svg
+11 Carlos Henderson WR (IR) Injury icon 2.svg
+ 6 Chad Kelly QB (NF-Inj.) Injury icon 2.svg
+52 Corey Nelson ILB (IR) Injury icon 2.svg
+77 Billy Turner G (IR) Injury icon 2.svg
+97 Billy Winn DE (IR) Injury icon 2.svg
+Practice squad
+64 Gabe Ikard C
+98 Tyrique Jarrett NT
+53 Deiontrez Mount OLB
+81 Tim Patrick WR
+90 Kyle Peko NT
+38 Marcus Rios CB
+15 Hunter Sharp WR
+35 Dymonte Thomas S
+86 Austin Traylor TE
+30 Jonathan Williams RB
+Rookies in italics
+Roster updated November 1, 2017
 Depth chart • Transactions
-53 Active, 6 Inactive, 10
+53 Active, 7 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -2390,7 +3022,6 @@ Running backs
 35 Charcandrick West
 Wide receivers
 80 Jehu Chesson
-17 Chris Conley
 10 Tyreek Hill
 14 Demarcus Robinson
 13 De'Anthony Thomas
@@ -2432,6 +3063,7 @@ Defensive backs
 23 Phillip Gaines CB
 39 Terrance Mitchell CB
 21 Eric Murray SS
+20 Steven Nelson CB
 38 Ron Parker SS
 22 Marcus Peters CB
 49 Daniel Sorensen FS
@@ -2441,11 +3073,31 @@ Special teams
  7 Harrison Butker K
  2 Dustin Colquitt P
 41 James Winchester LS
-
+Reserve lists
+46 Keith Baxter CB (IR) Injury icon 2.svg
+29 Eric Berry FS (IR) Injury icon 2.svg
+46 Devin Chappell SS (IR) Injury icon 2.svg
+17 Chris Conley WR (IR) Injury icon 2.svg
+91 Tamba Hali OLB (PUP) Injury icon 2.svg
+77 Donald Hawkins OT (IR) Injury icon 2.svg
+ 6 Ashton Lampkin CB (IR) Injury icon 2.svg
+52 Dadi Nicolas OLB (PUP) Injury icon 2.svg
+32 Spencer Ware RB (IR) Injury icon 2.svg
+Practice squad
+43 George Atkinson III RB
+-- Nick Becton OT
+82 Orson Charles TE
+ 4 Gehrig Dieter WR
+85 Amba Etta-Tawo WR
+19 Marcus Kemp WR
+64 Damien Mama G
+34 Leon McQuay III FS
+40 Keith Reaser CB
+90 Daniel Ross NT
 Rookies in italics
-Roster updated September 29, 2017
+Roster updated October 30, 2017
 Depth chart • Transactions
-53 Active, 10 Inactive, 10
+53 Active, 9 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -2464,7 +3116,7 @@ Running backs
 Wide receivers
 13 Keenan Allen
 12 Travis Benjamin
-15 Dontrelle Inman
+11 Geremy Davis
 81 Mike Williams
 16 Tyrell Williams
 Tight ends
@@ -2477,9 +3129,9 @@ Offensive linemen
 66 Dan Feeney G
 61 Tyler Marz T
 76 Russell Okung T
+74 Michael Ola T
 73 Spencer Pulley C
 78 Michael Schofield G
-68 Matt Slauson C
 69 Sam Tevi T
 79 Kenny Wiggins G
 Defensive linemen
@@ -2489,14 +3141,14 @@ Defensive linemen
 94 Corey Liuget DT
 40 Chris McCain DE
 92 Brandon Mebane DT
-95 Tenny Palepoi DT
+95 Tenny Palepoi DE
 93 Darius Philon DT
 71 Damion Square DT
 Linebackers
 57 Jatavis Brown OLB
 48 Nick Dzubnar MLB
 51 Kyle Emanuel OLB
-58 Nigel Harris OLB
+53 Josh Keyes OLB
 49 James Onwualu OLB
 50 Hayes Pullard MLB
 56 Korey Toomer MLB
@@ -2513,11 +3165,34 @@ Special teams
  8 Drew Kaser P
  9 Nick Novak K
 47 Mike Windt LS
-
+Reserve lists
+89 Isaiah Burse WR (IR) Injury icon 2.svg
+63 Donavon Clark G (IR) Injury icon 2.svg
+45 Asante Cleveland TE (IR) Injury icon 2.svg
+96 Kaleb Eulls DT (IR) Injury icon 2.svg
+27 Kenneth Farrow RB (IR) Injury icon 2.svg
+75 Chris Hairston T (NF-Ill.) Injury icon 2.svg
+77 Forrest Lamp G (IR) Injury icon 2.svg
+46 Chris Landrum DE (IR) Injury icon 2.svg
+50 Charmeachealle Moore OLB (IR) Injury icon 2.svg
+52 Denzel Perryman MLB (IR) Injury icon 2.svg
+68 Matt Slauson G (IR) Injury icon 2.svg
+22 Jason Verrett CB (IR) Injury icon 2.svg
+Practice squad
+83 Braedon Bowman TE
+67 Brett Boyko G
+62 Max Tuerk C
+45 A.J. Hendy S
+29 Craig Mager CB
+88 Andre Patton WR
+27 Jeff Richards CB
+90 Whitney Richardson DE
+98 Isaac Rochell DE
+82 Artavis Scott WR
 Rookies in italics
-Roster updated October 7, 2017
+Roster updated October 26, 2017
 Depth chart • Transactions
-53 Active, 11 Inactive, 9
+53 Active, 12 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
@@ -2557,12 +3232,12 @@ Defensive linemen
 97 Mario Edwards Jr. DE
 78 Justin Ellis NT
 90 Treyvon Hester DT
-75 Darius Latham NT
 52 Khalil Mack DE
 94 Eddie Vanderdoes DT
 95 Jihad Ward DE
 Linebackers
-58 Tyrell Adams MLB
+53 NaVorro Bowman MLB
+91 Shilique Calhoun OLB
 47 James Cowser OLB
 51 Bruce Irvin OLB
 57 Cory James OLB
@@ -2573,10 +3248,10 @@ Defensive backs
 29 David Amerson CB
 38 T.J. Carrie CB
 22 Gareon Conley CB
-32 Antonio Hamilton CB
 41 Erik Harris SS
 42 Karl Joseph SS
 26 Shalom Luani SS
+25 Demetrius McCray CB
 23 Dexter McDonald CB
 39 Keith McGill FS
 27 Reggie Nelson FS
@@ -2585,19 +3260,31 @@ Special teams
 59 Jon Condo LS
  7 Marquette King P
  2 Giorgio Tavecchio K
-
+Reserve lists
+32 Antonio Hamilton CB (IR) Injury icon 2.svg
+11 Sebastian Janikowski K (IR) Injury icon 2.svg
+79 Denver Kirkland G (IR) Injury icon 2.svg
+75 Darius Latham NT (Susp.)
+20 Obi Melifonwu SS (IR) Injury icon 2.svg
+99 Aldon Smith OLB (Susp.)
+Practice squad
+31 Breon Borders CB
+99 Fadol Brown DE
+81 Pharaoh Brown TE
+14 Keon Hatcher WR
+34 Elijah Hood RB
+37 Tevin Mitchel CB
+54 Deontae Skinner OLB
+65 Jordan Simmons G
+62 James Stone C
+ 9 Isaac Whitney WR
 Rookies in italics
-Roster updated September 28, 2017
+Roster updated November 1, 2017
 Depth chart • Transactions
-53 Active, 4 Inactive, 10
+53 Active, 6 Inactive, 10 Practice squad
 ? AFC rosters ? NFC rosters
 AFC East BUF MIA NE NYJ North BAL CIN CLE PIT South HOU IND JAX TEN West DEN KC LAC OAK
 NFC East DAL NYG PHI WAS North CHI DET GB MIN South ATL CAR NO TB West ARI LAR SF SEA
-See also[edit]
-List of current NFC team rosters
-Categories: National Football League playersNational Football League listsLists of players by National Football League team
-Navigation menu
-Not logged inTalkContributionsCreate accountLog inArticleTalkReadEditView historySearch
 
 
 </div>
