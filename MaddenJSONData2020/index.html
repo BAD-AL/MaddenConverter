@@ -10,7 +10,7 @@
 		text-align: center;
 	}
 </style>
-<script type="text/javascript" src="allTeams-7-22-2019.js"></script>
+<script type="text/javascript" src="allTeams-11-16-2019.js"></script>
 <script type="text/javascript">
 	// https://www.easports.com/madden-nfl/player-ratings 
 	var
@@ -264,21 +264,47 @@
 		team.count = team.docs.length;
 		// hack to get a few teams up to 53 (will need modification every data drop)
 		switch (team.team) { /* team adjustments */
-			case "Bears": case "Browns": case "Buccaneers":
+			case "Bears":
+				//playerLimits.WR += 1; 
+				playerLimits.HB++;
+				break;
+			case "Bengals":
+				//playerLimits.WR += 2; 
+				playerLimits.HB++;
+				break;
+			case "Browns":
+				playerLimits.C++;
+				playerLimits.LE++;
+				break;
+			//case "Dolphins":
+			case "Jaguars":
+			case "Falcons":
+				playerLimits.WR += 1;
+				playerLimits.HB++;
+				break;
+			case "Redskins":
+				//playerLimits.WR++;
+				break;
+			case "Buccaneers":
 			case "Cardinals": case "Colts": case "Eagles":
-			case "Jaguars": case "Jets": case "Rams":
-			case "Seahawks": case "Titans":
+			case "Jets": case "Rams":
+				//case "Titans":
 				playerLimits.HB++; break;
 			case "49ers":
-				playerLimits.WR += 2; playerLimits.TE--; break;
+				playerLimits.WR += 1; playerLimits.TE--; break;
+				break;
+			case "Vikings":
+				//case "Raiders":
+				playerLimits.WR++;
+				playerLimits.HB++;
 				break;
 			case "FreeAgents":
 				playerLimits = { // add upto 190 (pre-prepseason)
 					/*"QB": 10, "HB": 10, "FB": 5, "WR": 19, "TE": 12, "LT": 8, "LG": 7, "C": 3, "RG": 7, "RT": 8,
 					"LE": 10, "RE": 10, "DT": 12, "LOLB": 8, "ROLB": 8, "MLB": 12, "CB": 20, "SS": 6, "FS": 6,
 					"K": 5, "P": 5*/
-					"QB": 20, "HB": 20, "FB": 10, "WR": 29, "TE": 18, "LT": 8, "LG": 7, "C": 3, "RG": 7, "RT": 8,
-					"LE": 10, "RE": 10, "DT": 12, "LOLB": 8, "ROLB": 8, "MLB": 12, "CB": 20, "SS": 6, "FS": 6,
+					"QB": 20, "HB": 20, "FB": 10, "WR": 30, "TE": 16, "LT": 10, "LG": 10, "C": 16, "RG": 10, "RT": 10,
+					"LE": 10, "RE": 12, "DT": 12, "LOLB": 10, "ROLB": 10, "MLB": 16, "CB": 20, "SS": 10, "FS": 10,
 					"K": 10, "P": 10
 				};
 				break;

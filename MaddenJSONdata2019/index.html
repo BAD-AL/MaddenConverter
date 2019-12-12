@@ -2,7 +2,7 @@
 <html>
 <style>
 
-body
+	body
 {
 background-color:#d0e4fe;
 }
@@ -13,322 +13,441 @@ text-align:center;
 }
 
 </style>
-<script type="text/javascript" src="allTeams_week1.js"></script>
+<script type="text/javascript" src="allTeams_week8.js"></script>
 <script type="text/javascript">
-// https://www.easports.com/madden-nfl/player-ratings 
-var 
-    positionOrder = ["QB", "HB", "FB","WR","TE","LT","RT","LG","RG","C","LE","RE","NT","DT","OLB","LOLB","ROLB","LILB","RILB", "MLB", "CB","SS","FS", "K","P"],
-	teamOrder =["49ers", "Bears","Bengals", "Bills", "Broncos", "Browns","Buccaneers", "Cardinals", 
-                 "Chargers", "Chiefs","Colts","Cowboys",  "Dolphins", "Eagles","Falcons","Giants","Jaguars",
-                 "Jets","Lions","Packers", "Panthers", "Patriots","Raiders","Rams","Ravens","Redskins",
-                 "Saints","Seahawks","Steelers", "Texans", "Titans",  "Vikings" ],
-	attributeOrder = [
-		"team",
-		"firstName",
-        "lastName",
-        "position",
-		"jerseyNum",        
-        "ovr_rating",
-        "speed_rating",
-		"acceleration_rating",
-        "strength_rating",
-		"agility_rating",
-		"awareness_rating",
-		"catching_rating",
-        "carrying_rating",
-        "throwPower_rating",
-        "throwAccuracy_rating",
-        "throwAccuracyShort_rating",
-        "throwAccuracyMid_rating",
-        "throwAccuracyDeep_rating",
-        "kickPower_rating",
-        "kickAccuracy_rating",
-        "runBlock_rating",
-        "passBlock_rating",
-        "tackle_rating",
-        "jumping_rating",
-        "kickReturn_rating",
-        "injury_rating",
-        "stamina_rating",
-        "toughness_rating",
-        "trucking_rating",
-        "elusiveness_rating",
-        "bCVision_rating",
-        "stiffArm_rating",
-        "spinMove_rating",
-        "jukeMove_rating",
-        "impactBlocking_rating",
-        "powerMoves_rating",
-        "finesseMoves_rating",
-        "blockShedding_rating",
-        "pursuit_rating",
-        "playRecognition_rating",
-        "manCoverage_rating",
-        "zoneCoverage_rating",
-        "spectacularCatch_rating",
-        "catchInTraffic_rating",
-        "routeRunning_rating",
-        "hitPower_rating",
-        "press_rating",
-        "release_rating",
-        "playAction_rating",
-        "throwOnTheRun_rating",                
-        "height",
-        "weight",
-		
-		/* these were not used in 2016
-		"age",
-		"runBlockStrength_rating",
-        "runBlockFootwork_rating",
-        "passBlockStrength_rating",
-        "passBlockFootwork_rating",*/
-		
-		//* these are new for 2018
-		"yearsPro",
-		"totalSalary",
-		"signingBonus",
-		"plyrBirthdate",
-		"plyrHandedness",
-		"college",
-		//*/
-       
-    ], freeAgents={team:"FreeAgents", count:0, docs:[] };
+	// https://www.easports.com/madden-nfl/player-ratings 
+	var
+		positionOrder = ["QB", "HB", "FB", "WR", "TE", "LT", "RT", "LG", "RG", "C", "LE", "RE", "NT", "DT", "OLB", "LOLB", "ROLB", "LILB", "RILB", "MLB", "CB", "SS", "FS", "K", "P"],
+		teamOrder = ["49ers", "Bears", "Bengals", "Bills", "Broncos", "Browns", "Buccaneers", "Cardinals",
+			"Chargers", "Chiefs", "Colts", "Cowboys", "Dolphins", "Eagles", "Falcons", "Giants", "Jaguars",
+			"Jets", "Lions", "Packers", "Panthers", "Patriots", "Raiders", "Rams", "Ravens", "Redskins",
+			"Saints", "Seahawks", "Steelers", "Texans", "Titans", "Vikings"],
+		attributeOrder = [
+			"team",
+			"firstName",
+			"lastName",
+			"position",
+			"jerseyNum",
+			"ovr_rating",
+			"speed_rating",
+			"acceleration_rating",
+			"strength_rating",
+			"agility_rating",
+			"awareness_rating",
+			"catching_rating",
+			"carrying_rating",
+			"throwPower_rating",
+			"throwAccuracy_rating",
+			"throwAccuracyShort_rating",
+			"throwAccuracyMid_rating",
+			"throwAccuracyDeep_rating",
+			"kickPower_rating",
+			"kickAccuracy_rating",
+			"runBlock_rating",
+			"passBlock_rating",
+			"tackle_rating",
+			"jumping_rating",
+			"kickReturn_rating",
+			"injury_rating",
+			"stamina_rating",
+			"toughness_rating",
+			"trucking_rating",
+			"elusiveness_rating",
+			"bCVision_rating",
+			"stiffArm_rating",
+			"spinMove_rating",
+			"jukeMove_rating",
+			"impactBlocking_rating",
+			"powerMoves_rating",
+			"finesseMoves_rating",
+			"blockShedding_rating",
+			"pursuit_rating",
+			"playRecognition_rating",
+			"manCoverage_rating",
+			"zoneCoverage_rating",
+			"spectacularCatch_rating",
+			"catchInTraffic_rating",
+			"routeRunning_rating",
+			"hitPower_rating",
+			"press_rating",
+			"release_rating",
+			"playAction_rating",
+			"throwOnTheRun_rating",
+			"height",
+			"weight",
 
-function button1Click(){
-	var i, team, 
-     allTeams = getAllTeams2019(),
-	 teamTop = document.getElementById("team-top"),
-	 missingPlayerDiv = document.getElementById("missingPlayers"),
-     teamArea = document.getElementById("team-area");
-	 allTeams.sort(sortTeamsByName);
-     if( teamArea){
-        teamTop.removeChild(teamArea);
-        teamArea = document.createElement('div');
-        teamArea.id = "team-area";
-        teamTop.appendChild(teamArea);
-     }
-    // sort all the teams
-    for(i=0; i < allTeams.length; i++){ 
-		team=allTeams[i];
-		//trimTeam(team);
-		team.docs.sort(comparePlayer);
-		trimTeam2(team);
-		//missingPlayerDiv.innerHTML += checkMaddenTeamHasWikipediaPlayers(team);
-		appendTeam(team);
-    }
-	freeAgents.docs.sort(comparePlayer);
-	untrimTeam(freeAgents); // reset the 'notFound' flag on all players
-	trimTeam2(freeAgents);
-	appendTeam(freeAgents, "FreeAgents");
-}
+			/* these were not used in 2016
+			"age",
+			"runBlockStrength_rating",
+			"runBlockFootwork_rating",
+			"passBlockStrength_rating",
+			"passBlockFootwork_rating",*/
 
-function appendTeam(team, teamName){
-    var i, teamNameRow,td, tr, snapper, 
-      table = document.createElement("table");
-    table.id = 'team-table-'+ team.name;
-    
-    tableNameRow = table.insertRow();
-    tableNameRow.innerHTML = "Team = " + team.team + "    Players:"+ team.count;/**/
-    insertHeadder(table);
-    
-    for(i=0; i < team.docs.length; i++){
-        if( !team.docs[i].notFound )
-			insertPlayer(table, (teamName || team.team || team.docs[i].team), team.docs[i]);
-    }
-	//snapper = findLongSnapper(team.team);
-	if(snapper){
-		tr = table.insertRow();
-		td = tr.insertCell();
-		td.innerHTML = team.docs[i].team;
-		td = tr.insertCell();
-		td.innerHTML = '#'+snapper.split(' ').reverse().join();
-	}
-    document.getElementById("team-area").appendChild(table);
-}
+			//* these are new for 2018
+			"yearsPro",
+			"totalSalary",
+			"signingBonus",
+			"plyrBirthdate",
+			"plyrHandedness",
+			"college",
+			//*/
 
-function insertPlayer(table, teamName, player){
-    //attributeOrder
-    var i, td, tr;
-	tr = table.insertRow();
-	for(i=0; i < attributeOrder.length;i++){
-		td = tr.insertCell();
-		td.innerHTML = player[attributeOrder[i]];
-		if( attributeOrder[i] == "team"){
-			td.innerHTML = teamName;
-		} else if(attributeOrder[i] == "routeRunning_rating"){
-			td.innerHTML = Math.floor( (player["mediumRouteRunning_rating"] + player["deepRouteRunning_rating"] + player["shortRouteRunning_rating"])/3);
-		} else if(attributeOrder[i] == "throwAccuracy_rating"){
-			td.innerHTML = Math.floor( (player["throwAccuracyShort_rating"] + player["throwAccuracyMid_rating"] + player["throwAccuracyDeep_rating"])/3);
-		}
-	}
-}
+		], freeAgents = { team: "FreeAgents", count: 0, docs: [] };
 
-function insertHeadder(table){
-    //attributeOrder
-    var i, td, tr = table.insertRow();
-    for(i=0; i < attributeOrder.length;i++){
-        td = tr.insertCell();
-        td.className += ' ' + attributeOrder[i];
-        td.innerHTML = attributeOrder[i].replace('_rating','');
-		if( i === 0){
-			td.innerHTML = "#" + td.innerHTML;
-		}
-    }
-}
-
-function comparePlayer(a,b) {
-    if( a.position === b.position){
-        if (a.ovr_rating < b.ovr_rating)
-            return 1;
-        if (a.ovr_rating > b.ovr_rating)
-            return -1;
-    }
-    else{
-        if (positionOrder.indexOf(a.position) < positionOrder.indexOf( b.position))
-            return -1;
-        if (positionOrder.indexOf(a.position) > positionOrder.indexOf(b.position))
-            return 1;
-    }
-    return 0;
-}
-
-function sortTeamsByName(a,b){
-	if (teamOrder.indexOf( (a.docs[0].team || a.team) ) < teamOrder.indexOf( (b.team || b.docs[0].team)))
-		return -1;
-	if (teamOrder.indexOf( (a.docs[0].team || a.team)) > teamOrder.indexOf( (b.team || b.docs[0].team)))
-		return 1;
-	
-	return 0;
-}
-
-
-// itterates through the team checking if the player name is found on the wikipedia listing.
-function trimTeam(team){
-	var i, playerName, protectedPositions =["P","K"];
-	if(team.docs.length > 53){
-		team.count = team.docs.length;
-		for(i=team.docs.length-1; i > -1; i--){
-			playerName = team.docs[i].firstName + ' ' + team.docs[i].lastName;
-			if( protectedPositions.indexOf(team.docs[i].position) == -1 && !onTeam(playerName, team.docs[i].team)){
-				team.docs[i].notFound = true;
-				team.count--;
+	function getAllTeams() {
+		var i, j, k, team, player, ip;
+		for (i = 0; i < allTeams2019.length; i++) {
+			team = allTeams2019[i];
+			ip = getInjuredPlayersForTeam(team.team);
+			for (j = 0; j < ip.length; j++) {
+				player = ip[j];
+				for (k = 0; k < team.docs.length; k++) {
+					if (team.docs[k].lastName == player.lastName && team.docs[k].firstName == player.firstName) {
+						team.docs[k].position = team.docs[k].position + '_INJ';
+					}
+				}
 			}
-			if(team.count == 53){
+		}
+		return allTeams2019;
+	}
+
+	function getInjuredPlayersForTeam(teamName) {
+		var i, retVal = [];
+		for (i = 0; i < injuredReserveList.length; i++) {
+			if (teamName === injuredReserveList[i].team) {
+				retVal.push(injuredReserveList[i]);
+			}
+		}
+		return retVal;
+	}
+
+	function button1Click() {
+		var i, team,
+			//allTeams = getAllTeams2019(),
+			allTeams = getAllTeams(),
+			teamTop = document.getElementById("team-top"),
+			missingPlayerDiv = document.getElementById("missingPlayers"),
+			teamArea = document.getElementById("team-area");
+		allTeams.sort(sortTeamsByName);
+		if (teamArea) {
+			teamTop.removeChild(teamArea);
+			teamArea = document.createElement('div');
+			teamArea.id = "team-area";
+			teamTop.appendChild(teamArea);
+		}
+		// sort all the teams
+		for (i = 0; i < allTeams.length; i++) {
+			team = allTeams[i];
+			//trimTeam(team);
+			team.docs.sort(comparePlayer);
+			trimTeam2(team);
+			//missingPlayerDiv.innerHTML += checkMaddenTeamHasWikipediaPlayers(team);
+			appendTeam(team);
+		}
+		freeAgents.docs.sort(comparePlayer);
+		untrimTeam(freeAgents); // reset the 'notFound' flag on all players
+		trimTeam2(freeAgents);
+		appendTeam(freeAgents, "FreeAgents");
+	}
+
+	function appendTeam(team, teamName) {
+		var i, teamNameRow, td, tr, snapper,
+			table = document.createElement("table");
+		table.id = 'team-table-' + team.name;
+
+		tableNameRow = table.insertRow();
+		tableNameRow.innerHTML = "Team = " + team.team + "    Players:" + team.count;/**/
+		insertHeadder(table);
+
+		for (i = 0; i < team.docs.length; i++) {
+			if (!team.docs[i].notFound)
+				insertPlayer(table, (teamName || team.team || team.docs[i].team), team.docs[i]);
+		}
+		//snapper = findLongSnapper(team.team);
+		if (snapper) {
+			tr = table.insertRow();
+			td = tr.insertCell();
+			td.innerHTML = team.docs[i].team;
+			td = tr.insertCell();
+			td.innerHTML = '#' + snapper.split(' ').reverse().join();
+		}
+		document.getElementById("team-area").appendChild(table);
+	}
+
+	function insertPlayer(table, teamName, player) {
+		//attributeOrder
+		var i, td, tr;
+		tr = table.insertRow();
+		for (i = 0; i < attributeOrder.length; i++) {
+			td = tr.insertCell();
+			td.innerHTML = player[attributeOrder[i]];
+			if (attributeOrder[i] == "team") {
+				td.innerHTML = teamName;
+			} else if (attributeOrder[i] == "routeRunning_rating") {
+				td.innerHTML = Math.floor((player["mediumRouteRunning_rating"] + player["deepRouteRunning_rating"] + player["shortRouteRunning_rating"]) / 3);
+			} else if (attributeOrder[i] == "throwAccuracy_rating") {
+				td.innerHTML = Math.floor((player["throwAccuracyShort_rating"] + player["throwAccuracyMid_rating"] + player["throwAccuracyDeep_rating"]) / 3);
+			}
+		}
+	}
+
+	function insertHeadder(table) {
+		//attributeOrder
+		var i, td, tr = table.insertRow();
+		for (i = 0; i < attributeOrder.length; i++) {
+			td = tr.insertCell();
+			td.className += ' ' + attributeOrder[i];
+			td.innerHTML = attributeOrder[i].replace('_rating', '');
+			if (i === 0) {
+				td.innerHTML = "#" + td.innerHTML;
+			}
+		}
+	}
+
+	function comparePlayer(a, b) {
+		if (a.position === b.position) {
+			if (a.ovr_rating < b.ovr_rating)
+				return 1;
+			if (a.ovr_rating > b.ovr_rating)
+				return -1;
+		}
+		else {
+			if (positionOrder.indexOf(a.position) < positionOrder.indexOf(b.position))
+				return -1;
+			if (positionOrder.indexOf(a.position) > positionOrder.indexOf(b.position))
+				return 1;
+		}
+		return 0;
+	}
+
+	function sortTeamsByName(a, b) {
+		if (teamOrder.indexOf((a.docs[0].team || a.team)) < teamOrder.indexOf((b.team || b.docs[0].team)))
+			return -1;
+		if (teamOrder.indexOf((a.docs[0].team || a.team)) > teamOrder.indexOf((b.team || b.docs[0].team)))
+			return 1;
+
+		return 0;
+	}
+
+
+	// itterates through the team checking if the player name is found on the wikipedia listing.
+	function trimTeam(team) {
+		var i, playerName, protectedPositions = ["P", "K"];
+		if (team.docs.length > 53) {
+			team.count = team.docs.length;
+			for (i = team.docs.length - 1; i > -1; i--) {
+				playerName = team.docs[i].firstName + ' ' + team.docs[i].lastName;
+				if (protectedPositions.indexOf(team.docs[i].position) == -1 && !onTeam(playerName, team.docs[i].team)) {
+					team.docs[i].notFound = true;
+					team.count--;
+				}
+				if (team.count == 53) {
+					break;
+				}
+			}
+		}
+		return team;
+	}
+	function cloneObject(a) {
+		return JSON.parse(JSON.stringify(a));
+	}
+	function untrimTeam(team) {
+		var i;
+		for (i = 0; i < team.docs.length; i++) {
+			team.docs[i].notFound = false;
+		}
+	}
+	function trimTeam2(team) {
+		var clone, i, pos, prevPos, player, playerPosition = 0, teamPositions = {}, playerLimits = {
+			"QB": 3, "HB": 3, "FB": 1, "WR": 5, "TE": 3, "LT": 2, "LG": 2, "C": 1, "RG": 2, "RT": 2,
+			"LE": 2, "RE": 3, "DT": 4, "LOLB": 2, "ROLB": 2, "MLB": 4, "CB": 6, "SS": 2, "FS": 2,
+			"K": 1, "P": 1
+		};
+		team.count = team.docs.length;
+		// hack to get a few teams up to 53 (will need modification every data drop)
+		// 51: Cowboys, Dolphins, Eagles, Titans,
+		// 52: Rams, Redskins,Colts
+		switch (team.team) {/* week 1 adjustments
+			case "Cardinals": playerLimits.WR = 6; playerLimits.HB = 5; playerLimits.FB = 0; break;
+			case "Jaguars": playerLimits.WR = 6; playerLimits.HB++; break;
+			case "Falcons": playerLimits.WR = 8; playerLimits.QB = 4; break;
+			case "Lions": playerLimits.WR = 6; playerLimits.HB = 5; playerLimits.FB = 0; break;
+			case "Browns": playerLimits.WR = 7; playerLimits.TE = 4; break;
+			case "Packers": playerLimits.WR = 7; break;
+
+			case "Buccaneers":
+			case "Cowboys": playerLimits.WR++; playerLimits.HB++; break;
+			case "Dolphins": playerLimits.RE++; playerLimits.CB++; break;
+			case "Eagles": playerLimits.WR += 2; playerLimits.HB++; break;
+
+			case "49ers":
+			case "Bengals":
+			case "Chiefs":
+			case "Patriots":
+			case "Texans":
+			case "Titans": playerLimits.WR++; break;
+			case "Bills": playerLimits.WR = 7; playerLimits.HB = 4; playerLimits.CB++; break;
+			case "Saints": playerLimits.WR = 7; playerLimits.HB = 4; playerLimits.FB = 1; break;
+			case "Bears": playerLimits.WR = 7; break;
+			case "Rams": playerLimits.HB++; break;
+			case "Redskins": playerLimits.WR++; break;
+			case "Colts": playerLimits.WR++; break;*/
+			// week 8 adjustments
+			case "49ers": //51
+				playerLimits.WR++;
+				playerLimits.HB++;
+				break;
+			case "Bears": //50
+				playerLimits.WR += 2;
+				playerLimits.ROLB++;
+				playerLimits.LT++;
+				playerLimits.RT++;
+				break;
+			case "Bills":
+				playerLimits = {
+					"QB": 4, "HB": 4, "FB": 1, "WR": 6, "TE": 4, "LT": 1, "LG": 2, "C": 2, "RG": 2, "RT": 2,
+					"LE": 2, "RE": 3, "DT": 4, "LOLB": 2, "ROLB": 2, "MLB": 2, "CB": 5, "SS": 3, "FS": 1,
+					"K": 1, "P": 2
+				};
+				break;
+			case "Browns":
+				playerLimits.WR = 9;
+				break;
+			case "Buccaneers": playerLimits.HB++; playerLimits.C++;
+				break;
+			case "Cardinals": //49
+				playerLimits.TE = 4; playerLimits.HB = 4; playerLimits.LE = 4; playerLimits.C = 3;
+				break;
+			case "Chiefs":
+				playerLimits.WR += 2;
+				break;
+			case "Colts":
+				playerLimits.WR++;
+				playerLimits.HB++;
+				playerLimits.C++;
+				break;
+			case "Bengals":
+			case "Cowboys":
+			case "Panthers":
+			case "Raiders":
+				playerLimits.WR++;
+				playerLimits.HB++;
+				playerLimits.C++;
+				break;
+			case "Dolphins": //48
+				playerLimits.WR++;
+				playerLimits.HB = 5;
+				playerLimits.LE = 4;
+				playerLimits.RE = 3;
+				playerLimits.QB = 4;
+				break;
+			case "Chargers":
+			case "Jets":
+			case "Giants":
+			case "Rams":
+			case "Saints":
+			case "Vikings":
+				playerLimits.WR++;
+				playerLimits.HB++;
+				break;
+			case "Eagles":
+			case "Jaguars":
+			case "Lions":
+			case "Redskins":
+			case "Steelers":
+			case "Texans":
+			case "Titans":
+				playerLimits.HB++;
+				break;
+			case "Falcons":
+				playerLimits.WR += 2;
+				playerLimits.HB++;
+				playerLimits.C++;
+				break;
+			case "Packers": //49
+				playerLimits.WR = 8;
+				playerLimits.TE++;
+				break;
+			case "Patriots":
+				playerLimits.WR += 2;
+				playerLimits.HB++;
+				playerLimits.C++;
+				playerLimits.LE = 3;
+				break;
+
+			case "FreeAgents":
+				playerLimits = { // add upto 190 (pre-prepseason)
+					"QB": 10, "HB": 10, "FB": 5, "WR": 19, "TE": 12, "LT": 8, "LG": 7, "C": 3, "RG": 7, "RT": 8,
+					"LE": 10, "RE": 10, "DT": 12, "LOLB": 8, "ROLB": 8, "MLB": 12, "CB": 20, "SS": 6, "FS": 6,
+					"K": 5, "P": 5
+				};
+				break;
+		} // end hack
+
+		for (i = 0; i < team.docs.length; i++) {
+			player = team.docs[i];
+			pos = player.position;
+			if (playerLimits[pos] === undefined) {
+				player.notFound = true;
+				team.count--;
+			} else {
+				if (!teamPositions[pos]) {
+					teamPositions[pos] = 0;
+					if (prevPos && (playerLimits[prevPos] - teamPositions[prevPos]) > 0) {
+						playerLimits[pos] = playerLimits[pos] + (playerLimits[prevPos] - teamPositions[prevPos]);
+					}
+				}
+				teamPositions[pos] = teamPositions[pos] + 1;
+				if (teamPositions[pos] > playerLimits[pos]) {
+					// clone = cloneObject(player); // cloning takes too long
+					player.notFound = true;
+					team.count--;
+					if (team.team != "FreeAgents") {
+						freeAgents.docs.push(player);
+					}
+				}
+				prevPos = pos;
+			}
+		}
+	}
+
+	function onMaddenTeam(team, firstName, lastName) {
+		var i, retVal = false;
+		for (i = 0; i < team.docs.length; i++) {
+			if (team.docs[i].firstName == firstNAme && team.docs[i].lastName == lastName) {
+				retVal = true;
 				break;
 			}
 		}
+		return retVal;
 	}
-	return team;
-}
-function cloneObject(a){
-	return JSON.parse(JSON.stringify(a));
-}
-function untrimTeam(team){
-	var i;
-	for(i=0; i < team.docs.length;i++){
-		team.docs[i].notFound = false;
-	}
-}
-function trimTeam2(team){
-	var clone, i, pos, prevPos, player, playerPosition=0, teamPositions={}, playerLimits = {
-		"QB":3, "HB":3, "FB":1, "WR":5,   "TE":3,   "LT":2,  "LG":2, "C":1,  "RG":2, "RT":2,
-		"LE":2, "RE":3, "DT":4, "LOLB":2, "ROLB":2, "MLB":4, "CB":6, "SS":2, "FS":2,
-		 "K":1, "P":1
-	};
-	team.count = team.docs.length;
-	// hack to get a few teams up to 53 (will need modification every data drop)
-	// 51: Cowboys, Dolphins, Eagles, Titans,
-	// 52: Rams, Redskins,Colts
-	switch(team.team){
-		case "Cardinals": playerLimits.WR=6; playerLimits.HB=5; playerLimits.FB=0; break;
-		case "Jaguars" : playerLimits.WR=6;  playerLimits.HB++;  break;
-		case "Falcons": playerLimits.WR=8; playerLimits.QB=4;   break;
-		case "Lions": playerLimits.WR=6; playerLimits.HB=5; playerLimits.FB=0;  break;
-		case "Browns": playerLimits.WR=7; playerLimits.TE=4;  break;
-		case "Packers": playerLimits.WR=7;  break;
-		
-		case "Buccaneers":
-		case "Cowboys":  playerLimits.WR++; playerLimits.HB++; break;
-		case "Dolphins": playerLimits.RE++; playerLimits.CB++; break;
-		case "Eagles":   playerLimits.WR+=2; playerLimits.HB++; break;
-		
-		case "49ers":
-		case "Bengals":
-		case "Chiefs":
-		case "Patriots":
-	    case "Texans":
-		case "Titans":   playerLimits.WR++; break;
-		case "Bills":    playerLimits.WR=7; playerLimits.HB=4; playerLimits.CB++; break;
-		case "Saints":    playerLimits.WR=7; playerLimits.HB=4; playerLimits.FB=1; break;
-		case "Bears":   playerLimits.WR = 7 ; break;
-		case "Rams":     playerLimits.HB++; break;
-		case "Redskins": playerLimits.WR++; break;
-		case "Colts": playerLimits.WR++; break;
-		case "FreeAgents":
-			playerLimits = { // add upto 190 (pre-prepseason)
-				"QB":10, "HB":10, "FB":5, "WR":19,   "TE":12,   "LT":8,  "LG":7, "C":3,  "RG":7, "RT":8,
-				"LE":10, "RE":10, "DT":12, "LOLB":8, "ROLB":8, "MLB":12, "CB":20, "SS":6, "FS":6,
-				 "K":5, "P":5
-			};
-			break;
-	} // end hack
-
-	for(i=0; i < team.docs.length;i++){
-		player = team.docs[i];
-		pos = player.position;
-		if(!teamPositions[pos]) {
-			teamPositions[pos] = 0;
-			if( prevPos && ( playerLimits[prevPos] - teamPositions[prevPos] ) > 0 ) {
-				playerLimits[pos] = playerLimits[pos] + ( playerLimits[prevPos] - teamPositions[prevPos] );
-			}
-		}
-		teamPositions[pos] = teamPositions[pos]+1;
-		if( teamPositions[pos] > playerLimits[pos] ){
-			// clone = cloneObject(player); // cloning takes too long
-			player.notFound = true;
-			team.count--;
-			if(team.team != "FreeAgents"){
-				freeAgents.docs.push(player);
-			}
-		}
-		prevPos = pos;
-	}
-}
-
-function onMaddenTeam(team, firstName, lastName){
-	var i, retVal = false;
-	for(i=0; i < team.docs.length; i++){
-		if( team.docs[i].firstName == firstNAme && team.docs[i].lastName == lastName){
-			retVal = true;
-			break;
-		}
-	}
-	return retVal;
-}
 
 
 </script>
-<body >
-<div id="myTitle">Madden player ratings</div>
-<div id="sliderContainer" class="sliderControl">
-</div>
-<a href="https://www.easports.com/madden-nfl/player-ratings"> Madden Ratings</a><br><br>
-<button id="button1" onclick="button1Click()" >Show Players!</button>
 
-<div id="missingPlayers">
-<b>Missing Players</b><br>
-</div>
+<body>
+	<div id="myTitle">Madden player ratings</div>
+	<div id="sliderContainer" class="sliderControl">
+	</div>
+	<a href="https://www.easports.com/madden-nfl/player-ratings"> Madden Ratings</a><br><br>
+	<button id="button1" onclick="button1Click()">Show Players!</button>
 
-<div id="team-top">
-    <div id="team-area"><div>
-<div>
-<div id="NFLData" style="display: none;" >
-NFC East
-Dallas Cowboys
-</div>
+	<div id="missingPlayers">
+		<b>Missing Players</b><br>
+	</div>
 
-<div>
+	<div id="team-top">
+		<div id="team-area">
+			<div>
+				<div>
+					<div id="NFLData" style="display: none;">
+						NFC East
+						Dallas Cowboys
+					</div>
 
-<br>This is the End</div>
+					<div>
+
+						<br>This is the End</div>
 </body>
+
 </html>
