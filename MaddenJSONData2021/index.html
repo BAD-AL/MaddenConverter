@@ -10,15 +10,17 @@
 		text-align: center;
 	}
 </style>
-<script type="text/javascript" src="allTeams-week-3-2020.js"></script>
+<!--script type="text/javascript" src="allTeams-week-7-2020.js"></script-->
+<script type="text/javascript" src="AllTeams11.4.2020.js"></script>
 <script type="text/javascript">
 	// https://www.easports.com/madden-nfl/player-ratings 
+	// https://ratings-api.ea.com/v2/entities/madden-nfl-21?filter=iteration:week-2%20AND%20teamId:(32)&sort=position:ASC,firstName:ASC&limit=90&offset=0
 	var
 		positionOrder = ["QB", "HB", "FB", "WR", "TE", "LT", "RT", "LG", "RG", "C",
 			"LE", "RE", "NT", "DT", "OLB", "LOLB", "ROLB", "LILB", "RILB", "MLB", "CB", "SS", "FS", "K", "P"],
 		teamOrder = ["49ers", "Bears", "Bengals", "Bills", "Broncos", "Browns", "Buccaneers", "Cardinals",
 			"Chargers", "Chiefs", "Colts", "Cowboys", "Dolphins", "Eagles", "Falcons", "Giants", "Jaguars",
-			"Jets", "Lions", "Packers", "Panthers", "Patriots", "Raiders", "Rams", "Ravens", "Redskins",
+			"Jets", "Lions", "Packers", "Panthers", "Patriots", "Raiders", "Rams", "Ravens", "Redskins", "Football Team",
 			"Saints", "Seahawks", "Steelers", "Texans", "Titans", "Vikings"],
 		attributeOrder = [
 			"team",
@@ -179,6 +181,9 @@
 	function insertPlayer(table, teamName, player) {
 		//attributeOrder
 		var i, td, tr;
+		if( teamName == "Football Team")
+			teamName = "Redskins";
+			
 		tr = table.insertRow();
 		for (i = 0; i < attributeOrder.length; i++) {
 			td = tr.insertCell();
@@ -272,9 +277,9 @@
 				playerLimits.WR += 1; 
 				//playerLimits.HB++;
 				break;
-			case "Bengals":
-				//playerLimits.WR += 2; 
-				//playerLimits.HB++;
+			case "Ravens":
+				playerLimits.WR++; 
+				playerLimits.HB++;
 				break;
 			case "Browns":
 				//playerLimits.C++;
@@ -372,7 +377,6 @@
 		}
 		return retVal;
 	}
-
 
 </script>
 
