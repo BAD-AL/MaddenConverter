@@ -11,7 +11,8 @@
 	}
 </style>
 <!--script type="text/javascript" src="allTeams-week-7-2020.js"></script-->
-<script type="text/javascript" src="AllTeams11.4.2020.js"></script>
+<!--script type="text/javascript" src="AllTeams11.4.2020.js"></script-->
+<script type="text/javascript" src="result.js"></script>
 <script type="text/javascript">
 	// https://www.easports.com/madden-nfl/player-ratings 
 	// https://ratings-api.ea.com/v2/entities/madden-nfl-21?filter=iteration:week-2%20AND%20teamId:(32)&sort=position:ASC,firstName:ASC&limit=90&offset=0
@@ -98,8 +99,8 @@
 		var i, j, k, team, player, ip;
 		for (i = 0; i < allTeams2020.length; i++) {
 			team = allTeams2020[i];
-			if( ! team.team )
-			{
+			
+			/*if( ! team.team ) {
 				team.team = team.docs[0].team;
 			}
 			ip = getInjuredPlayersForTeam(team.team);
@@ -109,6 +110,12 @@
 					if (team.docs[k].lastName == player.lastName && team.docs[k].firstName == player.firstName) {
 						team.docs[k].position = team.docs[k].position + '_INJ';
 					}
+				}
+			}*/
+			// Redskins fix
+			if( team.docs[0].team == "Football Team") {
+				for( j = 0; j < team.docs.length; j++){
+					team.docs[j].team = "Redskins";
 				}
 			}
 		}
@@ -181,8 +188,6 @@
 	function insertPlayer(table, teamName, player) {
 		//attributeOrder
 		var i, td, tr;
-		if( teamName == "Football Team")
-			teamName = "Redskins";
 			
 		tr = table.insertRow();
 		for (i = 0; i < attributeOrder.length; i++) {
@@ -194,8 +199,25 @@
 				td.innerHTML = Math.floor((player["mediumRouteRunning_rating"] + player["deepRouteRunning_rating"] + player["shortRouteRunning_rating"]) / 3);
 			} else if (attributeOrder[i] == "throwAccuracy_rating") {
 				td.innerHTML = Math.floor((player["throwAccuracyShort_rating"] + player["throwAccuracyMid_rating"] + player["throwAccuracyDeep_rating"]) / 3);
+			} else if ("plyrBirthdate" == attributeOrder[i]) {
+				td.innerHTML = formatDOB(player["plyrBirthdate"]);
 			}
 		}
+	}
+
+	function formatDOB(playerDOB) {
+		var retVal = playerDOB,
+		     parts = playerDOB.split("/");
+		// month, day, year 
+		if( parts && parts.length > 2 && parts[2].length == 2 ) {
+			var year = parseInt(parts[2]);
+			if( year > 60)
+				year += 1900;
+			else 
+				year += 2000;
+			retVal = parts[0] +"/"+parts[1]+"/"+year;
+		}
+		return retVal;
 	}
 
 	function insertHeadder(table) {
@@ -273,6 +295,10 @@
 		team.count = team.docs.length;
 		// hack to get a few teams up to 53 (will need modification every data drop)
 		switch (team.team) { /* team adjustments */
+			case "Redskins":
+			case "Football Team":
+				playerLimits.TE++;
+				break;
 			case "Bears":
 				playerLimits.WR += 1; 
 				//playerLimits.HB++;
@@ -321,7 +347,7 @@
 			case "Jets": case "Rams":
 				playerLimits.HB++; break;
 			case "49ers":
-				//playerLimits.WR += 1; playerLimits.TE--; break;
+				playerLimits.WR += 5; playerLimits.TE--; break;
 				break;
 			case "Vikings":
 				//case "Raiders":
