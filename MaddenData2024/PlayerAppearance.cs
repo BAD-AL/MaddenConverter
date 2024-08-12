@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using static System.Windows.Forms.LinkLabel;
 
 namespace MaddenConverter
 {
@@ -31,46 +32,56 @@ namespace MaddenConverter
         // Call if re-using
         public void Initialize() { mPlayersToCheck.Length = 0; }
 
+        public static List<String> EquipmentFiles = new List<String>() {
+			"NFL2K5_EquipmentData.csv", "NFL2K5_EquipmentData_2014.csv"
+		};
+
 
         public PlayerAppearance()
-        {
-            mKeys = attrs.Split(new char[] { ',' });
-            string equipmentFilename = "NFL2K5_EquipmentData.csv";
-            if (!System.IO.File.Exists(equipmentFilename)) {
-                equipmentFilename = "NFL2K5_EquipmentData_2014.csv";
-            }
-            
-            string data = System.IO.File.ReadAllText(equipmentFilename);
-            Console.WriteLine("Using equipment file: '{0}'", equipmentFilename);
-
-            data = data.Replace("\r\n", "\n");
-            string[] lines = data.Split(new char[] { '\n' });
-            int index = 0;
-            string key = "";
-            string val = "";
-            mPlayerMap = new Dictionary<string, string>(lines.Length);
-
-            foreach (string line in lines)
+		{
+			mKeys = attrs.Split(new char[] { ',' });
+			mPlayerMap = new Dictionary<string, string>();
+			foreach (string equipmentFile in EquipmentFiles)
             {
-                if (line.StartsWith("#") || line.Length < 20 || line.StartsWith("Team "))
-                    continue;
-                index = 0;
-                for (int i = 0; i < 3; i++) // advance to 3rd comma
-                    index = line.IndexOf(',', index+1);
-                key = line.Substring(0, index);
-                index = line.IndexOf(',', index + 1); // get past jersey #
-                val = line.Substring(index + 1);
-                if (!mPlayerMap.ContainsKey(key))
-                    mPlayerMap.Add(key, val);
-                else
-                    Console.WriteLine(key + "is already in the map");
+                if( File.Exists(equipmentFile) )
+                {
+                    ReadEquipmentFile(equipmentFile);
+                }
             }
-        }
+		}
 
-        // 15 faces
-        // Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck 
-        //string mStandardAppearance = "Skin 6,Face 5,No,Standard,Type 7,Clear,Yes,No,Team 3,Team 3,None,None,None,None,None,Style 3,Style 3,None,None";
-        string mStandardAppearance = "Skin 6,Face 5,No,Standard,FaceMask7,None,Yes,No,Team3,Team3,None,None,None,None,None,Shoe3,Shoe3,None,None";
+		private void ReadEquipmentFile(string equipmentFilename)
+		{
+			string data = System.IO.File.ReadAllText(equipmentFilename);
+			Console.WriteLine("Using equipment file: '{0}'", equipmentFilename);
+
+			data = data.Replace("\r\n", "\n");
+			string[] lines = data.Split(new char[] { '\n' });
+			int index = 0;
+			string key = "";
+			string val = "";
+
+			foreach (string line in lines)
+			{
+				if (line.StartsWith("#") || line.Length < 20 || line.StartsWith("Team "))
+					continue;
+				index = 0;
+				for (int i = 0; i < 3; i++) // advance to 3rd comma
+					index = line.IndexOf(',', index + 1);
+				key = line.Substring(0, index);
+				index = line.IndexOf(',', index + 1); // get past jersey #
+				val = line.Substring(index + 1);
+				if (!mPlayerMap.ContainsKey(key))
+					mPlayerMap.Add(key, val);
+				else
+					Console.WriteLine(key + "is already in the map");
+			}
+		}
+
+		// 15 faces
+		// Skin,Face,Dreads,Helmet,FaceMask,Visor,EyeBlack,MouthPiece,LeftGlove,RightGlove,LeftWrist,RightWrist,LeftElbow,RightElbow,Sleeves,LeftShoe,RightShoe,NeckRoll,Turtleneck 
+		//string mStandardAppearance = "Skin 6,Face 5,No,Standard,Type 7,Clear,Yes,No,Team 3,Team 3,None,None,None,None,None,Style 3,Style 3,None,None";
+		string mStandardAppearance = "Skin 6,Face 5,No,Standard,FaceMask7,None,Yes,No,Team3,Team3,None,None,None,None,None,Shoe3,Shoe3,None,None";
         Random mRandom = new Random();
 
         public string GetAppearance(string firstName, string lastName, string position, string height, string weight, string number)
@@ -103,13 +114,16 @@ namespace MaddenConverter
 
         string mSkinMap = null;
 
-        private string SkinMap
+        private static string mSkinMapFile = "SkinMap.txt";
+		public static string SkinMapFile { get => mSkinMapFile; set => mSkinMapFile = value; }
+
+		private string SkinMap
         {
             get
             {
                 if (mSkinMap == null)
                 {
-                    string fileName = "SkinMap.txt";
+                    string fileName = mSkinMapFile;
                     if (System.IO.File.Exists(fileName))
                         mSkinMap = System.IO.File.ReadAllText(fileName);
                     else
@@ -119,7 +133,9 @@ namespace MaddenConverter
             }
         }
 
-        Regex skinRegex = new Regex("Skin[0-9+]");
+		
+
+		Regex skinRegex = new Regex("Skin[0-9+]");
 
         private string GetSkin(string firstName, string lastName, string position)
         {

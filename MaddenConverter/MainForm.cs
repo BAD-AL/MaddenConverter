@@ -58,7 +58,13 @@ namespace MaddenConverter
             keys = AttributeString.Split(new char[] { ',' });
             NFLPlayers = System.IO.File.ReadAllText("NFLPlayers.txt");
             NFLPlayers = NFLPlayers.Replace("\r\n", "\n");
-        }
+
+            autoUpdateDepthChartToolStripMenuItem.Checked = Program.AutoUpdateDepthChart;
+            autoUpdatePBPToolStripMenuItem.Checked = Program.AutoUpdatePBP;
+            autoUpdatePhotoToolStripMenuItem.Checked = Program.AutoUpdatePhoto;
+            autoUpdateSpecialTeamsDepthToolStripMenuItem.Checked = Program.AutoUpdateSpecialTeamsDepth;
+
+		}
 
         private string GetAttribute(string attribute, string[] playerData)
         {
@@ -88,26 +94,8 @@ namespace MaddenConverter
         
         private void mGoButton_Click(object sender, EventArgs e)
         {
-            if (mPlayerAppearance == null)
-                mPlayerAppearance = new PlayerAppearance();
-
-            string output = Convert(textBox1.Text);
-            //output = GetKey() + "\r\n" + output;
-            textBox2.Text = output;
-
-            //if (mPlayerAppearance.MissedPlayers.Length > 0)
-            //{
-            //    TextDisplay disp = new TextDisplay();
-            //    disp.Text = "Players to Check";
-            //    disp.Content = mPlayerAppearance.MissedPlayers;
-            //    disp.Show();
-            //}
-
-            //TextDisplay disp2 = new TextDisplay();
-            //disp2.Text = "Missing Players";
-            //disp2.Content = FindMissingPlayers();
-            //disp2.Show();
-            
+            MaddenDataConverter conv = new MaddenDataConverter();
+			textBox2.Text =conv.ConvertData(textBox1.Text);
         }
 
         private string FindMissingPlayers()
@@ -156,7 +144,7 @@ namespace MaddenConverter
 
             return ret;
         }
-
+        /*
         /// <summary>
         /// Converts from madden ratings to NFL2K ratings
         /// </summary>
@@ -170,56 +158,74 @@ namespace MaddenConverter
             string tmpTeam = "";
             mPlayerAppearance.Initialize();
             builder.Append(GetKey2018());
-            
-            foreach (string line in lines)
+            string current_line ="";
+
+            try
             {
-                if (line.StartsWith("#") || line.Length < 15) // comment
+                foreach (string line in lines)
                 {
-                    continue; // skip the line
-                }
-                string[] playerData = line.Split(new char[] { ',' });
-                tmpTeam = GetAttribute("Team", playerData);
-                if (tmpTeam != team)
-                {
-                    if (team.Length > 0)
+                    current_line = line;
+                    if (line.StartsWith("#") || line.Length < 15) // comment
                     {
-                        builder.Append("# Team:" + team + " players: " + players + "\r\n");
+                        continue; // skip the line
                     }
-                    //if (team == "")
-                    //    builder.Append("#");
-                    team = tmpTeam;
-                    builder.Append("Team = ");
-                    builder.Append(team);
-                    builder.Append("\r\n");
-                    players = 0;
-                }
-                if (IncludePlayer(playerData))
-                {
-                    //ConvertPlayerFromMadden2016(playerData, builder);
-                    //ConvertPlayerFromMadden2017(playerData, builder);
-                    ConvertPlayerFromMadden2018(playerData, builder);
-                    players++;
-                    builder.Append("\r\n");
-                }
-                else
-                {
-                    Console.Error.WriteLine("Not including player {0} {1}", playerData[1], playerData[2]);
+                    string[] playerData = line.Split(new char[] { ',' });
+                    tmpTeam = GetAttribute("Team", playerData);
+                    if (tmpTeam != team)
+                    {
+                        if (team.Length > 0)
+                        {
+                            builder.Append("# Team:" + team + " players: " + players + "\r\n");
+                        }
+                        //if (team == "")
+                        //    builder.Append("#");
+                        team = tmpTeam;
+                        builder.Append("Team = ");
+                        builder.Append(team);
+                        builder.Append("\r\n");
+                        players = 0;
+                    }
+                    if (IncludePlayer(playerData))
+                    {
+                        //ConvertPlayerFromMadden2016(playerData, builder);
+                        //ConvertPlayerFromMadden2017(playerData, builder);
+                        ConvertPlayerFromMadden2018(playerData, builder);
+                        players++;
+                        builder.Append("\r\n");
+                    }
+                    else
+                    {
+                        Console.Error.WriteLine("Not including player {0} {1}", playerData[1], playerData[2]);
+                    }
+
                 }
             }
-            return builder.ToString();
+            catch (Exception e)
+            {
+                MessageBox.Show("Error with line:\n'" + current_line +"'", "Data not applied", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+            }
+            if (!autoUpdateDepthChartToolStripMenuItem.Checked)
+                builder.Append("#");
+            builder.Append(autoUpdateDepthChartToolStripMenuItem.Text +"\r\n");
+            if(!autoUpdatePBPToolStripMenuItem.Checked)
+                builder.Append("#");
+            builder.Append(autoUpdatePBPToolStripMenuItem.Text +"\r\n");
+
+            if (!autoUpdatePhotoToolStripMenuItem.Checked) 
+                builder.Append("#");
+            builder.Append(autoUpdatePhotoToolStripMenuItem.Text +"\r\n");
+
+			if (!autoUpdateSpecialTeamsDepthToolStripMenuItem.Checked)
+				builder.Append("#");
+			builder.Append(autoUpdateSpecialTeamsDepthToolStripMenuItem.Text);
+
+			return builder.ToString();
         }
 
         private bool IncludePlayer(string[] playerData)
         {
-            bool ret = true;/*
-            string searchString = GetAttribute("Last Name", playerData) +", " + GetAttribute("First Name", playerData);
-
-            string playerLine = GetLine(searchString);
-            if (playerLine.Length > 0)
-            {
-                if (playerLine.IndexOf("	ACT") > -1)
-                    ret = true;
-            }*/
+            bool ret = true;
             return ret;
         }
 
@@ -448,6 +454,7 @@ namespace MaddenConverter
             builder.Append(attr.ToString());
             builder.Append(",");
         }
+        */
 
         private void textBox_KeyDown(object sender, KeyEventArgs e)
         {
@@ -479,7 +486,38 @@ namespace MaddenConverter
             RegexForm r = new RegexForm();
             r.Show();
         }
-        
-    }
+
+        private void textBox1_DragOver(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+                e.Effect = DragDropEffects.All;
+            else
+                e.Effect = DragDropEffects.None;
+        }
+
+        private void textBox1_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+            if (files != null && files.Length > 0)
+            {
+                textBox1.Text = System.IO.File.ReadAllText( files[0]);
+            }
+        }
+
+		private void menuItemClick(object sender, EventArgs e)
+		{
+            ToolStripMenuItem menuItem = sender as ToolStripMenuItem;
+            if(menuItem != null)
+            {
+                menuItem.Checked = !menuItem.Checked;
+                Program.AutoUpdateDepthChart = autoUpdatePhotoToolStripMenuItem.Checked;
+                Program.AutoUpdatePBP = autoUpdatePBPToolStripMenuItem.Checked;
+                Program.AutoUpdatePhoto = autoUpdatePhotoToolStripMenuItem.Checked;
+                Program.AutoUpdateSpecialTeamsDepth = autoUpdateSpecialTeamsDepthToolStripMenuItem.Checked;
+
+				Program.SaveIniOptions();
+			}
+		}
+	}
 
 }
