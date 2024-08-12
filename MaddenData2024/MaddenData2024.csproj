@@ -7,7 +7,7 @@
     <ProjectGuid>{50E5706D-DDC5-4DEB-BD02-1EB305CC5618}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>MaddenDataScraper_2024</RootNamespace>
-    <AssemblyName>MaddenDataScraper_2024</AssemblyName>
+    <AssemblyName>MaddenData2024</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <LangVersion>8</LangVersion>
     <FileAlignment>512</FileAlignment>
