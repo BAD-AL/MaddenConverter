@@ -4,6 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Security.Permissions;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -33,6 +34,29 @@ namespace MaddenDataScraper_2024
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new DataGatherForm());
+		}
+
+
+		public static Image GetEmbeddedImage(string imageName)
+		{
+			// Get the assembly where the resource is located
+			Assembly assembly = Assembly.GetExecutingAssembly();
+
+			// Construct the full resource name
+			string resourceName = $"MaddenDataScraper_2024.{imageName}";
+
+			// Open a stream for the resource
+			using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+			{
+				if (stream != null)
+				{
+					return Image.FromStream(stream);
+				}
+				else
+				{
+					throw new Exception("Resource not found.");
+				}
+			}
 		}
 
 		public static void Colorize(Regex reg, Color color, RichTextBox textBox)

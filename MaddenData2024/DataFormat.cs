@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.IO;
+using System.Text;
 
 namespace MaddenDataScraper_2024
 {
@@ -143,5 +147,66 @@ namespace MaddenDataScraper_2024
 			"plyrHandedness",
 			"college",
 		};
+	}
+
+	public class PlayerAppearanceData
+	{
+		public string Team { get; set; }
+		public string FirstName { get; set; }
+		public string LastName { get; set; }
+		public string Skin { get; set; }
+		public string Position { get; set; }
+		public string PhotoPath { get; set; }
+		public Image Photo
+		{
+			get { 
+				if(_img == null && !String.IsNullOrEmpty( PhotoPath) )
+				{
+					_img = Image.FromFile( PhotoPath );
+				}
+				return _img;
+			}
+		}
+
+		private Image _img = null;
+
+		public static List<PlayerAppearanceData> GetAppearanceData(List<String> teams)
+		{
+			List<PlayerAppearanceData> retVal = new List<PlayerAppearanceData>();
+			PlayerAppearanceData p;
+			string photoPath;
+			string teamFileName = "";
+			string rawTeamData = "";
+			string skin = "";
+			string dataDir = "RawTeamData";
+			foreach (var team in teams)
+			{
+				teamFileName = $"{dataDir}\\{team}.raw.json";
+				if (File.Exists(teamFileName))
+				{
+					rawTeamData = File.ReadAllText(teamFileName);
+					var players = DataGatherForm.GetImageDownloadData(rawTeamData);
+					// keys ["id", "overallRating", "firstName", "lastName", "jerseyNum", "position.id", "avatarUrl" ]
+					foreach (var player in players)
+					{
+						photoPath = $"Photos\\{team}\\{player["firstName"]}_{player["lastName"]}.png";
+						skin = SkinMatcher.MatchSkin(photoPath);
+						if (!String.IsNullOrEmpty(skin))
+						{
+							p = new PlayerAppearanceData() { 
+								FirstName = player["firstName"], LastName = player["lastName"], PhotoPath= photoPath,
+								Team = team, Skin = skin, Position = player["position.id"]
+							};
+							retVal.Add( p );
+						}
+					}
+				}
+				else
+				{
+					Console.WriteLine($"Error! Could not Find file {teamFileName}; Need to run Gather Data operation? Skipping {team}");
+				}
+			}
+			return retVal;
+		}
 	}
 }

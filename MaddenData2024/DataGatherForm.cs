@@ -15,6 +15,7 @@ using System.Diagnostics;
 using Newtonsoft.Json.Linq;
 using System.Text.RegularExpressions;
 using MaddenConverter;
+using System.Xml.Xsl;
 
 namespace MaddenDataScraper_2024
 {
@@ -32,13 +33,81 @@ namespace MaddenDataScraper_2024
 			comboTeamsPhoto.Items.Insert(0,"All Teams");
 			comboTeamsPhoto.SelectedIndex = 0;
 			SetToolTips();
-
+			PopulateAppearanceGrid();
 			labStatus.Text = "Loaded";
+		}
+
+		private void PopulateAppearanceGrid()
+		{
+			var photoColumn = new DataGridViewImageColumn() { 
+				Width = 50, HeaderText = "Photo", DataPropertyName = "Photo", ImageLayout = DataGridViewImageCellLayout.Stretch,
+				
+			};
+			photoColumn.DefaultCellStyle.NullValue = Program.GetEmbeddedImage("GreyBox.png");
+
+			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 50, HeaderText = "Team", DataPropertyName = "Team" });
+			dataGridAppearance.Columns.Add(photoColumn);
+			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 50, HeaderText = "Position", DataPropertyName = "Position" });
+			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 60, HeaderText = "First Name", DataPropertyName = "FirstName" });
+			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 60, HeaderText = "Last Name", DataPropertyName = "LastName" });
+			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 50, HeaderText = "Skin", DataPropertyName = "Skin" });
+			/*var skinColumn = new DataGridViewComboBoxColumn() { 
+				Width = 50, HeaderText = "Skin", DataPropertyName = "Skin"
+			};
+			skinColumn.Items.AddRange(SkinMatcher.GetSkinChoices());
+			dataGridAppearance.Columns.Add(skinColumn);*/
+
+			dataGridAppearance.AutoGenerateColumns = false;
+			dataGridAppearance.CellFormatting += DataGridAppearance_CellFormatting;
+			dataGridAppearance.EditingControlShowing += DataGridAppearance_EditingControlShowing;
+		}
+
+		private AutoCompleteStringCollection skinChoices = null;
+
+		private void DataGridAppearance_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+		{
+			if (dataGridAppearance.CurrentCell.ColumnIndex == 5)
+			{
+				TextBox txtBox = e.Control as TextBox;
+				txtBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend; //AutoCompleteStringCollection
+				txtBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+				if (skinChoices == null)
+				{
+					skinChoices = new AutoCompleteStringCollection();
+					skinChoices.AddRange(SkinMatcher.GetSkinChoices().ToArray());
+				}
+				txtBox.AutoCompleteCustomSource = skinChoices;
+			}
+		}
+
+		private void DataGridAppearance_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+		{
+			if (e.RowIndex > -1)
+			{
+				var dude = dataGridAppearance.Rows[e.RowIndex].DataBoundItem as PlayerAppearanceData;
+				if (dude != null)
+				{
+					Color c = SkinMatcher.GetColorForSkin(dude.Skin);
+					dataGridAppearance.Rows[e.RowIndex].DefaultCellStyle.BackColor = c;
+				}
+			}
+		}
+
+		private void dataGridAppearance_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.RowIndex > -1)
+			{
+				PlayerAppearanceData p = dataGridAppearance.Rows[e.RowIndex].DataBoundItem as PlayerAppearanceData;
+				if (p != null)
+				{
+					pictureBoxPlayer.Image = p.Photo;
+				}
+			}
 		}
 
 		private void SetToolTips()
 		{
-			ToolTip tip = new ToolTip();
+			var tip = new System.Windows.Forms.ToolTip();
 			tip.SetToolTip(panel2K5Data, "Auto Populated after using the 'Team Trimmer'");
 			tip.SetToolTip(listEquipmentFiles, "Auto Populated with 'EquipmentData' files");
 		}
@@ -605,5 +674,87 @@ Expected Workflow:
 				PlayerAppearance.SkinMapFile = txtSkinFileLocation.Text;
 			}
 		}
+
+		private void photoTestToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			FaceForm ff = new FaceForm();
+			ff.Icon = this.Icon;
+			ff.Show();
+		}
+
+		private void btnCreateSkinMap_Click(object sender, EventArgs e)
+		{
+			CreateSkinMap();
+		}
+
+		private void CreateSkinMap()
+		{
+			StringBuilder sb = new StringBuilder();
+			sb.Append("#Key=fname,lname,Position,Skin\r\n");
+			BindingList< PlayerAppearanceData > players = dataGridAppearance.DataSource as BindingList<PlayerAppearanceData>;
+			if(players == null || players.Count == 0)
+				return; // early return
+
+			foreach (var player in players)
+			{
+				sb.Append($"{player.FirstName},{player.LastName},{player.Position},{player.Skin}\r\n");
+			}
+			TextForm textForm = new TextForm();
+			textForm.Icon = this.Icon;
+			textForm.Text = "SkinMap.txt; Save As to keep";
+			textForm.FilenameHint = "SkinMap.txt";
+			textForm.TextContent = sb.ToString();
+			textForm.Show();
+		}
+
+		private List<PlayerAppearanceData> playerAppearanceDataList = null;
+
+		private void populateSkinStuffToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			List<string> teams = new List<string>();
+			if (comboTeamsPhoto.SelectedIndex == 0) // all teams
+				teams = Program.GetTeams();
+			else
+				teams.Add(comboTeamsPhoto.Text);
+			playerAppearanceDataList = PlayerAppearanceData.GetAppearanceData(teams);
+			dataGridAppearance.DataSource = new BindingList<PlayerAppearanceData>(playerAppearanceDataList);
+		}
+
+		private void textApperanceFilter_TextChanged(object sender, EventArgs e)
+		{
+			//var dataList = dataGridAppearance.DataSource as BindingList<PlayerAppearanceData>;
+			List<PlayerAppearanceData> pd = new List<PlayerAppearanceData>();
+
+			string filterCol = comboApperanceFilter.Text;
+			string filterText = textApperanceFilter.Text.Trim();
+			foreach (PlayerAppearanceData data in playerAppearanceDataList)
+			{
+				switch (filterCol)
+				{
+					case "Skin":
+						if(data.Skin.Contains(filterText))
+							pd.Add(data);
+						break;
+					case "Team":
+						if (data.Team.Contains(filterText))
+							pd.Add(data);
+						break;
+					case "Position":
+						if (data.Position.Contains(filterText))
+							pd.Add(data);
+						break;
+					case "First Name":
+						if (data.FirstName.Contains(filterText))
+							pd.Add(data);
+						break;
+					case "Last Name":
+						if (data.LastName.Contains(filterText))
+							pd.Add(data);
+						break;
+				}
+			}
+			dataGridAppearance.DataSource = new BindingList<PlayerAppearanceData>(pd);
+		}
+
 	}
 }
