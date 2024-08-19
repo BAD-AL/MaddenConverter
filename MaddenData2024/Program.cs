@@ -59,6 +59,21 @@ namespace MaddenDataScraper_2024
 			}
 		}
 
+		private static Dictionary<string, string> sNfl2k5Positions = new Dictionary<string, string>() {
+							{"RDE", "DE" }, {"LDE", "DE" },
+							{"RT", "T" }, {"LT", "T" },
+							{"RG", "G" }, {"LG", "G" },
+							{"MLB", "ILB" },{"ROLB", "OLB" }, {"LOLB", "OLB" },
+							{"HB", "RB" },
+						};
+
+		public static string MapMaddenTo2K5Position(string maddenPos)
+		{
+			if(sNfl2k5Positions.ContainsKey(maddenPos))
+				return sNfl2k5Positions[maddenPos];
+			return maddenPos;
+		}
+
 		public static void Colorize(Regex reg, Color color, RichTextBox textBox)
 		{
 			textBox.Visible = false;

@@ -39,6 +39,7 @@
 			this.translateDataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.aboutBaseUrlToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.photoTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.populateSkinStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveMaddenDataAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,9 +47,27 @@
 			this.comboTeams = new System.Windows.Forms.ComboBox();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.txtJsonData = new WinFormsUtilities.SearchTextBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.txtMaddenData = new WinFormsUtilities.SearchTextBox();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.checkExactMatch = new System.Windows.Forms.CheckBox();
+			this.labelPhotoPlayerName = new System.Windows.Forms.Label();
+			this.groupBox3 = new System.Windows.Forms.GroupBox();
+			this.comboRightSkin = new System.Windows.Forms.ComboBox();
+			this.comboMiddleSkin = new System.Windows.Forms.ComboBox();
+			this.label6 = new System.Windows.Forms.Label();
+			this.labelRightClick = new System.Windows.Forms.Label();
+			this.labelMiddleClick = new System.Windows.Forms.Label();
+			this.checkQuickClick = new System.Windows.Forms.CheckBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.pictureBoxPlayer = new System.Windows.Forms.PictureBox();
+			this.btnPolulateAppearanceGrid = new System.Windows.Forms.Button();
+			this.comboApperanceFilter = new System.Windows.Forms.ComboBox();
+			this.textApperanceFilter = new System.Windows.Forms.TextBox();
+			this.dataGridAppearance = new System.Windows.Forms.DataGridView();
+			this.btnCreateSkinMap = new System.Windows.Forms.Button();
 			this.btnCreatePhotoDownloadCurlScript = new System.Windows.Forms.Button();
 			this.comboTeamsPhoto = new System.Windows.Forms.ComboBox();
 			this.btnDownloadPhotos = new System.Windows.Forms.Button();
@@ -58,7 +77,9 @@
 			this.lab2K5DataError = new System.Windows.Forms.Label();
 			this.btnConvertTo2K5Data = new System.Windows.Forms.Button();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.richTextBox2K5Data = new WinFormsUtilities.SearchTextBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.richTextBoxMaddenConverter = new WinFormsUtilities.SearchTextBox();
 			this.txtSkinFileLocation = new System.Windows.Forms.TextBox();
 			this.labelSkinMapFile = new System.Windows.Forms.Label();
 			this.listEquipmentFiles = new System.Windows.Forms.ListBox();
@@ -70,31 +91,20 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnTranslateAllData = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
-			this.btnCreateSkinMap = new System.Windows.Forms.Button();
-			this.dataGridAppearance = new System.Windows.Forms.DataGridView();
-			this.textApperanceFilter = new System.Windows.Forms.TextBox();
-			this.comboApperanceFilter = new System.Windows.Forms.ComboBox();
-			this.populateSkinStuffToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.btnPolulateAppearanceGrid = new System.Windows.Forms.Button();
-			this.pictureBoxPlayer = new System.Windows.Forms.PictureBox();
-			this.txtJsonData = new WinFormsUtilities.SearchTextBox();
-			this.txtMaddenData = new WinFormsUtilities.SearchTextBox();
-			this.richTextBox2K5Data = new WinFormsUtilities.SearchTextBox();
-			this.richTextBoxMaddenConverter = new WinFormsUtilities.SearchTextBox();
-			this.label3 = new System.Windows.Forms.Label();
 			this.menuStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.panel1.SuspendLayout();
+			this.groupBox3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridAppearance)).BeginInit();
 			this.tabPage4.SuspendLayout();
 			this.panel2K5Data.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			this.statusStrip1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridAppearance)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// menuStrip1
@@ -184,6 +194,13 @@
 			this.photoTestToolStripMenuItem.Text = "Photo Test";
 			this.photoTestToolStripMenuItem.Click += new System.EventHandler(this.photoTestToolStripMenuItem_Click);
 			// 
+			// populateSkinStuffToolStripMenuItem
+			// 
+			this.populateSkinStuffToolStripMenuItem.Name = "populateSkinStuffToolStripMenuItem";
+			this.populateSkinStuffToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
+			this.populateSkinStuffToolStripMenuItem.Text = "Populate Skin Stuff";
+			this.populateSkinStuffToolStripMenuItem.Click += new System.EventHandler(this.populateSkinStuffToolStripMenuItem_Click);
+			// 
 			// saveToolStripMenuItem
 			// 
 			this.saveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -235,7 +252,7 @@
 			this.tabControl1.Location = new System.Drawing.Point(12, 172);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1119, 568);
+			this.tabControl1.Size = new System.Drawing.Size(1119, 646);
 			this.tabControl1.TabIndex = 3;
 			this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
 			// 
@@ -245,10 +262,23 @@
 			this.tabPage1.Location = new System.Drawing.Point(4, 29);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(1111, 535);
+			this.tabPage1.Size = new System.Drawing.Size(1111, 613);
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "JSON Data";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// txtJsonData
+			// 
+			this.txtJsonData.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.txtJsonData.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtJsonData.Location = new System.Drawing.Point(3, 3);
+			this.txtJsonData.Name = "txtJsonData";
+			this.txtJsonData.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+			this.txtJsonData.SearchString = null;
+			this.txtJsonData.Size = new System.Drawing.Size(1105, 607);
+			this.txtJsonData.StatusControl = null;
+			this.txtJsonData.TabIndex = 0;
+			this.txtJsonData.Text = "";
 			// 
 			// tabPage2
 			// 
@@ -256,23 +286,39 @@
 			this.tabPage2.Location = new System.Drawing.Point(4, 29);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage2.Size = new System.Drawing.Size(1111, 535);
+			this.tabPage2.Size = new System.Drawing.Size(1111, 613);
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Madden Data";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// txtMaddenData
+			// 
+			this.txtMaddenData.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.txtMaddenData.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.txtMaddenData.Location = new System.Drawing.Point(3, 3);
+			this.txtMaddenData.Name = "txtMaddenData";
+			this.txtMaddenData.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+			this.txtMaddenData.SearchString = null;
+			this.txtMaddenData.Size = new System.Drawing.Size(1105, 607);
+			this.txtMaddenData.StatusControl = null;
+			this.txtMaddenData.TabIndex = 1;
+			this.txtMaddenData.Text = "";
 			// 
 			// tabPage3
 			// 
 			this.tabPage3.Controls.Add(this.panel1);
 			this.tabPage3.Location = new System.Drawing.Point(4, 29);
 			this.tabPage3.Name = "tabPage3";
-			this.tabPage3.Size = new System.Drawing.Size(1111, 535);
+			this.tabPage3.Size = new System.Drawing.Size(1111, 613);
 			this.tabPage3.TabIndex = 2;
 			this.tabPage3.Text = "Photos";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.checkExactMatch);
+			this.panel1.Controls.Add(this.labelPhotoPlayerName);
+			this.panel1.Controls.Add(this.groupBox3);
 			this.panel1.Controls.Add(this.label3);
 			this.panel1.Controls.Add(this.pictureBoxPlayer);
 			this.panel1.Controls.Add(this.btnPolulateAppearanceGrid);
@@ -287,8 +333,208 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 0);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1111, 535);
+			this.panel1.Size = new System.Drawing.Size(1111, 613);
 			this.panel1.TabIndex = 0;
+			// 
+			// checkExactMatch
+			// 
+			this.checkExactMatch.AutoSize = true;
+			this.checkExactMatch.Location = new System.Drawing.Point(484, 301);
+			this.checkExactMatch.Name = "checkExactMatch";
+			this.checkExactMatch.Size = new System.Drawing.Size(123, 24);
+			this.checkExactMatch.TabIndex = 35;
+			this.checkExactMatch.Text = "Exact Match";
+			this.checkExactMatch.UseVisualStyleBackColor = true;
+			this.checkExactMatch.CheckedChanged += new System.EventHandler(this.filter_Changed);
+			// 
+			// labelPhotoPlayerName
+			// 
+			this.labelPhotoPlayerName.AutoSize = true;
+			this.labelPhotoPlayerName.Location = new System.Drawing.Point(613, 526);
+			this.labelPhotoPlayerName.Name = "labelPhotoPlayerName";
+			this.labelPhotoPlayerName.Size = new System.Drawing.Size(27, 20);
+			this.labelPhotoPlayerName.TabIndex = 34;
+			this.labelPhotoPlayerName.Tag = "";
+			this.labelPhotoPlayerName.Text = "<>";
+			// 
+			// groupBox3
+			// 
+			this.groupBox3.Controls.Add(this.comboRightSkin);
+			this.groupBox3.Controls.Add(this.comboMiddleSkin);
+			this.groupBox3.Controls.Add(this.label6);
+			this.groupBox3.Controls.Add(this.labelRightClick);
+			this.groupBox3.Controls.Add(this.labelMiddleClick);
+			this.groupBox3.Controls.Add(this.checkQuickClick);
+			this.groupBox3.Location = new System.Drawing.Point(818, 330);
+			this.groupBox3.Name = "groupBox3";
+			this.groupBox3.Size = new System.Drawing.Size(200, 193);
+			this.groupBox3.TabIndex = 33;
+			this.groupBox3.TabStop = false;
+			this.groupBox3.Text = "Quick Change";
+			// 
+			// comboRightSkin
+			// 
+			this.comboRightSkin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboRightSkin.FormattingEnabled = true;
+			this.comboRightSkin.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "11",
+            "12",
+            "13",
+            "14",
+            "20",
+            "21",
+            "22"});
+			this.comboRightSkin.Location = new System.Drawing.Point(119, 109);
+			this.comboRightSkin.Name = "comboRightSkin";
+			this.comboRightSkin.Size = new System.Drawing.Size(59, 28);
+			this.comboRightSkin.TabIndex = 5;
+			// 
+			// comboMiddleSkin
+			// 
+			this.comboMiddleSkin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboMiddleSkin.FormattingEnabled = true;
+			this.comboMiddleSkin.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "11",
+            "12",
+            "13",
+            "14",
+            "20",
+            "21",
+            "22"});
+			this.comboMiddleSkin.Location = new System.Drawing.Point(119, 64);
+			this.comboMiddleSkin.Name = "comboMiddleSkin";
+			this.comboMiddleSkin.Size = new System.Drawing.Size(59, 28);
+			this.comboMiddleSkin.TabIndex = 4;
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Location = new System.Drawing.Point(138, 29);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(40, 20);
+			this.label6.TabIndex = 3;
+			this.label6.Text = "Skin";
+			// 
+			// labelRightClick
+			// 
+			this.labelRightClick.AutoSize = true;
+			this.labelRightClick.Location = new System.Drawing.Point(6, 112);
+			this.labelRightClick.Name = "labelRightClick";
+			this.labelRightClick.Size = new System.Drawing.Size(84, 20);
+			this.labelRightClick.TabIndex = 2;
+			this.labelRightClick.Text = "Right Click";
+			// 
+			// labelMiddleClick
+			// 
+			this.labelMiddleClick.AutoSize = true;
+			this.labelMiddleClick.Location = new System.Drawing.Point(6, 64);
+			this.labelMiddleClick.Name = "labelMiddleClick";
+			this.labelMiddleClick.Size = new System.Drawing.Size(92, 20);
+			this.labelMiddleClick.TabIndex = 1;
+			this.labelMiddleClick.Text = "Middle Click";
+			// 
+			// checkQuickClick
+			// 
+			this.checkQuickClick.AutoSize = true;
+			this.checkQuickClick.Checked = true;
+			this.checkQuickClick.CheckState = System.Windows.Forms.CheckState.Checked;
+			this.checkQuickClick.Location = new System.Drawing.Point(6, 25);
+			this.checkQuickClick.Name = "checkQuickClick";
+			this.checkQuickClick.Size = new System.Drawing.Size(56, 24);
+			this.checkQuickClick.TabIndex = 0;
+			this.checkQuickClick.Text = "On";
+			this.checkQuickClick.UseVisualStyleBackColor = true;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(3, 301);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(44, 20);
+			this.label3.TabIndex = 32;
+			this.label3.Tag = "";
+			this.label3.Text = "Filter";
+			// 
+			// pictureBoxPlayer
+			// 
+			this.pictureBoxPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.pictureBoxPlayer.Location = new System.Drawing.Point(613, 330);
+			this.pictureBoxPlayer.Name = "pictureBoxPlayer";
+			this.pictureBoxPlayer.Size = new System.Drawing.Size(177, 193);
+			this.pictureBoxPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBoxPlayer.TabIndex = 31;
+			this.pictureBoxPlayer.TabStop = false;
+			// 
+			// btnPolulateAppearanceGrid
+			// 
+			this.btnPolulateAppearanceGrid.Location = new System.Drawing.Point(614, 180);
+			this.btnPolulateAppearanceGrid.Name = "btnPolulateAppearanceGrid";
+			this.btnPolulateAppearanceGrid.Size = new System.Drawing.Size(177, 55);
+			this.btnPolulateAppearanceGrid.TabIndex = 14;
+			this.btnPolulateAppearanceGrid.Text = "Populate Grid from photo data";
+			this.btnPolulateAppearanceGrid.UseVisualStyleBackColor = true;
+			this.btnPolulateAppearanceGrid.Click += new System.EventHandler(this.populateSkinStuffToolStripMenuItem_Click);
+			// 
+			// comboApperanceFilter
+			// 
+			this.comboApperanceFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboApperanceFilter.FormattingEnabled = true;
+			this.comboApperanceFilter.Items.AddRange(new object[] {
+            "Team",
+            "Position",
+            "First Name",
+            "Last Name",
+            "Skin"});
+			this.comboApperanceFilter.Location = new System.Drawing.Point(62, 296);
+			this.comboApperanceFilter.Name = "comboApperanceFilter";
+			this.comboApperanceFilter.Size = new System.Drawing.Size(163, 28);
+			this.comboApperanceFilter.TabIndex = 20;
+			this.comboApperanceFilter.SelectedIndexChanged += new System.EventHandler(this.filter_Changed);
+			// 
+			// textApperanceFilter
+			// 
+			this.textApperanceFilter.Location = new System.Drawing.Point(248, 298);
+			this.textApperanceFilter.Name = "textApperanceFilter";
+			this.textApperanceFilter.Size = new System.Drawing.Size(215, 26);
+			this.textApperanceFilter.TabIndex = 22;
+			this.textApperanceFilter.TextChanged += new System.EventHandler(this.filter_Changed);
+			// 
+			// dataGridAppearance
+			// 
+			this.dataGridAppearance.AllowUserToOrderColumns = true;
+			this.dataGridAppearance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+			this.dataGridAppearance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridAppearance.Location = new System.Drawing.Point(3, 330);
+			this.dataGridAppearance.Name = "dataGridAppearance";
+			this.dataGridAppearance.RowHeadersWidth = 62;
+			this.dataGridAppearance.RowTemplate.Height = 28;
+			this.dataGridAppearance.Size = new System.Drawing.Size(604, 271);
+			this.dataGridAppearance.TabIndex = 30;
+			this.dataGridAppearance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAppearance_CellContentClick);
+			this.dataGridAppearance.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridAppearance_CellMouseClick);
+			// 
+			// btnCreateSkinMap
+			// 
+			this.btnCreateSkinMap.Location = new System.Drawing.Point(614, 241);
+			this.btnCreateSkinMap.Name = "btnCreateSkinMap";
+			this.btnCreateSkinMap.Size = new System.Drawing.Size(177, 55);
+			this.btnCreateSkinMap.TabIndex = 18;
+			this.btnCreateSkinMap.Text = "Create Skin Map from Data Grid";
+			this.btnCreateSkinMap.UseVisualStyleBackColor = true;
+			this.btnCreateSkinMap.Click += new System.EventHandler(this.btnCreateSkinMap_Click);
 			// 
 			// btnCreatePhotoDownloadCurlScript
 			// 
@@ -336,7 +582,7 @@
 			this.tabPage4.Controls.Add(this.panel2K5Data);
 			this.tabPage4.Location = new System.Drawing.Point(4, 29);
 			this.tabPage4.Name = "tabPage4";
-			this.tabPage4.Size = new System.Drawing.Size(1111, 535);
+			this.tabPage4.Size = new System.Drawing.Size(1111, 613);
 			this.tabPage4.TabIndex = 3;
 			this.tabPage4.Text = "2K5 Data";
 			this.tabPage4.UseVisualStyleBackColor = true;
@@ -354,7 +600,7 @@
 			this.panel2K5Data.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel2K5Data.Location = new System.Drawing.Point(0, 0);
 			this.panel2K5Data.Name = "panel2K5Data";
-			this.panel2K5Data.Size = new System.Drawing.Size(1111, 535);
+			this.panel2K5Data.Size = new System.Drawing.Size(1111, 613);
 			this.panel2K5Data.TabIndex = 0;
 			// 
 			// lab2K5DataError
@@ -386,10 +632,23 @@
 			this.groupBox2.Controls.Add(this.richTextBox2K5Data);
 			this.groupBox2.Location = new System.Drawing.Point(361, 275);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(742, 239);
+			this.groupBox2.Size = new System.Drawing.Size(742, 317);
 			this.groupBox2.TabIndex = 5;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "NFL 2K5 Data";
+			// 
+			// richTextBox2K5Data
+			// 
+			this.richTextBox2K5Data.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.richTextBox2K5Data.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.richTextBox2K5Data.Location = new System.Drawing.Point(3, 22);
+			this.richTextBox2K5Data.Name = "richTextBox2K5Data";
+			this.richTextBox2K5Data.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+			this.richTextBox2K5Data.SearchString = null;
+			this.richTextBox2K5Data.Size = new System.Drawing.Size(736, 292);
+			this.richTextBox2K5Data.StatusControl = null;
+			this.richTextBox2K5Data.TabIndex = 0;
+			this.richTextBox2K5Data.Text = "";
 			// 
 			// groupBox1
 			// 
@@ -402,6 +661,19 @@
 			this.groupBox1.TabIndex = 4;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Madden Data";
+			// 
+			// richTextBoxMaddenConverter
+			// 
+			this.richTextBoxMaddenConverter.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.richTextBoxMaddenConverter.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.richTextBoxMaddenConverter.Location = new System.Drawing.Point(3, 22);
+			this.richTextBoxMaddenConverter.Name = "richTextBoxMaddenConverter";
+			this.richTextBoxMaddenConverter.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+			this.richTextBoxMaddenConverter.SearchString = null;
+			this.richTextBoxMaddenConverter.Size = new System.Drawing.Size(736, 220);
+			this.richTextBoxMaddenConverter.StatusControl = null;
+			this.richTextBoxMaddenConverter.TabIndex = 0;
+			this.richTextBoxMaddenConverter.Text = "";
 			// 
 			// txtSkinFileLocation
 			// 
@@ -458,7 +730,7 @@
 			this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
 			this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.labStatus});
-			this.statusStrip1.Location = new System.Drawing.Point(0, 743);
+			this.statusStrip1.Location = new System.Drawing.Point(0, 821);
 			this.statusStrip1.Name = "statusStrip1";
 			this.statusStrip1.Size = new System.Drawing.Size(1131, 32);
 			this.statusStrip1.TabIndex = 5;
@@ -510,146 +782,11 @@
 			this.label2.Text = "Open index.html";
 			this.label2.Click += new System.EventHandler(this.label2_Click);
 			// 
-			// btnCreateSkinMap
-			// 
-			this.btnCreateSkinMap.Location = new System.Drawing.Point(614, 241);
-			this.btnCreateSkinMap.Name = "btnCreateSkinMap";
-			this.btnCreateSkinMap.Size = new System.Drawing.Size(177, 55);
-			this.btnCreateSkinMap.TabIndex = 18;
-			this.btnCreateSkinMap.Text = "Create Skin Map from photos";
-			this.btnCreateSkinMap.UseVisualStyleBackColor = true;
-			this.btnCreateSkinMap.Click += new System.EventHandler(this.btnCreateSkinMap_Click);
-			// 
-			// dataGridAppearance
-			// 
-			this.dataGridAppearance.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-			this.dataGridAppearance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridAppearance.Location = new System.Drawing.Point(3, 330);
-			this.dataGridAppearance.Name = "dataGridAppearance";
-			this.dataGridAppearance.RowHeadersWidth = 62;
-			this.dataGridAppearance.RowTemplate.Height = 28;
-			this.dataGridAppearance.Size = new System.Drawing.Size(604, 193);
-			this.dataGridAppearance.TabIndex = 30;
-			this.dataGridAppearance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridAppearance_CellContentClick);
-			// 
-			// textApperanceFilter
-			// 
-			this.textApperanceFilter.Location = new System.Drawing.Point(248, 298);
-			this.textApperanceFilter.Name = "textApperanceFilter";
-			this.textApperanceFilter.Size = new System.Drawing.Size(234, 26);
-			this.textApperanceFilter.TabIndex = 22;
-			this.textApperanceFilter.TextChanged += new System.EventHandler(this.textApperanceFilter_TextChanged);
-			// 
-			// comboApperanceFilter
-			// 
-			this.comboApperanceFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboApperanceFilter.FormattingEnabled = true;
-			this.comboApperanceFilter.Items.AddRange(new object[] {
-            "Team",
-            "Position",
-            "First Name",
-            "Last Name",
-            "Skin"});
-			this.comboApperanceFilter.Location = new System.Drawing.Point(62, 296);
-			this.comboApperanceFilter.Name = "comboApperanceFilter";
-			this.comboApperanceFilter.Size = new System.Drawing.Size(163, 28);
-			this.comboApperanceFilter.TabIndex = 20;
-			// 
-			// populateSkinStuffToolStripMenuItem
-			// 
-			this.populateSkinStuffToolStripMenuItem.Name = "populateSkinStuffToolStripMenuItem";
-			this.populateSkinStuffToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
-			this.populateSkinStuffToolStripMenuItem.Text = "Populate Skin Stuff";
-			this.populateSkinStuffToolStripMenuItem.Click += new System.EventHandler(this.populateSkinStuffToolStripMenuItem_Click);
-			// 
-			// btnPolulateAppearanceGrid
-			// 
-			this.btnPolulateAppearanceGrid.Location = new System.Drawing.Point(614, 180);
-			this.btnPolulateAppearanceGrid.Name = "btnPolulateAppearanceGrid";
-			this.btnPolulateAppearanceGrid.Size = new System.Drawing.Size(177, 55);
-			this.btnPolulateAppearanceGrid.TabIndex = 14;
-			this.btnPolulateAppearanceGrid.Text = "Populate Grid from photo data";
-			this.btnPolulateAppearanceGrid.UseVisualStyleBackColor = true;
-			this.btnPolulateAppearanceGrid.Click += new System.EventHandler(this.populateSkinStuffToolStripMenuItem_Click);
-			// 
-			// pictureBoxPlayer
-			// 
-			this.pictureBoxPlayer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.pictureBoxPlayer.Location = new System.Drawing.Point(613, 330);
-			this.pictureBoxPlayer.Name = "pictureBoxPlayer";
-			this.pictureBoxPlayer.Size = new System.Drawing.Size(177, 193);
-			this.pictureBoxPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pictureBoxPlayer.TabIndex = 31;
-			this.pictureBoxPlayer.TabStop = false;
-			// 
-			// txtJsonData
-			// 
-			this.txtJsonData.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.txtJsonData.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtJsonData.Location = new System.Drawing.Point(3, 3);
-			this.txtJsonData.Name = "txtJsonData";
-			this.txtJsonData.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.txtJsonData.SearchString = null;
-			this.txtJsonData.Size = new System.Drawing.Size(1105, 529);
-			this.txtJsonData.StatusControl = null;
-			this.txtJsonData.TabIndex = 0;
-			this.txtJsonData.Text = "";
-			// 
-			// txtMaddenData
-			// 
-			this.txtMaddenData.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.txtMaddenData.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtMaddenData.Location = new System.Drawing.Point(3, 3);
-			this.txtMaddenData.Name = "txtMaddenData";
-			this.txtMaddenData.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.txtMaddenData.SearchString = null;
-			this.txtMaddenData.Size = new System.Drawing.Size(1105, 529);
-			this.txtMaddenData.StatusControl = null;
-			this.txtMaddenData.TabIndex = 1;
-			this.txtMaddenData.Text = "";
-			// 
-			// richTextBox2K5Data
-			// 
-			this.richTextBox2K5Data.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.richTextBox2K5Data.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.richTextBox2K5Data.Location = new System.Drawing.Point(3, 22);
-			this.richTextBox2K5Data.Name = "richTextBox2K5Data";
-			this.richTextBox2K5Data.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.richTextBox2K5Data.SearchString = null;
-			this.richTextBox2K5Data.Size = new System.Drawing.Size(736, 214);
-			this.richTextBox2K5Data.StatusControl = null;
-			this.richTextBox2K5Data.TabIndex = 0;
-			this.richTextBox2K5Data.Text = "";
-			// 
-			// richTextBoxMaddenConverter
-			// 
-			this.richTextBoxMaddenConverter.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.richTextBoxMaddenConverter.Font = new System.Drawing.Font("Courier New", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.richTextBoxMaddenConverter.Location = new System.Drawing.Point(3, 22);
-			this.richTextBoxMaddenConverter.Name = "richTextBoxMaddenConverter";
-			this.richTextBoxMaddenConverter.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-			this.richTextBoxMaddenConverter.SearchString = null;
-			this.richTextBoxMaddenConverter.Size = new System.Drawing.Size(736, 220);
-			this.richTextBoxMaddenConverter.StatusControl = null;
-			this.richTextBoxMaddenConverter.TabIndex = 0;
-			this.richTextBoxMaddenConverter.Text = "";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(3, 301);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(44, 20);
-			this.label3.TabIndex = 32;
-			this.label3.Tag = "";
-			this.label3.Text = "Filter";
-			// 
 			// DataGatherForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1131, 775);
+			this.ClientSize = new System.Drawing.Size(1131, 853);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.btnTranslateAllData);
 			this.Controls.Add(this.label1);
@@ -671,6 +808,10 @@
 			this.tabPage3.ResumeLayout(false);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
+			this.groupBox3.ResumeLayout(false);
+			this.groupBox3.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridAppearance)).EndInit();
 			this.tabPage4.ResumeLayout(false);
 			this.panel2K5Data.ResumeLayout(false);
 			this.panel2K5Data.PerformLayout();
@@ -678,8 +819,6 @@
 			this.groupBox1.ResumeLayout(false);
 			this.statusStrip1.ResumeLayout(false);
 			this.statusStrip1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridAppearance)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlayer)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -740,6 +879,15 @@
 		private System.Windows.Forms.Button btnPolulateAppearanceGrid;
 		private System.Windows.Forms.PictureBox pictureBoxPlayer;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.GroupBox groupBox3;
+		private System.Windows.Forms.ComboBox comboRightSkin;
+		private System.Windows.Forms.ComboBox comboMiddleSkin;
+		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label labelRightClick;
+		private System.Windows.Forms.Label labelMiddleClick;
+		private System.Windows.Forms.CheckBox checkQuickClick;
+		private System.Windows.Forms.Label labelPhotoPlayerName;
+		private System.Windows.Forms.CheckBox checkExactMatch;
 	}
 }
 

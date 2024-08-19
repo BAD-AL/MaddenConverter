@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace MaddenDataScraper_2024
 {
 	public class DataFormat
 	{
+
 		public static readonly List<String> MaddenImportFormat = new List<string> {
 		"team",
 			"firstName",
@@ -162,7 +164,14 @@ namespace MaddenDataScraper_2024
 			get { 
 				if(_img == null && !String.IsNullOrEmpty( PhotoPath) )
 				{
-					_img = Image.FromFile( PhotoPath );
+					Image tmp = Image.FromFile( PhotoPath );
+					Bitmap bitmap = new Bitmap( tmp.Width, tmp.Height );
+					var g = Graphics.FromImage( bitmap );
+					g.Clear(Color.Gray);
+					g.DrawImage(tmp, 0, 0);
+					_img = bitmap;
+					g.Dispose();
+					tmp.Dispose();
 				}
 				return _img;
 			}
@@ -207,6 +216,55 @@ namespace MaddenDataScraper_2024
 				}
 			}
 			return retVal;
+		}
+	}
+
+	public class PlayerAppearanceDataSorter : IComparer<PlayerAppearanceData>
+	{
+		public void SortBindingList(BindingList<PlayerAppearanceData> bindingList)
+		{
+			if (PropertyToCompare == "Photo") return;
+
+			List<PlayerAppearanceData> sortedList = bindingList.ToList<PlayerAppearanceData>();
+			sortedList.Sort(this);
+
+			// Repopulate the BindingList with the sorted items
+			for (int i = 0; i < sortedList.Count; i++)
+			{
+				bindingList[i] = sortedList[i];
+			}
+
+			// Notify the BindingList that the list has been changed
+			bindingList.ResetBindings();
+		}
+
+		 //Team, FirstName, LastName, Skin, Position,
+		public string PropertyToCompare { get; set; }
+		public bool Ascending = true;
+		
+		public int Compare(PlayerAppearanceData x, PlayerAppearanceData y)
+		{
+			if (Ascending) {
+				switch (PropertyToCompare)
+				{
+					case "Team": return x.Team.CompareTo(y.Team);
+					case "FirstName": return x.FirstName.CompareTo(y.FirstName);
+					case "LastName": return x.LastName.CompareTo(y.LastName);
+					case "Skin": return x.Skin.CompareTo(y.Skin);
+					case "Position": return x.Position.CompareTo(y.Position);
+				}
+			}
+			else {
+				switch (PropertyToCompare)
+				{
+					case "Team": return y.Team.CompareTo(x.Team);
+					case "FirstName": return y.FirstName.CompareTo(x.FirstName);
+					case "LastName": return y.LastName.CompareTo(x.LastName);
+					case "Skin": return y.Skin.CompareTo(x.Skin);
+					case "Position": return y.Position.CompareTo(x.Position);
+				}
+			}
+			return 0;
 		}
 	}
 }

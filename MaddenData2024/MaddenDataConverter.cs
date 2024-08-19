@@ -114,9 +114,13 @@ namespace MaddenConverter
 				MessageBox.Show("Error with line:\n'" + current_line + "'", "Data not applied", MessageBoxButtons.OK, MessageBoxIcon.Error);
 				return "";
 			}
+
 			builder.Append("\r\nAutoUpdateDepthChart\r\n");
 			builder.Append("AutoUpdatePBP\r\n");
 			builder.Append("AutoUpdatePhoto\r\n");
+			builder.Append("# Set Salary Cap -> 198.2M\r\nSET(0x9ACCC, 0x38060300)\r\n");
+			builder.Append("ApplyFormula('Hand =Left', 'LeftGlove', 'None', [QB])\r\n");
+			builder.Append("ApplyFormula('Hand =Right','RightGlove','None', [QB])\r\n");
 
 			return builder.ToString();
 		}

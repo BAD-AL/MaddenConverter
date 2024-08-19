@@ -32,6 +32,11 @@ namespace MaddenDataScraper_2024
 			comboTeamsPhoto.Items.AddRange(Program.GetTeams().ToArray());
 			comboTeamsPhoto.Items.Insert(0,"All Teams");
 			comboTeamsPhoto.SelectedIndex = 0;
+
+			comboMiddleSkin.SelectedIndex = 0;
+			comboRightSkin.SelectedIndex = 2;
+			labelMiddleClick.BackColor = SkinMatcher.GetColorForSkin("Skin"+comboMiddleSkin.Text);
+			labelRightClick.BackColor = SkinMatcher.GetColorForSkin("Skin"+comboRightSkin.Text);
 			SetToolTips();
 			PopulateAppearanceGrid();
 			labStatus.Text = "Loaded";
@@ -44,18 +49,13 @@ namespace MaddenDataScraper_2024
 				
 			};
 			photoColumn.DefaultCellStyle.NullValue = Program.GetEmbeddedImage("GreyBox.png");
-
+			
 			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 50, HeaderText = "Team", DataPropertyName = "Team" });
 			dataGridAppearance.Columns.Add(photoColumn);
 			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 50, HeaderText = "Position", DataPropertyName = "Position" });
 			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 60, HeaderText = "First Name", DataPropertyName = "FirstName" });
 			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 60, HeaderText = "Last Name", DataPropertyName = "LastName" });
 			dataGridAppearance.Columns.Add(new DataGridViewTextBoxColumn() { Width = 50, HeaderText = "Skin", DataPropertyName = "Skin" });
-			/*var skinColumn = new DataGridViewComboBoxColumn() { 
-				Width = 50, HeaderText = "Skin", DataPropertyName = "Skin"
-			};
-			skinColumn.Items.AddRange(SkinMatcher.GetSkinChoices());
-			dataGridAppearance.Columns.Add(skinColumn);*/
 
 			dataGridAppearance.AutoGenerateColumns = false;
 			dataGridAppearance.CellFormatting += DataGridAppearance_CellFormatting;
@@ -69,7 +69,7 @@ namespace MaddenDataScraper_2024
 			if (dataGridAppearance.CurrentCell.ColumnIndex == 5)
 			{
 				TextBox txtBox = e.Control as TextBox;
-				txtBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend; //AutoCompleteStringCollection
+				txtBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
 				txtBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
 				if (skinChoices == null)
 				{
@@ -93,6 +93,8 @@ namespace MaddenDataScraper_2024
 			}
 		}
 
+		PlayerAppearanceDataSorter columnSorter  = new PlayerAppearanceDataSorter();
+
 		private void dataGridAppearance_CellContentClick(object sender, DataGridViewCellEventArgs e)
 		{
 			if (e.RowIndex > -1)
@@ -101,6 +103,44 @@ namespace MaddenDataScraper_2024
 				if (p != null)
 				{
 					pictureBoxPlayer.Image = p.Photo;
+					labelPhotoPlayerName.Text = $"{p.Position} {p.FirstName} {p.LastName}";
+				}
+			}
+			else if (e.RowIndex == -1)
+			{
+				string clickedProperty = dataGridAppearance.Columns[e.ColumnIndex].HeaderText.Replace(" ", "");
+				if (columnSorter.PropertyToCompare != clickedProperty)
+				{
+					columnSorter.PropertyToCompare = clickedProperty;
+					columnSorter.Ascending = true;
+				}
+				else
+				{
+					columnSorter.Ascending = !columnSorter.Ascending;
+				}
+				columnSorter.SortBindingList(dataGridAppearance.DataSource as BindingList<PlayerAppearanceData>);
+			}
+		}
+
+		private void dataGridAppearance_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+			if(checkQuickClick.Checked && e.RowIndex > -1)
+			{
+				PlayerAppearanceData p = dataGridAppearance.Rows[e.RowIndex].DataBoundItem as PlayerAppearanceData;
+				if (p != null)
+				{
+					if (e.Button == MouseButtons.Middle)
+					{
+						p.Skin = "Skin" + comboMiddleSkin.Text;
+						dataGridAppearance.Invalidate();
+						labelMiddleClick.BackColor = SkinMatcher.GetColorForSkin(p.Skin);
+					}
+					else if(e.Button == MouseButtons.Right)
+					{
+						p.Skin = "Skin" + comboRightSkin.Text;
+						dataGridAppearance.Invalidate();
+						labelRightClick.BackColor = SkinMatcher.GetColorForSkin(p.Skin);
+					}
 				}
 			}
 		}
@@ -378,6 +418,7 @@ namespace MaddenDataScraper_2024
 			string rawTeamData = "";
 			string dataDir = "RawTeamData";
 			string url;
+			string nfl2k5Pos;
 			foreach (var team in teams)
 			{
 				teamFileName = $"{dataDir}\\{team}.raw.json";
@@ -391,7 +432,8 @@ namespace MaddenDataScraper_2024
 					foreach (var player in players)
 					{
 						//curl -o image.png https://example.com/image.png
-						string saveTo = $"Photos\\{team}\\{player["firstName"]}_{player["lastName"]}.png";
+						nfl2k5Pos =  Program.MapMaddenTo2K5Position(player["position.id"]);
+						string saveTo = $"Photos\\{team}\\{nfl2k5Pos}_{player["firstName"]}_{player["lastName"]}.png";
 						url = player["avatarUrl"];
 						int index = url.IndexOf('?');
 						if (index > 0)
@@ -431,7 +473,6 @@ namespace MaddenDataScraper_2024
 				if (File.Exists(teamFileName))
 				{
 					rawTeamData = File.ReadAllText(teamFileName);
-					//UpdateStatus($"Read from file {teamFileName}");
 					var players = GetImageDownloadData(rawTeamData);
 					foreach(var player in players)
 					{
@@ -464,7 +505,8 @@ namespace MaddenDataScraper_2024
 			{
 				Directory.CreateDirectory(folder);
 			}
-			string saveTo = $"{folder}\\{player["firstName"]}_{player["lastName"]}.png";
+			string nfl2k5pos = Program.MapMaddenTo2K5Position(player["position.id"]);
+			string saveTo = $"{folder}\\{nfl2k5pos}_{player["firstName"]}_{player["lastName"]}.png";
 			if(File.Exists(saveTo))
 				return;
 			string url = player["avatarUrl"];
@@ -583,8 +625,6 @@ namespace MaddenDataScraper_2024
 			sb.Append("Team Photo Count\r\n");
 			var items = Program.GetTeams();
 			int cols = 6;
-			//while (items.Count % cols != 0)
-			//	items.Add(" ");
 			for (int i = 0; i < items.Count; i++)
 			{
 				if (i > 0 && i % cols == 0)
@@ -717,44 +757,110 @@ Expected Workflow:
 			else
 				teams.Add(comboTeamsPhoto.Text);
 			playerAppearanceDataList = PlayerAppearanceData.GetAppearanceData(teams);
+			
 			dataGridAppearance.DataSource = new BindingList<PlayerAppearanceData>(playerAppearanceDataList);
 		}
 
-		private void textApperanceFilter_TextChanged(object sender, EventArgs e)
+		private void filter_Changed(object sender, EventArgs e)
 		{
-			//var dataList = dataGridAppearance.DataSource as BindingList<PlayerAppearanceData>;
-			List<PlayerAppearanceData> pd = new List<PlayerAppearanceData>();
-
 			string filterCol = comboApperanceFilter.Text;
 			string filterText = textApperanceFilter.Text.Trim();
+			FilterDataGrid(filterCol, filterText);
+		}
+
+		private void FilterDataGrid(string filterCol, string filterText)
+		{
+			if (filterText == "" || filterCol == "")
+				return;
+			List<PlayerAppearanceData> pd = new List<PlayerAppearanceData>();
+			bool addItem;
 			foreach (PlayerAppearanceData data in playerAppearanceDataList)
 			{
-				switch (filterCol)
+				addItem = false;
+				if (checkExactMatch.Checked)
 				{
-					case "Skin":
-						if(data.Skin.Contains(filterText))
-							pd.Add(data);
-						break;
-					case "Team":
-						if (data.Team.Contains(filterText))
-							pd.Add(data);
-						break;
-					case "Position":
-						if (data.Position.Contains(filterText))
-							pd.Add(data);
-						break;
-					case "First Name":
-						if (data.FirstName.Contains(filterText))
-							pd.Add(data);
-						break;
-					case "Last Name":
-						if (data.LastName.Contains(filterText))
-							pd.Add(data);
-						break;
+					switch (filterCol)
+					{
+						case "Skin": if (data.Skin == filterText) addItem = true; break;
+						case "Team": if (data.Team == filterText) addItem = true; break;
+						case "Position": if (data.Position == filterText) addItem = true; break;
+						case "First Name": if (data.FirstName == filterText) addItem = true; break;
+						case "Last Name": if (data.LastName == filterText) addItem = true; break;
+					}
 				}
+				else
+				{
+					switch (filterCol)
+					{
+						case "Skin": if (data.Skin.Contains(filterText)) addItem = true; break;
+						case "Team": if (data.Team.Contains(filterText)) addItem = true; break;
+						case "Position": if (data.Position.Contains(filterText)) addItem = true; break;
+						case "First Name": if (data.FirstName.Contains(filterText)) addItem = true; break;
+						case "Last Name": if (data.LastName.Contains(filterText)) addItem = true; break;
+					}
+				}
+				if (addItem) pd.Add(data);
 			}
 			dataGridAppearance.DataSource = new BindingList<PlayerAppearanceData>(pd);
 		}
+		/* 1-time use
+		private void btnRenameStuff_Click(object sender, EventArgs e)
+		{
+			StringBuilder sb = new StringBuilder();
+			List<string> teams = new List<string>();
+			if (comboTeamsPhoto.SelectedIndex == 0) // all teams
+				teams = Program.GetTeams();
+			else
+				teams.Add(comboTeamsPhoto.Text);
 
+			string teamFileName = "";
+			string rawTeamData = "";
+			string dataDir = "RawTeamData";
+			string nfl2k5Pos = "";
+			foreach (var team in teams)
+			{
+				teamFileName = $"{dataDir}\\{team}.raw.json";
+				UpdateStatus($"Downloading photos for {team}");
+				if (File.Exists(teamFileName))
+				{
+					rawTeamData = File.ReadAllText(teamFileName);
+					var players = GetImageDownloadData(rawTeamData);
+					sb.Append($"\r\n::Download Photos for {team}\r\n");
+					sb.Append($"mkdir Photos\\{team}\r\n");
+					foreach (var player in players)
+					{
+						//curl -o image.png https://example.com/image.png
+						nfl2k5Pos = Program.MapMaddenTo2K5Position(player["position.id"]);
+						string savedAs = $"Photos\\{team}\\{nfl2k5Pos}_{player["firstName"]}_{player["lastName"]}.png";
+						Dictionary<string, string> nfl2k5Positions = new Dictionary<string, string>() {
+							{"RDE", "DE" },
+							{"LDE", "DE" },
+							{"RT", "T" },
+							{"LT", "T" },
+							{"RG", "G" },
+							{"LG", "G" },
+							{"MLB", "ILB" },
+							{"HB", "RB" },
+							{"ROLB", "OLB" },
+							{"LOLB", "OLB" },
+						};
+						if (nfl2k5Positions.ContainsKey(player["position.id"]))
+						{
+							var saveToPos = nfl2k5Positions[player["position.id"]];
+							string saveTo = $"Photos\\{team}\\{saveToPos}_{player["firstName"]}_{player["lastName"]}.png";
+
+							if (File.Exists(savedAs))
+							{
+								File.Move(savedAs, saveTo);
+							}
+						}
+					}
+				}
+				else
+				{
+					Console.WriteLine($"Error! Could not Find file {teamFileName}; Need to run Gather Data operation? Skipping {team}");
+				}
+			}
+		}*/
 	}
 }
